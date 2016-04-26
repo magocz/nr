@@ -1,7 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Mateusz
- * Date: 25.04.2016
- * Time: 23:23
- */
+include_once "../../db-config/db-config.php";
+
+function login($login, $password,$dbconn){
+    $sqlQuery = "SELECT id FROM USER";
+    $result = $dbconn->query($sqlQuery);
+    echo count($result);
+}
+
+echo login("liweye","dsds",$dbconn);
