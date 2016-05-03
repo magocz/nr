@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Notatnik</title>
+    <script src="client/src/build/jquery-2.2.3.js"></script>
+    <script src="client/src/home/login.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+</head>
+<body>
+<div id="contener">
+    <div id="loginContaner">
+        <div id="lable"  id="loginContaner">Panel logowania</div>
+        <table id="loginTable">
+            <tr>
+                <td>
+                    <div id="loginLable">Login:</div>
+                </td>
+                <td>
+                    <input type="text" id="loginLogin">
+                </td>
+                <td>
+                    <div hidden="true" id="requiredLoginLoginLable">*pole jest wymagane</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="loginLable">Hasło:</div>
+                </td>
+                <td>
+                    <input type="password" id="loginPassword">
+                </td>
+                <td>
+                    <div hidden="true" id="requiredLoginPasswordLable">*pole jest wymagane</div>
+                </td>
+            </tr>
+        </table>
+        <input name="login" id="login" type="button" value="Zaloguj się">
+    </div>
+    <div id="registrationyContener">
+        <div id="registrationyLable">Panel rejestracyjny</div>
+        <table id="regestryTable">
+            <tr>
+                <td>
+                    <div id="registrationLable">Login:</div>
+                </td>
+                <td>
+                    <input type="text" id="registrationLogin">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="registrationLable">Hasło:</div>
+                </td>
+                <td>
+                    <input type="password" id="registrationPassword">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="registrationLable">Powtórz hasło:</div>
+                </td>
+                <td>
+                    <input type="password" id="registrationPassword2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="registrationLable">Mail:</div>
+                </td>
+                <td>
+                    <input type="email" id="registrationMail">
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="Rejestruj" id="registration">
+    </div>
+</div>
+</body>
+</html>

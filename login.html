@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Notatnik - login</title>
+    <script type="text/javascript" src="client/src/build/jquery-2.2.3.js"></script>
+    <script type="text/javascript" src="client/src/home/login.js"></script>
+    <script type="text/javascript" src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="client/resource/user-crud.css">
+</head>
+<body class="userCrudBody">
+<div class="userCrudPanel" id="contener">
+    <div class="panelLable" id="loginPanelLableId">Panel logowania</div>
+    <div id="loginContaner">
+        <table class="inputTable">
+            <tr>
+                <td>
+                    <input type="text" id="loginLogin" placeholder="Login">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="required-info" hidden="true" id="requiredLoginLoginLable">*wymagane</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" id="loginPassword" placeholder="Hasło">
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="required-info" hidden="true" id="requiredLoginPasswordLable">*wymagane</div>
+                </td>
+            </tr>
+        </table>
+        <input name="login" id="login" type="button" value="Zaloguj się">
+    </div>
+
+    <div>
+        <div class="panelLable" id="registrationyPanelLableId"> Panel rejestracyjny</div>
+        <div id="registrationyContener" hidden="true">
+            <table class="inputTable">
+                <tr>
+                    <td>
+                        <input type="text" id="registrationLogin" placeholder="Login">
+                    </td>
+                    <td>
+                        <div class="required-info" hidden="true" id="requiredLoginPasswordLable">*wymagane</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" id="registrationPassword" placeholder="Hasło">
+                    </td>
+                    <td>
+                        <div class="required-info" hidden="true" id="requiredLoginPasswordLable">*wymagane</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" id="registrationPassword2" placeholder="Hasło">
+                    </td>
+                    <td>
+                        <div class="required-info" hidden="true" id="requiredMailRegistratioLable">*wymagane</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="email" id="registrationMail" placeholder="E-Mail">
+                    </td>
+                    <td>
+                        <div class="required-info" hidden="true" id="requiredMailRegistratioLable">*wymagane</div>
+                    </td>
+                </tr>
+            </table>
+            <input type="button" value="Rejestruj" id="registration">
+        </div>
+    </div>
+    <div class="panelLable" id="forgotPassword">Zapomniałeś hasła?</div>
+    <div hidden="true" id="forgotPasswordContener">
+        <table class="inputTable">
+            <tr>
+                <td>
+                    <input type="email" id="forgotPasswordMail" placeholder="E-Mail">
+                </td>
+                <td>
+                    <div class="required-info" hidden="true" id="requiredMailForgotPassworLable">*wymagane</div>
+                </td>
+                <td>
+                    <div class="required-info" hidden="true" id="unknownMail">*nie rozpoznano adresu E-Mail</div>
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="Generuj hasło" id="generateNewPassword">
+    </div>
+</div>
+</div>
+</body>
+</html>

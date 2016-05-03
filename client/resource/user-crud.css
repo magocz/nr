@@ -1,0 +1,28 @@
+.userCrudBody {
+    background-color: lightblue;
+}
+
+.userCrudPanel {
+    box-shadow: 1px 1px 5px #888888;
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    font-family: Verdana;
+}
+
+.inputTable {
+    width: 300px;
+}
+
+.panelLable {
+    text-align: center;
+    font-size: 16;
+    border-bottom: solid;
+    border-bottom-color: lightblue;
+}
+
+.required-info {
+    font-size: 9px;
+    color: red;
+}
