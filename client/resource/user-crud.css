@@ -20,9 +20,14 @@
     font-size: 16;
     border-bottom: solid;
     border-bottom-color: lightblue;
+    cursor: pointer;
 }
 
 .required-info {
     font-size: 9px;
+    color: red;
+}
+
+.error-msg{
     color: red;
 }

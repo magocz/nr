@@ -3,16 +3,23 @@
     <meta charset="UTF-8">
     <title>Notatnik - login</title>
     <script type="text/javascript" src="client/src/build/jquery-2.2.3.js"></script>
-    <script type="text/javascript" src="client/src/home/login.js"></script>
+    <script type="text/javascript" src="client/src/bc/authorization/common.js"></script>
+    <script type="text/javascript" src="client/src/bc/authorization/login.js"></script>
+    <script type="text/javascript" src="client/src/bc/authorization/registration.js"></script>
     <script type="text/javascript" src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
 
     <link rel="stylesheet" type="text/css" href="client/resource/user-crud.css">
 </head>
 <body class="userCrudBody">
 <div class="userCrudPanel" id="contener">
-    <div class="panelLable" id="loginPanelLableId">Panel logowania</div>
+    <div class="panelLable" id="loginPanelLableId">LOGOWANIE</div>
     <div id="loginContaner">
         <table class="inputTable">
+            <tr>
+                <td>
+                    <div class="error-msg" hidden="true" id="loginError">Nie poprawne hasło lub login</div>
+                </td>
+            </tr>
             <tr>
                 <td>
                     <input type="text" id="loginLogin" placeholder="Login">
@@ -39,48 +46,97 @@
     </div>
 
     <div>
-        <div class="panelLable" id="registrationyPanelLableId"> Panel rejestracyjny</div>
-        <div id="registrationyContener" hidden="true">
+        <div class="panelLable" id="registrationPanelLableId">REJESTRACJA</div>
+        <div id="registrationContener" hidden="true">
             <table class="inputTable">
+                <tr>
+                    <td>
+                        <div class="error-msg" hidden="true" id="registrationLoginError">Podany login jest już zajęty
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="error-msg" hidden="true" id="registrationMailError">Podany E-Mail jest już zajęty
+                        </div>
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <input type="text" id="registrationLogin" placeholder="Login">
                     </td>
+                </tr>
+                <tr>
                     <td>
-                        <div class="required-info" hidden="true" id="requiredLoginPasswordLable">*wymagane</div>
+                        <div class="required-info" hidden="true" id="requiredRegistrationLoginLable">*wymagane</div>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <input type="password" id="registrationPassword" placeholder="Hasło">
                     </td>
+                </tr>
+                <tr>
                     <td>
-                        <div class="required-info" hidden="true" id="requiredLoginPasswordLable">*wymagane</div>
+                        <div class="required-info" hidden="true" id="requiredRegistrationPasswordLable">*wymagane</div>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <input type="password" id="registrationPassword2" placeholder="Hasło">
                     </td>
+                </tr>
+                <tr>
                     <td>
-                        <div class="required-info" hidden="true" id="requiredMailRegistratioLable">*wymagane</div>
+                        <div class="required-info" hidden="true" id="requiredRegistrationPasswordLable2">*wymagane</div>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="email" id="registrationMail" placeholder="E-Mail">
+                        <div class="required-info" hidden="true" id="notEqualsRegistrationPasswordLable">*hasła się
+                            róznią
+                        </div>
                     </td>
+                </tr>
+                <tr>
                     <td>
-                        <div class="required-info" hidden="true" id="requiredMailRegistratioLable">*wymagane</div>
+                        <div class="required-info" hidden="true" id="lengthPasswordLable">*hasło musi posiadac min. 8
+                            znaków
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="email" id="registrationMail" placeholder="E-Mail" required="true">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="required-info" hidden="true" id="requiredRegistrationMailRegistratioLable">*wymagane
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="required-info" hidden="true" id="badRegistrationMailRegistratioLable">*błedny adres
+                            E-Mail
+                        </div>
                     </td>
                 </tr>
             </table>
             <input type="button" value="Rejestruj" id="registration">
         </div>
     </div>
-    <div class="panelLable" id="forgotPassword">Zapomniałeś hasła?</div>
+    <div class="panelLable" id="forgotPassword">RESET HASŁA</div>
     <div hidden="true" id="forgotPasswordContener">
         <table class="inputTable">
+            <tr>
+                <td>
+                    <div class="error-msg" hidden="true" id="forgotPasswordMailError">Popany adres E-Mail jest
+                        nieprawidłowy
+                    </div>
+                </td>
+            </tr>
             <tr>
                 <td>
                     <input type="email" id="forgotPasswordMail" placeholder="E-Mail">
@@ -90,6 +146,13 @@
                 </td>
                 <td>
                     <div class="required-info" hidden="true" id="unknownMail">*nie rozpoznano adresu E-Mail</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="success-msg" hidden="true" id="forgotPasswordMailSuccess">Popany adres E-Mail jest
+                        nieprawidłowy
+                    </div>
                 </td>
             </tr>
         </table>

@@ -19,5 +19,7 @@ if (isset($_POST['login'], $_POST['password'])) {
         header("HTTP/1.0 200 OK");
     }
 } else {
-    echo 'Invalid Request';
+      header("HTTP/1.0 405 Method Not Allowed");
+      exit;
 }
+
