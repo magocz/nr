@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="client/resource/menu.css">
     <link rel="stylesheet" type="text/css" href="client/resource/home.css">
     <script src="client/src/build/jquery-2.2.3.js"></script>
     <script src="client/src/build/highcharts/highcharts.js"></script>
-    <script src="client/src/build/highcharts/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/data.js"></script>
-    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    <script src="client/src/build/highcharts/modules/data.js"></script>
+    <script src="client/src/build/highcharts/modules/drilldown.js"></script>
+    <script src="client/src/bc/home/home.js"></script>
     <script>
         $(function () {
-            $("#includedContent").load("test.html");
-            //$("#includedContent").hide();
-            $("#includedContent2").load("doun.html");
-           // $("#includedContent2").hide();
+            $("#activeSeasonChart").load("activePlantsToVarietesChar.html");
         });
     </script>
 </head>
@@ -33,16 +31,30 @@
     </tr>
     <tr>
         <td class="activeSeasonCell">
-            <div id="includedContent"></div>
+            <div id="activeSeasonChart"></div>
         </td>
         <td class="lastOperationCell">
-            <div id="includedContent2"></div>
+            <div id="includedContent2">dupa 2</div>
+        </td>
+    </tr>
+    <tr>
+        <td class="activeSeasonCell">
+            <div>
+                <select id="activeSeasonChartCombobox">
+                    <option value="plantsToVarietes">Uprawiane rośliny -> odmiana rośliny</option>
+                    <option value="fieldDescriptionToPlants">Uprawiane rośliny -> zasiane pola (opis)</option>
+                    <option value="fieldNrToPlants">Zasiane pola -> uprawiane rośliny</option>
+                </select>
+            </div>
+        </td>
+        <td class="lastOperationCell">
+            <div id="includedContent2">dupa 2</div>
         </td>
     </tr>
     <tr>
         <td colspan="2" class="allFieldsCell">
             <div>
-                <div id="includedContent2"></div>
+                <div id="includedContent2"> dupa</div>
             </div>
         </td>
     </tr>

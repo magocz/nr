@@ -1,0 +1,23 @@
+'activeSeasonChart': {
+'seasonName': 'Sezeon 2015/2016',
+'seriesData': [
+{
+'name': 'Rzepak',
+'y': 12.4,
+'drilldwon': 'Rzepak'
+},
+{
+'name': 'Pszenica',
+'y': 12.4,
+'drilldwon': 'Pszenica'
+}
+],
+drilldownData: {
+name: „Pszenica”,
+id: „Pszenica”,
+data: [
+[„Pszenica ozima”, 12.3],
+[„Pszenica jara”, 32.3]
+]
+}
+}

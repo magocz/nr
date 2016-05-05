@@ -32,3 +32,16 @@ function save($description, $startData, $stopData, $dbcon)
     $sql = "INSERT INTO SEASON (`USER_ID`,`DESCRIPTION`,`START_DATE`,`STOP_DATE`) VALUES ('$userId','$description','$startData','$stopData')";
     return $dbcon->query($sql);
 }
+
+
+function findAllFieldBySeasonId($seasonId, $dbcon)
+{
+    $sql = "SELECT * FROM FIELD WHERE `SEASON_ID` LIKE '$seasonId'";
+    $response = $dbcon->query($sql);
+    $rows = array();
+    while ($r = mysqli_fetch_assoc($response)) {
+        $rows[] = $r;
+    }
+    return $rows;
+
+}

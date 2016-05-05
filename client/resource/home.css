@@ -2,3 +2,21 @@
     width: 1000px;
     text-align: center;
 }
+
+.activeSeasonCell{
+    width: 60%;
+    border-right: solid;
+    border-width: 1px;
+    border-color: #B8B8B8  ;
+}
+
+.lastOperationCell{
+    width: 40%;
+}
+
+.allFieldsCell{
+    width: 100%;
+    border-top: solid;
+    border-width: 1px;
+    border-color: #B8B8B8  ;
+}

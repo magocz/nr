@@ -16,6 +16,7 @@ if (isset($_POST['login'], $_POST['password'])) {
     } else {
         $_SESSION['login'] = $login;
         $_SESSION['id'] = $userData[0];
+        $_SESSION['activeSeasonId'] = $userData[6];
         header("HTTP/1.0 200 OK");
     }
 } else {
