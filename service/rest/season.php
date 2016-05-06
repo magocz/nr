@@ -1,7 +1,11 @@
 <?php
 
+header('Content-Type: text/html; charset=utf-8');
+
 include_once "../core/season.php";
+include_once "../core/done-operations.php";
 include_once "../db-config/db-config.php";
+
 
 session_start();
 
@@ -33,71 +37,97 @@ if ($_SESSION['login'] == null) {
                 if (count($season) != 0) {
                     $fields = findAllFieldBySeasonId($seckondParam, $dbcon);
                     header('Content-type: application/json');
-                    echo generateHomeDataJSON($season, $fields);
+                    echo generateActiveSeasonChartData_plants_to_variates($season, $fields);
                     exit;
                 } else {
                     header("HTTP/1.0 404 Not Found");
                     exit;
                 }
-            }else{
+            } else {
                 $seasonId = $_SESSION['activeSeasonId'];
                 $season = findSeasonById($seasonId, $dbcon);
                 if (count($season) != 0) {
                     $fields = findAllFieldBySeasonId($seasonId, $dbcon);
                     header('Content-type: application/json');
-                    echo generateHomeDataJSON($season, $fields);
+                    echo generateActiveSeasonChartData_plants_to_variates($season, $fields, $dbcon);
                     exit;
                 } else {
                     header("HTTP/1.0 404 Not Found");
                     exit;
                 }
             }
-        }elseif ($firstParam == 'fiedl-desctiption-to-plants') {
+        } elseif ($firstParam == 'plants-to-description') {
             $seckondParam = array_shift($request);
             if (is_numeric($seckondParam)) {
                 $season = findSeasonById($seckondParam, $dbcon);
                 if (count($season) != 0) {
                     $fields = findAllFieldBySeasonId($seckondParam, $dbcon);
                     header('Content-type: application/json');
-                    echo generateHomeDataJSONFieldDescriptionToPlants($season, $fields);
+                    echo generateActiveSeasonChartData_plants_to_fieldDescription($season, $fields);
                     exit;
                 } else {
                     header("HTTP/1.0 404 Not Found");
                     exit;
                 }
-            }else{
+            } else {
                 $seasonId = $_SESSION['activeSeasonId'];
                 $season = findSeasonById($seasonId, $dbcon);
                 if (count($season) != 0) {
                     $fields = findAllFieldBySeasonId($seasonId, $dbcon);
                     header('Content-type: application/json');
-                    echo generateHomeDataJSONFieldDescriptionToPlants($season, $fields);
+                    echo generateActiveSeasonChartData_plants_to_fieldDescription($season, $fields);
                     exit;
                 } else {
                     header("HTTP/1.0 404 Not Found");
                     exit;
                 }
             }
-        }elseif ($firstParam == 'fieldnr-to-plants') {
+        } elseif ($firstParam == 'plants-to-field') {
             $seckondParam = array_shift($request);
             if (is_numeric($seckondParam)) {
                 $season = findSeasonById($seckondParam, $dbcon);
                 if (count($season) != 0) {
                     $fields = findAllFieldBySeasonId($seckondParam, $dbcon);
                     header('Content-type: application/json');
-                    echo generateHomeDataJSONFieldNrToPlants($season, $fields);
+                    echo generateActiveSeasonChartData_plants_to_fieldNumber($season, $fields);
                     exit;
                 } else {
                     header("HTTP/1.0 404 Not Found");
                     exit;
                 }
-            }else{
+            } else {
                 $seasonId = $_SESSION['activeSeasonId'];
                 $season = findSeasonById($seasonId, $dbcon);
                 if (count($season) != 0) {
                     $fields = findAllFieldBySeasonId($seasonId, $dbcon);
                     header('Content-type: application/json');
-                    echo generateHomeDataJSONFieldNrToPlants($season, $fields);
+                    echo generateActiveSeasonChartData_plants_to_fieldNumber($season, $fields);
+                    exit;
+                } else {
+                    header("HTTP/1.0 404 Not Found");
+                    exit;
+                }
+            }
+        } elseif ($firstParam == 'cost-to-plants') {
+            $seckondParam = array_shift($request);
+            if (is_numeric($seckondParam)) {
+                $season = findSeasonById($seckondParam, $dbcon);
+                if (count($season) != 0) {
+                    $fields = findAllFieldBySeasonId($seckondParam, $dbcon);
+                    header('Content-type: application/json');
+                    echo generateActiveSeasonColumnChartData_plants_to_Cost($season, $fields, $dbcon);
+                    exit;
+                } else {
+                    header("HTTP/1.0 404 Not Found");
+                    exit;
+                }
+            } else {
+                $seasonId = $_SESSION['activeSeasonId'];
+                $season = findSeasonById($seasonId, $dbcon);
+                if (count($season) != 0) {
+                    $fields = findAllFieldBySeasonId($seasonId, $dbcon);
+                    header('Content-type: application/json');
+                    echo generateActiveSeasonColumnChartData_plants_to_Cost($season, $fields, $dbcon);
                     exit;
                 } else {
                     header("HTTP/1.0 404 Not Found");
@@ -128,55 +158,23 @@ if ($_SESSION['login'] == null) {
 }
 
 
-function generateHomeDataJSONFieldNrToPlants($season, $fields)
+function generateActiveSeasonTableData($fields)
 {
-    $homeData = (object)[];
-    $homeData->activeSeasonChart = (object)[];
-    $homeData->activeSeasonChart->haCount = 0;
-    $homeData->activeSeasonChart->seasonName = $season[0]['name'];
-    $homeData->activeSeasonChart->seriesData = array();
-    $homeData->activeSeasonChart->drilldownData = array();
-    $homeData->activeSeasonTable = array();
-    $homeData->activeSeasonLastFieldOperation = (object)[];
-    getFieldNrToPlantChartData($fields, $homeData);
+    $homeData = generateHomeTableDataModel();
+    fillHomeTableDataModel($homeData, $fields);
     return json_encode($homeData);
 }
 
 
-function generateHomeDataJSONFieldDescriptionToPlants($season, $fields)
+function generateHomeTableDataModel()
 {
     $homeData = (object)[];
-    $homeData->activeSeasonChart = (object)[];
-    $homeData->activeSeasonChart->haCount = 0;
-    $homeData->activeSeasonChart->seasonName = $season[0]['name'];
-    $homeData->activeSeasonChart->seriesData = array();
-    $homeData->activeSeasonChart->drilldownData = array();
     $homeData->activeSeasonTable = array();
-    $homeData->activeSeasonLastFieldOperation = (object)[];
-    getFieldPlantToDescriptionChartData($fields, $homeData);
     return json_encode($homeData);
 }
 
-function generateHomeDataJSON($season, $fields)
+function fillHomeTableDataModel($homeData, $fields)
 {
-    $homeData = (object)[];
-    $homeData->activeSeasonChart = (object)[];
-    $homeData->activeSeasonChart->haCount = 0;
-    $homeData->activeSeasonChart->seasonName = $season[0]['name'];
-    $homeData->activeSeasonChart->seriesData = array();
-    $homeData->activeSeasonChart->drilldownData = array();
-    $homeData->activeSeasonTable = array();
-    $homeData->activeSeasonLastFieldOperation = (object)[];
-    getFieldPlantToVariatesChartData($fields, $homeData);
-    return json_encode($homeData);
-}
-
-function getFieldPlantToDescriptionChartData($fields, $homeData)
-{
-
-    $seriesHasMap = array();
-    $drilldownHashMap = array();
-
     foreach ($fields as $field) {
         array_push($homeData->activeSeasonTable, (object)[
             'id' => $field['ID'],
@@ -187,84 +185,75 @@ function getFieldPlantToDescriptionChartData($fields, $homeData)
             'ha' => intval($field['HA']),
             'operationsNumber' => $field['OPERATIONS_NUMBER']
         ]);
-        $homeData->activeSeasonChart->haCount += intval($field['HA']);
-
-        if (array_key_exists($field['PLANT'], $seriesHasMap)) {
-            $seriesHasMap[$field['PLANT']][0]->y += intval($field['HA']);
-            array_push($drilldownHashMap[$field['PLANT']][0]->data, array($field['DESCRIPTION'], intval($field['HA'])));
-        } else {
-            $seriesHasMap[$field['PLANT']] = array();
-            array_push($seriesHasMap[$field['PLANT']], (object)[
-                'name' => $field['PLANT'],
-                'y' => intval($field['HA']),
-                'drilldown' => $field['PLANT']
-            ]);
-            $drilldownHashMap[$field['PLANT']] = array();
-            array_push($drilldownHashMap[$field['PLANT']], (object)[
-                'name' => $field['PLANT'],
-                'id' => $field['PLANT'],
-                'data' => array(array($field['DESCRIPTION'], intval($field['HA'])))
-            ]);
-
-        }
-
-    }
-
-    foreach ($drilldownHashMap as $drilldownData) {
-        array_push($homeData->activeSeasonChart->drilldownData, $drilldownData[0]);
-    }
-
-    foreach ($seriesHasMap as $seriesData) {
-        array_push($homeData->activeSeasonChart->seriesData, $seriesData[0]);
     }
 }
 
-
-function getFieldPlantToVariatesChartData($fields, $homeData)
+function generateActiveSeasonChartData_plants_to_fieldDescription($season, $fields)
 {
+    $homeData = generatePipeChartDataModel($season);
+    getChartData($fields, $homeData, 'PLANT', 'DESCRIPTION');
+    return json_encode($homeData);
+}
 
+function generateActiveSeasonChartData_plants_to_fieldNumber($season, $fields)
+{
+    $homeData = generatePipeChartDataModel($season);
+    getChartData($fields, $homeData, 'PLANT', 'FIELD_NR');
+    return json_encode($homeData);
+}
+
+function generateActiveSeasonChartData_plants_to_variates($season, $fields)
+{
+    $homeData = generatePipeChartDataModel($season);
+    getChartData($fields, $homeData, 'PLANT', 'VARIETES');
+    return json_encode($homeData);
+}
+
+function generatePipeChartDataModel($season)
+{
+    $homeData = (object)[];
+    $homeData->activeSeasonChart = (object)[];
+    $homeData->activeSeasonChart->haCount = 0;
+    $homeData->activeSeasonChart->seasonName = $season[0]['name'];
+    $homeData->activeSeasonChart->seriesData = array();
+    $homeData->activeSeasonChart->drilldownData = array();
+    return $homeData;
+}
+
+function getChartData($fields, $homeData, $seriesVariable, $drilldownVariable)
+{
     $seriesHasMap = array();
     $drilldownHashMap = array();
 
     foreach ($fields as $field) {
-        array_push($homeData->activeSeasonTable, (object)[
-            'id' => $field['ID'],
-            'fieldNumber' => $field['FIELD_NR'],
-            'description' => $field['DESCRIPTION'],
-            'plant' => $field['PLANT'],
-            'varietes' => $field['VARIETES'],
-            'ha' => intval($field['HA']),
-            'operationsNumber' => $field['OPERATIONS_NUMBER']
-        ]);
         $homeData->activeSeasonChart->haCount += intval($field['HA']);
-
         $isAdded = false;
 
-        if (array_key_exists($field['PLANT'], $seriesHasMap)) {
-            $seriesHasMap[$field['PLANT']][0]->y += intval($field['HA']);
-            for ($i = 0; $i < count($drilldownHashMap[$field['PLANT']][0]->data); $i++) {
-                if (in_array($field['VARIETES'], $drilldownHashMap[$field['PLANT']][0]->data[$i])) {
-                    $drilldownHashMap[$field['PLANT']][0]->data[$i][1] += intval($field['HA']);
+        if (array_key_exists($field[$seriesVariable], $seriesHasMap)) {
+            $seriesHasMap[$field[$seriesVariable]][0]->y += intval($field['HA']);
+            for ($i = 0; $i < count($drilldownHashMap[$field[$seriesVariable]][0]->data); $i++) {
+                if (in_array($field[$drilldownVariable], $drilldownHashMap[$field[$seriesVariable]][0]->data[$i])) {
+                    $drilldownHashMap[$field[$seriesVariable]][0]->data[$i][1] += intval($field['HA']);
                     $isAdded = true;
                     break;
                 }
             }
             if (!$isAdded) {
-                array_push($drilldownHashMap[$field['PLANT']][0]->data, array($field['VARIETES'], intval($field['HA'])));
+                array_push($drilldownHashMap[$field[$seriesVariable]][0]->data, array($field[$drilldownVariable], intval($field['HA'])));
             }
 
         } else {
-            $seriesHasMap[$field['PLANT']] = array();
-            array_push($seriesHasMap[$field['PLANT']], (object)[
-                'name' => $field['PLANT'],
+            $seriesHasMap[$field[$seriesVariable]] = array();
+            array_push($seriesHasMap[$field[$seriesVariable]], (object)[
+                'name' => $field[$seriesVariable],
                 'y' => intval($field['HA']),
-                'drilldown' => $field['PLANT']
+                'drilldown' => $field[$seriesVariable]
             ]);
-            $drilldownHashMap[$field['PLANT']] = array();
-            array_push($drilldownHashMap[$field['PLANT']], (object)[
-                'name' => $field['PLANT'],
-                'id' => $field['PLANT'],
-                'data' => array(array($field['VARIETES'], intval($field['HA'])))
+            $drilldownHashMap[$field[$seriesVariable]] = array();
+            array_push($drilldownHashMap[$field[$seriesVariable]], (object)[
+                'name' => $field[$seriesVariable],
+                'id' => $field[$seriesVariable],
+                'data' => array(array($field[$drilldownVariable], intval($field['HA'])))
             ]);
 
         }
@@ -279,50 +268,102 @@ function getFieldPlantToVariatesChartData($fields, $homeData)
     }
 }
 
-function getFieldNrToPlantChartData($fields, $homeData)
-{
 
+function generateActiveSeasonColumnChartData_plants_to_Cost($season, $fields, $dbcon)
+{
+    $homeData = generateColumnChartDataModel($season);
+    getColumnChartData($fields, $homeData, 'PLANT', $dbcon);
+    return json_encode($homeData);
+}
+
+
+function generateColumnChartDataModel($season)
+{
+    $homeData = (object)[];
+    $homeData->activeSeasonChart = (object)[];
+    $homeData->activeSeasonChart->cost = 0;
+    $homeData->activeSeasonChart->seasonName = $season[0]['name'];
+    $homeData->activeSeasonChart->seriesData = array();
+    $homeData->activeSeasonChart->drilldownData = array();
+    return $homeData;
+}
+
+
+function getColumnChartData($fields, $homeData, $seriesVariable, $dbcon)
+{
     $seriesHasMap = array();
     $drilldownHashMap = array();
 
     foreach ($fields as $field) {
-        array_push($homeData->activeSeasonTable, (object)[
-            'id' => $field['ID'],
-            'fieldNumber' => $field['FIELD_NR'],
-            'description' => $field['DESCRIPTION'],
-            'plant' => $field['PLANT'],
-            'varietes' => $field['VARIETES'],
-            'ha' => intval($field['HA']),
-            'operationsNumber' => $field['OPERATIONS_NUMBER']
-        ]);
-        $homeData->activeSeasonChart->haCount += intval($field['HA']);
 
-        if (array_key_exists($field['FIELD_NR'], $seriesHasMap)) {
-            $seriesHasMap[$field['FIELD_NR']][0]->y += intval($field['HA']);
-            array_push($drilldownHashMap[$field['FIELD_NR']][0]->data, array($field['PLANT'], intval($field['HA'])));
+        $allDoneOperations = findAllDoneOperationsByFieldId($field['ID'], $dbcon);
+        $fertilizerCost = getFertilizerCost($allDoneOperations); // koszt nawozu
+        $plantProtectionCost = getPlantProtectionCost($allDoneOperations); // koszt ochrony roslin
+        if (array_key_exists($field[$seriesVariable], $seriesHasMap)) {
+            $seriesHasMap[$field[$seriesVariable]][0]->y += ($plantProtectionCost + $fertilizerCost);
+            $drilldownHashMap[$field[$seriesVariable]][0]->data[0][1] += $plantProtectionCost;
+            $drilldownHashMap[$field[$seriesVariable]][0]->data[1][1] += $fertilizerCost;
+
+            $homeData->activeSeasonChart->cost += $plantProtectionCost + $fertilizerCost;
+
         } else {
-            $seriesHasMap[$field['FIELD_NR']] = array();
-            array_push($seriesHasMap[$field['FIELD_NR']], (object)[
-                'name' => $field['FIELD_NR'],
-                'y' => intval($field['HA']),
-                'drilldown' => $field['FIELD_NR']
-            ]);
-            $drilldownHashMap[$field['FIELD_NR']] = array();
-            array_push($drilldownHashMap[$field['FIELD_NR']], (object)[
-                'name' => $field['FIELD_NR'],
-                'id' => $field['FIELD_NR'],
-                'data' => array(array($field['PLANT'], intval($field['HA'])))
-            ]);
+            $fertilizerCost = getFertilizerCost($allDoneOperations); // koszt nawozu
+            $plantProtectionCost = getPlantProtectionCost($allDoneOperations); // koszt ochrony roslin
 
+            $homeData->activeSeasonChart->cost += $plantProtectionCost + $fertilizerCost;
+
+            $seriesHasMap[$field[$seriesVariable]] = array();
+            array_push($seriesHasMap[$field[$seriesVariable]], (object)[
+                'name' => $field[$seriesVariable],
+                'y' => ($plantProtectionCost + $fertilizerCost),
+                'drilldown' => $field[$seriesVariable]
+            ]);
+            $drilldownHashMap[$field[$seriesVariable]] = array();
+
+            array_push($drilldownHashMap[$field[$seriesVariable]], (object)[
+                'name' => $field[$seriesVariable],
+                'id' => $field[$seriesVariable],
+                'data' => array(array('Koszt ochrony roślin', $plantProtectionCost), array('Koszt nawozów', $fertilizerCost))
+            ]);
         }
-
     }
 
+
+    krsort($seriesHasMap);
     foreach ($drilldownHashMap as $drilldownData) {
+        usort($drilldownData[0]->data,'invenDescSort');
         array_push($homeData->activeSeasonChart->drilldownData, $drilldownData[0]);
     }
 
     foreach ($seriesHasMap as $seriesData) {
         array_push($homeData->activeSeasonChart->seriesData, $seriesData[0]);
     }
+}
+
+function invenDescSort($item1, $item2)
+{
+    if ($item1[1] == $item2[1]) return 0;
+    return ($item1[1] < $item2[1]) ? 1 : -1;
+}
+
+function getFertilizerCost($allDoneOperations)
+{
+    $fertilizerCost = 0;
+    foreach ($allDoneOperations as $operation) {
+        if ($operation['MEANS_TYPE'] == "fertilizer") {
+            $fertilizerCost += (intval($operation['COST']));
+        }
+    }
+    return $fertilizerCost;
+}
+
+function getPlantProtectionCost($allDoneOperations)
+{
+    $plantProtectionCost = 0;
+    foreach ($allDoneOperations as $operation) {
+        if ($operation['MEANS_TYPE'] == "plantProtection") {
+            $plantProtectionCost += (intval($operation['COST']));
+        }
+    }
+    return $plantProtectionCost;
 }

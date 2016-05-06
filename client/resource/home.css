@@ -4,14 +4,14 @@
 }
 
 .activeSeasonCell{
-    width: 60%;
+    width: 50%;
     border-right: solid;
     border-width: 1px;
     border-color: #B8B8B8  ;
 }
 
 .lastOperationCell{
-    width: 40%;
+    width: 50%;
 }
 
 .allFieldsCell{
@@ -19,4 +19,17 @@
     border-top: solid;
     border-width: 1px;
     border-color: #B8B8B8  ;
+}
+
+.pipeChartSelect select {
+    text-indent: 1px;
+    background-color: #D0D0D0  ;
+    color: black;
+    padding: 5px;
+    font-size: 13px;
+    line-height: 1;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    height: 34px;
+    box-shadow:0 0 5px #dc143c;
 }
