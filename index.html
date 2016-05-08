@@ -6,9 +6,10 @@
     <link rel="stylesheet" type="text/css" href="client/resource/home.css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="client/src/build/datatables/css/jquery.dataTables.css">
 
     <script src="client/src/build/jquery-2.2.3.js"></script>
+    <script type="text/javascript" src="client/src/build/datatables/js/jquery.dataTables.js"></script>
     <script src="client/src/build/highcharts/highcharts.js"></script>
     <script src="client/src/build/highcharts/modules/data.js"></script>
     <script src="client/src/build/highcharts/modules/drilldown.js"></script>
@@ -40,7 +41,7 @@
         <td class="activeSeasonCell">
             <div class="pipeChartSelect">
                 <select id="activeSeasonChartCombobox">
-                    <option value="plantsToVarietes" >Uprawiane rośliny / odmiana rośliny</option>
+                    <option value="plantsToVarietes">Uprawiane rośliny / odmiana rośliny</option>
                     <option value="plantsToDescription">Uprawiane rośliny / pole (opis)</option>
                     <option value="plantsToField">Uprawiane rośliny / nr działki</option>
                 </select>
@@ -49,17 +50,28 @@
         <td class="lastOperationCell">
             <div class="pipeChartSelect">
                 <select id="activeSeasonCostChartCombobox">
-                    <option value="costToPlants" >Uprawiane rośliny / koszt</option>
-                    <option value="profitToPlants">Uprawiane rośliny / zysk </option>
+                    <option value="costToPlants">Uprawiane rośliny / koszt</option>
+                    <option value="profitToPlants">Uprawiane rośliny / zysk</option>
                     <option value="profitToPlantsProHa">Uprawiane rośliny / zysk na hektar</option>
                 </select>
             </div>
         </td>
     </tr>
     <tr>
-        <td colspan="2" class="allFieldsCell">
+        <td colspan="2" class="homeTableCell">
+            <div id="homeTableCell" class="homeTableCellDiv">
+            </div>
+        </td>
+    </tr>
+    <tr id="fieldOptionMenu" class="fieldOptionMenu" hidden="true">
+        <td colspan="2">
             <div>
-                <div id="includedContent2"> dupa</div>
+                <ul class="menu">
+                    <li><a class="active" href="#home">Home</a></li>
+                    <li><a href="#news">Sezony</a></li>
+                    <li style="float:right"><a href="#about">Wyloguj</a></li>
+                    <li style="float:right"><a href="#contact">Twoje dane</a></li>
+                </ul>
             </div>
         </td>
     </tr>

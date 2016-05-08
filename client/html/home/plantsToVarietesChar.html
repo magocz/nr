@@ -8,44 +8,34 @@
     <script type="text/javascript">
         $(function () {
             $.ajax({
-                url: "service/rest/season.php/cost-to-plants/",
+                url: "service/rest/season.php/plants-to-varietes/",
                 type: "GET",
-                //data: {get_param: 'value'},
                 dataType: 'json',
                 contentType: "application/x-www-form-urlencoded",
                 statusCode: {
                     200: function (homeData) {
-                        $('#activeSeasonCostChartContener').highcharts({
+                        $('#activeSeasonChartContener').highcharts({
                             chart: {
-                                type: 'column'
+                                type: 'pie'
                             },
                             title: {
-                                text: 'Koszt uprawianych roślin: ' + homeData.activeSeasonChart.seasonName
+                                text: 'Uprawiane rośliny: ' + homeData.activeSeasonChart.seasonName
                             },
                             subtitle: {
-                                text: 'Całkowity koszt uprawy: ' + homeData.activeSeasonChart.cost + ' zł'
-                            },
-
-                            xAxis: {
-                                type: 'category'
-                            },
-                            yAxis: {
-                                title: {
-                                    text: 'Całkowity koszt w zł'
-                                }
-
-                            },
-                            legend: {
-                                enabled: false
+                                text: 'Całkowita powierzchnia upraw: ' + homeData.activeSeasonChart.haCount + ' ha'
                             },
                             plotOptions: {
                                 series: {
-                                    borderWidth: 1
+                                    dataLabels: {
+                                        enabled: true,
+                                        format: '{point.name}: {point.y} ha'
+                                    }
                                 }
                             },
+
                             tooltip: {
                                 headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-                                pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y} zł</b>  <br/>'
+                                pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y} ha</b>  <br/>'
                             },
                             series: [{
                                 name: homeData.activeSeasonChart.seasonName,
@@ -65,5 +55,5 @@
 
     </script>
 </head>
-<div id="activeSeasonCostChartContener" style="min-width: 310px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+<div id="activeSeasonChartContener" style="min-width: 310px; max-width: 600px; height: 400px; margin: 0 auto"></div>
 </html>
