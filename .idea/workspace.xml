@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/db-config/db-config.php" afterPath="$PROJECT_DIR$/service/db-config/db-config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/active-season/costToPlantsChar.html" afterPath="$PROJECT_DIR$/client/html/active-season/costToPlantsChar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/active-season/plantsToFieldChart.html" afterPath="$PROJECT_DIR$/client/html/active-season/plantsToFieldChart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/active-season/plantsToFieldDescriptionChart.html" afterPath="$PROJECT_DIR$/client/html/active-season/plantsToFieldDescriptionChart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/active-season/plantsToVarietesChar.html" afterPath="$PROJECT_DIR$/client/html/active-season/plantsToVarietesChar.html" />
     </list>
     <ignored path="nr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,17 +29,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="db-config.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/service/db-config/db-config.php">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="64" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
+            <state relative-caret-position="1003">
+              <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+      <file leaf-file-name="db-config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/db-config/db-config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -47,11 +62,11 @@
       <file leaf-file-name="costToPlantsChar.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/html/active-season/costToPlantsChar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+            <state relative-caret-position="170">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding>
-                <marker date="1462736073226" expanded="true" signature="1845:1859" placeholder="..." />
-                <marker date="1462736073226" expanded="true" signature="1947:1966" placeholder="..." />
+                <marker date="1462737099803" expanded="true" signature="1844:1858" placeholder="..." />
+                <marker date="1462737099803" expanded="true" signature="1946:1965" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -63,8 +78,8 @@
             <state relative-caret-position="170">
               <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding>
-                <marker date="1462735842200" expanded="true" signature="1566:1580" placeholder="..." />
-                <marker date="1462735842200" expanded="true" signature="1668:1687" placeholder="..." />
+                <marker date="1462737113312" expanded="true" signature="1565:1579" placeholder="..." />
+                <marker date="1462737113312" expanded="true" signature="1667:1686" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -83,8 +98,8 @@
       <file leaf-file-name="season.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/rest/season.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2286">
-              <caret line="190" column="9" selection-start-line="190" selection-start-column="9" selection-end-line="190" selection-end-column="9" />
+            <state relative-caret-position="297">
+              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
               <folding>
                 <element signature="n#generateActiveSeasonTableData#0;n#!!top" expanded="false" />
                 <element signature="n#generateHomeTableDataModel#0;n#!!top" expanded="false" />
@@ -102,10 +117,10 @@
         <entry file="file://$PROJECT_DIR$/client/html/active-season/plantsToFieldDescriptionChart.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding>
-                <marker date="1462735857056" expanded="true" signature="1572:1586" placeholder="..." />
-                <marker date="1462735857056" expanded="true" signature="1674:1693" placeholder="..." />
+                <marker date="1462737115872" expanded="true" signature="1571:1585" placeholder="..." />
+                <marker date="1462737115872" expanded="true" signature="1673:1692" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -115,10 +130,10 @@
         <entry file="file://$PROJECT_DIR$/client/html/active-season/plantsToVarietesChar.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding>
-                <marker date="1462735857081" expanded="true" signature="1569:1583" placeholder="..." />
-                <marker date="1462735857081" expanded="true" signature="1671:1690" placeholder="..." />
+                <marker date="1462737118129" expanded="true" signature="1568:1582" placeholder="..." />
+                <marker date="1462737118129" expanded="true" signature="1670:1689" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -176,13 +191,13 @@
         <option value="$PROJECT_DIR$/client/src/bc/home/home.js" />
         <option value="$PROJECT_DIR$/client/resource/home.css" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/client/html/active-season/plantsToFieldChart.html" />
-        <option value="$PROJECT_DIR$/client/html/active-season/plantsToVarietesChar.html" />
-        <option value="$PROJECT_DIR$/client/html/active-season/plantsToFieldDescriptionChart.html" />
-        <option value="$PROJECT_DIR$/service/rest/season.php" />
-        <option value="$PROJECT_DIR$/client/html/active-season/costToPlantsChar.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/service/db-config/db-config.php" />
+        <option value="$PROJECT_DIR$/client/html/active-season/costToPlantsChar.html" />
+        <option value="$PROJECT_DIR$/client/html/active-season/plantsToFieldChart.html" />
+        <option value="$PROJECT_DIR$/client/html/active-season/plantsToFieldDescriptionChart.html" />
+        <option value="$PROJECT_DIR$/client/html/active-season/plantsToVarietesChar.html" />
+        <option value="$PROJECT_DIR$/service/rest/season.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -259,10 +274,6 @@
               <option name="myItemId" value="service" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rest" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -274,25 +285,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
+              <option name="myItemId" value="doc" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db-config" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
+              <option name="myItemId" value="json-examples" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -307,24 +304,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resource" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -438,12 +417,12 @@
       <workItem from="1462473506998" duration="276000" />
       <workItem from="1462474176584" duration="2121000" />
       <workItem from="1462479828177" duration="4000" />
-      <workItem from="1462735656751" duration="984000" />
+      <workItem from="1462735656751" duration="1575000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49135000" />
+    <option name="totallyTimeSpent" value="49726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -767,14 +746,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Downloads/examples/column-drilldown/index.htm" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/resource/home.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -790,10 +761,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/service/db-config/db-config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/active-season/costToPlantsChar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <marker date="1462737099803" expanded="true" signature="1844:1858" placeholder="..." />
+            <marker date="1462737099803" expanded="true" signature="1946:1965" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/active-season/plantsToFieldChart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <marker date="1462737113312" expanded="true" signature="1565:1579" placeholder="..." />
+            <marker date="1462737113312" expanded="true" signature="1667:1686" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/active-season/plantsToFieldDescriptionChart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <marker date="1462737115872" expanded="true" signature="1571:1585" placeholder="..." />
+            <marker date="1462737115872" expanded="true" signature="1673:1692" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/html/active-season/plantsToVarietesChar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <marker date="1462737118129" expanded="true" signature="1568:1582" placeholder="..." />
+            <marker date="1462737118129" expanded="true" signature="1670:1689" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/service/rest/season.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2286">
-          <caret line="190" column="9" selection-start-line="190" selection-start-column="9" selection-end-line="190" selection-end-column="9" />
+        <state relative-caret-position="297">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
             <element signature="n#generateActiveSeasonTableData#0;n#!!top" expanded="false" />
             <element signature="n#generateHomeTableDataModel#0;n#!!top" expanded="false" />
@@ -806,62 +837,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/active-season/plantsToVarietesChar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <marker date="1462735857081" expanded="true" signature="1569:1583" placeholder="..." />
-            <marker date="1462735857081" expanded="true" signature="1671:1690" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/active-season/plantsToFieldDescriptionChart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <marker date="1462735857056" expanded="true" signature="1572:1586" placeholder="..." />
-            <marker date="1462735857056" expanded="true" signature="1674:1693" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/active-season/plantsToFieldChart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <marker date="1462735842200" expanded="true" signature="1566:1580" placeholder="..." />
-            <marker date="1462735842200" expanded="true" signature="1668:1687" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/active-season/costToPlantsChar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding>
-            <marker date="1462736073226" expanded="true" signature="1845:1859" placeholder="..." />
-            <marker date="1462736073226" expanded="true" signature="1947:1966" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/db-config/db-config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="64" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
           <folding />
         </state>
       </provider>
