@@ -28,20 +28,36 @@
     box-shadow: 0 0 5px #dc143c;
 
 }
-.fieldOptionMenu{
+
+.fieldOptionMenu {
     position: fixed;
     bottom: 0;
-}
-.homeTableCell {
-
-    border-top: solid;
-    border-width: 1px;
-    border-color: #B8B8B8;
-
 }
 
 .homeTableCellDiv {
     margin-top: 10px;
     margin-bottom: 20px;
     font-family: serif;
+}
+
+.homeTableActiveSeasonData  {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.homeTableActiveSeasonData td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.homeTableActiveSeasonData tr:nth-child(even) {
+    background-color: 	#E0E0E0  ;
+}
+
+.homeTableActiveSeasonData tr:hover {
+    background-color: #D0D0D0;
+}
+
+.homeTableActiveSeasonData th {
+    background-color: #B8B8B8;
 }

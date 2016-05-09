@@ -1,40 +1,11 @@
-<script>
-    $(document).ready(function () {
-        var table = $('#table_id').DataTable({
-            "ajax": 'service/rest/season.php/home-table/',
-            stateSave: true,
-            "columns": [
-                {"data": "fieldNumber"},
-                {"data": "description"},
-                {"data": "plant"},
-                {"data": "varietes"},
-                {"data": "ha"},
-                {"data": "operationsNumber"}
-            ]
-        });
-        $('#table_id tbody').on('click', 'tr', function () {
-            if ($(this).hasClass('selected')) {
-                $(this).removeClass('selected');
-            }
-            else {
-                table.$('tr.selected').removeClass('selected');
-                $(this).addClass('selected');
-            }
-        });
-
-    });
-
-</script>
-<table id="table_id" class="display">
-    <thead>
-    <tr>
-        <th style="width: 20%">Nr działki</th>
+<table id="homeTableActiveSeasonData" class="homeTableActiveSeasonData">
+    <tr class="homeTableActiveSeasonDataHead">
+        <th style="width: 20%">Numer działki</th>
         <th style="width: 30%">Opis</th>
-        <th style="width: 25%"> Uprawiana roślina</th>
+        <th style="width: 25%">Roślina</th>
         <th style="width: 25%">Odmiana</th>
-        <th style="width: 10%">Powierzchnia pola [ha]</th>
+        <th style="width: 10%">Powierzchnia [ha]</th>
         <th style="width: 10%">Przeprowadzone zabiegi</th>
     </tr>
-    </thead>
 
 </table>
