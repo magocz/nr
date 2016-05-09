@@ -2,10 +2,375 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/html/home/home-table.html" afterPath="$PROJECT_DIR$/client/html/home/home-table.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/resource/home.css" afterPath="$PROJECT_DIR$/client/resource/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/bc/home/home.js" afterPath="$PROJECT_DIR$/client/src/bc/home/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/field/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/authorization/core/repo/user.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/home/core/bc/column-chart-data.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/home/core/bc/common.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/home/core/bc/fields-data.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/home/core/bc/pipe-chart-data.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/home/rest/plants-to-cost.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/home/rest/plants-to-description.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/home/rest/plants-to-field.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/home/rest/plants-to-varietes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/home/rest/season-fields.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/all.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/dataTables.bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/dataTables.bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/dataTables.bootstrap4.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/dataTables.bootstrap4.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/dataTables.foundation.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/dataTables.foundation.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/dataTables.jqueryui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/dataTables.jqueryui.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/dataTables.material.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/dataTables.material.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/dataTables.semanticui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/dataTables.semanticui.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/dataTables.uikit.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/dataTables.uikit.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/jquery.dataTables.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/jquery.dataTables.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/css/jquery.dataTables_themeroller.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/images/Sorting icons.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/images/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/images/sort_asc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/images/sort_asc_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/images/sort_both.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/images/sort_desc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/images/sort_desc_disabled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/dataTables.bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/dataTables.bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/dataTables.bootstrap4.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/dataTables.bootstrap4.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/dataTables.foundation.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/dataTables.foundation.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/dataTables.jqueryui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/dataTables.jqueryui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/dataTables.material.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/dataTables.material.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/dataTables.semanticui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/dataTables.semanticui.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/dataTables.uikit.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/dataTables.uikit.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/jquery.dataTables.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/jquery.dataTables.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/js/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/syntax/Syntax Highlighter license" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/syntax/shCore.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/build/datatables/syntax/shCore.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/json-examples/homeData.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/service/core/authorization/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/service/core/authorization/registration.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/service/core/season/season-ba.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/service/rest/season.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/html/home/costToPlantsChar.html" afterPath="$PROJECT_DIR$/client/src/home/html/cost-to-plants-column-chart.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/html/home/home-table.html" afterPath="$PROJECT_DIR$/client/src/home/html/home-table.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/html/home/plantsToFieldChart.html" afterPath="$PROJECT_DIR$/client/src/home/html/plants-to-field-pipe-chart.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/html/home/plantsToFieldDescriptionChart.html" afterPath="$PROJECT_DIR$/client/src/home/html/plants-to-field-description-pipe-chart.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/html/home/plantsToVarietesChar.html" afterPath="$PROJECT_DIR$/client/src/home/html/plants-to-varietes-pipe-char.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/resource/home.css" afterPath="$PROJECT_DIR$/client/src/home/resources/home.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/resource/menu.css" afterPath="$PROJECT_DIR$/client/src/common/resources/menu.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/resource/user-crud.css" afterPath="$PROJECT_DIR$/client/src/authorization/resources/user-crud.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/bc/authorization/common.js" afterPath="$PROJECT_DIR$/client/src/authorization/js/common.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/bc/authorization/login.js" afterPath="$PROJECT_DIR$/client/src/authorization/js/login.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/bc/authorization/registration.js" afterPath="$PROJECT_DIR$/client/src/authorization/js/registration.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/bc/home/home.js" afterPath="$PROJECT_DIR$/client/src/home/js/home.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/adapters/standalone-framework.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/adapters/standalone-framework.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/adapters/standalone-framework.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/adapters/standalone-framework.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/highcharts-3d.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/highcharts-3d.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/highcharts-3d.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/highcharts-3d.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/highcharts-more.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/highcharts-more.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/highcharts-more.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/highcharts-more.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/highcharts.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/highcharts.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/highcharts.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/highcharts.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/boost.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/boost.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/boost.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/boost.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/broken-axis.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/broken-axis.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/broken-axis.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/broken-axis.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/canvas-tools.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/canvas-tools.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/canvas-tools.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/canvas-tools.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/data.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/data.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/data.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/data.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/drilldown.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/drilldown.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/drilldown.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/drilldown.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/exporting.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/exporting.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/exporting.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/exporting.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/funnel.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/funnel.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/funnel.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/funnel.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/heatmap.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/heatmap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/heatmap.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/heatmap.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/no-data-to-display.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/no-data-to-display.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/no-data-to-display.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/no-data-to-display.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/offline-exporting.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/offline-exporting.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/offline-exporting.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/offline-exporting.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/solid-gauge.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/solid-gauge.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/solid-gauge.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/solid-gauge.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/treemap.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/treemap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/modules/treemap.src.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/treemap.src.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/themes/dark-blue.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/themes/dark-blue.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/themes/dark-green.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/themes/dark-green.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/themes/dark-unica.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/themes/dark-unica.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/themes/gray.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/themes/gray.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/themes/grid-light.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/themes/grid-light.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/themes/grid.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/themes/grid.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/themes/sand-signika.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/themes/sand-signika.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/highcharts/themes/skies.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/themes/skies.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/build/jquery-2.2.3.js" afterPath="$PROJECT_DIR$/client/src/common/js/jquery-2.2.3.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/client/public/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/login.html" afterPath="$PROJECT_DIR$/client/public/authorization/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Autoloader.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Autoloader.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CachedObjectStorage/APC.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/APC.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CachedObjectStorage/CacheBase.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/CacheBase.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CachedObjectStorage/DiscISAM.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/DiscISAM.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CachedObjectStorage/ICache.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/ICache.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CachedObjectStorage/Igbinary.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/Igbinary.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CachedObjectStorage/Memcache.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/Memcache.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CachedObjectStorage/Memory.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/Memory.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CachedObjectStorage/MemoryGZip.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/MemoryGZip.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CachedObjectStorage/MemorySerialized.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/MemorySerialized.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CachedObjectStorage/PHPTemp.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/PHPTemp.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CachedObjectStorage/SQLite.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/SQLite.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CachedObjectStorage/SQLite3.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/SQLite3.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CachedObjectStorage/Wincache.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/Wincache.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CachedObjectStorageFactory.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorageFactory.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CalcEngine/CyclicReferenceStack.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CalcEngine/CyclicReferenceStack.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/CalcEngine/Logger.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CalcEngine/Logger.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/Database.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Database.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/DateTime.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/DateTime.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/Engineering.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Engineering.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/Exception.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Exception.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/ExceptionHandler.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/ExceptionHandler.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/Financial.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Financial.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/FormulaParser.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/FormulaParser.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/FormulaToken.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/FormulaToken.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/Function.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Function.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/Functions.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Functions.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/Logical.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Logical.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/LookupRef.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/LookupRef.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/MathTrig.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/MathTrig.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/Statistical.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Statistical.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/TextData.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/TextData.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/Token/Stack.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Token/Stack.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/functionlist.txt" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/functionlist.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Cell.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Cell.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Cell/AdvancedValueBinder.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Cell/AdvancedValueBinder.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Cell/DataType.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Cell/DataType.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Cell/DataValidation.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Cell/DataValidation.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Cell/DefaultValueBinder.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Cell/DefaultValueBinder.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Cell/Hyperlink.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Cell/Hyperlink.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Cell/IValueBinder.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Cell/IValueBinder.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Chart.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Chart/Axis.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Axis.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Chart/DataSeries.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/DataSeries.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Chart/DataSeriesValues.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/DataSeriesValues.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Chart/Exception.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Exception.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Chart/GridLines.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/GridLines.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Chart/Layout.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Layout.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Chart/Legend.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Legend.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Chart/PlotArea.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/PlotArea.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Chart/Properties.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Properties.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Chart/Renderer/PHP Charting Libraries.txt" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Renderer/PHP Charting Libraries.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Chart/Renderer/jpgraph.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Renderer/jpgraph.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Chart/Title.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Title.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Comment.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Comment.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/DocumentProperties.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/DocumentProperties.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/DocumentSecurity.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/DocumentSecurity.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Exception.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Exception.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/HashTable.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/HashTable.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Helper/HTML.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Helper/HTML.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/IComparable.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/IComparable.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/IOFactory.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/IOFactory.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/NamedRange.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/NamedRange.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/Abstract.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Abstract.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/CSV.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/CSV.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/DefaultReadFilter.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/DefaultReadFilter.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/Excel2003XML.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel2003XML.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/Excel2007.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel2007.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/Excel2007/Chart.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel2007/Chart.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/Excel2007/Theme.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel2007/Theme.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/Excel5.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel5.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/Excel5/Escher.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel5/Escher.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/Excel5/MD5.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel5/MD5.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/Excel5/RC4.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel5/RC4.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/Exception.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Exception.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/Gnumeric.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Gnumeric.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/HTML.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/HTML.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/IReadFilter.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/IReadFilter.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/IReader.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/IReader.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/OOCalc.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/OOCalc.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Reader/SYLK.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/SYLK.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/ReferenceHelper.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/ReferenceHelper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/RichText.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/RichText.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/RichText/ITextElement.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/RichText/ITextElement.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/RichText/Run.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/RichText/Run.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/RichText/TextElement.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/RichText/TextElement.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Settings.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Settings.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/CodePage.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/CodePage.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/Date.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Date.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/Drawing.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Drawing.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/Escher.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/Escher/DgContainer.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher/DgContainer.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/Escher/DgContainer/SpgrContainer.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher/DgContainer/SpgrContainer.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/Escher/DgContainer/SpgrContainer/SpContainer.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher/DgContainer/SpgrContainer/SpContainer.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/Escher/DggContainer.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher/DggContainer.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE/Blip.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE/Blip.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/Excel5.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Excel5.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/File.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/File.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/Font.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Font.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/JAMA/CHANGELOG.TXT" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/CHANGELOG.TXT" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/JAMA/CholeskyDecomposition.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/CholeskyDecomposition.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/JAMA/EigenvalueDecomposition.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/EigenvalueDecomposition.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/JAMA/LUDecomposition.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/LUDecomposition.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/JAMA/Matrix.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/Matrix.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/JAMA/QRDecomposition.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/QRDecomposition.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/JAMA/SingularValueDecomposition.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/SingularValueDecomposition.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/JAMA/utils/Error.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/utils/Error.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/JAMA/utils/Maths.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/utils/Maths.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/OLE.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/OLE.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/OLE/ChainedBlockStream.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/OLE/ChainedBlockStream.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/OLE/PPS.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/OLE/PPS.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/OLE/PPS/File.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/OLE/PPS/File.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/OLE/PPS/Root.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/OLE/PPS/Root.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/OLERead.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/OLERead.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/PCLZip/gnu-lgpl.txt" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/PCLZip/gnu-lgpl.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/PCLZip/pclzip.lib.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/PCLZip/pclzip.lib.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/PCLZip/readme.txt" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/PCLZip/readme.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/PasswordHasher.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/PasswordHasher.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/String.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/String.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/TimeZone.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/TimeZone.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/XMLWriter.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/XMLWriter.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/ZipArchive.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/ZipArchive.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/ZipStreamWrapper.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/ZipStreamWrapper.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/trend/bestFitClass.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/trend/bestFitClass.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/trend/exponentialBestFitClass.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/trend/exponentialBestFitClass.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/trend/linearBestFitClass.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/trend/linearBestFitClass.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/trend/logarithmicBestFitClass.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/trend/logarithmicBestFitClass.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/trend/polynomialBestFitClass.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/trend/polynomialBestFitClass.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/trend/powerBestFitClass.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/trend/powerBestFitClass.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Shared/trend/trendClass.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/trend/trendClass.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Style.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Style/Alignment.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Alignment.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Style/Border.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Border.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Style/Borders.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Borders.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Style/Color.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Color.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Style/Conditional.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Conditional.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Style/Fill.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Fill.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Style/Font.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Font.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Style/NumberFormat.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/NumberFormat.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Style/Protection.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Protection.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Style/Supervisor.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Supervisor.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/AutoFilter.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/AutoFilter.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/AutoFilter/Column.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/AutoFilter/Column.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/AutoFilter/Column/Rule.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/AutoFilter/Column/Rule.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/BaseDrawing.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/BaseDrawing.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/CellIterator.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/CellIterator.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/Column.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/Column.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/ColumnCellIterator.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/ColumnCellIterator.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/ColumnDimension.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/ColumnDimension.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/ColumnIterator.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/ColumnIterator.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/Drawing.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/Drawing.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/Drawing/Shadow.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/Drawing/Shadow.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/HeaderFooter.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/HeaderFooter.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/HeaderFooterDrawing.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/HeaderFooterDrawing.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/MemoryDrawing.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/MemoryDrawing.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/PageMargins.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/PageMargins.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/PageSetup.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/PageSetup.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/Protection.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/Protection.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/Row.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/Row.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/RowCellIterator.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/RowCellIterator.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/RowDimension.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/RowDimension.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/RowIterator.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/RowIterator.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Worksheet/SheetView.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/SheetView.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/WorksheetIterator.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/WorksheetIterator.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Abstract.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Abstract.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/CSV.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/CSV.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007/Chart.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Chart.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007/Comments.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Comments.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007/ContentTypes.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/ContentTypes.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007/DocProps.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/DocProps.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007/Drawing.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Drawing.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007/Rels.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Rels.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007/RelsRibbon.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/RelsRibbon.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007/RelsVBA.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/RelsVBA.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007/StringTable.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/StringTable.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007/Style.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Style.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007/Theme.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Theme.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007/Workbook.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Workbook.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007/Worksheet.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Worksheet.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel2007/WriterPart.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/WriterPart.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel5.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel5/BIFFwriter.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5/BIFFwriter.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel5/Escher.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5/Escher.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel5/Font.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5/Font.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel5/Parser.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5/Parser.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel5/Workbook.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5/Workbook.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel5/Worksheet.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5/Worksheet.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Excel5/Xf.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5/Xf.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/Exception.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Exception.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/HTML.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/HTML.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/IWriter.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/IWriter.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/OpenDocument.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/OpenDocument/Cell/Comment.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/Cell/Comment.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/OpenDocument/Content.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/Content.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/OpenDocument/Meta.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/Meta.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/OpenDocument/MetaInf.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/MetaInf.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/OpenDocument/Mimetype.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/Mimetype.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/OpenDocument/Settings.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/Settings.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/OpenDocument/Styles.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/Styles.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/OpenDocument/Thumbnails.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/Thumbnails.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/OpenDocument/WriterPart.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/WriterPart.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/PDF.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/PDF.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/PDF/Core.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/PDF/Core.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/PDF/DomPDF.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/PDF/DomPDF.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/PDF/mPDF.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/PDF/mPDF.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/Writer/PDF/tcPDF.php" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/PDF/tcPDF.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/bg/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/bg/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/cs/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/cs/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/cs/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/cs/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/da/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/da/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/da/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/da/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/de/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/de/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/de/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/de/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/en/uk/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/en/uk/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/es/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/es/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/es/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/es/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/fi/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/fi/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/fi/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/fi/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/fr/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/fr/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/fr/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/fr/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/hu/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/hu/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/hu/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/hu/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/it/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/it/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/it/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/it/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/nl/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/nl/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/nl/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/nl/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/no/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/no/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/no/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/no/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/pl/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/pl/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/pl/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/pl/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/pt/br/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/pt/br/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/pt/br/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/pt/br/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/pt/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/pt/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/pt/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/pt/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/ru/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/ru/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/ru/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/ru/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/sv/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/sv/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/sv/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/sv/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/tr/config" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/tr/config" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/build/excel/PHPExcel/locale/tr/functions" afterPath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/tr/functions" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/done-operations.php" afterPath="$PROJECT_DIR$/service/home/core/repo/done-operations.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/core/season/repo/season-repo.php" afterPath="$PROJECT_DIR$/service/home/core/repo/season.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/rest/excel-generator.php" afterPath="$PROJECT_DIR$/service/excel-generator/rest/excel-generator.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/rest/login.php" afterPath="$PROJECT_DIR$/service/authorization/rest/login.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/rest/registration.php" afterPath="$PROJECT_DIR$/service/authorization/rest/registration.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/rest/reset-password.php" afterPath="$PROJECT_DIR$/service/authorization/rest/reset-password.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/db-config/db-config.php" afterPath="$PROJECT_DIR$/service/db-config/db-config.php" />
     </list>
     <ignored path="nr.iws" />
@@ -28,74 +393,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/home/js/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617">
-              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+            <state relative-caret-position="799">
+              <caret line="53" column="51" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
+              <folding>
+                <marker date="1462838239078" expanded="true" signature="1478:1509" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/public/field/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="home-table.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/home/home-table.html">
+        <entry file="file://$PROJECT_DIR$/client/src/home/html/home-table.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769">
-              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            <state relative-caret-position="136">
+              <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
               <folding>
-                <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#4;n#tr#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#5;n#tr#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#6;n#tr#0;n#table#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="costToPlantsChar.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/html/home/costToPlantsChar.html">
+      <file leaf-file-name="plants-to-varietes-pipe-char.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/home/html/plants-to-varietes-pipe-char.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.538462">
-              <caret line="61" column="0" selection-start-line="9" selection-start-column="11" selection-end-line="61" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="69" />
               <folding>
-                <marker date="1462808011059" expanded="true" signature="1798:1812" placeholder="..." />
-                <marker date="1462808011059" expanded="true" signature="1900:1919" placeholder="..." />
+                <marker date="1462836799288" expanded="true" signature="1528:1542" placeholder="..." />
+                <marker date="1462836799288" expanded="true" signature="1630:1649" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/bc/home/home.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46275395">
-              <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
-              <folding>
-                <marker date="1462817065748" expanded="true" signature="1420:1451" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/resource/home.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.576923">
-              <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -117,57 +469,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/service/index.html" />
-        <option value="$PROJECT_DIR$/client/src/home/home.js" />
-        <option value="$PROJECT_DIR$/service/login.html" />
-        <option value="$PROJECT_DIR$/client/src/home/login.js" />
-        <option value="$PROJECT_DIR$/client/src/bc/authorization/register.js" />
-        <option value="$PROJECT_DIR$/client/resource/user-crud.css" />
-        <option value="$PROJECT_DIR$/client/src/bc/authorization/common.js" />
-        <option value="$PROJECT_DIR$/client/src/bc/authorization/login.js" />
-        <option value="$PROJECT_DIR$/service/core/authorization/registration.js" />
-        <option value="$PROJECT_DIR$/service/core/authorization/login.php" />
-        <option value="$PROJECT_DIR$/service/core/authorization/registration.php" />
-        <option value="$PROJECT_DIR$/service/rest/registration.php" />
-        <option value="$PROJECT_DIR$/client/src/bc/authorization/registration.js" />
-        <option value="$PROJECT_DIR$/service/rest/reset-password.php" />
-        <option value="$PROJECT_DIR$/service/rest/excel-generator.php" />
-        <option value="$PROJECT_DIR$/login.html" />
-        <option value="$PROJECT_DIR$/test.htm" />
-        <option value="$PROJECT_DIR$/test.html" />
-        <option value="$PROJECT_DIR$/doun.html" />
-        <option value="$PROJECT_DIR$/client/src/build/highcharts/highcharts.js" />
-        <option value="$PROJECT_DIR$/doc/json-examples/homeData.json" />
-        <option value="$PROJECT_DIR$/service/core/season.php" />
-        <option value="$PROJECT_DIR$/client/src/build/highcharts/modules/drilldown.js" />
-        <option value="$PROJECT_DIR$/service/rest/login.php" />
-        <option value="$PROJECT_DIR$/activeSeasonChart.html" />
-        <option value="$PROJECT_DIR$/activeSeasonFieldDescriptionToPlantsChar.html" />
-        <option value="$PROJECT_DIR$/activeSeasonFieldNrToPlantsChar.html" />
-        <option value="$PROJECT_DIR$/activePlantsToField.html" />
-        <option value="$PROJECT_DIR$/activePlantsToFieldDescription.html" />
-        <option value="$PROJECT_DIR$/service/core/done-operations.php" />
-        <option value="$PROJECT_DIR$/client/html/active-season/costToPlantsChar.html" />
-        <option value="$PROJECT_DIR$/client/html/active-season/plantsToFieldChart.html" />
-        <option value="$PROJECT_DIR$/client/html/active-season/plantsToFieldDescriptionChart.html" />
-        <option value="$PROJECT_DIR$/client/html/active-season/plantsToVarietesChar.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/service/core/season-ba.php" />
-        <option value="$USER_HOME$/Downloads/DataTables-1.10.11/DataTables-1.10.11/examples/styling/bootstrap.html" />
-        <option value="$PROJECT_DIR$/service/rest/season.php" />
-        <option value="$PROJECT_DIR$/client/html/home/costToPlantsChar.html" />
-        <option value="$PROJECT_DIR$/client/html/home/plantsToFieldChart.html" />
-        <option value="$PROJECT_DIR$/client/html/home/plantsToFieldDescriptionChart.html" />
-        <option value="$PROJECT_DIR$/client/html/home/plantsToVarietesChar.html" />
-        <option value="$PROJECT_DIR$/client/src/build/datatables/css/jquery.dataTables.css" />
-        <option value="$PROJECT_DIR$/service/core/season/season-ba.php" />
         <option value="$PROJECT_DIR$/client/resource/menu.css" />
         <option value="$PROJECT_DIR$/client/src/build/datatables/js/jquery.dataTables.js" />
-        <option value="$PROJECT_DIR$/service/db-config/db-config.php" />
         <option value="$PROJECT_DIR$/client/resource/home.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/client/html/home/home-table.html" />
         <option value="$PROJECT_DIR$/client/src/bc/home/home.js" />
+        <option value="$PROJECT_DIR$/client/html/field/index.html" />
+        <option value="$PROJECT_DIR$/public/authorization/index.html" />
+        <option value="$PROJECT_DIR$/client/src/bc/authorization/login.js" />
+        <option value="$PROJECT_DIR$/client/html/home/costToPlantsChar.html" />
+        <option value="$PROJECT_DIR$/service/home/rest/plants-to-variates/index.html" />
+        <option value="$PROJECT_DIR$/service/home/rest/plants-to-variates/index.php" />
+        <option value="$PROJECT_DIR$/service/home/bc/season-ba.php" />
+        <option value="$PROJECT_DIR$/service/home/core/season-ba.php" />
+        <option value="$PROJECT_DIR$/service/home/rest/plants-to-variates/plants-to-variates.php" />
+        <option value="$PROJECT_DIR$/service/home/core/bc/plants-to-variates.php" />
+        <option value="$PROJECT_DIR$/service/home/rest/plants-to-varietes/plants-to-varietes.php" />
+        <option value="$PROJECT_DIR$/service/home/core/bc/plants.php" />
+        <option value="$PROJECT_DIR$/service/home/core/bc/pipe-chart-data.php" />
+        <option value="$PROJECT_DIR$/service/home/core/bc/common.php" />
+        <option value="$PROJECT_DIR$/service/core/done-operations.php" />
+        <option value="$PROJECT_DIR$/service/home/core/repo/season-repo.php" />
+        <option value="$PROJECT_DIR$/service/home/rest/plants-to-description.php" />
+        <option value="$PROJECT_DIR$/service/home/rest/plants-to-field.php" />
+        <option value="$PROJECT_DIR$/service/home/rest/plants-to-varietes.php" />
+        <option value="$PROJECT_DIR$/service/home/rest/plants-to-cost.php" />
+        <option value="$PROJECT_DIR$/service/home/core/bc/column-chart-data.php" />
+        <option value="$PROJECT_DIR$/service/db-config/db-config.php" />
+        <option value="$PROJECT_DIR$/service/home/core/repo/season.php" />
+        <option value="$PROJECT_DIR$/service/home/core/repo/done-operations.php" />
+        <option value="$PROJECT_DIR$/service/home/rest/fields.php" />
+        <option value="$PROJECT_DIR$/service/authorization/core/repo/login.php" />
+        <option value="$PROJECT_DIR$/service/authorization/core/repo/registration.php" />
+        <option value="$PROJECT_DIR$/service/authorization/core/repo/user.php" />
+        <option value="$PROJECT_DIR$/service/authorization/rest/login.php" />
+        <option value="$PROJECT_DIR$/service/authorization/rest/reset-password.php" />
+        <option value="$PROJECT_DIR$/service/home/rest/season-fields.php" />
+        <option value="$PROJECT_DIR$/service/authorization/rest/registration.php" />
+        <option value="$PROJECT_DIR$/service/excel-generator/rest/excel-generator.php" />
+        <option value="$PROJECT_DIR$/client/public/authorization/index.html" />
+        <option value="$PROJECT_DIR$/client/src/authorization/js/login.js" />
+        <option value="$PROJECT_DIR$/client/public/index.html" />
+        <option value="$PROJECT_DIR$/client/src/home/html/plants-to-varietes-pipe-char.html" />
+        <option value="$PROJECT_DIR$/client/src/home/html/plants-to-field-pipe-chart.html" />
+        <option value="$PROJECT_DIR$/client/src/home/html/plants-to-field-description-pipe-chart.html" />
+        <option value="$PROJECT_DIR$/client/src/home/html/cost-to-plants-column-char.html" />
+        <option value="$PROJECT_DIR$/client/src/home/html/cost-to-plants-column-chart.html" />
+        <option value="$PROJECT_DIR$/service/home/core/bc/fields-data.php" />
+        <option value="$PROJECT_DIR$/client/src/home/html/home-table.html" />
+        <option value="$PROJECT_DIR$/client/public/field/index.html" />
+        <option value="$PROJECT_DIR$/client/src/home/js/home.js" />
       </list>
     </option>
   </component>
@@ -181,10 +533,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1050" />
+    <option name="x" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -219,154 +570,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db-config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resource" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -383,44 +586,37 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\nr\client\src\build\datatables" />
-      <recent name="C:\xampp\htdocs\nr\client\src\build" />
-      <recent name="C:\xampp\htdocs\nr\client\src\build\dynatable" />
-      <recent name="C:\xampp\htdocs\nr\service\core\season\repo" />
-      <recent name="C:\xampp\htdocs\nr\client\html\active-season" />
+      <recent name="C:\xampp\htdocs\nr\service" />
+      <recent name="C:\xampp\htdocs\nr\service\excel-generator" />
+      <recent name="C:\xampp\htdocs\nr\service\authorization\rest" />
+      <recent name="C:\xampp\htdocs\nr\service\authorization\core\bc" />
+      <recent name="C:\xampp\htdocs\nr\service\authorization\core\repo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\nr\service\core\season" />
-      <recent name="C:\xampp\htdocs\nr\client\html\active-season" />
-      <recent name="C:\xampp\htdocs\nr\service\core" />
-      <recent name="C:\xampp\htdocs\nr\client\src\bc\authorization" />
-      <recent name="C:\xampp\htdocs\nr\client\src\bc" />
+      <recent name="C:\xampp\htdocs\nr\client\public\authorization" />
+      <recent name="C:\xampp\htdocs\nr\client" />
+      <recent name="C:\xampp\htdocs\nr\client\src" />
+      <recent name="C:\xampp\htdocs\nr\service\home\core" />
+      <recent name="C:\xampp\htdocs\nr\public" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
-      <method />
-    </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
       <method />
     </configuration>
-    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
-      <option name="cucumberJsArguments" value="" />
-      <option name="executablePath" />
-      <option name="filePath" />
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -431,23 +627,14 @@
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run-script" />
       <scripts />
+      <node-interpreter value="project" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-options />
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
       <method />
     </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -456,6 +643,7 @@
       <changelist id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="" />
       <created>1461618517120</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1461618517120</updated>
       <workItem from="1461618518508" duration="2928000" />
       <workItem from="1461700037292" duration="796000" />
@@ -473,33 +661,35 @@
       <workItem from="1462474176584" duration="2121000" />
       <workItem from="1462479828177" duration="4000" />
       <workItem from="1462735656751" duration="11995000" />
+      <workItem from="1462828657262" duration="2245000" />
+      <workItem from="1462830917848" duration="7329000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60146000" />
+    <option name="totallyTimeSpent" value="69720000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="0" width="1936" height="1056" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22447917" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19479166" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19133192" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19133192" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -520,387 +710,434 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/service/core/season/season-ba.php">
+    <entry file="file://$PROJECT_DIR$/client/src/home/resources/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/home/plantsToFieldChart.html">
+    <entry file="file://$PROJECT_DIR$/client/src/common/resources/menu.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="36" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/build/datatables/css/jquery.dataTables.css">
+    <entry file="file://$PROJECT_DIR$/client/src/common/js/highcharts/themes/gray.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/resource/home.css">
+    <entry file="file://$PROJECT_DIR$/client/src/bc/authorization/common.js" />
+    <entry file="file://$PROJECT_DIR$/client/src/authorization/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="16" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/resource/menu.css">
+    <entry file="file://$PROJECT_DIR$/client/src/authorization/resources/user-crud.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/db-config/db-config.php">
+    <entry file="file://$PROJECT_DIR$/client/src/authorization/js/registration.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/core/authorization/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/db-config/db-config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/db-config/db-config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/build/jquery-2.2.3.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/core/authorization/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/rest/registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/bc/authorization/registration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/core/authorization/registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/core/build/excel/PHPExcel/Cell/DataType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/core/build/excel/PHPExcel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/rest/excel-generator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="272">
           <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation/Function.php">
+    <entry file="file://$PROJECT_DIR$/service/home/rest/plants-to-variates/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/core/build/excel/PHPExcel/Calculation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="483" column="114" selection-start-line="483" selection-start-column="114" selection-end-line="483" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/core/build/excel/PHPExcel/Cell/DataType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/rest/reset-password.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/build/highcharts/themes/gray.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/doc/json-examples/homeData.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="459">
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/rest/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="306">
           <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/bc/authorization/common.js">
+    <entry file="file://$PROJECT_DIR$/service/rest/season.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="-944">
+          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="66" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/bc/authorization/login.js">
+    <entry file="file://$PROJECT_DIR$/service/home/rest/plants-to-varietes/plants-to-varietes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="35" />
+        <state relative-caret-position="391">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/resource/user-crud.css">
+    <entry file="file://$PROJECT_DIR$/service/home/core/bc/common.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="14" />
+        <state relative-caret-position="238">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/home/core/bc/pipe-chart-data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="29" selection-start-line="3" selection-start-column="4" selection-end-line="7" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/core/done-operations.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/examples/column-drilldown/index.htm" />
-    <entry file="file://$PROJECT_DIR$/all.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/core/season/repo/season-repo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/build/datatables/js/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/build/datatables/syntax/shCore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/home/plantsToFieldDescriptionChart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/home/plantsToVarietesChar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/rest/season.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="137" column="34" selection-start-line="137" selection-start-column="34" selection-end-line="137" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/build/highcharts/highcharts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3889" column="30" selection-start-line="3889" selection-start-column="25" selection-end-line="3889" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/build/highcharts/modules/drilldown.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
+        <state relative-caret-position="34">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="7" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/home/plantsToFieldChart.html">
+    <entry file="file://$PROJECT_DIR$/service/home/rest/plants-to-field.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="36" />
+        <state relative-caret-position="34">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/build/datatables/css/jquery.dataTables.css">
+    <entry file="file://$PROJECT_DIR$/service/home/rest/plants-to-varietes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        <state relative-caret-position="34">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/resource/menu.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/build/datatables/js/jquery.dataTables.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14463" column="5" selection-start-line="14463" selection-start-column="5" selection-end-line="14463" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/core/season/season-ba.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/build/datatables/css/jquery.dataTables_themeroller.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.004651">
-          <caret line="152" column="46" selection-start-line="152" selection-start-column="38" selection-end-line="152" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/home/costToPlantsChar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.538462">
-          <caret line="61" column="0" selection-start-line="9" selection-start-column="11" selection-end-line="61" selection-end-column="0" />
-          <folding>
-            <marker date="1462808011059" expanded="true" signature="1798:1812" placeholder="..." />
-            <marker date="1462808011059" expanded="true" signature="1900:1919" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/db-config/db-config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19953051">
-          <caret line="10" column="64" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
+        <state relative-caret-position="68">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/home/core/season-ba.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="25" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/authorization/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/core/authorization/registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/authorization/core/bc/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/authorization/core/bc/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/authorization/core/bc/registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/authorization/core/bc/reset-password.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/home/core/repo/season.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="33" />
+          <folding>
+            <marker date="1462834971969" expanded="true" signature="87:164" placeholder="SELECT * FRO... SEASON" />
+            <marker date="1462834971969" expanded="true" signature="387:438" placeholder="SELECT * FRO... SEASON" />
+            <marker date="1462834971969" expanded="true" signature="705:833" placeholder="INSERT INTO SEASON... " />
+            <marker date="1462834971969" expanded="true" signature="940:994" placeholder="SELECT * FRO... FIELD" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/authorization/core/repo/registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="35" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/authorization/core/repo/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/home/core/repo/done-operations.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding>
+            <marker date="1462834982009" expanded="true" signature="74:145" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
+            <marker date="1462834982009" expanded="true" signature="379:448" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/home/rest/plants-to-description.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/authorization/rest/reset-password.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/core/authorization/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/home/rest/season-fields.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/authorization/rest/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/authorization/core/repo/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+          <folding>
+            <marker date="1462835808536" expanded="true" signature="55:133" placeholder="SELECT * FRO... USER" />
+            <marker date="1462835808536" expanded="true" signature="335:381" placeholder="SELECT * FRO... USER" />
+            <marker date="1462835808536" expanded="true" signature="560:604" placeholder="SELECT * FRO... USER" />
+            <marker date="1462835808536" expanded="true" signature="916:999" placeholder="INSERT INTO USER... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/authorization/rest/registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/excel-generator/rest/excel-generator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/client/public/authorization/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        <state relative-caret-position="204">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/resource/home.css">
+    <entry file="file://$PROJECT_DIR$/client/src/authorization/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.576923">
-          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+        <state relative-caret-position="408">
+          <caret line="24" column="62" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/html/home/home-table.html">
+    <entry file="file://$PROJECT_DIR$/client/src/home/html/plants-to-field-pipe-chart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        <state relative-caret-position="187">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
           <folding>
-            <element signature="n#style#0;n#th#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#4;n#tr#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#5;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <marker date="1462836825546" expanded="true" signature="1525:1539" placeholder="..." />
+            <marker date="1462836825546" expanded="true" signature="1627:1646" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/bc/home/home.js">
+    <entry file="file://$PROJECT_DIR$/client/src/home/html/plants-to-field-description-pipe-chart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46275395">
-          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+        <state relative-caret-position="238">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
           <folding>
-            <marker date="1462817065748" expanded="true" signature="1420:1451" placeholder="..." />
+            <marker date="1462836837181" expanded="true" signature="1527:1541" placeholder="..." />
+            <marker date="1462836837181" expanded="true" signature="1629:1648" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/home/rest/plants-to-cost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/home/html/cost-to-plants-column-chart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+          <folding>
+            <marker date="1462837073297" expanded="true" signature="1802:1816" placeholder="..." />
+            <marker date="1462837073297" expanded="true" signature="1904:1923" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/home/core/bc/column-chart-data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="93" column="1" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/home/core/bc/fields-data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="80" selection-start-line="3" selection-start-column="80" selection-end-line="3" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/home/html/plants-to-varietes-pipe-char.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="69" />
+          <folding>
+            <marker date="1462836799288" expanded="true" signature="1528:1542" placeholder="..." />
+            <marker date="1462836799288" expanded="true" signature="1630:1649" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/home/html/home-table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+          <folding>
+            <element signature="n#style#0;n#th#4;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#5;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#6;n#tr#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/field/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/home/js/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="53" column="51" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
+          <folding>
+            <marker date="1462838239078" expanded="true" signature="1478:1509" placeholder="..." />
           </folding>
         </state>
       </provider>

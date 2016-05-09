@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../src/common/resources/menu.css">
+    <link rel="stylesheet" type="text/css" href="../src/home/resources/home.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <script src="../src/common/js/jquery-2.2.3.js"></script>
+    <script src="../src/common/js/highcharts/highcharts.js"></script>
+    <script src="../src/common/js/highcharts/modules/data.js"></script>
+    <script src="../src/common/js/highcharts/modules/drilldown.js"></script>
+    <script src="../src/home/js/home.js"></script>
+
+</head>
+<body>
+<table id="homeTable" class="homeTable" align="center">
+    <tr>
+        <td colspan="2">
+            <div>
+                <ul class="menu">
+                    <li><a class="active" href="#home">Home</a></li>
+                    <li><a href="#news">Sezony</a></li>
+                    <li style="float:right"><a href="#about">Wyloguj</a></li>
+                    <li style="float:right"><a href="#contact">Twoje dane</a></li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="activeSeasonCell">
+            <div id="activeSeasonChart"></div>
+        </td>
+        <td class="lastOperationCell">
+            <div id="activeSeasonCost"></div>
+        </td>
+    </tr>
+    <tr>
+        <td class="activeSeasonCell">
+            <div class="pipeChartSelect">
+                <select id="activeSeasonChartCombobox">
+                    <option value="plantsToVarietes">Uprawiane rośliny / odmiana rośliny</option>
+                    <option value="plantsToDescription">Uprawiane rośliny / pole (opis)</option>
+                    <option value="plantsToField">Uprawiane rośliny / nr działki</option>
+                </select>
+            </div>
+        </td>
+        <td class="lastOperationCell">
+            <div class="pipeChartSelect">
+                <select id="activeSeasonCostChartCombobox">
+                    <option value="costToPlants">Uprawiane rośliny / koszt</option>
+                    <option value="profitToPlants">Uprawiane rośliny / zysk</option>
+                    <option value="profitToPlantsProHa">Uprawiane rośliny / zysk na hektar</option>
+                </select>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" class="homeTableCell">
+            <div id="homeTableCell" class="homeTableCellDiv">
+            </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
