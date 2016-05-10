@@ -4,7 +4,7 @@ function generateActiveSeasonColumnChartData_plants_to_Cost($seasonId)
 {
     $season = findSeasonById($seasonId);
     if (count($season) == 1) {
-        return json_encode(getColumnChartData(findAllFieldBySeasonId($seasonId), generateColumnChartDataModel($season)));
+        return json_encode(getColumnChartData($seasonId, generateColumnChartDataModel($season)));
     }
     return json_encode(null);
 }
@@ -22,16 +22,16 @@ function generateColumnChartDataModel($season)
 }
 
 
-function getColumnChartData($fields, $homeData)
+function getColumnChartData($seasonId, $homeData)
 {
     $seriesHasMap = array();
     $drilldownHashMap = array();
+    $fields = findAllFieldBySeasonId($seasonId);
+    $allDoneOperations = findAllDoneOperationsBySeasonId($seasonId);
 
     foreach ($fields as $field) {
-
-        $allDoneOperations = findAllDoneOperationsByFieldId($field['ID']);
-        $fertilizerCost = getFertilizerCost($allDoneOperations); // koszt nawozu
-        $plantProtectionCost = getPlantProtectionCost($allDoneOperations); // koszt ochrony roslin
+        $fertilizerCost = getFertilizerCost($allDoneOperations,$field['ID']); // koszt nawozu
+        $plantProtectionCost = getPlantProtectionCost($allDoneOperations,$field['ID']); // koszt ochrony roslin
         if (array_key_exists($field['PLANT'], $seriesHasMap)) {
             $seriesHasMap[$field['PLANT']][0]->y += ($plantProtectionCost + $fertilizerCost);
             $drilldownHashMap[$field['PLANT']][0]->data[0][1] += $plantProtectionCost;
@@ -71,22 +71,22 @@ function getColumnChartData($fields, $homeData)
     return $homeData;
 }
 
-function getFertilizerCost($allDoneOperations)
+function getFertilizerCost($allDoneOperations, $fieldId)
 {
     $fertilizerCost = 0;
     foreach ($allDoneOperations as $operation) {
-        if ($operation['MEANS_TYPE'] == "fertilizer") {
+        if ($operation['MEANS_TYPE'] == "fertilizer" && $operation['FIELD_ID'] == $fieldId) {
             $fertilizerCost += (intval($operation['COST']));
         }
     }
     return $fertilizerCost;
 }
 
-function getPlantProtectionCost($allDoneOperations)
+function getPlantProtectionCost($allDoneOperations, $fieldId)
 {
     $plantProtectionCost = 0;
     foreach ($allDoneOperations as $operation) {
-        if ($operation['MEANS_TYPE'] == "plantProtection") {
+        if ($operation['MEANS_TYPE'] == "plantProtection" && $operation['FIELD_ID'] == $fieldId) {
             $plantProtectionCost += (intval($operation['COST']));
         }
     }

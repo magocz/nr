@@ -5,7 +5,7 @@ $(function () {
     $("#homeTableCell").load("../src/home/html/home-table.html"); // load home-content table
 
     $.ajax({
-        url: "../../service/home/rest/season-fields.php/",
+        url: "../../service/home/rest/field.php/",
         type: "GET",
         dataType: 'json',
         contentType: "application/x-www-form-urlencoded",
