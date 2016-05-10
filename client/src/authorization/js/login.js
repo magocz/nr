@@ -22,7 +22,7 @@ $(function () {
                 contentType: "application/x-www-form-urlencoded",
                 success: function (data, textStatus, response) {
                     $('#loginError').hide();
-                    window.location.href = "nr/client/public";
+                    window.location.href = "/nr/client/public";
                 },
                 error: function (data, textStatus, response) {
                     $('#loginError').show();
