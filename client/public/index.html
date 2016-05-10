@@ -4,14 +4,23 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../src/common/resources/menu.css">
     <link rel="stylesheet" type="text/css" href="../src/home/resources/home.css">
+    <link rel="stylesheet" type="text/css" href="../src/home/resources/load-gif.css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <script src="../src/common/js/jquery-2.2.3.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="../src/common/js/highcharts/highcharts.js"></script>
     <script src="../src/common/js/highcharts/modules/data.js"></script>
     <script src="../src/common/js/highcharts/modules/drilldown.js"></script>
+    <script type="text/javascript" src="../src/common/js/tablesorter/jquery.tablesorter.js"></script>
+
     <script src="../src/home/js/home.js"></script>
+    <script src="../src/home/js/pipe-chart.js"></script>
+    <script src="../src/home/js/column-chart.js"></script>
+    <script src="../src/home/js/fields-table.js"></script>
 
 </head>
 <body>
@@ -30,10 +39,10 @@
     </tr>
     <tr>
         <td class="activeSeasonCell">
-            <div id="activeSeasonChart"></div>
+            <div id="activeSeasonPipeChartContener"></div>
         </td>
         <td class="lastOperationCell">
-            <div id="activeSeasonCost"></div>
+            <div id="activeSeasonColumnChartContener"></div>
         </td>
     </tr>
     <tr>
@@ -56,12 +65,127 @@
             </div>
         </td>
     </tr>
+    <tr class="homeTableSearchRow">
+        <td class="homeTableSearchCell">
+            <div align="left" class="homeTableSearchCell">
+                Szukaj:
+                <input type="text" id="search">
+            </div>
+        </td>
+        <td class="homeTableSearchCell">
+            <div align="right" class="homeTableSiteCell">
+                <table align="right" style="width:50px">
+                    <tr>
+                        <td>
+                            <div class="fa fa-chevron-left" style='font-size:22px; cursor: pointer; '
+                                 onclick="goBack()"></div>
+                        </td>
+                        <td>
+                            <div class="fieldsHomeTableSiteInfo" id="fieldsHomeTableSiteInfo"></div>
+
+                        </td>
+                        <td>
+                            <div class="fa fa-chevron-right" style='font-size:22px; cursor: pointer;'
+                                 onclick="goNext()"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
     <tr>
-        <td colspan="2" class="homeTableCell">
+        <td colspan="2">
             <div id="homeTableCell" class="homeTableCellDiv">
             </div>
         </td>
     </tr>
+    <tr>
+        <td colspan="2">
+            <div align="right" id="fieldsTableShwonRowInfo">dupa</div>
+        </td>
+    </tr>
 </table>
+<!--edit field modal dialog-->
+<div class="modal fade" id="editFieldModal" role="dialog" data-backdrop="static"
+     data-keyboard="false">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="editFieldModalHeader"></h4>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="fieldEditInputs">Numer działki:</div>
+                        </td>
+                        <td>
+                            <input class="fieldEditInputs" type="text" id="fieldNumberEditInput">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fieldEditInputs">Opis pola:</div>
+                        </td>
+                        <td>
+                            <input class="fieldEditInputs" type="text" id="fieldDescriptionEditInput">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fieldEditInputs">Roślina:</div>
+                        </td>
+                        <td>
+                            <input class="fieldEditInputs" type="text" id="fieldPlantEditInput">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fieldEditInputs">Odmiana:</div>
+                        </td>
+                        <td>
+                            <input class="fieldEditInputs" type="text" id="fieldVarietesEditInput">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="fieldEditInputs">Powierzchnia [ha]:</div>
+                        </td>
+                        <td>
+                            <input class="fieldEditInputs" type="text" id="fieldSizeEditInput">
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+            <div class="modal-footer">
+                <button id="updateFieldBtn" type="button" class="btn btn-success" data-dismiss="modal">Zapisz</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- delete field modal dialog-->
+<div class="modal fade" id="deleteFieldModal" role="dialog" data-backdrop="static"
+     data-keyboard="false">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="deleteFieldModalHeader"></h4>
+            </div>
+            <div class="modal-footer">
+                <button id="deleteFieldBtn" type="button" class="btn btn-warning" data-dismiss="modal">Usuń</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 </body>
 </html>

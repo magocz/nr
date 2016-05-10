@@ -23,4 +23,28 @@ if ($_SESSION['login'] == null) {
             echo generateFieldData($firstParam);
         }
     }
+    if ($method == 'POST') {
+        $firstParam = array_shift($request);
+        if (is_numeric($firstParam)) {
+            $data = json_decode(file_get_contents('php://input'), true);
+            if ($data != null) {
+                if (!updateField($firstParam, $data)) {
+                    header('HTTP/1.0 500 Server error');
+                    exit;
+                }
+            }
+        }
+    }
+    if ($method == 'DELETE') {
+        if (is_numeric($firstParam)) {
+            echo deleteField($firstParam);
+        }
+    }
+    if ($method == 'PUT') {
+        $firstParam = array_shift($request);
+        if (is_numeric($firstParam)) {
+            header('Content-type: application/json');
+            echo generateFieldData($firstParam);
+        }
+    }
 }

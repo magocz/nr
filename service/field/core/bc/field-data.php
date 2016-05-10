@@ -34,11 +34,21 @@ function fillFieldDataModel($fieldId)
                 'economicHarm' => $operation['ECONOMIC_HARN'],
                 'cost' => $operation['COST'],
                 'costProHa' => $operation['COST_PRO_HA'],
-                'comment' => iconv("ISO-8859-2","UTF-8",$operation['COMMENT']),
-                'cause' => iconv("ISO-8859-2","UTF-8",$operation['CAUSE']),
+                'comment' => iconv("ISO-8859-2", "UTF-8", $operation['COMMENT']),
+                'cause' => iconv("ISO-8859-2", "UTF-8", $operation['CAUSE']),
             ]);
         }
         return $fieldData;
     }
     return null;
+}
+
+function updateField($fieldId, $data)
+{
+    return updateFieldById($fieldId, $data, $_SESSION['id']);
+}
+
+function deleteField($fieldId)
+{
+    return deleteFieldById($fieldId, $_SESSION['id']);
 }
