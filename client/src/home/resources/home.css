@@ -1,3 +1,17 @@
+html {
+    overflow-y: scroll;
+}
+
+body.modal-open {
+    /*  disable scrooling*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
 .homeTable {
     width: 1000px;
     text-align: center;
@@ -75,7 +89,32 @@
 
 .fieldEditInputs {
     margin-bottom: 6px;
+    width: 70%;
 }
-.footer{
+
+.footer {
     margin-top: 10px;
+}
+
+.editFieldInput {
+    width: 40%;
+    float: left;
+}
+
+.editFieldWarning {
+    width: 25%;
+    float: left;
+}
+
+.editFieldLable {
+    width: 35%;
+    float: left;
+}
+
+.datepicker {
+    z-index: 100000 !important;
+}
+
+.clsDatePicker {
+    z-index: 1000000000;
 }

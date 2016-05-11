@@ -46,8 +46,12 @@ if ($_SESSION['login'] == null) {
         }
     }
     if ($method == 'DELETE') {
+        $firstParam = array_shift($request);
         if (is_numeric($firstParam)) {
-            echo deleteField($firstParam);
+            if (!deleteField($firstParam)) {
+                header('HTTP/1.0 500 Server error');
+                exit;
+            }
         }
     }
     if ($method == 'PUT') {

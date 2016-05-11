@@ -19,6 +19,9 @@ function fillHomeTableDataModel($fields)
             'varietes' => iconv("iso-8859-2", "utf-8", $field['VARIETES']),
             'ha' => floatval($field['HA']),
             'operationsNumber' => floatval($field['OPERATIONS_NUMBER']),
+            'plantPrice' => floatval($field['PLANT_PRICE']),
+            'tonsProHa' => floatval($field['TONS_PRO_HA']),
+            'otherCosts' => floatval($field['OTHER_COSTS']),
             'seasonId' => floatval($field['SEASON_ID']),
         ));
     }

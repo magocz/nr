@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../src/common/resources/bootstrap.css">
+    <link rel="stylesheet" href="../src/common/resources/jquery-ui.css">
 
     <script src="../src/common/js/jquery-2.2.3.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="../src/common/js/jquery-ui.js"></script>
+    <script src="../src/common/js/datepicker-pl.js"></script>
+    <script src="../src/common/js/bootstrap/bootstrap.js"></script>
     <script src="../src/common/js/highcharts/highcharts.js"></script>
     <script src="../src/common/js/highcharts/modules/data.js"></script>
     <script src="../src/common/js/highcharts/modules/drilldown.js"></script>
@@ -28,8 +31,8 @@
         <td colspan="2">
             <div>
                 <ul class="menu">
-                    <li><a class="active" href="#home">Home</a></li>
-                    <li><a href="#news">Sezony</a></li>
+                    <li><a class="active" href="/nr/client/public/" style="text-decoration: none">Home</a></li>
+                    <li><a href="/">Sezony</a></li>
                     <li style="float:right"><a href="#about">Wyloguj</a></li>
                     <li style="float:right"><a href="#contact">Twoje dane</a></li>
                 </ul>
@@ -139,86 +142,9 @@
         </td>
     </tr>
 </table>
-<!--edit field modal dialog-->
-<div class="modal fade" id="editFieldModal" role="dialog" data-backdrop="static"
-     data-keyboard="false">
-    <div class="modal-dialog">
+<div id="editFieldModalContener"></div>
+<div id="deleteFieldModalContener"></div>
+<div id="addOperationModalContener"></div>
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="editFieldModalHeader"></h4>
-            </div>
-            <div class="modal-body">
-                <table>
-                    <tr>
-                        <td>
-                            <div class="fieldEditInputs">Numer działki:</div>
-                        </td>
-                        <td>
-                            <input class="fieldEditInputs" type="text" id="fieldNumberEditInput">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="fieldEditInputs">Opis pola:</div>
-                        </td>
-                        <td>
-                            <input class="fieldEditInputs" type="text" id="fieldDescriptionEditInput">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="fieldEditInputs">Roślina:</div>
-                        </td>
-                        <td>
-                            <input class="fieldEditInputs" type="text" id="fieldPlantEditInput">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="fieldEditInputs">Odmiana:</div>
-                        </td>
-                        <td>
-                            <input class="fieldEditInputs" type="text" id="fieldVarietesEditInput">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="fieldEditInputs">Powierzchnia [ha]:</div>
-                        </td>
-                        <td>
-                            <input class="fieldEditInputs" type="text" id="fieldSizeEditInput">
-                        </td>
-                    </tr>
-                </table>
-
-
-            </div>
-            <div class="modal-footer">
-                <button id="updateFieldBtn" type="button" class="btn btn-success" data-dismiss="modal">Zapisz</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- delete field modal dialog-->
-<div class="modal fade" id="deleteFieldModal" role="dialog" data-backdrop="static"
-     data-keyboard="false">
-    <div class="modal-dialog">
-
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="deleteFieldModalHeader"></h4>
-            </div>
-            <div class="modal-footer">
-                <button id="deleteFieldBtn" type="button" class="btn btn-warning" data-dismiss="modal">Usuń</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
-            </div>
-        </div>
-
-    </div>
-</div>
 </body>
 </html>

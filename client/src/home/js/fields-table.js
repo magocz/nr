@@ -1,5 +1,4 @@
 var maxRowNumber = 20;
-
 var allVisiblesRows;
 var maxSites = 1;
 var currentPage = 0;
@@ -59,15 +58,51 @@ function drawRow(rowData) {
     row.append($("<td>" + rowData.operationsNumber + "</td>"));
     var field = [rowData.id, rowData.description, rowData.plant];
     row.append($("<td>  " +
-        "<i onclick='openFieldEditModalDialog(" + JSON.stringify(rowData) + ")' class='fa fa-edit' style='font-size:20px; cursor:pointer; margin-right: 5px'/>" +
-        "<i onclick='openDeleteFieldModalDialog(" + JSON.stringify(rowData) + ");' class='fa fa-trash-o' style='font-size:20px; cursor:pointer;'/>" +
+        "<i onclick='openAdOperationModalDialog(" + JSON.stringify(rowData) + ")' class='fa fa-plus' style='font-size:20px; cursor:pointer; margin-right: 5px' data-toggle='tooltip'  title='Dodaj nowy zabieg'/>" +
+        "<i onclick='openFieldEditModalDialog(" + JSON.stringify(rowData) + ")' class='fa fa-edit' style='font-size:20px; cursor:pointer; margin-right: 5px' data-toggle='tooltip'  title='Edytuj'/>" +
+        "<i onclick='openDeleteFieldModalDialog(" + JSON.stringify(rowData) + ");' class='fa fa-trash-o' style='font-size:20px; cursor:pointer;' data-toggle='tooltip'  title='Usuń'/>" +
         "</td>"));
-    row.append($("<td>  <i onclick='getFieldDetails(" + rowData.id + ")' class='fa fa-arrow-circle-o-right' style='font-size:28px; cursor:pointer;'/></td>"));
+    row.append($("<td>  <i onclick='getFieldDetails(" + rowData.id + ")' class='fa fa-arrow-circle-o-right' style='font-size:28px; cursor:pointer;' data-toggle='tooltip'  title='Szczegóły'/></td>"));
 }
 
 
 function getFieldDetails(fieldId) {
-    window.location.href = '/nr/client/public/field/?fieldId=' + fieldId;
+    window.location.href = '/nr/client/public/field#' + fieldId;
+}
+
+
+function openAdOperationModalDialog(field) {
+    $('#addOperationModalHeader').text('Dodaj zabieg do działki: ' + field.fieldNumber);
+    $('#operationDate').datepicker();
+    $('#operationDate').datepicker('setDate', new Date());
+    configModalToDispalyCallender();
+    $('#addOperationBtn').unbind();
+    $('#addOperationBtn').click(function () {
+        addOperation(field);
+    });
+
+    $('#addOperationdModal').modal();
+}
+
+function addOperation(field){
+    console.log(field.id);
+    console.log(field.seasonId);
+}
+
+function configModalToDispalyCallender() {
+    var enforceModalFocusFn = $.fn.modal.Constructor.prototype.enforceFocus;
+    $.fn.modal.Constructor.prototype.enforceFocus = function () {
+    };
+    try {
+        $confModal.on('hidden', function () {
+            $.fn.modal.Constructor.prototype.enforceFocus = enforceModalFocusFn;
+        });
+        $confModal.modal({backdrop: false});
+    }
+    catch (error) {
+        if (error.name != 'ReferenceError')
+            throw error;
+    }
 }
 
 
@@ -130,7 +165,6 @@ function searchFieldsTable() {
         currentPage = 0;
         setCurrentVisbleRowsLength();
         show(0, maxRowNumber);
-        //getFieldsTableRowsInfo(currentPage);
     });
 }
 
@@ -178,7 +212,6 @@ function openDeleteFieldModalDialog(field) {
     $('#deleteFieldBtn').click(function () {
         deleteField(field.id);
     });
-
     $('#deleteFieldModal').modal({});
 }
 
@@ -197,46 +230,54 @@ function deleteField(fieldId) {
 }
 
 function updateField(field) {
-
-    fillJSONEditableFields(field);
-
-    $.ajax({
-        url: "../../service/field/rest/field.php/" + field.id,
-        type: "POST",
-        dataType: 'json',
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(fillJSONEditableFields(field)),
-        statusCode: {
-            200: function (homeData) {
-                loadHomeData();
+    if (checkRequiredFieldInEditFieldModal()) {
+        fillJSONEditableFields(field);
+        $.ajax({
+            url: "../../service/field/rest/field.php/" + field.id,
+            type: "POST",
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(fillJSONEditableFields(field)),
+            statusCode: {
+                200: function (homeData) {
+                    loadHomeData();
+                    clearAllFieldEditModalInputs();
+                    $('#editFieldModal').modal('toggle');
+                }
             }
-        }
-    });
+        });
+    }
 }
 
 
 function openSaveNewFieldModal() {
+    hideAllFieldEditModalInputWarnings();
+    clearAllFieldEditModalInputs();
     $('#editFieldModalHeader').text('Dadawanie nowej działki');
     $('#updateFieldBtn').unbind();
     $('#updateFieldBtn').click(function () {
         saveField();
     });
-    $('#editFieldModal').modal({});
+    $('#editFieldModal').modal();
 }
 
 function saveField() {
-    $.ajax({
-        url: "../../service/field/rest/field.php/",
-        type: "PUT",
-        dataType: 'json',
-        contentType: "application/json",
-        data: JSON.stringify(fillJSONEmptyField()),
-        statusCode: {
-            200: function (homeData) {
-                loadHomeData();
+    if (checkRequiredFieldInEditFieldModal()) {
+        $.ajax({
+            url: "../../service/field/rest/field.php/",
+            type: "PUT",
+            dataType: 'json',
+            contentType: "application/json",
+            data: JSON.stringify(fillJSONEmptyField()),
+            statusCode: {
+                200: function (homeData) {
+                    loadHomeData();
+                    clearAllFieldEditModalInputs();
+                    $('#editFieldModal').modal('toggle');
+                }
             }
-        }
-    });
+        });
+    }
 }
 
 
@@ -246,6 +287,9 @@ function fillEditableFields(field) {
     $('#fieldPlantEditInput').val(field.plant);
     $('#fieldVarietesEditInput').val(field.varietes);
     $('#fieldSizeEditInput').val(field.ha);
+    $('#fieldPlantPriceEditInput').val(field.plantPrice);
+    $('#fieldTonsProHaEditInput').val(field.tonsProHa);
+    $('#fieldOtherCostsEditInput').val(field.otherCosts);
 }
 
 function fillJSONEditableFields(field) {
@@ -254,11 +298,9 @@ function fillJSONEditableFields(field) {
     field.plant = $('#fieldPlantEditInput').val();
     field.varietes = $('#fieldVarietesEditInput').val();
     field.ha = $('#fieldSizeEditInput').val();
-    field.fieldNumber = $('#fieldNumberEditInput').val();
-    field.description = $('#fieldDescriptionEditInput').val();
-    field.plant = $('#fieldPlantEditInput').val();
-    field.varietes = $('#fieldVarietesEditInput').val();
-    field.ha = $('#fieldSizeEditInput').val();
+    field.plantPrice = $('#fieldPlantPriceEditInput').val();
+    field.tonsProHa = $('#fieldTonsProHaEditInput').val();
+    field.otherCosts = $('#fieldOtherCostsEditInput').val();
     return field;
 }
 
@@ -270,10 +312,72 @@ function fillJSONEmptyField() {
     field.plant = $('#fieldPlantEditInput').val();
     field.varietes = $('#fieldVarietesEditInput').val();
     field.ha = $('#fieldSizeEditInput').val();
-    field.fieldNumber = $('#fieldNumberEditInput').val();
-    field.description = $('#fieldDescriptionEditInput').val();
-    field.plant = $('#fieldPlantEditInput').val();
-    field.varietes = $('#fieldVarietesEditInput').val();
-    field.ha = $('#fieldSizeEditInput').val();
+    field.plantPrice = $('#fieldPlantPriceEditInput').val();
+    field.tonsProHa = $('#fieldTonsProHaEditInput').val();
+    field.otherCosts = $('#fieldOtherCostsEditInput').val();
     return field;
+}
+
+function checkRequiredFieldInEditFieldModal() {
+    hideAllFieldEditModalInputWarnings();
+    if ($('#fieldNumberEditInput').val().length === 0) {
+        $('#fieldNumberEditInputWarning').text('*wymagane');
+        return false;
+    }
+    if ($('#fieldDescriptionEditInput').val().length === 0) {
+        $('#fieldDescriptionEditInputWarning').text('*wymagane');
+        return false;
+    }
+    if ($('#fieldPlantEditInput').val().length === 0) {
+        $('#fieldPlantEditInputInputWarning').text('*wymagane');
+        return false;
+    }
+    if ($('#fieldVarietesEditInput').val().length === 0) {
+        $('#fieldVarietesEditInputWarning').text('*wymagane');
+        return false;
+    }
+    if ($('#fieldSizeEditInput').val().length === 0) {
+        $('#fieldSizeEditInputWarning').text('*wymagane');
+        return false;
+    }
+    if (!$.isNumeric($('#fieldSizeEditInput').val())) {
+        $('#fieldSizeEditInputWarning').text('*wprowadz liczbę');
+        return false;
+    }
+    if (!$.isNumeric($('#fieldPlantPriceEditInput').val())) {
+        $('#fieldPlantPriceEditWarning').text('*wprowadz liczbę');
+        return false;
+    }
+    if (!$.isNumeric($('#fieldTonsProHaEditInput').val())) {
+        $('#fieldTonsProHaEditInputWarning').text('*wprowadz liczbę');
+        return false;
+    }
+    if (!$.isNumeric($('#fieldOtherCostsEditInput').val())) {
+        $('#fieldOtherCostsEditInputWarning').text('*wprowadz liczbę');
+        return false;
+    }
+    return true;
+}
+
+function clearAllFieldEditModalInputs() {
+    $('#fieldNumberEditInput').text('');
+    $('#fieldDescriptionEditInput').text('');
+    $('#fieldPlantEditInput').text('');
+    $('#fieldVarietesEditInput').text('');
+    $('#fieldSizeEditInput').text('');
+    $('#fieldPlantPriceEditInput').text('');
+    $('#fieldTonsProHaEditInput').text('');
+    $('#fieldOtherCostsEditInput').text('');
+}
+
+
+function hideAllFieldEditModalInputWarnings() {
+    $('#fieldNumberEditInputWarning').text('');
+    $('#fieldDescriptionEditInputWarning').text('');
+    $('#fieldPlantEditInputInputWarning').text('');
+    $('#fieldVarietesEditInputWarning').text('');
+    $('#fieldSizeEditInputWarning').text('');
+    $('#fieldPlantPriceEditWarning').text('');
+    $('#fieldTonsProHaEditInputWarning').text('');
+    $('#fieldOtherCostsEditInputWarning').text('');
 }

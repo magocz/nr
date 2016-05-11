@@ -1,6 +1,8 @@
 $(function () {
 
-
+    $("#editFieldModalContener").load("../src/home/html/edit-fiedl-modal.html");
+    $("#deleteFieldModalContener").load("../src/home/html/delete-field-modal.html");
+    $("#addOperationModalContener").load("../src/home/html/add-operation-modal.html");
     loadHomeData();
 
 
@@ -29,6 +31,8 @@ $(function () {
     });
 
     searchFieldsTable();
+
+ 
 });
 
 function loadHomeData() {
