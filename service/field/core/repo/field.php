@@ -18,20 +18,34 @@ function deleteFieldById($fieldId, $userId)
     return $response;
 }
 
-
-function updateFieldById($fieldId, $data, $userId)
+function saveNewField($data, $seasonId, $userId)
 {
-    $fieldNr = strval($data['fieldNumber']);
-    $description = strval($data['description']);
-    $plant = strval($data['plant']);
-    $varietes = strval($data['varietes']);
+    $fieldNr = iconv("UTF-8", "ISO-8859-2", $data['fieldNumber']);
+    $description = iconv("UTF-8", "ISO-8859-2", $data['description']);
+    $plant = iconv("UTF-8", "ISO-8859-2", $data['plant']);
+    $varietes = iconv("UTF-8", "ISO-8859-2", $data['varietes']);
     $ha = $data['ha'];
-    echo $fieldNr;
-    $sql = "UPDATE FIELD " . "SET FIELD_NR = '$fieldNr' , DESCRIPTION = '$description',  PLANT = '$plant', VARIETES = '$varietes', HA = '$ha' " .
-        "WHERE ID = $fieldId";
+    $sql = "INSERT INTO FIELD (SEASON_ID, FIELD_NR, USER_ID ,DESCRIPTION ,PLANT, VARIETES, HA) VALUES ('$seasonId ','$fieldNr ',' $userId ',' $description ',' $plant ',' $varietes ','$ha ')";
     $response = $GLOBALS['dbcon']->query($sql);
     if ($response === TRUE) {
         return true;
     }
-    echo "Number of rows affected: " . mysql_affected_rows() . "<br>";
+    echo $response;
+    return false;
+}
+
+function updateFieldById($fieldId, $data, $userId)
+{
+    $fieldNr = iconv("UTF-8", "ISO-8859-2", $data['fieldNumber']);
+    $description = iconv("UTF-8", "ISO-8859-2", $data['description']);
+    $plant = iconv("UTF-8", "ISO-8859-2", $data['plant']);
+    $varietes = iconv("UTF-8", "ISO-8859-2", $data['varietes']);
+    $ha = $data['ha'];
+    $sql = "UPDATE FIELD " . "SET FIELD_NR = '$fieldNr' , DESCRIPTION = '$description',  PLANT = '$plant', VARIETES = '$varietes', HA = '$ha' " .
+        "WHERE ID = $fieldId AND USER_ID = $userId";
+    $response = $GLOBALS['dbcon']->query($sql);
+    if ($response === TRUE) {
+        return true;
+    }
+    return false;
 }

@@ -35,6 +35,16 @@ if ($_SESSION['login'] == null) {
             }
         }
     }
+    if ($method == 'PUT') {
+        $firstParam = array_shift($request);
+        $data = json_decode(file_get_contents('php://input'), true);
+        if ($data != null) {
+            if (!saveField($data, $_SESSION['activeSeasonId'])) {
+                header('HTTP/1.0 500 Server error');
+                exit;
+            }
+        }
+    }
     if ($method == 'DELETE') {
         if (is_numeric($firstParam)) {
             echo deleteField($firstParam);

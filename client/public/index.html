@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../src/common/resources/menu.css">
     <link rel="stylesheet" type="text/css" href="../src/home/resources/home.css">
-    <link rel="stylesheet" type="text/css" href="../src/home/resources/load-gif.css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,7 +36,7 @@
             </div>
         </td>
     </tr>
-    <tr>
+    <tr style="margin-top: 200px">
         <td class="activeSeasonCell">
             <div id="activeSeasonPipeChartContener"></div>
         </td>
@@ -57,40 +56,70 @@
         </td>
         <td class="lastOperationCell">
             <div class="pipeChartSelect">
-                <select id="activeSeasonCostChartCombobox">
-                    <option value="costToPlants">Uprawiane rośliny / koszt</option>
-                    <option value="profitToPlants">Uprawiane rośliny / zysk</option>
-                    <option value="profitToPlantsProHa">Uprawiane rośliny / zysk na hektar</option>
+                <select id="activeSeasonColumnChartCombobox">
+                    <option value="plantsToCost">Uprawiane rośliny / koszt</option>
+                    <option value="plantsToProceeds">Uprawiane rośliny / przychód</option>
+                    <option value="plantsToProfit">Uprawiane rośliny / zysk</option>
                 </select>
             </div>
         </td>
     </tr>
     <tr class="homeTableSearchRow">
-        <td class="homeTableSearchCell">
-            <div align="left" class="homeTableSearchCell">
-                Szukaj:
-                <input type="text" id="search">
-            </div>
-        </td>
-        <td class="homeTableSearchCell">
-            <div align="right" class="homeTableSiteCell">
-                <table align="right" style="width:50px">
-                    <tr>
-                        <td>
-                            <div class="fa fa-chevron-left" style='font-size:22px; cursor: pointer; '
-                                 onclick="goBack()"></div>
-                        </td>
-                        <td>
-                            <div class="fieldsHomeTableSiteInfo" id="fieldsHomeTableSiteInfo"></div>
 
-                        </td>
-                        <td>
-                            <div class="fa fa-chevron-right" style='font-size:22px; cursor: pointer;'
-                                 onclick="goNext()"></div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+        <td class="homeTableSearchCell" colspan="2">
+            <table>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div align="right" class="homeTableSiteCell">
+                            <table align="right">
+                                <tr>
+                                    <td class="homeTableSearchCell" style="width: 33%">
+                                        <div align="left" class="homeTableSearchCell">
+                                            Szukaj:
+                                            <input type="text" id="search">
+                                        </div>
+                                    </td>
+                                    <td style="width: 33%">
+                                        <table align="center" style="width: 50px">
+                                            <tr>
+                                                <td>
+                                                    <div class="seasonActions">
+                                                         <span id="addNewFieldToActiveSeason" align="right"
+                                                               hidden="true">
+                                                             <i class="fa fa-plus"></i>
+                                                         </span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="fa fa-chevron-left"
+                                                         style='font-size:16px; cursor: pointer; '
+                                                         onclick="goBack()"></div>
+                                                </td>
+                                                <td>
+                                                    <div class="fieldsHomeTableSiteInfo"
+                                                         id="fieldsHomeTableSiteInfo"></div>
+                                                </td>
+                                                <td>
+                                                    <div class="fa fa-chevron-right"
+                                                         style='font-size:16px; cursor: pointer;'
+                                                         onclick="goNext()"></div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td style="width: 33%">
+                                        <button onclick="openSaveNewFieldModal()" align="right" type="button"
+                                                class="btn btn-success"
+                                                style="float: right; margin-top: 10px; data-dismiss=" modal
+                                        ">Dodaj</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </td>
     </tr>
     <tr>
@@ -101,7 +130,12 @@
     </tr>
     <tr>
         <td colspan="2">
-            <div align="right" id="fieldsTableShwonRowInfo">dupa</div>
+            <div align="right" id="fieldsTableShwonRowInfo"></div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="footer">Copyright&copy; Neldam Software Solutions</div>
         </td>
     </tr>
 </table>
@@ -166,7 +200,6 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
             </div>
         </div>
-
     </div>
 </div>
 

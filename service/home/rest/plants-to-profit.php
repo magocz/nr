@@ -1,10 +1,14 @@
 <?php
+
 include_once '../../db-config/db-config.php';
-include_once '../core/repo/season.php';
 include_once '../core/repo/done-operations.php';
+include_once '../core/repo/season.php';
 
 include_once '../core/bc/common.php';
-include_once '../core/bc/fields-data.php';
+
+
+include_once '../core/repo/done-operations.php';
+include_once '../core/bc/column-chart-data.php';
 
 
 session_start();
@@ -19,12 +23,11 @@ if ($_SESSION['login'] == null) {
 } else {
     if ($method == 'GET') {
         $firstParam = array_shift($request);
+        header('Content-type: application/json');
         if (is_numeric($firstParam)) {
-            header('Content-type: application/json');
-            echo generateSeasonTableData($firstParam);
+            echo generateActiveSeasonColumnChartData_plants_to_profit($firstParam);
         } else {
-            header('Content-type: application/json');
-            echo generateSeasonTableData($_SESSION['activeSeasonId']);
+            echo generateActiveSeasonColumnChartData_plants_to_profit($_SESSION['activeSeasonId']);
         }
     }
 }

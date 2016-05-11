@@ -16,6 +16,18 @@ $(function () {
         }
     });
 
+    $('#activeSeasonColumnChartCombobox').change(function () {
+        if ($('#activeSeasonColumnChartCombobox').val() === 'plantsToCost') {
+            getColumnChart('../../service/home/rest/plants-to-cost.php/');
+        }
+        if ($('#activeSeasonColumnChartCombobox').val() === 'plantsToProceeds') {
+            getColumnChart('../../service/home/rest/plants-to-proceeds.php/');
+        }
+        if ($('#activeSeasonColumnChartCombobox').val() === 'plantsToProfit') {
+            getColumnChart('../../service/home/rest/plants-to-profit.php/');
+        }
+    });
+
     searchFieldsTable();
 });
 

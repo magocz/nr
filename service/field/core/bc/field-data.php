@@ -20,6 +20,7 @@ function fillFieldDataModel($fieldId)
         $fieldData->tonsProHa = $field[0]['TONS_PRO_HA'];
         $fieldData->tons = $field[0]['TONS'];
         $fieldData->otherCost = $field[0]['OTHER_COSTS'];
+        $fieldData->seasonId = $field[0]['SEASON_ID'];
 
         $fieldData->doneOperations = array();
         $allDoneOperations = findAllDoneOperationsByFieldId($fieldId);
@@ -34,8 +35,6 @@ function fillFieldDataModel($fieldId)
                 'economicHarm' => $operation['ECONOMIC_HARN'],
                 'cost' => $operation['COST'],
                 'costProHa' => $operation['COST_PRO_HA'],
-                'comment' => iconv("ISO-8859-2", "UTF-8", $operation['COMMENT']),
-                'cause' => iconv("ISO-8859-2", "UTF-8", $operation['CAUSE']),
             ]);
         }
         return $fieldData;
@@ -51,4 +50,9 @@ function updateField($fieldId, $data)
 function deleteField($fieldId)
 {
     return deleteFieldById($fieldId, $_SESSION['id']);
+}
+
+function saveField($data, $seasonId)
+{
+    return saveNewField($data,$seasonId, $_SESSION['id']);
 }

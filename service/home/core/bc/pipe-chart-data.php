@@ -45,34 +45,34 @@ function getChartData($fields, $homeData, $seriesVariable, $drilldownVariable)
     $drilldownHashMap = array();
 
     foreach ($fields as $field) {
-        $homeData->activeSeasonChart->haCount += intval($field['HA']);
+        $homeData->activeSeasonChart->haCount += floatval($field['HA']);
         $isAdded = false;
 
         if (array_key_exists($field[$seriesVariable], $seriesHasMap)) {
-            $seriesHasMap[$field[$seriesVariable]][0]->y += intval($field['HA']);
+            $seriesHasMap[$field[$seriesVariable]][0]->y += floatval($field['HA']);
             for ($i = 0; $i < count($drilldownHashMap[$field[$seriesVariable]][0]->data); $i++) {
                 if (in_array($field[$drilldownVariable], $drilldownHashMap[$field[$seriesVariable]][0]->data[$i])) {
-                    $drilldownHashMap[$field[$seriesVariable]][0]->data[$i][1] += intval($field['HA']);
+                    $drilldownHashMap[$field[$seriesVariable]][0]->data[$i][1] += floatval($field['HA']);
                     $isAdded = true;
                     break;
                 }
             }
             if (!$isAdded) {
-                array_push($drilldownHashMap[$field[$seriesVariable]][0]->data, array($field[$drilldownVariable], intval($field['HA'])));
+                array_push($drilldownHashMap[$field[$seriesVariable]][0]->data, array(iconv("iso-8859-2", "utf-8",$field[$drilldownVariable]), floatval($field['HA'])));
             }
 
         } else {
             $seriesHasMap[$field[$seriesVariable]] = array();
             array_push($seriesHasMap[$field[$seriesVariable]], (object)[
                 'name' => $field[$seriesVariable],
-                'y' => intval($field['HA']),
+                'y' => floatval($field['HA']),
                 'drilldown' => $field[$seriesVariable]
             ]);
             $drilldownHashMap[$field[$seriesVariable]] = array();
             array_push($drilldownHashMap[$field[$seriesVariable]], (object)[
                 'name' => $field[$seriesVariable],
                 'id' => $field[$seriesVariable],
-                'data' => array(array($field[$drilldownVariable], intval($field['HA'])))
+                'data' => array(array(iconv("iso-8859-2", "utf-8",$field[$drilldownVariable]), floatval($field['HA'])))
             ]);
 
         }

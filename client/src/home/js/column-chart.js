@@ -88,6 +88,7 @@ function generateHomeColumnChart(data, renderObject) {
             headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
             pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y} zł</b>  <br/>'
         },
+
         series: [{
             name: data.activeSeasonChart.seasonName,
             colorByPoint: true,

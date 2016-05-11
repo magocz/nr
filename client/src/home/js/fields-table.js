@@ -25,7 +25,13 @@ function generateFieldsTable(restUrl) {
         statusCode: {
             200: function (homeData) {
                 drawTable(homeData.data);
-                $("#homeTableActiveSeasonData").tablesorter();
+                $("#homeTableActiveSeasonData").tablesorter({
+                        headers: {
+                            6: {sorter: false},
+                            7: {sorter: false}
+                        }
+                    }
+                );
                 setCurrentVisbleRowsLength();
                 show(0, maxRowNumber, 0); // show first
             }
@@ -104,7 +110,7 @@ function hideAllHeaderSort() {
 
 function searchFieldsTable() {
     $("#search").on("keyup", function () {
-        var value = $(this).val();
+        var value = $(this).val().toLocaleLowerCase();
         $("#homeTableActiveSeasonData tr").each(function (index) {
             if (index !== 0) {
                 $row = $(this);
@@ -113,7 +119,7 @@ function searchFieldsTable() {
                 var fieldPlant = $row.find("td:nth-child(3)").text();
                 var fieldVariates = $row.find("td:nth-child(4)").text();
                 console.log(fieldDescription.indexOf(value) >= 0);
-                if (fieldDescription.indexOf(value) >= 0 || fieldNr.indexOf(value) >= 0 || fieldPlant.indexOf(value) >= 0 || fieldVariates.indexOf(value) >= 0) {
+                if (fieldDescription.toLocaleLowerCase().indexOf(value) >= 0 || fieldNr.toLocaleLowerCase().indexOf(value) >= 0 || fieldPlant.toLocaleLowerCase().indexOf(value) >= 0 || fieldVariates.toLocaleLowerCase().indexOf(value) >= 0) {
                     $row.show();
                 }
                 else {
@@ -124,7 +130,7 @@ function searchFieldsTable() {
         currentPage = 0;
         setCurrentVisbleRowsLength();
         show(0, maxRowNumber);
-        getFieldsTableRowsInfo(currentPage);
+        //getFieldsTableRowsInfo(currentPage);
     });
 }
 
@@ -163,7 +169,7 @@ function openFieldEditModalDialog(field) {
     $('#updateFieldBtn').click(function () {
         updateField(field);
     });
-    var modal = $('#editFieldModal').modal({});
+    $('#editFieldModal').modal({});
 }
 
 function openDeleteFieldModalDialog(field) {
@@ -173,7 +179,7 @@ function openDeleteFieldModalDialog(field) {
         deleteField(field.id);
     });
 
-    var modal = $('#deleteFieldModal').modal({});
+    $('#deleteFieldModal').modal({});
 }
 
 function deleteField(fieldId) {
@@ -209,6 +215,31 @@ function updateField(field) {
 }
 
 
+function openSaveNewFieldModal() {
+    $('#editFieldModalHeader').text('Dadawanie nowej działki');
+    $('#updateFieldBtn').unbind();
+    $('#updateFieldBtn').click(function () {
+        saveField();
+    });
+    $('#editFieldModal').modal({});
+}
+
+function saveField() {
+    $.ajax({
+        url: "../../service/field/rest/field.php/",
+        type: "PUT",
+        dataType: 'json',
+        contentType: "application/json",
+        data: JSON.stringify(fillJSONEmptyField()),
+        statusCode: {
+            200: function (homeData) {
+                loadHomeData();
+            }
+        }
+    });
+}
+
+
 function fillEditableFields(field) {
     $('#fieldNumberEditInput').val(field.fieldNumber);
     $('#fieldDescriptionEditInput').val(field.description);
@@ -218,6 +249,27 @@ function fillEditableFields(field) {
 }
 
 function fillJSONEditableFields(field) {
+    field.fieldNumber = $('#fieldNumberEditInput').val();
+    field.description = $('#fieldDescriptionEditInput').val();
+    field.plant = $('#fieldPlantEditInput').val();
+    field.varietes = $('#fieldVarietesEditInput').val();
+    field.ha = $('#fieldSizeEditInput').val();
+    field.fieldNumber = $('#fieldNumberEditInput').val();
+    field.description = $('#fieldDescriptionEditInput').val();
+    field.plant = $('#fieldPlantEditInput').val();
+    field.varietes = $('#fieldVarietesEditInput').val();
+    field.ha = $('#fieldSizeEditInput').val();
+    return field;
+}
+
+
+function fillJSONEmptyField() {
+    var field = new Object();
+    field.fieldNumber = $('#fieldNumberEditInput').val();
+    field.description = $('#fieldDescriptionEditInput').val();
+    field.plant = $('#fieldPlantEditInput').val();
+    field.varietes = $('#fieldVarietesEditInput').val();
+    field.ha = $('#fieldSizeEditInput').val();
     field.fieldNumber = $('#fieldNumberEditInput').val();
     field.description = $('#fieldDescriptionEditInput').val();
     field.plant = $('#fieldPlantEditInput').val();

@@ -42,5 +42,4 @@ function findAllFieldBySeasonId($seasonId)
         $rows[] = $r;
     }
     return $rows;
-
 }

@@ -13,12 +13,13 @@ function fillHomeTableDataModel($fields)
     foreach ($fields as $field) {
         array_push($homeData->data, array(
             'id' => $field['ID'],
-            'fieldNumber' => $field['FIELD_NR'],
-            'description' => $field['DESCRIPTION'],
-            'plant' => $field['PLANT'],
-            'varietes' => $field['VARIETES'],
-            'ha' => intval($field['HA']),
-            'operationsNumber' => $field['OPERATIONS_NUMBER'],
+            'fieldNumber' => iconv("iso-8859-2", "utf-8", $field['FIELD_NR']),
+            'description' => iconv("iso-8859-2", "utf-8", $field['DESCRIPTION']),
+            'plant' => iconv("iso-8859-2", "utf-8", $field['PLANT']),
+            'varietes' => iconv("iso-8859-2", "utf-8", $field['VARIETES']),
+            'ha' => floatval($field['HA']),
+            'operationsNumber' => floatval($field['OPERATIONS_NUMBER']),
+            'seasonId' => floatval($field['SEASON_ID']),
         ));
     }
     return $homeData;

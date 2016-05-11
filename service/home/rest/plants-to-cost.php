@@ -25,9 +25,9 @@ if ($_SESSION['login'] == null) {
         $firstParam = array_shift($request);
         header('Content-type: application/json');
         if (is_numeric($firstParam)) {
-            echo generateActiveSeasonColumnChartData_plants_to_Cost($firstParam);
+            echo generateActiveSeasonColumnChartData_plants_to_operationsCost($firstParam);
         } else {
-            echo generateActiveSeasonColumnChartData_plants_to_Cost($_SESSION['activeSeasonId']);
+            echo generateActiveSeasonColumnChartData_plants_to_operationsCost($_SESSION['activeSeasonId']);
         }
     }
 }
