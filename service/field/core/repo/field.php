@@ -11,6 +11,18 @@ function findFieldById($fieldId, $userId)
     return $rows;
 }
 
+
+function findAllFieldBySeasonId($seasonId)
+{
+    $sql = "SELECT * FROM FIELD WHERE `SEASON_ID` LIKE '$seasonId'";
+    $response = $GLOBALS['dbcon']->query($sql);
+    $rows = array();
+    while ($r = mysqli_fetch_assoc($response)) {
+        $rows[] = $r;
+    }
+    return $rows;
+}
+
 function deleteFieldById($fieldId, $userId)
 {
     $sql = "DELETE FROM FIELD WHERE `ID` LIKE '$fieldId' AND `USER_ID` LIKE '$userId'";
