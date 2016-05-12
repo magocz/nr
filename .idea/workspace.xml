@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/business-components/field/business-activity/FieldBA.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/business-components/field/repo/FieldRepo.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/business-components/operation/business-activity/OperationBA.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/business-components/season/business-activity/SeasonBA.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/business-components/season/repo/SeasonRepo.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/business-components/user/business-activity/UserBA.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/business-components/user/repo/UserRepo.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/service/db-config/db-config.php" afterPath="$PROJECT_DIR$/service/configs/db-config/db-config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nr.iws" />
@@ -132,6 +125,9 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -359,6 +355,20 @@
               <option name="myItemId" value="nr" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -404,11 +414,11 @@
       <recent name="C:\xampp\htdocs\nr\service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\nr\service\configs" />
       <recent name="C:\xampp\htdocs\nr\client\src\common\resources" />
       <recent name="C:\xampp\htdocs\nr\client\public\authorization" />
       <recent name="C:\xampp\htdocs\nr\client" />
       <recent name="C:\xampp\htdocs\nr\client\src" />
-      <recent name="C:\xampp\htdocs\nr\service\home\core" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.nr">
@@ -849,7 +859,7 @@
       <workItem from="1462991179428" duration="14969000" />
       <workItem from="1463007158808" duration="527000" />
       <workItem from="1463087179873" duration="946000" />
-      <workItem from="1463088139217" duration="1862000" />
+      <workItem from="1463088139217" duration="2026000" />
     </task>
     <task id="LOCAL-00001" summary="Zaczęto refaktoring kodu w sekcji serwisowej, pliki PHP.">
       <created>1463089722893</created>
@@ -858,11 +868,18 @@
       <option name="project" value="LOCAL" />
       <updated>1463089722893</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Zaczęto refaktoring kodu w sekcji serwisowej, pliki PHP.">
+      <created>1463090011636</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1463090011636</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118860000" />
+    <option name="totallyTimeSpent" value="119024000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -1025,7 +1042,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/db-config/db-config.php">
+    <entry file="file://$PROJECT_DIR$/service/configs/db-config/db-config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
