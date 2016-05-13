@@ -3,7 +3,7 @@ function generateActiveSeasonChartData_plants_to_varietes($seasonId)
 {
     $season = findSeasonById($seasonId);
     if (count($season) == 1) {
-        return json_encode(getChartData(findAllFieldBySeasonId($seasonId), generatePipeChartDataModel($season), 'PLANT', 'VARIETES'));
+        return json_encode(getChartData(findAllFieldBySeasonId($seasonId), generateDoubleDrillDownChartDataModel($season), 'PLANT', 'VARIETES'));
     }
     return json_encode(null);
 }
@@ -12,7 +12,7 @@ function generateActiveSeasonChartData_plants_to_fieldNumber($seasonId)
 {
     $season = findSeasonById($seasonId);
     if (count($season) == 1) {
-        return json_encode(getChartData(findAllFieldBySeasonId($seasonId), generatePipeChartDataModel($season), 'PLANT', 'FIELD_NR'));
+        return json_encode(getChartData(findAllFieldBySeasonId($seasonId), generateDoubleDrillDownChartDataModel($season), 'PLANT', 'FIELD_NR'));
     }
     return json_encode(null);
 }
@@ -22,30 +22,30 @@ function generateChartData_plants_to_fieldDescription($seasonId)
 {
     $season = findSeasonById($seasonId);
     if (count($season) == 1) {
-        return json_encode(getChartData(findAllFieldBySeasonId($seasonId), generatePipeChartDataModel($season), 'PLANT', 'DESCRIPTION'));
+        return json_encode(getChartData(findAllFieldBySeasonId($seasonId), generateDoubleDrillDownChartDataModel($season), 'PLANT', 'DESCRIPTION'));
     }
     return json_encode(null);
 }
 
-function generatePipeChartDataModel($season)
+function generateDoubleDrillDownChartDataModel($season)
 {
-    $homeData = (object)[];
-    $homeData->activeSeasonChart = (object)[];
-    $homeData->activeSeasonChart->haCount = 0;
-    $homeData->activeSeasonChart->seasonName = $season[0]['name'];
-    $homeData->activeSeasonChart->seriesData = array();
-    $homeData->activeSeasonChart->drilldownData = array();
-    return $homeData;
+    $doubleDrildownChartData = (object)[];
+    $doubleDrildownChartData->activeSeasonChart = (object)[];
+    $doubleDrildownChartData->activeSeasonChart->haCount = 0;
+    $doubleDrildownChartData->activeSeasonChart->seasonName = $season[0]['name'];
+    $doubleDrildownChartData->activeSeasonChart->seriesData = array();
+    $doubleDrildownChartData->activeSeasonChart->drilldownData = array();
+    return $doubleDrildownChartData;
 }
 
 
-function getChartData($fields, $homeData, $seriesVariable, $drilldownVariable)
+function getData($fields, $doubleDrildownChartData, $seriesVariable, $drilldownVariable)
 {
     $seriesHasMap = array();
     $drilldownHashMap = array();
 
     foreach ($fields as $field) {
-        $homeData->activeSeasonChart->haCount += floatval($field['HA']);
+        $doubleDrildownChartData->activeSeasonChart->haCount += floatval($field['HA']);
         $isAdded = false;
 
         if (array_key_exists($field[$seriesVariable], $seriesHasMap)) {
@@ -58,7 +58,7 @@ function getChartData($fields, $homeData, $seriesVariable, $drilldownVariable)
                 }
             }
             if (!$isAdded) {
-                array_push($drilldownHashMap[$field[$seriesVariable]][0]->data, array(iconv("iso-8859-2", "utf-8",$field[$drilldownVariable]), floatval($field['HA'])));
+                array_push($drilldownHashMap[$field[$seriesVariable]][0]->data, array(iconv("iso-8859-2", "utf-8", $field[$drilldownVariable]), floatval($field['HA'])));
             }
 
         } else {
@@ -72,7 +72,7 @@ function getChartData($fields, $homeData, $seriesVariable, $drilldownVariable)
             array_push($drilldownHashMap[$field[$seriesVariable]], (object)[
                 'name' => $field[$seriesVariable],
                 'id' => $field[$seriesVariable],
-                'data' => array(array(iconv("iso-8859-2", "utf-8",$field[$drilldownVariable]), floatval($field['HA'])))
+                'data' => array(array(iconv("iso-8859-2", "utf-8", $field[$drilldownVariable]), floatval($field['HA'])))
             ]);
 
         }
@@ -80,12 +80,12 @@ function getChartData($fields, $homeData, $seriesVariable, $drilldownVariable)
 
     foreach ($drilldownHashMap as $drilldownData) {
         usort($drilldownData[0]->data, 'sortDrilldownDataByValue');
-        array_push($homeData->activeSeasonChart->drilldownData, $drilldownData[0]);
+        array_push($doubleDrildownChartData->activeSeasonChart->drilldownData, $drilldownData[0]);
     }
     usort($seriesHasMap, 'sortSeriesDataByY');
     foreach ($seriesHasMap as $seriesData) {
-        array_push($homeData->activeSeasonChart->seriesData, $seriesData[0]);
+        array_push($doubleDrildownChartData->activeSeasonChart->seriesData, $seriesData[0]);
     }
 
-    return $homeData;
+    return $doubleDrildownChartData;
 }
