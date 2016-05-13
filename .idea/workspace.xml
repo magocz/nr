@@ -2,256 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Autoloader.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Autoloader.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/APC.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CachedObjectStorage/APC.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/CacheBase.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CachedObjectStorage/CacheBase.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/DiscISAM.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CachedObjectStorage/DiscISAM.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/ICache.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CachedObjectStorage/ICache.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/Igbinary.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CachedObjectStorage/Igbinary.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/Memcache.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CachedObjectStorage/Memcache.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/Memory.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CachedObjectStorage/Memory.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/MemoryGZip.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CachedObjectStorage/MemoryGZip.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/MemorySerialized.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CachedObjectStorage/MemorySerialized.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/PHPTemp.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CachedObjectStorage/PHPTemp.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/SQLite.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CachedObjectStorage/SQLite.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/SQLite3.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CachedObjectStorage/SQLite3.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorage/Wincache.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CachedObjectStorage/Wincache.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CachedObjectStorageFactory.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CachedObjectStorageFactory.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CalcEngine/CyclicReferenceStack.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CalcEngine/CyclicReferenceStack.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/CalcEngine/Logger.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/CalcEngine/Logger.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Database.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/Database.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/DateTime.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/DateTime.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Engineering.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/Engineering.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Exception.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/Exception.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/ExceptionHandler.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/ExceptionHandler.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Financial.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/Financial.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/FormulaParser.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/FormulaParser.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/FormulaToken.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/FormulaToken.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Function.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/Function.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Functions.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/Functions.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Logical.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/Logical.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/LookupRef.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/LookupRef.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/MathTrig.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/MathTrig.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Statistical.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/Statistical.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/TextData.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/TextData.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/Token/Stack.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/Token/Stack.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Calculation/functionlist.txt" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Calculation/functionlist.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Cell.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Cell.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Cell/AdvancedValueBinder.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Cell/AdvancedValueBinder.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Cell/DataType.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Cell/DataType.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Cell/DataValidation.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Cell/DataValidation.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Cell/DefaultValueBinder.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Cell/DefaultValueBinder.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Cell/Hyperlink.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Cell/Hyperlink.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Cell/IValueBinder.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Cell/IValueBinder.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Chart.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Axis.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Chart/Axis.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/DataSeries.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Chart/DataSeries.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/DataSeriesValues.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Chart/DataSeriesValues.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Exception.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Chart/Exception.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/GridLines.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Chart/GridLines.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Layout.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Chart/Layout.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Legend.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Chart/Legend.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/PlotArea.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Chart/PlotArea.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Properties.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Chart/Properties.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Renderer/PHP Charting Libraries.txt" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Chart/Renderer/PHP Charting Libraries.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Renderer/jpgraph.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Chart/Renderer/jpgraph.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Chart/Title.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Chart/Title.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Comment.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Comment.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/DocumentProperties.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/DocumentProperties.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/DocumentSecurity.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/DocumentSecurity.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Exception.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Exception.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/HashTable.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/HashTable.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Helper/HTML.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Helper/HTML.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/IComparable.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/IComparable.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/IOFactory.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/IOFactory.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/NamedRange.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/NamedRange.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Abstract.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/Abstract.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/CSV.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/CSV.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/DefaultReadFilter.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/DefaultReadFilter.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel2003XML.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/Excel2003XML.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel2007.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/Excel2007.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel2007/Chart.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/Excel2007/Chart.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel2007/Theme.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/Excel2007/Theme.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel5.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/Excel5.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel5/Escher.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/Excel5/Escher.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel5/MD5.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/Excel5/MD5.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Excel5/RC4.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/Excel5/RC4.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Exception.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/Exception.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/Gnumeric.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/Gnumeric.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/HTML.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/HTML.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/IReadFilter.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/IReadFilter.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/IReader.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/IReader.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/OOCalc.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/OOCalc.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Reader/SYLK.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Reader/SYLK.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/ReferenceHelper.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/ReferenceHelper.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/RichText.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/RichText.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/RichText/ITextElement.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/RichText/ITextElement.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/RichText/Run.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/RichText/Run.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/RichText/TextElement.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/RichText/TextElement.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Settings.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Settings.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/CodePage.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/CodePage.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Date.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/Date.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Drawing.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/Drawing.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/Escher.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher/DgContainer.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/Escher/DgContainer.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher/DgContainer/SpgrContainer.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/Escher/DgContainer/SpgrContainer.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher/DgContainer/SpgrContainer/SpContainer.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/Escher/DgContainer/SpgrContainer/SpContainer.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher/DggContainer.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/Escher/DggContainer.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE/Blip.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE/Blip.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Excel5.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/Excel5.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/File.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/File.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/Font.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/Font.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/CHANGELOG.TXT" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/JAMA/CHANGELOG.TXT" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/CholeskyDecomposition.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/JAMA/CholeskyDecomposition.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/EigenvalueDecomposition.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/JAMA/EigenvalueDecomposition.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/LUDecomposition.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/JAMA/LUDecomposition.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/Matrix.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/JAMA/Matrix.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/QRDecomposition.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/JAMA/QRDecomposition.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/SingularValueDecomposition.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/JAMA/SingularValueDecomposition.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/utils/Error.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/JAMA/utils/Error.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/JAMA/utils/Maths.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/JAMA/utils/Maths.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/OLE.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/OLE.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/OLE/ChainedBlockStream.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/OLE/ChainedBlockStream.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/OLE/PPS.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/OLE/PPS.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/OLE/PPS/File.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/OLE/PPS/File.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/OLE/PPS/Root.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/OLE/PPS/Root.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/OLERead.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/OLERead.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/PCLZip/gnu-lgpl.txt" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/PCLZip/gnu-lgpl.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/PCLZip/pclzip.lib.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/PCLZip/pclzip.lib.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/PCLZip/readme.txt" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/PCLZip/readme.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/PasswordHasher.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/PasswordHasher.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/String.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/String.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/TimeZone.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/TimeZone.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/XMLWriter.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/XMLWriter.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/ZipArchive.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/ZipArchive.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/ZipStreamWrapper.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/ZipStreamWrapper.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/trend/bestFitClass.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/trend/bestFitClass.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/trend/exponentialBestFitClass.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/trend/exponentialBestFitClass.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/trend/linearBestFitClass.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/trend/linearBestFitClass.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/trend/logarithmicBestFitClass.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/trend/logarithmicBestFitClass.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/trend/polynomialBestFitClass.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/trend/polynomialBestFitClass.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/trend/powerBestFitClass.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/trend/powerBestFitClass.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Shared/trend/trendClass.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Shared/trend/trendClass.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Style.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Alignment.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Style/Alignment.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Border.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Style/Border.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Borders.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Style/Borders.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Color.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Style/Color.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Conditional.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Style/Conditional.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Fill.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Style/Fill.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Font.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Style/Font.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/NumberFormat.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Style/NumberFormat.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Protection.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Style/Protection.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Style/Supervisor.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Style/Supervisor.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/AutoFilter.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/AutoFilter.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/AutoFilter/Column.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/AutoFilter/Column.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/AutoFilter/Column/Rule.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/AutoFilter/Column/Rule.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/BaseDrawing.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/BaseDrawing.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/CellIterator.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/CellIterator.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/Column.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/Column.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/ColumnCellIterator.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/ColumnCellIterator.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/ColumnDimension.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/ColumnDimension.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/ColumnIterator.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/ColumnIterator.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/Drawing.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/Drawing.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/Drawing/Shadow.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/Drawing/Shadow.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/HeaderFooter.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/HeaderFooter.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/HeaderFooterDrawing.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/HeaderFooterDrawing.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/MemoryDrawing.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/MemoryDrawing.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/PageMargins.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/PageMargins.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/PageSetup.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/PageSetup.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/Protection.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/Protection.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/Row.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/Row.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/RowCellIterator.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/RowCellIterator.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/RowDimension.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/RowDimension.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/RowIterator.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/RowIterator.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Worksheet/SheetView.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Worksheet/SheetView.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/WorksheetIterator.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/WorksheetIterator.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Abstract.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Abstract.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/CSV.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/CSV.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Chart.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007/Chart.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Comments.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007/Comments.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/ContentTypes.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007/ContentTypes.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/DocProps.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007/DocProps.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Drawing.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007/Drawing.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Rels.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007/Rels.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/RelsRibbon.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007/RelsRibbon.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/RelsVBA.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007/RelsVBA.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/StringTable.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007/StringTable.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Style.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007/Style.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Theme.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007/Theme.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Workbook.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007/Workbook.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/Worksheet.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007/Worksheet.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel2007/WriterPart.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel2007/WriterPart.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel5.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5/BIFFwriter.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel5/BIFFwriter.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5/Escher.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel5/Escher.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5/Font.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel5/Font.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5/Parser.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel5/Parser.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5/Workbook.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel5/Workbook.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5/Worksheet.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel5/Worksheet.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Excel5/Xf.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Excel5/Xf.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/Exception.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/Exception.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/HTML.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/HTML.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/IWriter.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/IWriter.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/OpenDocument.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/Cell/Comment.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/OpenDocument/Cell/Comment.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/Content.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/OpenDocument/Content.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/Meta.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/OpenDocument/Meta.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/MetaInf.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/OpenDocument/MetaInf.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/Mimetype.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/OpenDocument/Mimetype.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/Settings.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/OpenDocument/Settings.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/Styles.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/OpenDocument/Styles.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/Thumbnails.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/OpenDocument/Thumbnails.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/OpenDocument/WriterPart.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/OpenDocument/WriterPart.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/PDF.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/PDF.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/PDF/Core.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/PDF/Core.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/PDF/DomPDF.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/PDF/DomPDF.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/PDF/mPDF.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/PDF/mPDF.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/Writer/PDF/tcPDF.php" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Writer/PDF/tcPDF.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/bg/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/bg/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/cs/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/cs/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/cs/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/cs/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/da/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/da/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/da/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/da/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/de/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/de/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/de/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/de/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/en/uk/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/en/uk/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/es/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/es/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/es/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/es/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/fi/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/fi/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/fi/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/fi/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/fr/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/fr/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/fr/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/fr/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/hu/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/hu/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/hu/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/hu/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/it/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/it/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/it/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/it/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/nl/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/nl/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/nl/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/nl/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/no/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/no/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/no/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/no/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/pl/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/pl/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/pl/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/pl/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/pt/br/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/pt/br/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/pt/br/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/pt/br/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/pt/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/pt/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/pt/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/pt/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/ru/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/ru/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/ru/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/ru/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/sv/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/sv/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/sv/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/sv/functions" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/tr/config" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/tr/config" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service/lib/build/excel/PHPExcel/locale/tr/functions" afterPath="$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/locale/tr/functions" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/chart/business-activity/DoubleDrilldownChartDataBA.php" afterPath="$PROJECT_DIR$/service/business-components/chart/business-activity/DoubleDrilldownChartDataBA.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/common/SortUtil.php" afterPath="$PROJECT_DIR$/service/business-components/common/SortUtil.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/home/core/bc/pipe-chart-data.php" afterPath="$PROJECT_DIR$/service/home/core/bc/pipe-chart-data.php" />
     </list>
     <ignored path="nr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1171,7 +922,7 @@
       <workItem from="1463087179873" duration="946000" />
       <workItem from="1463088139217" duration="2076000" />
       <workItem from="1463142673733" duration="59000" />
-      <workItem from="1463142814664" duration="3488000" />
+      <workItem from="1463142814664" duration="3553000" />
     </task>
     <task id="LOCAL-00001" summary="Zaczęto refaktoring kodu w sekcji serwisowej, pliki PHP.">
       <created>1463089722893</created>
@@ -1197,11 +948,17 @@
       <option name="project" value="LOCAL" />
       <updated>1463143548629</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Dodanie pakietow do obslugi wykresów.">
+      <created>1463150852960</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1463150852960</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122621000" />
+    <option name="totallyTimeSpent" value="122686000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
