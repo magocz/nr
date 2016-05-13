@@ -1,0 +1,81 @@
+{
+  "series": [
+    {
+      "id": "toplevel",
+      "name": "Uprawiane rośliny",
+      "data": [
+        {
+          "name": "Rzepak",
+          "y": 4,
+          "drilldown": "rzepakAllCosts"
+        },
+        {
+          "name": "Pszenica",
+          "y": 2,
+          "drilldown": "pszenicaAllCosts"
+        }
+      ]
+    }
+  ],
+  "drilldown": {
+    "series": [
+      {
+        "id": "rzepakAllCosts",
+        "name": "Level 1",
+        "data": [
+          {
+            "name": "Koszt nawozów",
+            "y": 14,
+            "drilldown": "rzepakKosztyNawozow"
+          },
+          {
+            "name": "Koszt ochrony",
+            "y": 32,
+            "drilldown": "rzepakKosztOchrony"
+          },
+          {
+            "name": "Inne",
+            "y": 23,
+            "drilldown": "rzepakinne"
+          }
+        ]
+      },
+      {
+        "id": "pszenicaAllCosts",
+        "name": "Koszt",
+        "data": [
+          {
+            "name": "Koszt nawozów",
+            "y": 13
+          },
+          {
+            "name": "Koszt ochrony",
+            "y": 22
+          },
+          {
+            "name": "Inne",
+            "y": 34
+          }
+        ]
+      },
+      {
+        "id": "rzepakKosztyNawozow",
+        "name": "Rzepak koszty nawozów",
+        "data": [
+          {
+            "name": "Mustang",
+            "y": 32.4
+          },
+          {
+            "name": "Smail",
+            "y": 45.2
+          },
+          {
+            "name": "Vortes",
+            "y": 65.2
+          }
+        ]
+      }
+    ]
+  }
+}
