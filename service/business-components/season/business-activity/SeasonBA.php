@@ -14,7 +14,7 @@ class SeasonBA
         return $fourtDrildownChartData;
     }
 
-    public static function getPlant_Varietes_Cost_Details_ProHa_ChartData($seasonId, $userId)
+    public  function getPlant_Varietes_Cost_Details_ProHa_ChartData($seasonId, $userId)
     {
         $season = SeasonRepo::findSeasonById($seasonId, $userId);
         $seriesHasMap = array();
@@ -160,7 +160,7 @@ class SeasonBA
         return null;
     }
 
-    public static function getPlant_Varietes_Cost_Details_ProField_ChartData($seasonId, $userId)
+    public  function getPlant_Varietes_Cost_Details_ProField_ChartData($seasonId, $userId)
     {
         $season = SeasonRepo::findSeasonById($seasonId, $userId);
         $seriesHasMap = array();
@@ -306,7 +306,7 @@ class SeasonBA
     }
 
 
-    public static function getPlant_Varietes_Profit_Details_ProField_ChartData($seasonId, $userId)
+    public  function getPlant_Varietes_Profit_Details_ProField_ChartData($seasonId, $userId)
     {
         $season = SeasonRepo::findSeasonById($seasonId, $userId);
         $seriesHasMap = array();
@@ -359,7 +359,7 @@ class SeasonBA
         return null;
     }
 
-    public static function getPlant_Varietes_Profit_Details_ProHa_ChartData($seasonId, $userId)
+    public  function getPlant_Varietes_Profit_Details_ProHa_ChartData($seasonId, $userId)
     {
         $season = SeasonRepo::findSeasonById($seasonId, $userId);
         $seriesHasMap = array();
@@ -415,7 +415,7 @@ class SeasonBA
     }
 
 
-    public static function getPlant_Varietes_Revenues_Details_ProField_ChartData($seasonId, $userId)
+    public  function getPlant_Varietes_Revenues_Details_ProField_ChartData($seasonId, $userId)
     {
         $season = SeasonRepo::findSeasonById($seasonId, $userId);
         $seriesHasMap = array();
@@ -468,7 +468,7 @@ class SeasonBA
         return null;
     }
 
-    public static function getPlant_Varietes_Revenues_Details_ProHa_ChartData($seasonId, $userId)
+    public  function getPlant_Varietes_Revenues_Details_ProHa_ChartData($seasonId, $userId)
     {
         $season = SeasonRepo::findSeasonById($seasonId, $userId);
         $seriesHasMap = array();
@@ -524,7 +524,7 @@ class SeasonBA
     }
 
 
-    public static function getPlant_Varietes_FieldSize_Details_ChartData($seasonId, $userId)
+    public  function getPlant_Varietes_FieldSize_Details_ChartData($seasonId, $userId)
     {
         $season = SeasonRepo::findSeasonById($seasonId, $userId);
         $seriesHasMap = array();
@@ -577,7 +577,7 @@ class SeasonBA
         return null;
     }
 
-    public static function getPlant_Varietes_FieldNumber_Details_ChartData($seasonId, $userId)
+    public  function getPlant_Varietes_FieldNumber_Details_ChartData($seasonId, $userId)
     {
         $season = SeasonRepo::findSeasonById($seasonId, $userId);
         $seriesHasMap = array();
@@ -630,7 +630,7 @@ class SeasonBA
         return null;
     }
 
-    public static function getPlant_Varietes_FieldDescription_Details_ChartData($seasonId, $userId)
+    public  function getPlant_Varietes_FieldDescription_Details_ChartData($seasonId, $userId)
     {
         $season = SeasonRepo::findSeasonById($seasonId, $userId);
         $seriesHasMap = array();
@@ -683,7 +683,7 @@ class SeasonBA
         return null;
     }
 
-    public static function generateSeasonOverviewTable($seasonId, $userId)
+    public  function generateSeasonOverviewTable($seasonId, $userId)
     {
         $season = SeasonRepo::findSeasonById($seasonId, $userId);
         $seriesHasMap = array();
