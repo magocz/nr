@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="Kod refaktoring">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/home/js/HomeControloe.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/home/js/home.js" afterPath="" />
+    <list default="true" id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/index.html" afterPath="$PROJECT_DIR$/client/public/index.html" />
     </list>
     <ignored path="nr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -961,7 +958,7 @@
       <workItem from="1463229422298" duration="2304000" />
       <workItem from="1463234335640" duration="14008000" />
       <workItem from="1463252711031" duration="12642000" />
-      <workItem from="1463325752978" duration="22008000" />
+      <workItem from="1463325752978" duration="22014000" />
     </task>
     <task id="LOCAL-00001" summary="Zaczęto refaktoring kodu w sekcji serwisowej, pliki PHP.">
       <created>1463089722893</created>
@@ -1012,11 +1009,18 @@
       <option name="project" value="LOCAL" />
       <updated>1463347512365</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Kod refaktoring">
+      <created>1463347806680</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1463347806680</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192002000" />
+    <option name="totallyTimeSpent" value="192008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
