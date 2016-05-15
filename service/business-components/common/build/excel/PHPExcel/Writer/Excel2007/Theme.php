@@ -813,6 +813,27 @@ class PHPExcel_Writer_Excel2007_Theme extends PHPExcel_Writer_Excel2007_WriterPa
     }
 
     /**
+     * Write colour scheme to XML format
+     *
+     * @param    PHPExcel_Shared_XMLWriter $objWriter
+     * @return    string                        XML Output
+     * @throws    PHPExcel_Writer_Exception
+     */
+    private function _writeColourScheme($objWriter)
+    {
+        foreach (self::$_colourScheme as $colourName => $colourValue) {
+            $objWriter->startElement('a:' . $colourName);
+
+            $objWriter->startElement('a:srgbClr');
+            $objWriter->writeAttribute('val', $colourValue);
+            $objWriter->endElement();
+
+            $objWriter->endElement();
+        }
+
+    }
+
+    /**
      * Write fonts to XML format
      *
      * @param    PHPExcel_Shared_XMLWriter $objWriter
@@ -842,27 +863,6 @@ class PHPExcel_Writer_Excel2007_Theme extends PHPExcel_Writer_Excel2007_WriterPa
             $objWriter->startElement('a:font');
             $objWriter->writeAttribute('script', $fontScript);
             $objWriter->writeAttribute('typeface', $typeface);
-            $objWriter->endElement();
-        }
-
-    }
-
-    /**
-     * Write colour scheme to XML format
-     *
-     * @param    PHPExcel_Shared_XMLWriter $objWriter
-     * @return    string                        XML Output
-     * @throws    PHPExcel_Writer_Exception
-     */
-    private function _writeColourScheme($objWriter)
-    {
-        foreach (self::$_colourScheme as $colourName => $colourValue) {
-            $objWriter->startElement('a:' . $colourName);
-
-            $objWriter->startElement('a:srgbClr');
-            $objWriter->writeAttribute('val', $colourValue);
-            $objWriter->endElement();
-
             $objWriter->endElement();
         }
 

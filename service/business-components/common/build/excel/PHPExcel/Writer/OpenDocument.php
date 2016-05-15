@@ -76,18 +76,16 @@ class PHPExcel_Writer_OpenDocument extends PHPExcel_Writer_Abstract implements P
     }
 
     /**
-     * Get writer part
+     * Set PHPExcel object
      *
-     * @param  string $pPartName Writer part name
-     * @return PHPExcel_Writer_Excel2007_WriterPart
+     * @param  PHPExcel $pPHPExcel PHPExcel object
+     * @throws PHPExcel_Writer_Exception
+     * @return PHPExcel_Writer_Excel2007
      */
-    public function getWriterPart($pPartName = '')
+    public function setPHPExcel(PHPExcel $pPHPExcel = null)
     {
-        if ($pPartName != '' && isset($this->_writerParts[strtolower($pPartName)])) {
-            return $this->_writerParts[strtolower($pPartName)];
-        } else {
-            return null;
-        }
+        $this->_spreadSheet = $pPHPExcel;
+        return $this;
     }
 
     /**
@@ -171,6 +169,21 @@ class PHPExcel_Writer_OpenDocument extends PHPExcel_Writer_Abstract implements P
     }
 
     /**
+     * Get writer part
+     *
+     * @param  string $pPartName Writer part name
+     * @return PHPExcel_Writer_Excel2007_WriterPart
+     */
+    public function getWriterPart($pPartName = '')
+    {
+        if ($pPartName != '' && isset($this->_writerParts[strtolower($pPartName)])) {
+            return $this->_writerParts[strtolower($pPartName)];
+        } else {
+            return null;
+        }
+    }
+
+    /**
      * Get PHPExcel object
      *
      * @return PHPExcel
@@ -183,18 +196,5 @@ class PHPExcel_Writer_OpenDocument extends PHPExcel_Writer_Abstract implements P
         } else {
             throw new PHPExcel_Writer_Exception('No PHPExcel assigned.');
         }
-    }
-
-    /**
-     * Set PHPExcel object
-     *
-     * @param  PHPExcel $pPHPExcel PHPExcel object
-     * @throws PHPExcel_Writer_Exception
-     * @return PHPExcel_Writer_Excel2007
-     */
-    public function setPHPExcel(PHPExcel $pPHPExcel = null)
-    {
-        $this->_spreadSheet = $pPHPExcel;
-        return $this;
     }
 }

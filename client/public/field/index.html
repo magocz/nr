@@ -5,64 +5,90 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../../src/common/resources/menu.css">
     <link rel="stylesheet" type="text/css" href="../../src/home/resources/home.css">
+    <link rel="stylesheet" type="text/css" href="../../src/fiedl/resources/field.css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../src/common/resources/bootstrap.css">
+    <link rel="stylesheet" href="../../src/common/resources/jquery-ui.css">
+
 
     <script src="../../src/common/js/jquery-2.2.3.js"></script>
-    <script src="../../src/common/js/highcharts/highcharts.js"></script>
-    <script src="../../src/common/js/highcharts/modules/data.js"></script>
-    <script src="../../src/common/js/highcharts/modules/drilldown.js"></script>
+    <script type="text/javascript" src="../../src/common/js/tablesorter/jquery.tablesorter.js"></script>
+
+    <script src="../../src/fiedl/js/OperationsTable.js"></script>
     <script src="../../src/fiedl/js/field.js"></script>
+
 
 </head>
 <body>
-<table id="fieldTable" class="homeTable" align="center">
+<table id="homeTable" class="homeTable" align="center">
     <tr>
         <td colspan="2">
             <div>
                 <ul class="menu">
-                    <li><a href="../">Home</a></li>
-                    <li><a href="#news">Sezony</a></li>
-                    <li style="float:right"><a href="#about">Wyloguj</a></li>
-                    <li style="float:right"><a href="#contact">Twoje dane</a></li>
+                    <li><a class="active" href="/nr/client/public/" style="text-decoration: none">Home</a></li>
+                    <li><a href="/nr/client/public/seasons">Sezony</a></li>
+                    <li style="float:right"><a href="/nr/client/public/authorization">Wyloguj</a></li>
+                    <li style="float:right"><a href="/nr/client/public/user/">Twoje dane</a></li>
                 </ul>
             </div>
         </td>
     </tr>
     <tr>
-        <td class="activeSeasonCell">
-            <div id="activeSeasonChart"></div>
-        </td>
-        <td class="lastOperationCell">
-            <div id="activeSeasonCost"></div>
-        </td>
-    </tr>
-    <tr>
-        <td class="activeSeasonCell">
-            <div class="pipeChartSelect">
-                <select id="activeSeasonChartCombobox">
-                    <option value="plantsToVarietes">Uprawiane rośliny / odmiana rośliny</option>
-                    <option value="plantsToDescription">Uprawiane rośliny / pole (opis)</option>
-                    <option value="plantsToField">Uprawiane rośliny / nr działki</option>
-                </select>
-            </div>
-        </td>
-        <td class="lastOperationCell">
-            <div class="pipeChartSelect">
-                <select id="activeSeasonCostChartCombobox">
-                    <option value="costToPlants">Uprawiane rośliny / koszt</option>
-                    <option value="profitToPlants">Uprawiane rośliny / zysk</option>
-                    <option value="profitToPlantsProHa">Uprawiane rośliny / zysk na hektar</option>
-                </select>
+        <td colspan="2">
+            <div id="fieldHeader" class="fieldHeader">
             </div>
         </td>
     </tr>
+    <tr style="margin-top: 200px">
+        <td>
+            <div class="fieldInfo" id="fieldLeftInfoDivId"></div>
+        </td>
+        <td>
+            <div class="fieldInfo" id="fieldRightInfoDivId"></div>
+        </td>
+    </tr>
+    <tr class="homeTableSearchRow">
+
+        <td class="homeTableSearchCell" colspan="2">
+            <table>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div align="right" class="homeTableSiteCell">
+                            <table align="right">
+                                <tr>
+                                    <td class="homeTableSearchCell" style="width: 33%">
+                                        <div align="left" class="homeTableSearchCell">
+                                            Lista wykonanych zabiegów
+                                        </div>
+                                    </td>
+
+                                    <td style="width: 33%">
+                                        <button onclick="openSaveNewFieldModal()" align="right" type="button"
+                                                class="btn btn-success"
+                                                style="float: right; margin-top: 10px; data-dismiss=" modal">Dodaj zabieg</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
     <tr>
-        <td colspan="2" class="homeTableCell">
-            <div id="homeTableCell" class="homeTableCellDiv">
+        <td colspan="2">
+            <div id="operationsCell" class="homeTableCellDiv">
             </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="footer">Copyright&copy; Neldam Software Solutions</div>
         </td>
     </tr>
 </table>
+<iframe id="my_iframe" style="display:none;"></iframe>
 </body>
 </html>

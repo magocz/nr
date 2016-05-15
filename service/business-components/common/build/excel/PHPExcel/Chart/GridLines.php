@@ -90,19 +90,6 @@ class PHPExcel_Chart_GridLines extends
     }
 
     /**
-     * Change Object State to True
-     *
-     * @return PHPExcel_Chart_GridLines
-     */
-
-    private function _activateObject()
-    {
-        $this->_object_state = TRUE;
-
-        return $this;
-    }
-
-    /**
      * Set Line Color Properties
      *
      * @param string $value
@@ -118,6 +105,19 @@ class PHPExcel_Chart_GridLines extends
             $value,
             $alpha,
             $type);
+    }
+
+    /**
+     * Change Object State to True
+     *
+     * @return PHPExcel_Chart_GridLines
+     */
+
+    private function _activateObject()
+    {
+        $this->_object_state = TRUE;
+
+        return $this;
     }
 
     /**
@@ -211,45 +211,6 @@ class PHPExcel_Chart_GridLines extends
     }
 
     /**
-     * Get Glow Color Property
-     *
-     * @param string $property
-     *
-     * @return string
-     */
-
-    public function getGlowColor($property)
-    {
-        return $this->_glow_properties['color'][$property];
-    }
-
-    /**
-     * Get Glow Size
-     *
-     * @return string
-     */
-
-    public function getGlowSize()
-    {
-        return $this->_glow_properties['size'];
-    }
-
-    /**
-     * Set Glow Size
-     *
-     * @param float $size
-     *
-     * @return PHPExcel_Chart_GridLines
-     */
-
-    private function _setGlowSize($size)
-    {
-        $this->_glow_properties['size'] = $this->getExcelPointsWidth((float)$size);
-
-        return $this;
-    }
-
-    /**
      * Set Glow Color
      *
      * @param string $color
@@ -272,6 +233,45 @@ class PHPExcel_Chart_GridLines extends
         }
 
         return $this;
+    }
+
+    /**
+     * Set Glow Size
+     *
+     * @param float $size
+     *
+     * @return PHPExcel_Chart_GridLines
+     */
+
+    private function _setGlowSize($size)
+    {
+        $this->_glow_properties['size'] = $this->getExcelPointsWidth((float)$size);
+
+        return $this;
+    }
+
+    /**
+     * Get Glow Color Property
+     *
+     * @param string $property
+     *
+     * @return string
+     */
+
+    public function getGlowColor($property)
+    {
+        return $this->_glow_properties['color'][$property];
+    }
+
+    /**
+     * Get Glow Size
+     *
+     * @return string
+     */
+
+    public function getGlowSize()
+    {
+        return $this->_glow_properties['size'];
     }
 
     /**
@@ -317,6 +317,82 @@ class PHPExcel_Chart_GridLines extends
     }
 
     /**
+     * Set Shadow Distance
+     *
+     * @param float $distance
+     *
+     * @return PHPExcel_Chart_GridLines
+     */
+
+    private function _setShadowDistance($distance)
+    {
+        if ($distance !== NULL) {
+            $this->_shadow_properties['distance'] = (string)$this->getExcelPointsWidth($distance);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set Shadow Angle
+     *
+     * @param int $angle
+     *
+     * @return PHPExcel_Chart_GridLines
+     */
+
+    private function _setShadowAngle($angle)
+    {
+        if ($angle !== NULL) {
+            $this->_shadow_properties['direction'] = (string)$this->getExcelPointsAngle($angle);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set Shadow Blur
+     *
+     * @param float $blur
+     *
+     * @return PHPExcel_Chart_GridLines
+     */
+
+    private function _setShadowBlur($blur)
+    {
+        if ($blur !== NULL) {
+            $this->_shadow_properties['blur'] = (string)$this->getExcelPointsWidth($blur);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set Shadow Color
+     *
+     * @param string $color
+     * @param int $alpha
+     * @param string $type
+     *
+     * @return PHPExcel_Chart_GridLines
+     */
+
+    private function _setShadowColor($color, $alpha, $type)
+    {
+        if (!is_null($color)) {
+            $this->_shadow_properties['color']['value'] = (string)$color;
+        }
+        if (!is_null($alpha)) {
+            $this->_shadow_properties['color']['alpha'] = $this->getTrueAlpha((int)$alpha);
+        }
+        if (!is_null($type)) {
+            $this->_shadow_properties['color']['type'] = (string)$type;
+        }
+
+        return $this;
+    }
+
+    /**
      * Set Shadow Presets Properties
      *
      * @param int $shadow_presets
@@ -359,82 +435,6 @@ class PHPExcel_Chart_GridLines extends
                     $reference[$property_key] = $property_val;
                 }
             }
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set Shadow Color
-     *
-     * @param string $color
-     * @param int $alpha
-     * @param string $type
-     *
-     * @return PHPExcel_Chart_GridLines
-     */
-
-    private function _setShadowColor($color, $alpha, $type)
-    {
-        if (!is_null($color)) {
-            $this->_shadow_properties['color']['value'] = (string)$color;
-        }
-        if (!is_null($alpha)) {
-            $this->_shadow_properties['color']['alpha'] = $this->getTrueAlpha((int)$alpha);
-        }
-        if (!is_null($type)) {
-            $this->_shadow_properties['color']['type'] = (string)$type;
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set Shadow Blur
-     *
-     * @param float $blur
-     *
-     * @return PHPExcel_Chart_GridLines
-     */
-
-    private function _setShadowBlur($blur)
-    {
-        if ($blur !== NULL) {
-            $this->_shadow_properties['blur'] = (string)$this->getExcelPointsWidth($blur);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set Shadow Angle
-     *
-     * @param int $angle
-     *
-     * @return PHPExcel_Chart_GridLines
-     */
-
-    private function _setShadowAngle($angle)
-    {
-        if ($angle !== NULL) {
-            $this->_shadow_properties['direction'] = (string)$this->getExcelPointsAngle($angle);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set Shadow Distance
-     *
-     * @param float $distance
-     *
-     * @return PHPExcel_Chart_GridLines
-     */
-
-    private function _setShadowDistance($distance)
-    {
-        if ($distance !== NULL) {
-            $this->_shadow_properties['distance'] = (string)$this->getExcelPointsWidth($distance);
         }
 
         return $this;

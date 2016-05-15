@@ -251,22 +251,6 @@ class PHPExcel_Chart_DataSeriesValues
     }
 
     /**
-     * Get the first Series Data value
-     *
-     * @return    mixed
-     */
-    public function getDataValue()
-    {
-        $count = count($this->_dataValues);
-        if ($count == 0) {
-            return null;
-        } elseif ($count == 1) {
-            return $this->_dataValues[0];
-        }
-        return $this->_dataValues;
-    }
-
-    /**
      * Set Series Data Values
      *
      * @param    array $dataValues
@@ -287,9 +271,20 @@ class PHPExcel_Chart_DataSeriesValues
         return $this;
     }
 
-    private function _stripNulls($var)
+    /**
+     * Get the first Series Data value
+     *
+     * @return    mixed
+     */
+    public function getDataValue()
     {
-        return $var !== NULL;
+        $count = count($this->_dataValues);
+        if ($count == 0) {
+            return null;
+        } elseif ($count == 1) {
+            return $this->_dataValues[0];
+        }
+        return $this->_dataValues;
     }
 
     public function refresh(PHPExcel_Worksheet $worksheet, $flatten = TRUE)
@@ -338,6 +333,11 @@ class PHPExcel_Chart_DataSeriesValues
             $this->_pointCount = count($this->_dataValues);
         }
 
+    }
+
+    private function _stripNulls($var)
+    {
+        return $var !== NULL;
     }
 
 }

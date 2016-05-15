@@ -1,7 +1,7 @@
 <!--edit field modal dialog-->
 <div class="modal fade" id="addOperationdModal" role="dialog" data-backdrop="static"
      data-keyboard="false">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
 
         <!-- Modal content-->
         <div class="modal-content">
@@ -16,10 +16,8 @@
                         </td>
                         <td class="editFieldInput">
                             <input id="operationDate" class="fieldEditInputs" type="text"
-                                   style="z-index:1151 !important;" readonly="true">
-                        </td>
-                        <td class="editFieldWarning">
-                            <div id="operationDateWarning" class="fieldEditInputs" type="text"></div>
+                                   style="z-index:1151 !important;" readonly="true"
+                                   onkeyup="checkRequiredFieldInAddOperationModal()">
                         </td>
                     </tr>
                     <tr>
@@ -27,10 +25,19 @@
                             <div>Nazwa środka:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="operationMeansNameInputs">
+                            <input class="fieldEditInputs" type="text" id="operationMeansNameInputs"
+                                   onkeyup="checkRequiredFieldInAddOperationModal()">
                         </td>
-                        <td class="editFieldWarning">
-                            <div class="fieldEditInputs" type="text" id="operationMeansNameInputsWarning"></div>
+                    </tr>
+                    <tr>
+                        <td class="editFieldLable">
+                            <div>Rodzaj środka:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <select id="operationType" style="padding: 3px; margin-bottom: 5px; width: 368px"  >
+                                <option value="plantProtection">Ochrona roślin</option>
+                                <option value="fertilizer">Nawóz</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>
@@ -39,14 +46,11 @@
                         </td>
                         <td class="editFieldInput">
                             <input class="fieldEditInputs" type="text" id="operationMeansDoseInputs"
-                                   value="0.0" style="width: 50%">
+                                   value="0.0" style="width: 81%" onkeyup="checkRequiredFieldInAddOperationModal()">
                             <select id="operationMeansDoseOption" style="padding: 3px">
                                 <option value="lProHa">l/ha</option>
                                 <option value="kgProHa">kg/ha</option>
                             </select>
-                        </td>
-                        <td class="editFieldWarning">
-                            <div class="fieldEditInputs" type="text" id="operationMeansDoseInputsWarning"></div>
                         </td>
                     </tr>
                     <tr>
@@ -54,10 +58,8 @@
                             <div>Powód stosowania:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="operationCauseInputs" value="Nie określono">
-                        </td>
-                        <td class="editFieldWarning">
-                            <div class="fieldEditInputs" type="text" id="operationCauseInputsWarning"></div>
+                            <input class="fieldEditInputs" type="text" id="operationCauseInputs" value="Nie określono"
+                                   onkeyup="checkRequiredFieldInAddOperationModal()">
                         </td>
                     </tr>
                     <tr>
@@ -65,10 +67,8 @@
                             <div>Ekonomiczna szkodliwość:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="operationEcoHarmInputs" value="0.0">
-                        </td>
-                        <td class="editFieldWarning">
-                            <div class="fieldEditInputs" type="text" id="operationEcoHarmInputsWarning"></div>
+                            <input class="fieldEditInputs" type="text" id="operationEcoHarmInputs" value="0.0"
+                                   onkeyup="checkRequiredFieldInAddOperationModal()">
                         </td>
                     </tr>
                     <tr>
@@ -76,10 +76,8 @@
                             <div>Koszt srodka na hektar:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="operationCostProHaInputs" value="0.0">
-                        </td>
-                        <td class="editFieldWarning">
-                            <div class="fieldEditInputs" type="text" id="operationCostProHaInputsWarning"></div>
+                            <input class="fieldEditInputs" type="text" id="operationCostProHaInputs" value="0.0"
+                                   onkeyup="checkRequiredFieldInAddOperationModal()">
                         </td>
                     </tr>
                     <tr>
@@ -87,16 +85,14 @@
                             <div>Komentarz:</div>
                         </td>
                         <td class="editFieldInput">
-                            <textarea class="fieldEditInputs" type="te" id="operationCommentInputs" maxlength="2000" style="resize: none"/>
-                        </td>
-                        <td class="editFieldWarning">
-                            <div class="fieldEditInputs" type="text" id="operationCommentInputsWarning"></div>
+                            <textarea class="fieldEditInputs" type="te" id="operationCommentInputs" maxlength="2000"
+                                      style="resize: none"/>
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="modal-footer">
-                <button id="addOperationBtn" type="button" class="btn btn-success">Dodaj</button>
+                <button id="addOperationBtn" type="button" class="btn btn-success" disabled="true">Dodaj</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
             </div>
         </div>

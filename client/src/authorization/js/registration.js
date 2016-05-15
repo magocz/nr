@@ -37,7 +37,7 @@ $(function () {
         if (isInputOK) {
             var formData = $('form').serialize();
             $.ajax({
-                url: "service/rest/registration.php",
+                url: "../../service/rest/user/registration.php",
                 data: 'login=' + login + '&password=' + CryptoJS.MD5(password) + '&mail=' + mail,
                 type: "POST",
                 contentType: "application/x-www-form-urlencoded",

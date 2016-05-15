@@ -77,13 +77,6 @@ abstract class PHPExcel_Worksheet_CellIterator
     }
 
     /**
-     * Validate start/end values for "IterateOnlyExistingCells" mode, and adjust if necessary
-     *
-     * @throws PHPExcel_Exception
-     */
-    abstract protected function adjustForExistingOnlyRange();
-
-    /**
      * Set the iterator to loop only existing cells
      *
      * @param    boolean $value
@@ -95,4 +88,11 @@ abstract class PHPExcel_Worksheet_CellIterator
 
         $this->adjustForExistingOnlyRange();
     }
+
+    /**
+     * Validate start/end values for "IterateOnlyExistingCells" mode, and adjust if necessary
+     *
+     * @throws PHPExcel_Exception
+     */
+    abstract protected function adjustForExistingOnlyRange();
 }

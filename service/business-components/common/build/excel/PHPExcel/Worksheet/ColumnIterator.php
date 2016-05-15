@@ -83,11 +83,17 @@ class PHPExcel_Worksheet_ColumnIterator implements Iterator
     }
 
     /**
-     * Destructor
+     * (Re)Set the end column
+     *
+     * @param string $endColumn The column address at which to stop iterating
+     * @return PHPExcel_Worksheet_ColumnIterator
      */
-    public function __destruct()
+    public function resetEnd($endColumn = null)
     {
-        unset($this->_subject);
+        $endColumn = ($endColumn) ? $endColumn : $this->_subject->getHighestColumn();
+        $this->_endColumn = PHPExcel_Cell::columnIndexFromString($endColumn) - 1;
+
+        return $this;
     }
 
     /**
@@ -101,20 +107,6 @@ class PHPExcel_Worksheet_ColumnIterator implements Iterator
         $startColumnIndex = PHPExcel_Cell::columnIndexFromString($startColumn) - 1;
         $this->_startColumn = $startColumnIndex;
         $this->seek($startColumn);
-
-        return $this;
-    }
-
-    /**
-     * (Re)Set the end column
-     *
-     * @param string $endColumn The column address at which to stop iterating
-     * @return PHPExcel_Worksheet_ColumnIterator
-     */
-    public function resetEnd($endColumn = null)
-    {
-        $endColumn = ($endColumn) ? $endColumn : $this->_subject->getHighestColumn();
-        $this->_endColumn = PHPExcel_Cell::columnIndexFromString($endColumn) - 1;
 
         return $this;
     }
@@ -135,6 +127,14 @@ class PHPExcel_Worksheet_ColumnIterator implements Iterator
         $this->_position = $column;
 
         return $this;
+    }
+
+    /**
+     * Destructor
+     */
+    public function __destruct()
+    {
+        unset($this->_subject);
     }
 
     /**

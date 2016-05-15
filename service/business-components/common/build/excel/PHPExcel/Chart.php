@@ -515,6 +515,11 @@ class PHPExcel_Chart
         );
     }
 
+    public function getTopLeftXOffset()
+    {
+        return $this->_topLeftXOffset;
+    }
+
     public function setTopLeftXOffset($xOffset)
     {
         $this->_topLeftXOffset = $xOffset;
@@ -522,9 +527,9 @@ class PHPExcel_Chart
         return $this;
     }
 
-    public function getTopLeftXOffset()
+    public function getTopLeftYOffset()
     {
-        return $this->_topLeftXOffset;
+        return $this->_topLeftYOffset;
     }
 
     public function setTopLeftYOffset($yOffset)
@@ -532,11 +537,6 @@ class PHPExcel_Chart
         $this->_topLeftYOffset = $yOffset;
 
         return $this;
-    }
-
-    public function getTopLeftYOffset()
-    {
-        return $this->_topLeftYOffset;
     }
 
     /**
@@ -617,21 +617,14 @@ class PHPExcel_Chart
         );
     }
 
-    public function setBottomRightXOffset($xOffset)
-    {
-        $this->_bottomRightXOffset = $xOffset;
-
-        return $this;
-    }
-
     public function getBottomRightXOffset()
     {
         return $this->_bottomRightXOffset;
     }
 
-    public function setBottomRightYOffset($yOffset)
+    public function setBottomRightXOffset($xOffset)
     {
-        $this->_bottomRightYOffset = $yOffset;
+        $this->_bottomRightXOffset = $xOffset;
 
         return $this;
     }
@@ -641,12 +634,11 @@ class PHPExcel_Chart
         return $this->_bottomRightYOffset;
     }
 
-
-    public function refresh()
+    public function setBottomRightYOffset($yOffset)
     {
-        if ($this->_worksheet !== NULL) {
-            $this->_plotArea->refresh($this->_worksheet);
-        }
+        $this->_bottomRightYOffset = $yOffset;
+
+        return $this;
     }
 
     public function render($outputDestination = null)
@@ -672,6 +664,13 @@ class PHPExcel_Chart
             $outputDestination = null;
         }
         return $renderer->render($outputDestination);
+    }
+
+    public function refresh()
+    {
+        if ($this->_worksheet !== NULL) {
+            $this->_plotArea->refresh($this->_worksheet);
+        }
     }
 
 }

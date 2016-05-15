@@ -638,10 +638,10 @@
         },
         credits: {
             /*enabled: !0,
-            text: "Highcharts.com",
-            href: "http://www.highcharts.com",
-            position: {align: "right", x: -10, verticalAlign: "bottom", y: -5},
-            style: {cursor: "pointer", color: "#909090", fontSize: "9px"}*/
+             text: "Highcharts.com",
+             href: "http://www.highcharts.com",
+             position: {align: "right", x: -10, verticalAlign: "bottom", y: -5},
+             style: {cursor: "pointer", color: "#909090", fontSize: "9px"}*/
         }
     };
     var ba = S.plotOptions, ea = ba.line;

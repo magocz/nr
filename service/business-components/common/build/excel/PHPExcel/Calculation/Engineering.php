@@ -684,100 +684,78 @@ class PHPExcel_Calculation_Engineering
             )
         )
     );
-
-
-    /**
-     * _parseComplex
-     *
-     * Parses a complex number into its real and imaginary parts, and an I or J suffix
-     *
-     * @param    string $complexNumber The complex number
-     * @return    string[]    Indexed on "real", "imaginary" and "suffix"
-     */
-    public static function _parseComplex($complexNumber)
-    {
-        $workString = (string)$complexNumber;
-
-        $realNumber = $imaginary = 0;
-        //	Extract the suffix, if there is one
-        $suffix = substr($workString, -1);
-        if (!is_numeric($suffix)) {
-            $workString = substr($workString, 0, -1);
-        } else {
-            $suffix = '';
-        }
-
-        //	Split the input into its Real and Imaginary components
-        $leadingSign = 0;
-        if (strlen($workString) > 0) {
-            $leadingSign = (($workString{0} == '+') || ($workString{0} == '-')) ? 1 : 0;
-        }
-        $power = '';
-        $realNumber = strtok($workString, '+-');
-        if (strtoupper(substr($realNumber, -1)) == 'E') {
-            $power = strtok('+-');
-            ++$leadingSign;
-        }
-
-        $realNumber = substr($workString, 0, strlen($realNumber) + strlen($power) + $leadingSign);
-
-        if ($suffix != '') {
-            $imaginary = substr($workString, strlen($realNumber));
-
-            if (($imaginary == '') && (($realNumber == '') || ($realNumber == '+') || ($realNumber == '-'))) {
-                $imaginary = $realNumber . '1';
-                $realNumber = '0';
-            } else if ($imaginary == '') {
-                $imaginary = $realNumber;
-                $realNumber = '0';
-            } elseif (($imaginary == '+') || ($imaginary == '-')) {
-                $imaginary .= '1';
-            }
-        }
-
-        return array('real' => $realNumber,
-            'imaginary' => $imaginary,
-            'suffix' => $suffix
-        );
-    }    //	function _parseComplex()
-
+    private static $_two_sqrtpi = 1.128379167095512574;    //	function _parseComplex()
+    private static $_one_sqrtpi = 0.564189583547756287;
 
     /**
-     * Cleans the leading characters in a complex number string
+     *    BESSELK
      *
-     * @param    string $complexNumber The complex number to clean
-     * @return    string        The "cleaned" complex number
+     *    Returns the modified Bessel function Kn(x), which is equivalent to the Bessel functions evaluated
+     *        for purely imaginary arguments.
+     *
+     *    Excel Function:
+     *        BESSELK(x,ord)
+     *
+     * @access    public
+     * @category Engineering Functions
+     * @param    float $x The value at which to evaluate the function.
+     *                                If x is nonnumeric, BESSELK returns the #VALUE! error value.
+     * @param    integer $ord The order of the Bessel function. If n is not an integer, it is truncated.
+     *                                If $ord is nonnumeric, BESSELK returns the #VALUE! error value.
+     *                                If $ord < 0, BESSELK returns the #NUM! error value.
+     * @return    float
+     *
      */
-    private static function _cleanComplex($complexNumber)
+    public static function BESSELK($x, $ord)
     {
-        if ($complexNumber{0} == '+') $complexNumber = substr($complexNumber, 1);
-        if ($complexNumber{0} == '0') $complexNumber = substr($complexNumber, 1);
-        if ($complexNumber{0} == '.') $complexNumber = '0' . $complexNumber;
-        if ($complexNumber{0} == '+') $complexNumber = substr($complexNumber, 1);
-        return $complexNumber;
-    }
+        $x = (is_null($x)) ? 0.0 : PHPExcel_Calculation_Functions::flattenSingleValue($x);
+        $ord = (is_null($ord)) ? 0.0 : PHPExcel_Calculation_Functions::flattenSingleValue($ord);
 
-    /**
-     * Formats a number base string value with leading zeroes
-     *
-     * @param    string $xVal The "number" to pad
-     * @param    integer $places The length that we want to pad this value
-     * @return    string        The padded "number"
-     */
-    private static function _nbrConversionFormat($xVal, $places)
-    {
-        if (!is_null($places)) {
-            if (strlen($xVal) <= $places) {
-                return substr(str_pad($xVal, $places, '0', STR_PAD_LEFT), -10);
-            } else {
+        if ((is_numeric($x)) && (is_numeric($ord))) {
+            if (($ord < 0) || ($x == 0.0)) {
                 return PHPExcel_Calculation_Functions::NaN();
             }
-        }
 
-        return substr($xVal, -10);
+            switch (floor($ord)) {
+                case 0 :
+                    return self::_Besselk0($x);
+                    break;
+                case 1 :
+                    return self::_Besselk1($x);
+                    break;
+                default :
+                    $fTox = 2 / $x;
+                    $fBkm = self::_Besselk0($x);
+                    $fBk = self::_Besselk1($x);
+                    for ($n = 1; $n < $ord; ++$n) {
+                        $fBkp = $fBkm + $n * $fTox * $fBk;
+                        $fBkm = $fBk;
+                        $fBk = $fBkp;
+                    }
+            }
+            return (is_nan($fBk)) ? PHPExcel_Calculation_Functions::NaN() : $fBk;
+        }
+        return PHPExcel_Calculation_Functions::VALUE();
     }    //	function _nbrConversionFormat()
 
-    /**
+    private static function _Besselk0($fNum)
+    {
+        if ($fNum <= 2) {
+            $fNum2 = $fNum * 0.5;
+            $y = ($fNum2 * $fNum2);
+            $fRet = -log($fNum2) * self::BESSELI($fNum, 0) +
+                (-0.57721566 + $y * (0.42278420 + $y * (0.23069756 + $y * (0.3488590e-1 + $y * (0.262698e-2 + $y *
+                                    (0.10750e-3 + $y * 0.74e-5))))));
+        } else {
+            $y = 2 / $fNum;
+            $fRet = exp(-$fNum) / sqrt($fNum) *
+                (1.25331414 + $y * (-0.7832358e-1 + $y * (0.2189568e-1 + $y * (-0.1062446e-1 + $y *
+                                (0.587872e-2 + $y * (-0.251540e-2 + $y * 0.53208e-3))))));
+        }
+        return $fRet;
+    }    //	function BESSELI()
+
+/**
      *    BESSELI
      *
      *    Returns the modified Bessel function In(x), which is equivalent to the Bessel function evaluated
@@ -829,10 +807,94 @@ class PHPExcel_Calculation_Engineering
             return (is_nan($fResult)) ? PHPExcel_Calculation_Functions::NaN() : $fResult;
         }
         return PHPExcel_Calculation_Functions::VALUE();
-    }    //	function BESSELI()
+    }    //	function BESSELJ()
 
+private static function _Besselk1($fNum)
+    {
+        if ($fNum <= 2) {
+            $fNum2 = $fNum * 0.5;
+            $y = ($fNum2 * $fNum2);
+            $fRet = log($fNum2) * self::BESSELI($fNum, 1) +
+                (1 + $y * (0.15443144 + $y * (-0.67278579 + $y * (-0.18156897 + $y * (-0.1919402e-1 + $y *
+                                    (-0.110404e-2 + $y * (-0.4686e-4))))))) / $fNum;
+        } else {
+            $y = 2 / $fNum;
+            $fRet = exp(-$fNum) / sqrt($fNum) *
+                (1.25331414 + $y * (0.23498619 + $y * (-0.3655620e-1 + $y * (0.1504268e-1 + $y * (-0.780353e-2 + $y *
+                                    (0.325614e-2 + $y * (-0.68245e-3)))))));
+        }
+        return $fRet;
+    }    //	function _Besselk0()
 
-    /**
+/**
+     *    BESSELY
+     *
+     *    Returns the Bessel function, which is also called the Weber function or the Neumann function.
+     *
+     *    Excel Function:
+     *        BESSELY(x,ord)
+     *
+     * @access    public
+     * @category Engineering Functions
+     * @param    float $x The value at which to evaluate the function.
+     *                                If x is nonnumeric, BESSELK returns the #VALUE! error value.
+     * @param    integer $ord The order of the Bessel function. If n is not an integer, it is truncated.
+     *                                If $ord is nonnumeric, BESSELK returns the #VALUE! error value.
+     *                                If $ord < 0, BESSELK returns the #NUM! error value.
+     *
+     * @return    float
+     */
+    public static function BESSELY($x, $ord)
+    {
+        $x = (is_null($x)) ? 0.0 : PHPExcel_Calculation_Functions::flattenSingleValue($x);
+        $ord = (is_null($ord)) ? 0.0 : PHPExcel_Calculation_Functions::flattenSingleValue($ord);
+
+        if ((is_numeric($x)) && (is_numeric($ord))) {
+            if (($ord < 0) || ($x == 0.0)) {
+                return PHPExcel_Calculation_Functions::NaN();
+            }
+
+            switch (floor($ord)) {
+                case 0 :
+                    return self::_Bessely0($x);
+                    break;
+                case 1 :
+                    return self::_Bessely1($x);
+                    break;
+                default:
+                    $fTox = 2 / $x;
+                    $fBym = self::_Bessely0($x);
+                    $fBy = self::_Bessely1($x);
+                    for ($n = 1; $n < $ord; ++$n) {
+                        $fByp = $n * $fTox * $fBy - $fBym;
+                        $fBym = $fBy;
+                        $fBy = $fByp;
+                    }
+            }
+            return (is_nan($fBy)) ? PHPExcel_Calculation_Functions::NaN() : $fBy;
+        }
+        return PHPExcel_Calculation_Functions::VALUE();
+    }    //	function _Besselk1()
+
+private static function _Bessely0($fNum)
+    {
+        if ($fNum < 8.0) {
+            $y = ($fNum * $fNum);
+            $f1 = -2957821389.0 + $y * (7062834065.0 + $y * (-512359803.6 + $y * (10879881.29 + $y * (-86327.92757 + $y * 228.4622733))));
+            $f2 = 40076544269.0 + $y * (745249964.8 + $y * (7189466.438 + $y * (47447.26470 + $y * (226.1030244 + $y))));
+            $fRet = $f1 / $f2 + 0.636619772 * self::BESSELJ($fNum, 0) * log($fNum);
+        } else {
+            $z = 8.0 / $fNum;
+            $y = ($z * $z);
+            $xx = $fNum - 0.785398164;
+            $f1 = 1 + $y * (-0.1098628627e-2 + $y * (0.2734510407e-4 + $y * (-0.2073370639e-5 + $y * 0.2093887211e-6)));
+            $f2 = -0.1562499995e-1 + $y * (0.1430488765e-3 + $y * (-0.6911147651e-5 + $y * (0.7621095161e-6 + $y * (-0.934945152e-7))));
+            $fRet = sqrt(0.636619772 / $fNum) * (sin($xx) * $f1 + $z * cos($xx) * $f2);
+        }
+        return $fRet;
+    }    //	function BESSELK()
+
+/**
      *    BESSELJ
      *
      *    Returns the Bessel function
@@ -884,117 +946,9 @@ class PHPExcel_Calculation_Engineering
             return (is_nan($fResult)) ? PHPExcel_Calculation_Functions::NaN() : $fResult;
         }
         return PHPExcel_Calculation_Functions::VALUE();
-    }    //	function BESSELJ()
-
-
-    private static function _Besselk0($fNum)
-    {
-        if ($fNum <= 2) {
-            $fNum2 = $fNum * 0.5;
-            $y = ($fNum2 * $fNum2);
-            $fRet = -log($fNum2) * self::BESSELI($fNum, 0) +
-                (-0.57721566 + $y * (0.42278420 + $y * (0.23069756 + $y * (0.3488590e-1 + $y * (0.262698e-2 + $y *
-                                    (0.10750e-3 + $y * 0.74e-5))))));
-        } else {
-            $y = 2 / $fNum;
-            $fRet = exp(-$fNum) / sqrt($fNum) *
-                (1.25331414 + $y * (-0.7832358e-1 + $y * (0.2189568e-1 + $y * (-0.1062446e-1 + $y *
-                                (0.587872e-2 + $y * (-0.251540e-2 + $y * 0.53208e-3))))));
-        }
-        return $fRet;
-    }    //	function _Besselk0()
-
-
-    private static function _Besselk1($fNum)
-    {
-        if ($fNum <= 2) {
-            $fNum2 = $fNum * 0.5;
-            $y = ($fNum2 * $fNum2);
-            $fRet = log($fNum2) * self::BESSELI($fNum, 1) +
-                (1 + $y * (0.15443144 + $y * (-0.67278579 + $y * (-0.18156897 + $y * (-0.1919402e-1 + $y *
-                                    (-0.110404e-2 + $y * (-0.4686e-4))))))) / $fNum;
-        } else {
-            $y = 2 / $fNum;
-            $fRet = exp(-$fNum) / sqrt($fNum) *
-                (1.25331414 + $y * (0.23498619 + $y * (-0.3655620e-1 + $y * (0.1504268e-1 + $y * (-0.780353e-2 + $y *
-                                    (0.325614e-2 + $y * (-0.68245e-3)))))));
-        }
-        return $fRet;
-    }    //	function _Besselk1()
-
-
-    /**
-     *    BESSELK
-     *
-     *    Returns the modified Bessel function Kn(x), which is equivalent to the Bessel functions evaluated
-     *        for purely imaginary arguments.
-     *
-     *    Excel Function:
-     *        BESSELK(x,ord)
-     *
-     * @access    public
-     * @category Engineering Functions
-     * @param    float $x The value at which to evaluate the function.
-     *                                If x is nonnumeric, BESSELK returns the #VALUE! error value.
-     * @param    integer $ord The order of the Bessel function. If n is not an integer, it is truncated.
-     *                                If $ord is nonnumeric, BESSELK returns the #VALUE! error value.
-     *                                If $ord < 0, BESSELK returns the #NUM! error value.
-     * @return    float
-     *
-     */
-    public static function BESSELK($x, $ord)
-    {
-        $x = (is_null($x)) ? 0.0 : PHPExcel_Calculation_Functions::flattenSingleValue($x);
-        $ord = (is_null($ord)) ? 0.0 : PHPExcel_Calculation_Functions::flattenSingleValue($ord);
-
-        if ((is_numeric($x)) && (is_numeric($ord))) {
-            if (($ord < 0) || ($x == 0.0)) {
-                return PHPExcel_Calculation_Functions::NaN();
-            }
-
-            switch (floor($ord)) {
-                case 0 :
-                    return self::_Besselk0($x);
-                    break;
-                case 1 :
-                    return self::_Besselk1($x);
-                    break;
-                default :
-                    $fTox = 2 / $x;
-                    $fBkm = self::_Besselk0($x);
-                    $fBk = self::_Besselk1($x);
-                    for ($n = 1; $n < $ord; ++$n) {
-                        $fBkp = $fBkm + $n * $fTox * $fBk;
-                        $fBkm = $fBk;
-                        $fBk = $fBkp;
-                    }
-            }
-            return (is_nan($fBk)) ? PHPExcel_Calculation_Functions::NaN() : $fBk;
-        }
-        return PHPExcel_Calculation_Functions::VALUE();
-    }    //	function BESSELK()
-
-
-    private static function _Bessely0($fNum)
-    {
-        if ($fNum < 8.0) {
-            $y = ($fNum * $fNum);
-            $f1 = -2957821389.0 + $y * (7062834065.0 + $y * (-512359803.6 + $y * (10879881.29 + $y * (-86327.92757 + $y * 228.4622733))));
-            $f2 = 40076544269.0 + $y * (745249964.8 + $y * (7189466.438 + $y * (47447.26470 + $y * (226.1030244 + $y))));
-            $fRet = $f1 / $f2 + 0.636619772 * self::BESSELJ($fNum, 0) * log($fNum);
-        } else {
-            $z = 8.0 / $fNum;
-            $y = ($z * $z);
-            $xx = $fNum - 0.785398164;
-            $f1 = 1 + $y * (-0.1098628627e-2 + $y * (0.2734510407e-4 + $y * (-0.2073370639e-5 + $y * 0.2093887211e-6)));
-            $f2 = -0.1562499995e-1 + $y * (0.1430488765e-3 + $y * (-0.6911147651e-5 + $y * (0.7621095161e-6 + $y * (-0.934945152e-7))));
-            $fRet = sqrt(0.636619772 / $fNum) * (sin($xx) * $f1 + $z * cos($xx) * $f2);
-        }
-        return $fRet;
     }    //	function _Bessely0()
 
-
-    private static function _Bessely1($fNum)
+private static function _Bessely1($fNum)
     {
         if ($fNum < 8.0) {
             $y = ($fNum * $fNum);
@@ -1009,59 +963,7 @@ class PHPExcel_Calculation_Engineering
         return $fRet;
     }    //	function _Bessely1()
 
-
-    /**
-     *    BESSELY
-     *
-     *    Returns the Bessel function, which is also called the Weber function or the Neumann function.
-     *
-     *    Excel Function:
-     *        BESSELY(x,ord)
-     *
-     * @access    public
-     * @category Engineering Functions
-     * @param    float $x The value at which to evaluate the function.
-     *                                If x is nonnumeric, BESSELK returns the #VALUE! error value.
-     * @param    integer $ord The order of the Bessel function. If n is not an integer, it is truncated.
-     *                                If $ord is nonnumeric, BESSELK returns the #VALUE! error value.
-     *                                If $ord < 0, BESSELK returns the #NUM! error value.
-     *
-     * @return    float
-     */
-    public static function BESSELY($x, $ord)
-    {
-        $x = (is_null($x)) ? 0.0 : PHPExcel_Calculation_Functions::flattenSingleValue($x);
-        $ord = (is_null($ord)) ? 0.0 : PHPExcel_Calculation_Functions::flattenSingleValue($ord);
-
-        if ((is_numeric($x)) && (is_numeric($ord))) {
-            if (($ord < 0) || ($x == 0.0)) {
-                return PHPExcel_Calculation_Functions::NaN();
-            }
-
-            switch (floor($ord)) {
-                case 0 :
-                    return self::_Bessely0($x);
-                    break;
-                case 1 :
-                    return self::_Bessely1($x);
-                    break;
-                default:
-                    $fTox = 2 / $x;
-                    $fBym = self::_Bessely0($x);
-                    $fBy = self::_Bessely1($x);
-                    for ($n = 1; $n < $ord; ++$n) {
-                        $fByp = $n * $fTox * $fBy - $fBym;
-                        $fBym = $fBy;
-                        $fBy = $fByp;
-                    }
-            }
-            return (is_nan($fBy)) ? PHPExcel_Calculation_Functions::NaN() : $fBy;
-        }
-        return PHPExcel_Calculation_Functions::VALUE();
-    }    //	function BESSELY()
-
-
-    /**
+/**
      * BINTODEC
      *
      * Return a binary value as decimal.
@@ -1105,10 +1007,9 @@ class PHPExcel_Calculation_Engineering
             return '-' . (512 - bindec($x));
         }
         return bindec($x);
-    }    //	function BINTODEC()
+    }    //	function BESSELY()
 
-
-    /**
+/**
      * BINTOHEX
      *
      * Return a binary value as hex.
@@ -1160,10 +1061,29 @@ class PHPExcel_Calculation_Engineering
         $hexVal = (string)strtoupper(dechex(bindec($x)));
 
         return self::_nbrConversionFormat($hexVal, $places);
+    }    //	function BINTODEC()
+
+/**
+     * Formats a number base string value with leading zeroes
+     *
+     * @param    string $xVal The "number" to pad
+     * @param    integer $places The length that we want to pad this value
+     * @return    string        The padded "number"
+     */
+    private static function _nbrConversionFormat($xVal, $places)
+    {
+        if (!is_null($places)) {
+            if (strlen($xVal) <= $places) {
+                return substr(str_pad($xVal, $places, '0', STR_PAD_LEFT), -10);
+            } else {
+                return PHPExcel_Calculation_Functions::NaN();
+            }
+        }
+
+        return substr($xVal, -10);
     }    //	function BINTOHEX()
 
-
-    /**
+/**
      * BINTOOCT
      *
      * Return a binary value as octal.
@@ -1650,8 +1570,193 @@ class PHPExcel_Calculation_Engineering
         return self::_nbrConversionFormat($hexVal, $places);
     }    //	function OCTTOHEX()
 
+/**
+     * IMAGINARY
+     *
+     * Returns the imaginary coefficient of a complex number in x + yi or x + yj text format.
+     *
+     * Excel Function:
+     *        IMAGINARY(complexNumber)
+     *
+     * @access    public
+     * @category Engineering Functions
+     * @param    string $complexNumber The complex number for which you want the imaginary
+     *                                        coefficient.
+     * @return    float
+     */
+    public static function IMAGINARY($complexNumber)
+    {
+        $complexNumber = PHPExcel_Calculation_Functions::flattenSingleValue($complexNumber);
+
+        $parsedComplex = self::_parseComplex($complexNumber);
+        return $parsedComplex['imaginary'];
+    }    //	function COMPLEX()
+
+/**
+     * _parseComplex
+     *
+     * Parses a complex number into its real and imaginary parts, and an I or J suffix
+     *
+     * @param    string $complexNumber The complex number
+     * @return    string[]    Indexed on "real", "imaginary" and "suffix"
+     */
+    public static function _parseComplex($complexNumber)
+    {
+        $workString = (string)$complexNumber;
+
+        $realNumber = $imaginary = 0;
+        //	Extract the suffix, if there is one
+        $suffix = substr($workString, -1);
+        if (!is_numeric($suffix)) {
+            $workString = substr($workString, 0, -1);
+        } else {
+            $suffix = '';
+        }
+
+        //	Split the input into its Real and Imaginary components
+        $leadingSign = 0;
+        if (strlen($workString) > 0) {
+            $leadingSign = (($workString{0} == '+') || ($workString{0} == '-')) ? 1 : 0;
+        }
+        $power = '';
+        $realNumber = strtok($workString, '+-');
+        if (strtoupper(substr($realNumber, -1)) == 'E') {
+            $power = strtok('+-');
+            ++$leadingSign;
+        }
+
+        $realNumber = substr($workString, 0, strlen($realNumber) + strlen($power) + $leadingSign);
+
+        if ($suffix != '') {
+            $imaginary = substr($workString, strlen($realNumber));
+
+            if (($imaginary == '') && (($realNumber == '') || ($realNumber == '+') || ($realNumber == '-'))) {
+                $imaginary = $realNumber . '1';
+                $realNumber = '0';
+            } else if ($imaginary == '') {
+                $imaginary = $realNumber;
+                $realNumber = '0';
+            } elseif (($imaginary == '+') || ($imaginary == '-')) {
+                $imaginary .= '1';
+            }
+        }
+
+        return array('real' => $realNumber,
+            'imaginary' => $imaginary,
+            'suffix' => $suffix
+        );
+    }    //	function IMAGINARY()
+
+/**
+     * IMREAL
+     *
+     * Returns the real coefficient of a complex number in x + yi or x + yj text format.
+     *
+     * Excel Function:
+     *        IMREAL(complexNumber)
+     *
+     * @access    public
+     * @category Engineering Functions
+     * @param    string $complexNumber The complex number for which you want the real coefficient.
+     * @return    float
+     */
+    public static function IMREAL($complexNumber)
+    {
+        $complexNumber = PHPExcel_Calculation_Functions::flattenSingleValue($complexNumber);
+
+        $parsedComplex = self::_parseComplex($complexNumber);
+        return $parsedComplex['real'];
+    }    //	function IMREAL()
+
 
     /**
+     * IMABS
+     *
+     * Returns the absolute value (modulus) of a complex number in x + yi or x + yj text format.
+     *
+     * Excel Function:
+     *        IMABS(complexNumber)
+     *
+     * @param    string $complexNumber The complex number for which you want the absolute value.
+     * @return    float
+     */
+    public static function IMABS($complexNumber)
+    {
+        $complexNumber = PHPExcel_Calculation_Functions::flattenSingleValue($complexNumber);
+
+        $parsedComplex = self::_parseComplex($complexNumber);
+
+        return sqrt(($parsedComplex['real'] * $parsedComplex['real']) + ($parsedComplex['imaginary'] * $parsedComplex['imaginary']));
+    }    //	function IMABS()
+
+/**
+     * IMCOS
+     *
+     * Returns the cosine of a complex number in x + yi or x + yj text format.
+     *
+     * Excel Function:
+     *        IMCOS(complexNumber)
+     *
+     * @param    string $complexNumber The complex number for which you want the cosine.
+     * @return    string|float
+     */
+    public static function IMCOS($complexNumber)
+    {
+        $complexNumber = PHPExcel_Calculation_Functions::flattenSingleValue($complexNumber);
+
+        $parsedComplex = self::_parseComplex($complexNumber);
+
+        if ($parsedComplex['imaginary'] == 0.0) {
+            return cos($parsedComplex['real']);
+        } else {
+            return self::IMCONJUGATE(self::COMPLEX(cos($parsedComplex['real']) * cosh($parsedComplex['imaginary']), sin($parsedComplex['real']) * sinh($parsedComplex['imaginary']), $parsedComplex['suffix']));
+        }
+    }    //	function IMARGUMENT()
+
+/**
+     * IMCONJUGATE
+     *
+     * Returns the complex conjugate of a complex number in x + yi or x + yj text format.
+     *
+     * Excel Function:
+     *        IMCONJUGATE(complexNumber)
+     *
+     * @param    string $complexNumber The complex number for which you want the conjugate.
+     * @return    string
+     */
+    public static function IMCONJUGATE($complexNumber)
+    {
+        $complexNumber = PHPExcel_Calculation_Functions::flattenSingleValue($complexNumber);
+
+        $parsedComplex = self::_parseComplex($complexNumber);
+
+        if ($parsedComplex['imaginary'] == 0.0) {
+            return $parsedComplex['real'];
+        } else {
+            return self::_cleanComplex(self::COMPLEX($parsedComplex['real'],
+                0 - $parsedComplex['imaginary'],
+                $parsedComplex['suffix']
+            )
+            );
+        }
+    }    //	function IMCONJUGATE()
+
+    /**
+     * Cleans the leading characters in a complex number string
+     *
+     * @param    string $complexNumber The complex number to clean
+     * @return    string        The "cleaned" complex number
+     */
+    private static function _cleanComplex($complexNumber)
+    {
+        if ($complexNumber{0} == '+') $complexNumber = substr($complexNumber, 1);
+        if ($complexNumber{0} == '0') $complexNumber = substr($complexNumber, 1);
+        if ($complexNumber{0} == '.') $complexNumber = '0' . $complexNumber;
+        if ($complexNumber{0} == '+') $complexNumber = substr($complexNumber, 1);
+        return $complexNumber;
+    }    //	function IMCOS()
+
+/**
      * COMPLEX
      *
      * Converts real and imaginary coefficients into a complex number of the form x + yi or x + yj.
@@ -1703,76 +1808,62 @@ class PHPExcel_Calculation_Engineering
         }
 
         return PHPExcel_Calculation_Functions::VALUE();
-    }    //	function COMPLEX()
+    }    //	function IMSIN()
 
-
-    /**
-     * IMAGINARY
+/**
+     * IMSIN
      *
-     * Returns the imaginary coefficient of a complex number in x + yi or x + yj text format.
+     * Returns the sine of a complex number in x + yi or x + yj text format.
      *
      * Excel Function:
-     *        IMAGINARY(complexNumber)
+     *        IMSIN(complexNumber)
      *
-     * @access    public
-     * @category Engineering Functions
-     * @param    string $complexNumber The complex number for which you want the imaginary
-     *                                        coefficient.
-     * @return    float
+     * @param    string $complexNumber The complex number for which you want the sine.
+     * @return    string|float
      */
-    public static function IMAGINARY($complexNumber)
-    {
-        $complexNumber = PHPExcel_Calculation_Functions::flattenSingleValue($complexNumber);
-
-        $parsedComplex = self::_parseComplex($complexNumber);
-        return $parsedComplex['imaginary'];
-    }    //	function IMAGINARY()
-
-
-    /**
-     * IMREAL
-     *
-     * Returns the real coefficient of a complex number in x + yi or x + yj text format.
-     *
-     * Excel Function:
-     *        IMREAL(complexNumber)
-     *
-     * @access    public
-     * @category Engineering Functions
-     * @param    string $complexNumber The complex number for which you want the real coefficient.
-     * @return    float
-     */
-    public static function IMREAL($complexNumber)
-    {
-        $complexNumber = PHPExcel_Calculation_Functions::flattenSingleValue($complexNumber);
-
-        $parsedComplex = self::_parseComplex($complexNumber);
-        return $parsedComplex['real'];
-    }    //	function IMREAL()
-
-
-    /**
-     * IMABS
-     *
-     * Returns the absolute value (modulus) of a complex number in x + yi or x + yj text format.
-     *
-     * Excel Function:
-     *        IMABS(complexNumber)
-     *
-     * @param    string $complexNumber The complex number for which you want the absolute value.
-     * @return    float
-     */
-    public static function IMABS($complexNumber)
+    public static function IMSIN($complexNumber)
     {
         $complexNumber = PHPExcel_Calculation_Functions::flattenSingleValue($complexNumber);
 
         $parsedComplex = self::_parseComplex($complexNumber);
 
-        return sqrt(($parsedComplex['real'] * $parsedComplex['real']) + ($parsedComplex['imaginary'] * $parsedComplex['imaginary']));
-    }    //	function IMABS()
+        if ($parsedComplex['imaginary'] == 0.0) {
+            return sin($parsedComplex['real']);
+        } else {
+            return self::COMPLEX(sin($parsedComplex['real']) * cosh($parsedComplex['imaginary']), cos($parsedComplex['real']) * sinh($parsedComplex['imaginary']), $parsedComplex['suffix']);
+        }
+    }    //	function IMSQRT()
 
+/**
+     * IMSQRT
+     *
+     * Returns the square root of a complex number in x + yi or x + yj text format.
+     *
+     * Excel Function:
+     *        IMSQRT(complexNumber)
+     *
+     * @param    string $complexNumber The complex number for which you want the square root.
+     * @return    string
+     */
+    public static function IMSQRT($complexNumber)
+    {
+        $complexNumber = PHPExcel_Calculation_Functions::flattenSingleValue($complexNumber);
 
-    /**
+        $parsedComplex = self::_parseComplex($complexNumber);
+
+        $theta = self::IMARGUMENT($complexNumber);
+        $d1 = cos($theta / 2);
+        $d2 = sin($theta / 2);
+        $r = sqrt(sqrt(($parsedComplex['real'] * $parsedComplex['real']) + ($parsedComplex['imaginary'] * $parsedComplex['imaginary'])));
+
+        if ($parsedComplex['suffix'] == '') {
+            return self::COMPLEX($d1 * $r, $d2 * $r);
+        } else {
+            return self::COMPLEX($d1 * $r, $d2 * $r, $parsedComplex['suffix']);
+        }
+    }    //	function IMLN()
+
+/**
      * IMARGUMENT
      *
      * Returns the argument theta of a complex number, i.e. the angle in radians from the real
@@ -1805,119 +1896,73 @@ class PHPExcel_Calculation_Engineering
         } else {
             return M_PI - atan($parsedComplex['imaginary'] / abs($parsedComplex['real']));
         }
-    }    //	function IMARGUMENT()
+    }    //	function IMLOG10()
 
-
-    /**
-     * IMCONJUGATE
+/**
+     * IMLOG10
      *
-     * Returns the complex conjugate of a complex number in x + yi or x + yj text format.
+     * Returns the common logarithm (base 10) of a complex number in x + yi or x + yj text format.
      *
      * Excel Function:
-     *        IMCONJUGATE(complexNumber)
+     *        IMLOG10(complexNumber)
      *
-     * @param    string $complexNumber The complex number for which you want the conjugate.
+     * @param    string $complexNumber The complex number for which you want the common logarithm.
      * @return    string
      */
-    public static function IMCONJUGATE($complexNumber)
+    public static function IMLOG10($complexNumber)
     {
         $complexNumber = PHPExcel_Calculation_Functions::flattenSingleValue($complexNumber);
 
         $parsedComplex = self::_parseComplex($complexNumber);
 
-        if ($parsedComplex['imaginary'] == 0.0) {
-            return $parsedComplex['real'];
-        } else {
-            return self::_cleanComplex(self::COMPLEX($parsedComplex['real'],
-                0 - $parsedComplex['imaginary'],
-                $parsedComplex['suffix']
-            )
-            );
+        if (($parsedComplex['real'] == 0.0) && ($parsedComplex['imaginary'] == 0.0)) {
+            return PHPExcel_Calculation_Functions::NaN();
+        } elseif (($parsedComplex['real'] > 0.0) && ($parsedComplex['imaginary'] == 0.0)) {
+            return log10($parsedComplex['real']);
         }
-    }    //	function IMCONJUGATE()
 
+        return self::IMPRODUCT(log10(EULER), self::IMLN($complexNumber));
+    }    //	function IMLOG2()
 
-    /**
-     * IMCOS
+/**
+     * IMPRODUCT
      *
-     * Returns the cosine of a complex number in x + yi or x + yj text format.
+     * Returns the product of two or more complex numbers in x + yi or x + yj text format.
      *
      * Excel Function:
-     *        IMCOS(complexNumber)
+     *        IMPRODUCT(complexNumber[,complexNumber[,...]])
      *
-     * @param    string $complexNumber The complex number for which you want the cosine.
-     * @return    string|float
-     */
-    public static function IMCOS($complexNumber)
-    {
-        $complexNumber = PHPExcel_Calculation_Functions::flattenSingleValue($complexNumber);
-
-        $parsedComplex = self::_parseComplex($complexNumber);
-
-        if ($parsedComplex['imaginary'] == 0.0) {
-            return cos($parsedComplex['real']);
-        } else {
-            return self::IMCONJUGATE(self::COMPLEX(cos($parsedComplex['real']) * cosh($parsedComplex['imaginary']), sin($parsedComplex['real']) * sinh($parsedComplex['imaginary']), $parsedComplex['suffix']));
-        }
-    }    //	function IMCOS()
-
-
-    /**
-     * IMSIN
-     *
-     * Returns the sine of a complex number in x + yi or x + yj text format.
-     *
-     * Excel Function:
-     *        IMSIN(complexNumber)
-     *
-     * @param    string $complexNumber The complex number for which you want the sine.
-     * @return    string|float
-     */
-    public static function IMSIN($complexNumber)
-    {
-        $complexNumber = PHPExcel_Calculation_Functions::flattenSingleValue($complexNumber);
-
-        $parsedComplex = self::_parseComplex($complexNumber);
-
-        if ($parsedComplex['imaginary'] == 0.0) {
-            return sin($parsedComplex['real']);
-        } else {
-            return self::COMPLEX(sin($parsedComplex['real']) * cosh($parsedComplex['imaginary']), cos($parsedComplex['real']) * sinh($parsedComplex['imaginary']), $parsedComplex['suffix']);
-        }
-    }    //	function IMSIN()
-
-
-    /**
-     * IMSQRT
-     *
-     * Returns the square root of a complex number in x + yi or x + yj text format.
-     *
-     * Excel Function:
-     *        IMSQRT(complexNumber)
-     *
-     * @param    string $complexNumber The complex number for which you want the square root.
+     * @param    string $complexNumber,... Series of complex numbers to multiply
      * @return    string
      */
-    public static function IMSQRT($complexNumber)
+    public static function IMPRODUCT()
     {
-        $complexNumber = PHPExcel_Calculation_Functions::flattenSingleValue($complexNumber);
+        // Return value
+        $returnValue = self::_parseComplex('1');
+        $activeSuffix = '';
 
-        $parsedComplex = self::_parseComplex($complexNumber);
+        // Loop through the arguments
+        $aArgs = PHPExcel_Calculation_Functions::flattenArray(func_get_args());
+        foreach ($aArgs as $arg) {
+            $parsedComplex = self::_parseComplex($arg);
 
-        $theta = self::IMARGUMENT($complexNumber);
-        $d1 = cos($theta / 2);
-        $d2 = sin($theta / 2);
-        $r = sqrt(sqrt(($parsedComplex['real'] * $parsedComplex['real']) + ($parsedComplex['imaginary'] * $parsedComplex['imaginary'])));
-
-        if ($parsedComplex['suffix'] == '') {
-            return self::COMPLEX($d1 * $r, $d2 * $r);
-        } else {
-            return self::COMPLEX($d1 * $r, $d2 * $r, $parsedComplex['suffix']);
+            $workValue = $returnValue;
+            if (($parsedComplex['suffix'] != '') && ($activeSuffix == '')) {
+                $activeSuffix = $parsedComplex['suffix'];
+            } elseif (($parsedComplex['suffix'] != '') && ($activeSuffix != $parsedComplex['suffix'])) {
+                return PHPExcel_Calculation_Functions::NaN();
+            }
+            $returnValue['real'] = ($workValue['real'] * $parsedComplex['real']) - ($workValue['imaginary'] * $parsedComplex['imaginary']);
+            $returnValue['imaginary'] = ($workValue['real'] * $parsedComplex['imaginary']) + ($workValue['imaginary'] * $parsedComplex['real']);
         }
-    }    //	function IMSQRT()
 
+        if ($returnValue['imaginary'] == 0.0) {
+            $activeSuffix = '';
+        }
+        return self::COMPLEX($returnValue['real'], $returnValue['imaginary'], $activeSuffix);
+    }    //	function IMEXP()
 
-    /**
+/**
      * IMLN
      *
      * Returns the natural logarithm of a complex number in x + yi or x + yj text format.
@@ -1946,37 +1991,9 @@ class PHPExcel_Calculation_Engineering
         } else {
             return self::COMPLEX($logR, $t, $parsedComplex['suffix']);
         }
-    }    //	function IMLN()
+    }    //	function IMPOWER()
 
-
-    /**
-     * IMLOG10
-     *
-     * Returns the common logarithm (base 10) of a complex number in x + yi or x + yj text format.
-     *
-     * Excel Function:
-     *        IMLOG10(complexNumber)
-     *
-     * @param    string $complexNumber The complex number for which you want the common logarithm.
-     * @return    string
-     */
-    public static function IMLOG10($complexNumber)
-    {
-        $complexNumber = PHPExcel_Calculation_Functions::flattenSingleValue($complexNumber);
-
-        $parsedComplex = self::_parseComplex($complexNumber);
-
-        if (($parsedComplex['real'] == 0.0) && ($parsedComplex['imaginary'] == 0.0)) {
-            return PHPExcel_Calculation_Functions::NaN();
-        } elseif (($parsedComplex['real'] > 0.0) && ($parsedComplex['imaginary'] == 0.0)) {
-            return log10($parsedComplex['real']);
-        }
-
-        return self::IMPRODUCT(log10(EULER), self::IMLN($complexNumber));
-    }    //	function IMLOG10()
-
-
-    /**
+/**
      * IMLOG2
      *
      * Returns the base-2 logarithm of a complex number in x + yi or x + yj text format.
@@ -2000,10 +2017,9 @@ class PHPExcel_Calculation_Engineering
         }
 
         return self::IMPRODUCT(log(EULER, 2), self::IMLN($complexNumber));
-    }    //	function IMLOG2()
+    }    //	function IMDIV()
 
-
-    /**
+/**
      * IMEXP
      *
      * Returns the exponential of a complex number in x + yi or x + yj text format.
@@ -2033,10 +2049,9 @@ class PHPExcel_Calculation_Engineering
         } else {
             return self::COMPLEX($eX, $eY, $parsedComplex['suffix']);
         }
-    }    //	function IMEXP()
+    }    //	function IMSUB()
 
-
-    /**
+/**
      * IMPOWER
      *
      * Returns a complex number in x + yi or x + yj text format raised to a power.
@@ -2069,10 +2084,9 @@ class PHPExcel_Calculation_Engineering
         } else {
             return self::COMPLEX($rPower * cos($theta), $rPower * sin($theta), $parsedComplex['suffix']);
         }
-    }    //	function IMPOWER()
+    }    //	function IMSUM()
 
-
-    /**
+/**
      * IMDIV
      *
      * Returns the quotient of two complex numbers in x + yi or x + yj text format.
@@ -2115,10 +2129,9 @@ class PHPExcel_Calculation_Engineering
         } else {
             return $r;
         }
-    }    //	function IMDIV()
+    }    //	function IMPRODUCT()
 
-
-    /**
+/**
      * IMSUB
      *
      * Returns the difference of two complex numbers in x + yi or x + yj text format.
@@ -2150,10 +2163,9 @@ class PHPExcel_Calculation_Engineering
         $d2 = $parsedComplex1['imaginary'] - $parsedComplex2['imaginary'];
 
         return self::COMPLEX($d1, $d2, $parsedComplex1['suffix']);
-    }    //	function IMSUB()
+    }    //	function DELTA()
 
-
-    /**
+/**
      * IMSUM
      *
      * Returns the sum of two or more complex numbers in x + yi or x + yj text format.
@@ -2189,49 +2201,14 @@ class PHPExcel_Calculation_Engineering
             $activeSuffix = '';
         }
         return self::COMPLEX($returnValue['real'], $returnValue['imaginary'], $activeSuffix);
-    }    //	function IMSUM()
+    }    //	function GESTEP()
 
 
-    /**
-     * IMPRODUCT
-     *
-     * Returns the product of two or more complex numbers in x + yi or x + yj text format.
-     *
-     * Excel Function:
-     *        IMPRODUCT(complexNumber[,complexNumber[,...]])
-     *
-     * @param    string $complexNumber,... Series of complex numbers to multiply
-     * @return    string
-     */
-    public static function IMPRODUCT()
-    {
-        // Return value
-        $returnValue = self::_parseComplex('1');
-        $activeSuffix = '';
+    //
+    //	Private method to calculate the erf value
+    //
 
-        // Loop through the arguments
-        $aArgs = PHPExcel_Calculation_Functions::flattenArray(func_get_args());
-        foreach ($aArgs as $arg) {
-            $parsedComplex = self::_parseComplex($arg);
-
-            $workValue = $returnValue;
-            if (($parsedComplex['suffix'] != '') && ($activeSuffix == '')) {
-                $activeSuffix = $parsedComplex['suffix'];
-            } elseif (($parsedComplex['suffix'] != '') && ($activeSuffix != $parsedComplex['suffix'])) {
-                return PHPExcel_Calculation_Functions::NaN();
-            }
-            $returnValue['real'] = ($workValue['real'] * $parsedComplex['real']) - ($workValue['imaginary'] * $parsedComplex['imaginary']);
-            $returnValue['imaginary'] = ($workValue['real'] * $parsedComplex['imaginary']) + ($workValue['imaginary'] * $parsedComplex['real']);
-        }
-
-        if ($returnValue['imaginary'] == 0.0) {
-            $activeSuffix = '';
-        }
-        return self::COMPLEX($returnValue['real'], $returnValue['imaginary'], $activeSuffix);
-    }    //	function IMPRODUCT()
-
-
-    /**
+/**
      *    DELTA
      *
      *    Tests whether two values are equal. Returns 1 if number1 = number2; returns 0 otherwise.
@@ -2252,8 +2229,7 @@ class PHPExcel_Calculation_Engineering
         $b = PHPExcel_Calculation_Functions::flattenSingleValue($b);
 
         return (int)($a == $b);
-    }    //	function DELTA()
-
+    }
 
     /**
      *    GESTEP
@@ -2276,38 +2252,9 @@ class PHPExcel_Calculation_Engineering
         $step = PHPExcel_Calculation_Functions::flattenSingleValue($step);
 
         return (int)($number >= $step);
-    }    //	function GESTEP()
-
-
-    //
-    //	Private method to calculate the erf value
-    //
-    private static $_two_sqrtpi = 1.128379167095512574;
-
-    public static function _erfVal($x)
-    {
-        if (abs($x) > 2.2) {
-            return 1 - self::_erfcVal($x);
-        }
-        $sum = $term = $x;
-        $xsqr = ($x * $x);
-        $j = 1;
-        do {
-            $term *= $xsqr / $j;
-            $sum -= $term / (2 * $j + 1);
-            ++$j;
-            $term *= $xsqr / $j;
-            $sum += $term / (2 * $j + 1);
-            ++$j;
-            if ($sum == 0.0) {
-                break;
-            }
-        } while (abs($term / $sum) > PRECISION);
-        return self::$_two_sqrtpi * $sum;
     }    //	function _erfVal()
 
-
-    /**
+/**
      *    ERF
      *
      *    Returns the error function integrated between the lower and upper bound arguments.
@@ -2345,7 +2292,28 @@ class PHPExcel_Calculation_Engineering
     //
     //	Private method to calculate the erfc value
     //
-    private static $_one_sqrtpi = 0.564189583547756287;
+
+public static function _erfVal($x)
+    {
+        if (abs($x) > 2.2) {
+            return 1 - self::_erfcVal($x);
+        }
+        $sum = $term = $x;
+        $xsqr = ($x * $x);
+        $j = 1;
+        do {
+            $term *= $xsqr / $j;
+            $sum -= $term / (2 * $j + 1);
+            ++$j;
+            $term *= $xsqr / $j;
+            $sum += $term / (2 * $j + 1);
+            ++$j;
+            if ($sum == 0.0) {
+                break;
+            }
+        } while (abs($term / $sum) > PRECISION);
+        return self::$_two_sqrtpi * $sum;
+    }
 
     private static function _erfcVal($x)
     {

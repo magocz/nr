@@ -108,9 +108,9 @@ class PHPExcel_Shared_ZipStreamWrapper
      *
      * @return  boolean
      */
-    public function statName()
+    public function url_stat()
     {
-        return $this->_fileNameInArchive;
+        return $this->statName($this->_fileNameInArchive);
     }
 
     /**
@@ -118,9 +118,9 @@ class PHPExcel_Shared_ZipStreamWrapper
      *
      * @return  boolean
      */
-    public function url_stat()
+    public function statName()
     {
-        return $this->statName($this->_fileNameInArchive);
+        return $this->_fileNameInArchive;
     }
 
     /**

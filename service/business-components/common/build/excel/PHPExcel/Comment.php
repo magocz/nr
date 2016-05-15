@@ -277,6 +277,16 @@ class PHPExcel_Comment implements PHPExcel_IComparable
     }
 
     /**
+     * Get Alignment
+     *
+     * @return string
+     */
+    public function getAlignment()
+    {
+        return $this->_alignment;
+    }
+
+    /**
      * Set Alignment
      *
      * @param string $pValue
@@ -286,16 +296,6 @@ class PHPExcel_Comment implements PHPExcel_IComparable
     {
         $this->_alignment = $pValue;
         return $this;
-    }
-
-    /**
-     * Get Alignment
-     *
-     * @return string
-     */
-    public function getAlignment()
-    {
-        return $this->_alignment;
     }
 
     /**

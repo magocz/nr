@@ -192,27 +192,6 @@ abstract class PHPExcel_Reader_Abstract implements PHPExcel_Reader_IReader
     }
 
     /**
-     * Open file for reading
-     *
-     * @param string $pFilename
-     * @throws    PHPExcel_Reader_Exception
-     * @return resource
-     */
-    protected function _openFile($pFilename)
-    {
-        // Check if file exists
-        if (!file_exists($pFilename) || !is_readable($pFilename)) {
-            throw new PHPExcel_Reader_Exception("Could not open " . $pFilename . " for reading! File does not exist.");
-        }
-
-        // Open file
-        $this->_fileHandle = fopen($pFilename, 'r');
-        if ($this->_fileHandle === FALSE) {
-            throw new PHPExcel_Reader_Exception("Could not open file " . $pFilename . " for reading.");
-        }
-    }
-
-    /**
      * Can the current PHPExcel_Reader_IReader read the file?
      *
      * @param    string $pFilename
@@ -234,6 +213,38 @@ abstract class PHPExcel_Reader_Abstract implements PHPExcel_Reader_IReader
     }
 
     /**
+     * Open file for reading
+     *
+     * @param string $pFilename
+     * @throws    PHPExcel_Reader_Exception
+     * @return resource
+     */
+    protected function _openFile($pFilename)
+    {
+        // Check if file exists
+        if (!file_exists($pFilename) || !is_readable($pFilename)) {
+            throw new PHPExcel_Reader_Exception("Could not open " . $pFilename . " for reading! File does not exist.");
+        }
+
+        // Open file
+        $this->_fileHandle = fopen($pFilename, 'r');
+        if ($this->_fileHandle === FALSE) {
+            throw new PHPExcel_Reader_Exception("Could not open file " . $pFilename . " for reading.");
+        }
+    }
+
+    /**
+     * Scan theXML for use of <!ENTITY to prevent XXE/XEE attacks
+     *
+     * @param    string $filestream
+     * @throws PHPExcel_Reader_Exception
+     */
+    public function securityScanFile($filestream)
+    {
+        return $this->securityScan(file_get_contents($filestream));
+    }
+
+    /**
      * Scan theXML for use of <!ENTITY to prevent XXE/XEE attacks
      *
      * @param    string $xml
@@ -246,16 +257,5 @@ abstract class PHPExcel_Reader_Abstract implements PHPExcel_Reader_IReader
             throw new PHPExcel_Reader_Exception('Detected use of ENTITY in XML, spreadsheet file load() aborted to prevent XXE/XEE attacks');
         }
         return $xml;
-    }
-
-    /**
-     * Scan theXML for use of <!ENTITY to prevent XXE/XEE attacks
-     *
-     * @param    string $filestream
-     * @throws PHPExcel_Reader_Exception
-     */
-    public function securityScanFile($filestream)
-    {
-        return $this->securityScan(file_get_contents($filestream));
     }
 }

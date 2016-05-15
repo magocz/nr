@@ -1,7 +1,7 @@
 <!--edit field modal dialog-->
 <div class="modal fade" id="editFieldModal" role="dialog" data-backdrop="static"
      data-keyboard="false">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
 
         <!-- Modal content-->
         <div class="modal-content">
@@ -15,10 +15,7 @@
                             <div class="fieldEditInputs">Numer działki:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="fieldNumberEditInput">
-                        </td>
-                        <td class="editFieldWarning">
-                            <div class="fieldEditInputs" type="text" id="fieldNumberEditInputWarning"></div>
+                            <input class="fieldEditInputs" type="text" id="fieldNumberEditInput" onkeyup="checkRequiredFieldInEditFieldModal()">
                         </td>
                     </tr>
                     <tr>
@@ -26,10 +23,7 @@
                             <div class="fieldEditInputs">Opis pola:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="fieldDescriptionEditInput">
-                        </td>
-                        <td class="editFieldWarning">
-                            <div class="fieldEditInputs" type="text" id="fieldDescriptionEditInputWarning"></div>
+                            <input class="fieldEditInputs" type="text" id="fieldDescriptionEditInput" onkeyup="checkRequiredFieldInEditFieldModal()">
                         </td>
                     </tr>
                     <tr>
@@ -37,10 +31,7 @@
                             <div class="fieldEditInputs">Roślina:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="fieldPlantEditInput">
-                        </td>
-                        <td class="editFieldWarning">
-                            <div class="fieldEditInputs" type="text" id="fieldPlantEditInputInputWarning"></div>
+                            <input class="fieldEditInputs" type="text" id="fieldPlantEditInput" onkeyup="checkRequiredFieldInEditFieldModal()">
                         </td>
                     </tr>
                     <tr>
@@ -48,10 +39,7 @@
                             <div class="fieldEditInputs">Odmiana:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="fieldVarietesEditInput">
-                        </td>
-                        <td class="editFieldWarning">
-                            <div class="fieldEditInputs" type="text" id="fieldVarietesEditInputWarning"></div>
+                            <input class="fieldEditInputs" type="text" id="fieldVarietesEditInput" onkeyup="checkRequiredFieldInEditFieldModal()">
                         </td>
                     </tr>
                     <tr>
@@ -59,49 +47,13 @@
                             <div class="fieldEditInputs">Powierzchnia [ha]:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="fieldSizeEditInput">
-                        </td>
-                        <td class="editFieldWarning">
-                            <div class="fieldEditInputs" type="text" id="fieldSizeEditInputWarning"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="editFieldLable">
-                            <div class="fieldEditInputs">Cena za tonę:</div>
-                        </td>
-                        <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="fieldPlantPriceEditInput" value="0.0" >
-                        </td>
-                        <td class="editFieldWarning">
-                            <div class="fieldEditInputs" type="text" id="fieldPlantPriceEditWarning"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="editFieldLable">
-                            <div class="fieldEditInputs">Ton na hektar:</div>
-                        </td>
-                        <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="fieldTonsProHaEditInput"  value="0.0" >
-                        </td>
-                        <td class="editFieldWarning">
-                            <div class="fieldEditInputs" type="text" id="fieldTonsProHaEditInputWarning"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="editFieldLable">
-                            <div class="fieldEditInputs">Dodatkowe koszty:</div>
-                        </td>
-                        <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="fieldOtherCostsEditInput" value="0.0" >
-                        </td>
-                        <td class="editFieldWarning">
-                            <div class="fieldEditInputs" type="text" id="fieldOtherCostsEditInputWarning"></div>
+                            <input class="fieldEditInputs" type="text" id="fieldSizeEditInput" onkeyup="checkRequiredFieldInEditFieldModal()">
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="modal-footer">
-                <button id="updateFieldBtn" type="button" class="btn btn-success">Zapisz</button>
+                <button id="updateFieldBtn" type="button" class="btn btn-success" disabled>Zapisz</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
             </div>
         </div>

@@ -83,11 +83,16 @@ class PHPExcel_Worksheet_RowIterator implements Iterator
     }
 
     /**
-     * Destructor
+     * (Re)Set the end row
+     *
+     * @param integer $endRow The row number at which to stop iterating
+     * @return PHPExcel_Worksheet_RowIterator
      */
-    public function __destruct()
+    public function resetEnd($endRow = null)
     {
-        unset($this->_subject);
+        $this->_endRow = ($endRow) ? $endRow : $this->_subject->getHighestRow();
+
+        return $this;
     }
 
     /**
@@ -100,19 +105,6 @@ class PHPExcel_Worksheet_RowIterator implements Iterator
     {
         $this->_startRow = $startRow;
         $this->seek($startRow);
-
-        return $this;
-    }
-
-    /**
-     * (Re)Set the end row
-     *
-     * @param integer $endRow The row number at which to stop iterating
-     * @return PHPExcel_Worksheet_RowIterator
-     */
-    public function resetEnd($endRow = null)
-    {
-        $this->_endRow = ($endRow) ? $endRow : $this->_subject->getHighestRow();
 
         return $this;
     }
@@ -132,6 +124,14 @@ class PHPExcel_Worksheet_RowIterator implements Iterator
         $this->_position = $row;
 
         return $this;
+    }
+
+    /**
+     * Destructor
+     */
+    public function __destruct()
+    {
+        unset($this->_subject);
     }
 
     /**

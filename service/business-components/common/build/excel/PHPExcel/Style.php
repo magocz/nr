@@ -134,26 +134,6 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
     }
 
     /**
-     * Get the shared style component for the currently active cell in currently active sheet.
-     * Only used for style supervisor
-     *
-     * @return PHPExcel_Style
-     */
-    public function getSharedComponent()
-    {
-        $activeSheet = $this->getActiveSheet();
-        $selectedCell = $this->getActiveCell(); // e.g. 'A1'
-
-        if ($activeSheet->cellExists($selectedCell)) {
-            $xfIndex = $activeSheet->getCell($selectedCell)->getXfIndex();
-        } else {
-            $xfIndex = 0;
-        }
-
-        return $this->_parent->getCellXfByIndex($xfIndex);
-    }
-
-    /**
      * Get parent. Only used for style supervisor
      *
      * @return PHPExcel
@@ -172,6 +152,82 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
     public function getStyleArray($array)
     {
         return array('quotePrefix' => $array);
+    }
+
+    /**
+     * Get Conditional Styles. Only used on supervisor.
+     *
+     * @return PHPExcel_Style_Conditional[]
+     */
+    public function getConditionalStyles()
+    {
+        return $this->getActiveSheet()->getConditionalStyles($this->getActiveCell());
+    }
+
+    /**
+     * Set Conditional Styles. Only used on supervisor.
+     *
+     * @param PHPExcel_Style_Conditional[] $pValue Array of condtional styles
+     * @return PHPExcel_Style
+     */
+    public function setConditionalStyles($pValue = null)
+    {
+        if (is_array($pValue)) {
+            $this->getActiveSheet()->setConditionalStyles($this->getSelectedCells(), $pValue);
+        }
+        return $this;
+    }
+
+    /**
+     * Get quote prefix
+     *
+     * @return boolean
+     */
+    public function getQuotePrefix()
+    {
+        if ($this->_isSupervisor) {
+            return $this->getSharedComponent()->getQuotePrefix();
+        }
+        return $this->_quotePrefix;
+    }
+
+    /**
+     * Set quote prefix
+     *
+     * @param boolean $pValue
+     */
+    public function setQuotePrefix($pValue)
+    {
+        if ($pValue == '') {
+            $pValue = false;
+        }
+        if ($this->_isSupervisor) {
+            $styleArray = array('quotePrefix' => $pValue);
+            $this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
+        } else {
+            $this->_quotePrefix = (boolean)$pValue;
+        }
+        return $this;
+    }
+
+    /**
+     * Get the shared style component for the currently active cell in currently active sheet.
+     * Only used for style supervisor
+     *
+     * @return PHPExcel_Style
+     */
+    public function getSharedComponent()
+    {
+        $activeSheet = $this->getActiveSheet();
+        $selectedCell = $this->getActiveCell(); // e.g. 'A1'
+
+        if ($activeSheet->cellExists($selectedCell)) {
+            $xfIndex = $activeSheet->getCell($selectedCell)->getXfIndex();
+        } else {
+            $xfIndex = 0;
+        }
+
+        return $this->_parent->getCellXfByIndex($xfIndex);
     }
 
     /**
@@ -493,6 +549,51 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
     }
 
     /**
+     * Get hash code
+     *
+     * @return string Hash code
+     */
+    public function getHashCode()
+    {
+        $hashConditionals = '';
+        foreach ($this->_conditionalStyles as $conditional) {
+            $hashConditionals .= $conditional->getHashCode();
+        }
+
+        return md5(
+            $this->_fill->getHashCode()
+            . $this->_font->getHashCode()
+            . $this->_borders->getHashCode()
+            . $this->_alignment->getHashCode()
+            . $this->_numberFormat->getHashCode()
+            . $hashConditionals
+            . $this->_protection->getHashCode()
+            . ($this->_quotePrefix ? 't' : 'f')
+            . __CLASS__
+        );
+    }
+
+    /**
+     * Get own index in style collection
+     *
+     * @return int
+     */
+    public function getIndex()
+    {
+        return $this->_index;
+    }
+
+    /**
+     * Set own index in style collection
+     *
+     * @param int $pValue
+     */
+    public function setIndex($pValue)
+    {
+        $this->_index = $pValue;
+    }
+
+    /**
      * Get Fill
      *
      * @return PHPExcel_Style_Fill
@@ -555,30 +656,6 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
     }
 
     /**
-     * Get Conditional Styles. Only used on supervisor.
-     *
-     * @return PHPExcel_Style_Conditional[]
-     */
-    public function getConditionalStyles()
-    {
-        return $this->getActiveSheet()->getConditionalStyles($this->getActiveCell());
-    }
-
-    /**
-     * Set Conditional Styles. Only used on supervisor.
-     *
-     * @param PHPExcel_Style_Conditional[] $pValue Array of condtional styles
-     * @return PHPExcel_Style
-     */
-    public function setConditionalStyles($pValue = null)
-    {
-        if (is_array($pValue)) {
-            $this->getActiveSheet()->setConditionalStyles($this->getSelectedCells(), $pValue);
-        }
-        return $this;
-    }
-
-    /**
      * Get Protection
      *
      * @return PHPExcel_Style_Protection
@@ -586,83 +663,6 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
     public function getProtection()
     {
         return $this->_protection;
-    }
-
-    /**
-     * Get quote prefix
-     *
-     * @return boolean
-     */
-    public function getQuotePrefix()
-    {
-        if ($this->_isSupervisor) {
-            return $this->getSharedComponent()->getQuotePrefix();
-        }
-        return $this->_quotePrefix;
-    }
-
-    /**
-     * Set quote prefix
-     *
-     * @param boolean $pValue
-     */
-    public function setQuotePrefix($pValue)
-    {
-        if ($pValue == '') {
-            $pValue = false;
-        }
-        if ($this->_isSupervisor) {
-            $styleArray = array('quotePrefix' => $pValue);
-            $this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
-        } else {
-            $this->_quotePrefix = (boolean)$pValue;
-        }
-        return $this;
-    }
-
-    /**
-     * Get hash code
-     *
-     * @return string Hash code
-     */
-    public function getHashCode()
-    {
-        $hashConditionals = '';
-        foreach ($this->_conditionalStyles as $conditional) {
-            $hashConditionals .= $conditional->getHashCode();
-        }
-
-        return md5(
-            $this->_fill->getHashCode()
-            . $this->_font->getHashCode()
-            . $this->_borders->getHashCode()
-            . $this->_alignment->getHashCode()
-            . $this->_numberFormat->getHashCode()
-            . $hashConditionals
-            . $this->_protection->getHashCode()
-            . ($this->_quotePrefix ? 't' : 'f')
-            . __CLASS__
-        );
-    }
-
-    /**
-     * Get own index in style collection
-     *
-     * @return int
-     */
-    public function getIndex()
-    {
-        return $this->_index;
-    }
-
-    /**
-     * Set own index in style collection
-     *
-     * @param int $pValue
-     */
-    public function setIndex($pValue)
-    {
-        $this->_index = $pValue;
     }
 
 }

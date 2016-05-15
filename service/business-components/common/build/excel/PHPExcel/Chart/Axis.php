@@ -391,6 +391,74 @@ class PHPExcel_Chart_Axis extends
     }
 
     /**
+     * Set Shadow Distance
+     *
+     * @param float $distance
+     *
+     * @return PHPExcel_Chart_Axis
+     */
+
+    private function _setShadowDistance($distance)
+    {
+        if ($distance !== NULL) {
+            $this->_shadow_properties['distance'] = (string)$this->getExcelPointsWidth($distance);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set Shadow Angle
+     *
+     * @param int $angle
+     *
+     * @return PHPExcel_Chart_Axis
+     */
+
+    private function _setShadowAngle($angle)
+    {
+        if ($angle !== NULL) {
+            $this->_shadow_properties['direction'] = (string)$this->getExcelPointsAngle($angle);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set Shadow Blur
+     *
+     * @param float $blur
+     *
+     * @return PHPExcel_Chart_Axis
+     */
+
+    private function _setShadowBlur($blur)
+    {
+        if ($blur !== NULL) {
+            $this->_shadow_properties['blur'] = (string)$this->getExcelPointsWidth($blur);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set Shadow Color
+     *
+     * @param string $color
+     * @param int $alpha
+     * @param string $type
+     *
+     * @return PHPExcel_Chart_Axis
+     */
+
+    private function _setShadowColor($color, $alpha, $type)
+    {
+        $this->_shadow_properties['color'] = $this->setColorProperties($color, $alpha, $type);
+
+        return $this;
+    }
+
+    /**
      * Set Shadow Color
      *
      * @param int $shadow_presets
@@ -439,74 +507,6 @@ class PHPExcel_Chart_Axis extends
     }
 
     /**
-     * Set Shadow Color
-     *
-     * @param string $color
-     * @param int $alpha
-     * @param string $type
-     *
-     * @return PHPExcel_Chart_Axis
-     */
-
-    private function _setShadowColor($color, $alpha, $type)
-    {
-        $this->_shadow_properties['color'] = $this->setColorProperties($color, $alpha, $type);
-
-        return $this;
-    }
-
-    /**
-     * Set Shadow Blur
-     *
-     * @param float $blur
-     *
-     * @return PHPExcel_Chart_Axis
-     */
-
-    private function _setShadowBlur($blur)
-    {
-        if ($blur !== NULL) {
-            $this->_shadow_properties['blur'] = (string)$this->getExcelPointsWidth($blur);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set Shadow Angle
-     *
-     * @param int $angle
-     *
-     * @return PHPExcel_Chart_Axis
-     */
-
-    private function _setShadowAngle($angle)
-    {
-        if ($angle !== NULL) {
-            $this->_shadow_properties['direction'] = (string)$this->getExcelPointsAngle($angle);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Set Shadow Distance
-     *
-     * @param float $distance
-     *
-     * @return PHPExcel_Chart_Axis
-     */
-
-    private function _setShadowDistance($distance)
-    {
-        if ($distance !== NULL) {
-            $this->_shadow_properties['distance'] = (string)$this->getExcelPointsWidth($distance);
-        }
-
-        return $this;
-    }
-
-    /**
      * Get Glow Property
      *
      * @param float $size
@@ -540,16 +540,20 @@ class PHPExcel_Chart_Axis extends
     }
 
     /**
-     * Get Glow Property
+     * Set Glow Color
      *
-     * @param array|string $property
+     * @param string $color
+     * @param int $alpha
+     * @param string $type
      *
-     * @return string
+     * @return PHPExcel_Chart_Axis
      */
 
-    public function getGlowProperty($property)
+    private function _setGlowColor($color, $alpha, $type)
     {
-        return $this->getArrayElementsValue($this->_glow_properties, $property);
+        $this->_glow_properties['color'] = $this->setColorProperties($color, $alpha, $type);
+
+        return $this;
     }
 
     /**
@@ -570,20 +574,16 @@ class PHPExcel_Chart_Axis extends
     }
 
     /**
-     * Set Glow Color
+     * Get Glow Property
      *
-     * @param string $color
-     * @param int $alpha
-     * @param string $type
+     * @param array|string $property
      *
-     * @return PHPExcel_Chart_Axis
+     * @return string
      */
 
-    private function _setGlowColor($color, $alpha, $type)
+    public function getGlowProperty($property)
     {
-        $this->_glow_properties['color'] = $this->setColorProperties($color, $alpha, $type);
-
-        return $this;
+        return $this->getArrayElementsValue($this->_glow_properties, $property);
     }
 
     /**

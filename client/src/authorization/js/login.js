@@ -16,7 +16,7 @@ $(function () {
         if (isInputOK) {
             var formData = $('form').serialize();
             $.ajax({
-                url: "../../../service/authorization/rest/login.php",
+                url: "../../../service/rest/user/login.php",
                 data: 'login=' + login + '&password=' + CryptoJS.MD5(password),
                 type: "POST",
                 contentType: "application/x-www-form-urlencoded",

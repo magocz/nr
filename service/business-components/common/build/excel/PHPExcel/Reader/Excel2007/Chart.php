@@ -34,34 +34,6 @@
  */
 class PHPExcel_Reader_Excel2007_Chart
 {
-    private static function _getAttribute($component, $name, $format)
-    {
-        $attributes = $component->attributes();
-        if (isset($attributes[$name])) {
-            if ($format == 'string') {
-                return (string)$attributes[$name];
-            } elseif ($format == 'integer') {
-                return (integer)$attributes[$name];
-            } elseif ($format == 'boolean') {
-                return (boolean)($attributes[$name] === '0' || $attributes[$name] !== 'true') ? false : true;
-            } else {
-                return (float)$attributes[$name];
-            }
-        }
-        return null;
-    }    //	function _getAttribute()
-
-
-    private static function _readColor($color, $background = false)
-    {
-        if (isset($color["rgb"])) {
-            return (string)$color["rgb"];
-        } else if (isset($color["indexed"])) {
-            return PHPExcel_Style_Color::indexedColor($color["indexed"] - 7, $background)->getARGB();
-        }
-    }
-
-
     public static function readChart($chartElements, $chartName)
     {
         $namespacesChartMeta = $chartElements->getNamespaces(true);
@@ -202,10 +174,43 @@ class PHPExcel_Reader_Excel2007_Chart
         $chart = new PHPExcel_Chart($chartName, $title, $legend, $plotArea, $plotVisOnly, $dispBlanksAs, $XaxisLabel, $YaxisLabel);
 
         return $chart;
+    }    //	function _getAttribute()
+
+private static function _chartLayoutDetails($chartDetail, $namespacesChartMeta)
+    {
+        if (!isset($chartDetail->manualLayout)) {
+            return null;
+        }
+        $details = $chartDetail->manualLayout->children($namespacesChartMeta['c']);
+        if (is_null($details)) {
+            return null;
+        }
+        $layout = array();
+        foreach ($details as $detailKey => $detail) {
+//			echo $detailKey,' => ',self::_getAttribute($detail, 'val', 'string'),PHP_EOL;
+            $layout[$detailKey] = self::_getAttribute($detail, 'val', 'string');
+        }
+        return new PHPExcel_Chart_Layout($layout);
+    }
+
+private static function _getAttribute($component, $name, $format)
+    {
+        $attributes = $component->attributes();
+        if (isset($attributes[$name])) {
+            if ($format == 'string') {
+                return (string)$attributes[$name];
+            } elseif ($format == 'integer') {
+                return (integer)$attributes[$name];
+            } elseif ($format == 'boolean') {
+                return (boolean)($attributes[$name] === '0' || $attributes[$name] !== 'true') ? false : true;
+            } else {
+                return (float)$attributes[$name];
+            }
+        }
+        return null;
     }    //	function readChart()
 
-
-    private static function _chartTitle($titleDetails, $namespacesChartMeta, $type)
+private static function _chartTitle($titleDetails, $namespacesChartMeta, $type)
     {
         $caption = array();
         $titleLayout = null;
@@ -229,175 +234,6 @@ class PHPExcel_Reader_Excel2007_Chart
 
         return new PHPExcel_Chart_Title($caption, $titleLayout);
     }    //	function _chartTitle()
-
-
-    private static function _chartLayoutDetails($chartDetail, $namespacesChartMeta)
-    {
-        if (!isset($chartDetail->manualLayout)) {
-            return null;
-        }
-        $details = $chartDetail->manualLayout->children($namespacesChartMeta['c']);
-        if (is_null($details)) {
-            return null;
-        }
-        $layout = array();
-        foreach ($details as $detailKey => $detail) {
-//			echo $detailKey,' => ',self::_getAttribute($detail, 'val', 'string'),PHP_EOL;
-            $layout[$detailKey] = self::_getAttribute($detail, 'val', 'string');
-        }
-        return new PHPExcel_Chart_Layout($layout);
-    }    //	function _chartLayoutDetails()
-
-
-    private static function _chartDataSeries($chartDetail, $namespacesChartMeta, $plotType)
-    {
-        $multiSeriesType = NULL;
-        $smoothLine = false;
-        $seriesLabel = $seriesCategory = $seriesValues = $plotOrder = array();
-
-        $seriesDetailSet = $chartDetail->children($namespacesChartMeta['c']);
-        foreach ($seriesDetailSet as $seriesDetailKey => $seriesDetails) {
-            switch ($seriesDetailKey) {
-                case "grouping":
-                    $multiSeriesType = self::_getAttribute($chartDetail->grouping, 'val', 'string');
-                    break;
-                case "ser":
-                    $marker = NULL;
-                    foreach ($seriesDetails as $seriesKey => $seriesDetail) {
-                        switch ($seriesKey) {
-                            case "idx":
-                                $seriesIndex = self::_getAttribute($seriesDetail, 'val', 'integer');
-                                break;
-                            case "order":
-                                $seriesOrder = self::_getAttribute($seriesDetail, 'val', 'integer');
-                                $plotOrder[$seriesIndex] = $seriesOrder;
-                                break;
-                            case "tx":
-                                $seriesLabel[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail, $namespacesChartMeta);
-                                break;
-                            case "marker":
-                                $marker = self::_getAttribute($seriesDetail->symbol, 'val', 'string');
-                                break;
-                            case "smooth":
-                                $smoothLine = self::_getAttribute($seriesDetail, 'val', 'boolean');
-                                break;
-                            case "cat":
-                                $seriesCategory[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail, $namespacesChartMeta);
-                                break;
-                            case "val":
-                                $seriesValues[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail, $namespacesChartMeta, $marker);
-                                break;
-                            case "xVal":
-                                $seriesCategory[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail, $namespacesChartMeta, $marker);
-                                break;
-                            case "yVal":
-                                $seriesValues[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail, $namespacesChartMeta, $marker);
-                                break;
-                        }
-                    }
-            }
-        }
-        return new PHPExcel_Chart_DataSeries($plotType, $multiSeriesType, $plotOrder, $seriesLabel, $seriesCategory, $seriesValues, $smoothLine);
-    }    //	function _chartDataSeries()
-
-
-    private static function _chartDataSeriesValueSet($seriesDetail, $namespacesChartMeta, $marker = null, $smoothLine = false)
-    {
-        if (isset($seriesDetail->strRef)) {
-            $seriesSource = (string)$seriesDetail->strRef->f;
-            $seriesData = self::_chartDataSeriesValues($seriesDetail->strRef->strCache->children($namespacesChartMeta['c']), 's');
-
-            return new PHPExcel_Chart_DataSeriesValues('String', $seriesSource, $seriesData['formatCode'], $seriesData['pointCount'], $seriesData['dataValues'], $marker, $smoothLine);
-        } elseif (isset($seriesDetail->numRef)) {
-            $seriesSource = (string)$seriesDetail->numRef->f;
-            $seriesData = self::_chartDataSeriesValues($seriesDetail->numRef->numCache->children($namespacesChartMeta['c']));
-
-            return new PHPExcel_Chart_DataSeriesValues('Number', $seriesSource, $seriesData['formatCode'], $seriesData['pointCount'], $seriesData['dataValues'], $marker, $smoothLine);
-        } elseif (isset($seriesDetail->multiLvlStrRef)) {
-            $seriesSource = (string)$seriesDetail->multiLvlStrRef->f;
-            $seriesData = self::_chartDataSeriesValuesMultiLevel($seriesDetail->multiLvlStrRef->multiLvlStrCache->children($namespacesChartMeta['c']), 's');
-            $seriesData['pointCount'] = count($seriesData['dataValues']);
-
-            return new PHPExcel_Chart_DataSeriesValues('String', $seriesSource, $seriesData['formatCode'], $seriesData['pointCount'], $seriesData['dataValues'], $marker, $smoothLine);
-        } elseif (isset($seriesDetail->multiLvlNumRef)) {
-            $seriesSource = (string)$seriesDetail->multiLvlNumRef->f;
-            $seriesData = self::_chartDataSeriesValuesMultiLevel($seriesDetail->multiLvlNumRef->multiLvlNumCache->children($namespacesChartMeta['c']), 's');
-            $seriesData['pointCount'] = count($seriesData['dataValues']);
-
-            return new PHPExcel_Chart_DataSeriesValues('String', $seriesSource, $seriesData['formatCode'], $seriesData['pointCount'], $seriesData['dataValues'], $marker, $smoothLine);
-        }
-        return null;
-    }    //	function _chartDataSeriesValueSet()
-
-
-    private static function _chartDataSeriesValues($seriesValueSet, $dataType = 'n')
-    {
-        $seriesVal = array();
-        $formatCode = '';
-        $pointCount = 0;
-
-        foreach ($seriesValueSet as $seriesValueIdx => $seriesValue) {
-            switch ($seriesValueIdx) {
-                case 'ptCount':
-                    $pointCount = self::_getAttribute($seriesValue, 'val', 'integer');
-                    break;
-                case 'formatCode':
-                    $formatCode = (string)$seriesValue;
-                    break;
-                case 'pt':
-                    $pointVal = self::_getAttribute($seriesValue, 'idx', 'integer');
-                    if ($dataType == 's') {
-                        $seriesVal[$pointVal] = (string)$seriesValue->v;
-                    } else {
-                        $seriesVal[$pointVal] = (float)$seriesValue->v;
-                    }
-                    break;
-            }
-        }
-
-        if (empty($seriesVal)) {
-            $seriesVal = NULL;
-        }
-
-        return array('formatCode' => $formatCode,
-            'pointCount' => $pointCount,
-            'dataValues' => $seriesVal
-        );
-    }    //	function _chartDataSeriesValues()
-
-
-    private static function _chartDataSeriesValuesMultiLevel($seriesValueSet, $dataType = 'n')
-    {
-        $seriesVal = array();
-        $formatCode = '';
-        $pointCount = 0;
-
-        foreach ($seriesValueSet->lvl as $seriesLevelIdx => $seriesLevel) {
-            foreach ($seriesLevel as $seriesValueIdx => $seriesValue) {
-                switch ($seriesValueIdx) {
-                    case 'ptCount':
-                        $pointCount = self::_getAttribute($seriesValue, 'val', 'integer');
-                        break;
-                    case 'formatCode':
-                        $formatCode = (string)$seriesValue;
-                        break;
-                    case 'pt':
-                        $pointVal = self::_getAttribute($seriesValue, 'idx', 'integer');
-                        if ($dataType == 's') {
-                            $seriesVal[$pointVal][] = (string)$seriesValue->v;
-                        } else {
-                            $seriesVal[$pointVal][] = (float)$seriesValue->v;
-                        }
-                        break;
-                }
-            }
-        }
-
-        return array('formatCode' => $formatCode,
-            'pointCount' => $pointCount,
-            'dataValues' => $seriesVal
-        );
-    }    //	function _chartDataSeriesValuesMultiLevel()
 
     private static function _parseRichText($titleDetailPart = null)
     {
@@ -464,6 +300,162 @@ class PHPExcel_Reader_Excel2007_Chart
         }
 
         return $value;
+    }    //	function _chartLayoutDetails()
+
+    private static function _readColor($color, $background = false)
+    {
+        if (isset($color["rgb"])) {
+            return (string)$color["rgb"];
+        } else if (isset($color["indexed"])) {
+            return PHPExcel_Style_Color::indexedColor($color["indexed"] - 7, $background)->getARGB();
+        }
+    }    //	function _chartDataSeries()
+
+private static function _chartDataSeries($chartDetail, $namespacesChartMeta, $plotType)
+    {
+        $multiSeriesType = NULL;
+        $smoothLine = false;
+        $seriesLabel = $seriesCategory = $seriesValues = $plotOrder = array();
+
+        $seriesDetailSet = $chartDetail->children($namespacesChartMeta['c']);
+        foreach ($seriesDetailSet as $seriesDetailKey => $seriesDetails) {
+            switch ($seriesDetailKey) {
+                case "grouping":
+                    $multiSeriesType = self::_getAttribute($chartDetail->grouping, 'val', 'string');
+                    break;
+                case "ser":
+                    $marker = NULL;
+                    foreach ($seriesDetails as $seriesKey => $seriesDetail) {
+                        switch ($seriesKey) {
+                            case "idx":
+                                $seriesIndex = self::_getAttribute($seriesDetail, 'val', 'integer');
+                                break;
+                            case "order":
+                                $seriesOrder = self::_getAttribute($seriesDetail, 'val', 'integer');
+                                $plotOrder[$seriesIndex] = $seriesOrder;
+                                break;
+                            case "tx":
+                                $seriesLabel[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail, $namespacesChartMeta);
+                                break;
+                            case "marker":
+                                $marker = self::_getAttribute($seriesDetail->symbol, 'val', 'string');
+                                break;
+                            case "smooth":
+                                $smoothLine = self::_getAttribute($seriesDetail, 'val', 'boolean');
+                                break;
+                            case "cat":
+                                $seriesCategory[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail, $namespacesChartMeta);
+                                break;
+                            case "val":
+                                $seriesValues[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail, $namespacesChartMeta, $marker);
+                                break;
+                            case "xVal":
+                                $seriesCategory[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail, $namespacesChartMeta, $marker);
+                                break;
+                            case "yVal":
+                                $seriesValues[$seriesIndex] = self::_chartDataSeriesValueSet($seriesDetail, $namespacesChartMeta, $marker);
+                                break;
+                        }
+                    }
+            }
+        }
+        return new PHPExcel_Chart_DataSeries($plotType, $multiSeriesType, $plotOrder, $seriesLabel, $seriesCategory, $seriesValues, $smoothLine);
+    }    //	function _chartDataSeriesValueSet()
+
+private static function _chartDataSeriesValueSet($seriesDetail, $namespacesChartMeta, $marker = null, $smoothLine = false)
+    {
+        if (isset($seriesDetail->strRef)) {
+            $seriesSource = (string)$seriesDetail->strRef->f;
+            $seriesData = self::_chartDataSeriesValues($seriesDetail->strRef->strCache->children($namespacesChartMeta['c']), 's');
+
+            return new PHPExcel_Chart_DataSeriesValues('String', $seriesSource, $seriesData['formatCode'], $seriesData['pointCount'], $seriesData['dataValues'], $marker, $smoothLine);
+        } elseif (isset($seriesDetail->numRef)) {
+            $seriesSource = (string)$seriesDetail->numRef->f;
+            $seriesData = self::_chartDataSeriesValues($seriesDetail->numRef->numCache->children($namespacesChartMeta['c']));
+
+            return new PHPExcel_Chart_DataSeriesValues('Number', $seriesSource, $seriesData['formatCode'], $seriesData['pointCount'], $seriesData['dataValues'], $marker, $smoothLine);
+        } elseif (isset($seriesDetail->multiLvlStrRef)) {
+            $seriesSource = (string)$seriesDetail->multiLvlStrRef->f;
+            $seriesData = self::_chartDataSeriesValuesMultiLevel($seriesDetail->multiLvlStrRef->multiLvlStrCache->children($namespacesChartMeta['c']), 's');
+            $seriesData['pointCount'] = count($seriesData['dataValues']);
+
+            return new PHPExcel_Chart_DataSeriesValues('String', $seriesSource, $seriesData['formatCode'], $seriesData['pointCount'], $seriesData['dataValues'], $marker, $smoothLine);
+        } elseif (isset($seriesDetail->multiLvlNumRef)) {
+            $seriesSource = (string)$seriesDetail->multiLvlNumRef->f;
+            $seriesData = self::_chartDataSeriesValuesMultiLevel($seriesDetail->multiLvlNumRef->multiLvlNumCache->children($namespacesChartMeta['c']), 's');
+            $seriesData['pointCount'] = count($seriesData['dataValues']);
+
+            return new PHPExcel_Chart_DataSeriesValues('String', $seriesSource, $seriesData['formatCode'], $seriesData['pointCount'], $seriesData['dataValues'], $marker, $smoothLine);
+        }
+        return null;
+    }    //	function _chartDataSeriesValues()
+
+private static function _chartDataSeriesValues($seriesValueSet, $dataType = 'n')
+    {
+        $seriesVal = array();
+        $formatCode = '';
+        $pointCount = 0;
+
+        foreach ($seriesValueSet as $seriesValueIdx => $seriesValue) {
+            switch ($seriesValueIdx) {
+                case 'ptCount':
+                    $pointCount = self::_getAttribute($seriesValue, 'val', 'integer');
+                    break;
+                case 'formatCode':
+                    $formatCode = (string)$seriesValue;
+                    break;
+                case 'pt':
+                    $pointVal = self::_getAttribute($seriesValue, 'idx', 'integer');
+                    if ($dataType == 's') {
+                        $seriesVal[$pointVal] = (string)$seriesValue->v;
+                    } else {
+                        $seriesVal[$pointVal] = (float)$seriesValue->v;
+                    }
+                    break;
+            }
+        }
+
+        if (empty($seriesVal)) {
+            $seriesVal = NULL;
+        }
+
+        return array('formatCode' => $formatCode,
+            'pointCount' => $pointCount,
+            'dataValues' => $seriesVal
+        );
+    }    //	function _chartDataSeriesValuesMultiLevel()
+
+private static function _chartDataSeriesValuesMultiLevel($seriesValueSet, $dataType = 'n')
+    {
+        $seriesVal = array();
+        $formatCode = '';
+        $pointCount = 0;
+
+        foreach ($seriesValueSet->lvl as $seriesLevelIdx => $seriesLevel) {
+            foreach ($seriesLevel as $seriesValueIdx => $seriesValue) {
+                switch ($seriesValueIdx) {
+                    case 'ptCount':
+                        $pointCount = self::_getAttribute($seriesValue, 'val', 'integer');
+                        break;
+                    case 'formatCode':
+                        $formatCode = (string)$seriesValue;
+                        break;
+                    case 'pt':
+                        $pointVal = self::_getAttribute($seriesValue, 'idx', 'integer');
+                        if ($dataType == 's') {
+                            $seriesVal[$pointVal][] = (string)$seriesValue->v;
+                        } else {
+                            $seriesVal[$pointVal][] = (float)$seriesValue->v;
+                        }
+                        break;
+                }
+            }
+        }
+
+        return array('formatCode' => $formatCode,
+            'pointCount' => $pointCount,
+            'dataValues' => $seriesVal
+        );
     }
 
     private static function _readChartAttributes($chartDetail)

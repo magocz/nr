@@ -124,11 +124,6 @@ abstract class PHPExcel_Properties
         return $angle * 60000;
     }
 
-    protected function getTrueAlpha($alpha)
-    {
-        return (string)100 - $alpha . '000';
-    }
-
     protected function setColorProperties($color, $alpha, $type)
     {
         return array(
@@ -136,6 +131,11 @@ abstract class PHPExcel_Properties
             'value' => (string)$color,
             'alpha' => (string)$this->getTrueAlpha($alpha)
         );
+    }
+
+    protected function getTrueAlpha($alpha)
+    {
+        return (string)100 - $alpha . '000';
     }
 
     protected function getLineStyleArrowSize($array_selector, $array_kay_selector)

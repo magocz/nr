@@ -101,8 +101,23 @@ class PHPExcel_Calculation_Functions
         'gettingdata' => '#GETTING_DATA'
     );
 
+/**
+     * Return the current Compatibility Mode
+     *
+     * @access    public
+     * @category Function Configuration
+     * @return     string        Compatibility Mode
+     *                            Possible Return values are:
+     *                                PHPExcel_Calculation_Functions::COMPATIBILITY_EXCEL            'Excel'
+     *                                PHPExcel_Calculation_Functions::COMPATIBILITY_GNUMERIC        'Gnumeric'
+     *                                PHPExcel_Calculation_Functions::COMPATIBILITY_OPENOFFICE    'OpenOfficeCalc'
+     */
+    public static function getCompatibilityMode()
+    {
+        return self::$compatibilityMode;
+    }    //	function setCompatibilityMode()
 
-    /**
+/**
      * Set the Compatibility Mode
      *
      * @access    public
@@ -124,27 +139,25 @@ class PHPExcel_Calculation_Functions
             return True;
         }
         return False;
-    }    //	function setCompatibilityMode()
+    }    //	function getCompatibilityMode()
 
-
-    /**
-     * Return the current Compatibility Mode
+/**
+     * Return the current Return Date Format for functions that return a date/time (Excel, PHP Serialized Numeric or PHP Object)
      *
      * @access    public
      * @category Function Configuration
-     * @return     string        Compatibility Mode
+     * @return     string        Return Date Format
      *                            Possible Return values are:
-     *                                PHPExcel_Calculation_Functions::COMPATIBILITY_EXCEL            'Excel'
-     *                                PHPExcel_Calculation_Functions::COMPATIBILITY_GNUMERIC        'Gnumeric'
-     *                                PHPExcel_Calculation_Functions::COMPATIBILITY_OPENOFFICE    'OpenOfficeCalc'
+     *                                PHPExcel_Calculation_Functions::RETURNDATE_PHP_NUMERIC        'P'
+     *                                PHPExcel_Calculation_Functions::RETURNDATE_PHP_OBJECT        'O'
+     *                                PHPExcel_Calculation_Functions::RETURNDATE_EXCEL            'E'
      */
-    public static function getCompatibilityMode()
+    public static function getReturnDateType()
     {
-        return self::$compatibilityMode;
-    }    //	function getCompatibilityMode()
+        return self::$ReturnDateType;
+    }    //	function setReturnDateType()
 
-
-    /**
+/**
      * Set the Return Date Format used by functions that return a date/time (Excel, PHP Serialized Numeric or PHP Object)
      *
      * @access    public
@@ -166,27 +179,9 @@ class PHPExcel_Calculation_Functions
             return True;
         }
         return False;
-    }    //	function setReturnDateType()
-
-
-    /**
-     * Return the current Return Date Format for functions that return a date/time (Excel, PHP Serialized Numeric or PHP Object)
-     *
-     * @access    public
-     * @category Function Configuration
-     * @return     string        Return Date Format
-     *                            Possible Return values are:
-     *                                PHPExcel_Calculation_Functions::RETURNDATE_PHP_NUMERIC        'P'
-     *                                PHPExcel_Calculation_Functions::RETURNDATE_PHP_OBJECT        'O'
-     *                                PHPExcel_Calculation_Functions::RETURNDATE_EXCEL            'E'
-     */
-    public static function getReturnDateType()
-    {
-        return self::$ReturnDateType;
     }    //	function getReturnDateType()
 
-
-    /**
+/**
      * DUMMY
      *
      * @access    public
@@ -211,27 +206,7 @@ class PHPExcel_Calculation_Functions
         return self::$_errorCodes['divisionbyzero'];
     }    //	function DIV0()
 
-
-    /**
-     * NA
-     *
-     * Excel Function:
-     *        =NA()
-     *
-     * Returns the error value #N/A
-     *        #N/A is the error value that means "no value is available."
-     *
-     * @access    public
-     * @category Logical Functions
-     * @return    string    #N/A!
-     */
-    public static function NA()
-    {
-        return self::$_errorCodes['na'];
-    }    //	function NA()
-
-
-    /**
+/**
      * NaN
      *
      * Returns the error value #NUM!
@@ -243,25 +218,9 @@ class PHPExcel_Calculation_Functions
     public static function NaN()
     {
         return self::$_errorCodes['num'];
-    }    //	function NaN()
+    }    //	function NA()
 
-
-    /**
-     * NAME
-     *
-     * Returns the error value #NAME?
-     *
-     * @access    public
-     * @category Error Returns
-     * @return    string    #NAME?
-     */
-    public static function NAME()
-    {
-        return self::$_errorCodes['name'];
-    }    //	function NAME()
-
-
-    /**
+/**
      * REF
      *
      * Returns the error value #REF!
@@ -273,10 +232,9 @@ class PHPExcel_Calculation_Functions
     public static function REF()
     {
         return self::$_errorCodes['reference'];
-    }    //	function REF()
+    }    //	function NaN()
 
-
-    /**
+/**
      * NULL
      *
      * Returns the error value #NULL!
@@ -288,43 +246,14 @@ class PHPExcel_Calculation_Functions
     public static function NULL()
     {
         return self::$_errorCodes['null'];
-    }    //	function NULL()
-
-
-    /**
-     * VALUE
-     *
-     * Returns the error value #VALUE!
-     *
-     * @access    public
-     * @category Error Returns
-     * @return    string    #VALUE!
-     */
-    public static function VALUE()
-    {
-        return self::$_errorCodes['value'];
-    }    //	function VALUE()
-
-
-    public static function isMatrixValue($idx)
-    {
-        return ((substr_count($idx, '.') <= 1) || (preg_match('/\.[A-Z]/', $idx) > 0));
-    }
-
+    }    //	function NAME()
 
     public static function isValue($idx)
     {
         return (substr_count($idx, '.') == 0);
-    }
+    }    //	function REF()
 
-
-    public static function isCellValue($idx)
-    {
-        return (substr_count($idx, '.') > 1);
-    }
-
-
-    public static function _ifCondition($condition)
+public static function _ifCondition($condition)
     {
         $condition = PHPExcel_Calculation_Functions::flattenSingleValue($condition);
         if (!isset($condition{0}))
@@ -345,10 +274,24 @@ class PHPExcel_Calculation_Functions
 
             return $operator . $operand;
         }
-    }    //	function _ifCondition()
+    }    //	function NULL()
 
+/**
+     * Convert an array to a single scalar value by extracting the first element
+     *
+     * @param    mixed $value Array or scalar value
+     * @return    mixed
+     */
+    public static function flattenSingleValue($value = '')
+    {
+        while (is_array($value)) {
+            $value = array_pop($value);
+        }
 
-    /**
+        return $value;
+    }    //	function VALUE()
+
+/**
      * ERROR_TYPE
      *
      * @param    mixed $value Value to check
@@ -366,10 +309,27 @@ class PHPExcel_Calculation_Functions
             ++$i;
         }
         return self::NA();
-    }    //	function ERROR_TYPE()
+    }
 
+/**
+     * NA
+     *
+     * Excel Function:
+     *        =NA()
+     *
+     * Returns the error value #N/A
+     *        #N/A is the error value that means "no value is available."
+     *
+     * @access    public
+     * @category Logical Functions
+     * @return    string    #N/A!
+     */
+    public static function NA()
+    {
+        return self::$_errorCodes['na'];
+    }
 
-    /**
+/**
      * IS_BLANK
      *
      * @param    mixed $value Value to check
@@ -382,10 +342,9 @@ class PHPExcel_Calculation_Functions
         }
 
         return is_null($value);
-    }    //	function IS_BLANK()
+    }
 
-
-    /**
+/**
      * IS_ERR
      *
      * @param    mixed $value Value to check
@@ -396,10 +355,9 @@ class PHPExcel_Calculation_Functions
         $value = self::flattenSingleValue($value);
 
         return self::IS_ERROR($value) && (!self::IS_NA($value));
-    }    //	function IS_ERR()
+    }    //	function _ifCondition()
 
-
-    /**
+/**
      * IS_ERROR
      *
      * @param    mixed $value Value to check
@@ -412,10 +370,9 @@ class PHPExcel_Calculation_Functions
         if (!is_string($value))
             return false;
         return in_array($value, array_values(self::$_errorCodes));
-    }    //	function IS_ERROR()
+    }    //	function ERROR_TYPE()
 
-
-    /**
+/**
      * IS_NA
      *
      * @param    mixed $value Value to check
@@ -426,10 +383,9 @@ class PHPExcel_Calculation_Functions
         $value = self::flattenSingleValue($value);
 
         return ($value === self::NA());
-    }    //	function IS_NA()
+    }    //	function IS_BLANK()
 
-
-    /**
+/**
      * IS_EVEN
      *
      * @param    mixed $value Value to check
@@ -444,10 +400,37 @@ class PHPExcel_Calculation_Functions
         if ((is_bool($value)) || ((is_string($value)) && (!is_numeric($value))))
             return self::VALUE();
         return ($value % 2 == 0);
-    }    //	function IS_EVEN()
+    }    //	function IS_ERR()
 
+/**
+     * NAME
+     *
+     * Returns the error value #NAME?
+     *
+     * @access    public
+     * @category Error Returns
+     * @return    string    #NAME?
+     */
+    public static function NAME()
+    {
+        return self::$_errorCodes['name'];
+    }    //	function IS_ERROR()
 
-    /**
+/**
+     * VALUE
+     *
+     * Returns the error value #VALUE!
+     *
+     * @access    public
+     * @category Error Returns
+     * @return    string    #VALUE!
+     */
+    public static function VALUE()
+    {
+        return self::$_errorCodes['value'];
+    }    //	function IS_NA()
+
+/**
      * IS_ODD
      *
      * @param    mixed $value Value to check
@@ -462,10 +445,9 @@ class PHPExcel_Calculation_Functions
         if ((is_bool($value)) || ((is_string($value)) && (!is_numeric($value))))
             return self::VALUE();
         return (abs($value) % 2 == 1);
-    }    //	function IS_ODD()
+    }    //	function IS_EVEN()
 
-
-    /**
+/**
      * IS_NUMBER
      *
      * @param    mixed $value Value to check
@@ -479,10 +461,9 @@ class PHPExcel_Calculation_Functions
             return False;
         }
         return is_numeric($value);
-    }    //	function IS_NUMBER()
+    }    //	function IS_ODD()
 
-
-    /**
+/**
      * IS_LOGICAL
      *
      * @param    mixed $value Value to check
@@ -493,10 +474,20 @@ class PHPExcel_Calculation_Functions
         $value = self::flattenSingleValue($value);
 
         return is_bool($value);
+    }    //	function IS_NUMBER()
+
+/**
+     * IS_NONTEXT
+     *
+     * @param    mixed $value Value to check
+     * @return    boolean
+     */
+    public static function IS_NONTEXT($value = NULL)
+    {
+        return !self::IS_TEXT($value);
     }    //	function IS_LOGICAL()
 
-
-    /**
+/**
      * IS_TEXT
      *
      * @param    mixed $value Value to check
@@ -509,20 +500,7 @@ class PHPExcel_Calculation_Functions
         return (is_string($value) && !self::IS_ERROR($value));
     }    //	function IS_TEXT()
 
-
-    /**
-     * IS_NONTEXT
-     *
-     * @param    mixed $value Value to check
-     * @return    boolean
-     */
-    public static function IS_NONTEXT($value = NULL)
-    {
-        return !self::IS_TEXT($value);
-    }    //	function IS_NONTEXT()
-
-
-    /**
+/**
      * VERSION
      *
      * @return    string    Version information
@@ -530,10 +508,9 @@ class PHPExcel_Calculation_Functions
     public static function VERSION()
     {
         return 'PHPExcel 1.8.1, 2015-04-30';
-    }    //	function VERSION()
+    }    //	function IS_NONTEXT()
 
-
-    /**
+/**
      * N
      *
      * Returns a value converted to a number
@@ -571,10 +548,9 @@ class PHPExcel_Calculation_Functions
                 break;
         }
         return 0;
-    }    //	function N()
+    }    //	function VERSION()
 
-
-    /**
+/**
      * TYPE
      *
      * Returns a number that identifies the type of a value
@@ -621,43 +597,9 @@ class PHPExcel_Calculation_Functions
             return 2;
         }
         return 0;
-    }    //	function TYPE()
+    }    //	function N()
 
-
-    /**
-     * Convert a multi-dimensional array to a simple 1-dimensional array
-     *
-     * @param    array $array Array to be flattened
-     * @return    array    Flattened array
-     */
-    public static function flattenArray($array)
-    {
-        if (!is_array($array)) {
-            return (array)$array;
-        }
-
-        $arrayValues = array();
-        foreach ($array as $value) {
-            if (is_array($value)) {
-                foreach ($value as $val) {
-                    if (is_array($val)) {
-                        foreach ($val as $v) {
-                            $arrayValues[] = $v;
-                        }
-                    } else {
-                        $arrayValues[] = $val;
-                    }
-                }
-            } else {
-                $arrayValues[] = $value;
-            }
-        }
-
-        return $arrayValues;
-    }    //	function flattenArray()
-
-
-    /**
+/**
      * Convert a multi-dimensional array to a simple 1-dimensional array, but retain an element of indexing
      *
      * @param    array $array Array to be flattened
@@ -687,22 +629,48 @@ class PHPExcel_Calculation_Functions
         }
 
         return $arrayValues;
+    }    //	function TYPE()
+
+    public static function isCellValue($idx)
+    {
+        return (substr_count($idx, '.') > 1);
+    }    //	function flattenArray()
+
+    public static function isMatrixValue($idx)
+    {
+        return ((substr_count($idx, '.') <= 1) || (preg_match('/\.[A-Z]/', $idx) > 0));
     }    //	function flattenArrayIndexed()
 
-
-    /**
-     * Convert an array to a single scalar value by extracting the first element
+/**
+     * Convert a multi-dimensional array to a simple 1-dimensional array
      *
-     * @param    mixed $value Array or scalar value
-     * @return    mixed
+     * @param    array $array Array to be flattened
+     * @return    array    Flattened array
      */
-    public static function flattenSingleValue($value = '')
+    public static function flattenArray($array)
     {
-        while (is_array($value)) {
-            $value = array_pop($value);
+        if (!is_array($array)) {
+            return (array)$array;
         }
 
-        return $value;
+        $arrayValues = array();
+        foreach ($array as $value) {
+            if (is_array($value)) {
+                foreach ($value as $val) {
+                    if (is_array($val)) {
+                        foreach ($val as $v) {
+                            $arrayValues[] = $v;
+                        }
+                    } else {
+                        $arrayValues[] = $val;
+                    }
+                }
+            } else {
+                $arrayValues[] = $value;
+            }
+        }
+
+        return $arrayValues;
     }    //	function flattenSingleValue()
 
 }    //	class PHPExcel_Calculation_Functions

@@ -81,8 +81,9 @@ class PHPExcel_Shared_Date
      * @var	int
      */
     protected static $_excelBaseDate = self::CALENDAR_WINDOWS_1900;
+    private static $possibleDateFormatCharacters = 'eymdHs';    //	function setExcelCalendar()
 
-    /**
+/**
      * Set the Excel calendar (Windows 1900 or Mac 1904)
      *
      * @param     integer $baseDate Excel base date (1900 or 1904)
@@ -97,10 +98,9 @@ class PHPExcel_Shared_Date
             return TRUE;
         }
         return FALSE;
-    }    //	function setExcelCalendar()
+    }    //	function getExcelCalendar()
 
-
-    /**
+/**
      * Return the Excel calendar (Windows 1900 or Mac 1904)
      *
      * @return     integer    Excel base date (1900 or 1904)
@@ -108,10 +108,30 @@ class PHPExcel_Shared_Date
     public static function getExcelCalendar()
     {
         return self::$_excelBaseDate;
-    }    //	function getExcelCalendar()
+    }    //	function ExcelToPHP()
 
+/**
+     * Convert a date from Excel to a PHP Date/Time object
+     *
+     * @param    integer $dateValue Excel date/time value
+     * @return    DateTime                    PHP date/time object
+     */
+    public static function ExcelToPHPObject($dateValue = 0)
+    {
+        $dateTime = self::ExcelToPHP($dateValue);
+        $days = floor($dateTime / 86400);
+        $time = round((($dateTime / 86400) - $days) * 86400);
+        $hours = round($time / 3600);
+        $minutes = round($time / 60) - ($hours * 60);
+        $seconds = round($time) - ($hours * 3600) - ($minutes * 60);
 
-    /**
+        $dateObj = date_create('1-Jan-1970+' . $days . ' days');
+        $dateObj->setTime($hours, $minutes, $seconds);
+
+        return $dateObj;
+    }    //	function ExcelToPHPObject()
+
+/**
      *    Convert a date from Excel to PHP
      *
      * @param        long $dateValue Excel date/time value
@@ -152,32 +172,9 @@ class PHPExcel_Shared_Date
 
         // Return
         return $returnValue + $timezoneAdjustment;
-    }    //	function ExcelToPHP()
+    }    //	function PHPToExcel()
 
-
-    /**
-     * Convert a date from Excel to a PHP Date/Time object
-     *
-     * @param    integer $dateValue Excel date/time value
-     * @return    DateTime                    PHP date/time object
-     */
-    public static function ExcelToPHPObject($dateValue = 0)
-    {
-        $dateTime = self::ExcelToPHP($dateValue);
-        $days = floor($dateTime / 86400);
-        $time = round((($dateTime / 86400) - $days) * 86400);
-        $hours = round($time / 3600);
-        $minutes = round($time / 60) - ($hours * 60);
-        $seconds = round($time) - ($hours * 3600) - ($minutes * 60);
-
-        $dateObj = date_create('1-Jan-1970+' . $days . ' days');
-        $dateObj->setTime($hours, $minutes, $seconds);
-
-        return $dateObj;
-    }    //	function ExcelToPHPObject()
-
-
-    /**
+/**
      *    Convert a date from PHP to Excel
      *
      * @param    mixed $dateValue PHP serialized date/time or date object
@@ -204,10 +201,9 @@ class PHPExcel_Shared_Date
         date_default_timezone_set($saveTimeZone);
 
         return $retValue;
-    }    //	function PHPToExcel()
+    }    //	function FormattedPHPToExcel()
 
-
-    /**
+/**
      * FormattedPHPToExcel
      *
      * @param    long $year
@@ -251,10 +247,9 @@ class PHPExcel_Shared_Date
         $excelTime = (($hours * 3600) + ($minutes * 60) + $seconds) / 86400;
 
         return (float)$excelDate + $excelTime;
-    }    //	function FormattedPHPToExcel()
+    }    //	function isDateTime()
 
-
-    /**
+/**
      * Is a given cell a date/time?
      *
      * @param     PHPExcel_Cell $pCell
@@ -267,10 +262,9 @@ class PHPExcel_Shared_Date
                 $pCell->getCoordinate()
             )->getNumberFormat()
         );
-    }    //	function isDateTime()
+    }    //	function isDateTimeFormat()
 
-
-    /**
+/**
      * Is a given number format a date/time?
      *
      * @param     PHPExcel_Style_NumberFormat $pFormat
@@ -279,10 +273,7 @@ class PHPExcel_Shared_Date
     public static function isDateTimeFormat(PHPExcel_Style_NumberFormat $pFormat)
     {
         return self::isDateTimeFormatCode($pFormat->getFormatCode());
-    }    //	function isDateTimeFormat()
-
-
-    private static $possibleDateFormatCharacters = 'eymdHs';
+    }
 
     /**
      * Is a given number format code a date/time?

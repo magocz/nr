@@ -90,6 +90,16 @@ class PHPExcel_Shared_String
      */
     private static $_isIconvEnabled;
 
+    public static function buildCharacterSets()
+    {
+        if (empty(self::$_controlCharacters)) {
+            self::_buildControlCharacters();
+        }
+        if (empty(self::$_SYLKCharacters)) {
+            self::_buildSYLKCharacters();
+        }
+    }
+
     /**
      * Build control characters array
      */
@@ -270,77 +280,6 @@ class PHPExcel_Shared_String
     }
 
     /**
-     * Get whether mbstring extension is available
-     *
-     * @return boolean
-     */
-    public static function getIsMbstringEnabled()
-    {
-        if (isset(self::$_isMbstringEnabled)) {
-            return self::$_isMbstringEnabled;
-        }
-
-        self::$_isMbstringEnabled = function_exists('mb_convert_encoding') ?
-            true : false;
-
-        return self::$_isMbstringEnabled;
-    }
-
-    /**
-     * Get whether iconv extension is available
-     *
-     * @return boolean
-     */
-    public static function getIsIconvEnabled()
-    {
-        if (isset(self::$_isIconvEnabled)) {
-            return self::$_isIconvEnabled;
-        }
-
-        // Fail if iconv doesn't exist
-        if (!function_exists('iconv')) {
-            self::$_isIconvEnabled = false;
-            return false;
-        }
-
-        // Sometimes iconv is not working, and e.g. iconv('UTF-8', 'UTF-16LE', 'x') just returns false,
-        if (!@iconv('UTF-8', 'UTF-16LE', 'x')) {
-            self::$_isIconvEnabled = false;
-            return false;
-        }
-
-        // Sometimes iconv_substr('A', 0, 1, 'UTF-8') just returns false in PHP 5.2.0
-        // we cannot use iconv in that case either (http://bugs.php.net/bug.php?id=37773)
-        if (!@iconv_substr('A', 0, 1, 'UTF-8')) {
-            self::$_isIconvEnabled = false;
-            return false;
-        }
-
-        // CUSTOM: IBM AIX iconv() does not work
-        if (defined('PHP_OS') && @stristr(PHP_OS, 'AIX')
-            && defined('ICONV_IMPL') && (@strcasecmp(ICONV_IMPL, 'unknown') == 0)
-            && defined('ICONV_VERSION') && (@strcasecmp(ICONV_VERSION, 'unknown') == 0)
-        ) {
-            self::$_isIconvEnabled = false;
-            return false;
-        }
-
-        // If we reach here no problems were detected with iconv
-        self::$_isIconvEnabled = true;
-        return true;
-    }
-
-    public static function buildCharacterSets()
-    {
-        if (empty(self::$_controlCharacters)) {
-            self::_buildControlCharacters();
-        }
-        if (empty(self::$_SYLKCharacters)) {
-            self::_buildSYLKCharacters();
-        }
-    }
-
-    /**
      * Convert from OpenXML escaped control character to PHP control character
      *
      * Excel 2007 team:
@@ -398,6 +337,67 @@ class PHPExcel_Shared_String
 
         // else, no conversion
         return $value;
+    }
+
+    /**
+     * Get whether iconv extension is available
+     *
+     * @return boolean
+     */
+    public static function getIsIconvEnabled()
+    {
+        if (isset(self::$_isIconvEnabled)) {
+            return self::$_isIconvEnabled;
+        }
+
+        // Fail if iconv doesn't exist
+        if (!function_exists('iconv')) {
+            self::$_isIconvEnabled = false;
+            return false;
+        }
+
+        // Sometimes iconv is not working, and e.g. iconv('UTF-8', 'UTF-16LE', 'x') just returns false,
+        if (!@iconv('UTF-8', 'UTF-16LE', 'x')) {
+            self::$_isIconvEnabled = false;
+            return false;
+        }
+
+        // Sometimes iconv_substr('A', 0, 1, 'UTF-8') just returns false in PHP 5.2.0
+        // we cannot use iconv in that case either (http://bugs.php.net/bug.php?id=37773)
+        if (!@iconv_substr('A', 0, 1, 'UTF-8')) {
+            self::$_isIconvEnabled = false;
+            return false;
+        }
+
+        // CUSTOM: IBM AIX iconv() does not work
+        if (defined('PHP_OS') && @stristr(PHP_OS, 'AIX')
+            && defined('ICONV_IMPL') && (@strcasecmp(ICONV_IMPL, 'unknown') == 0)
+            && defined('ICONV_VERSION') && (@strcasecmp(ICONV_VERSION, 'unknown') == 0)
+        ) {
+            self::$_isIconvEnabled = false;
+            return false;
+        }
+
+        // If we reach here no problems were detected with iconv
+        self::$_isIconvEnabled = true;
+        return true;
+    }
+
+    /**
+     * Get whether mbstring extension is available
+     *
+     * @return boolean
+     */
+    public static function getIsMbstringEnabled()
+    {
+        if (isset(self::$_isMbstringEnabled)) {
+            return self::$_isMbstringEnabled;
+        }
+
+        self::$_isMbstringEnabled = function_exists('mb_convert_encoding') ?
+            true : false;
+
+        return self::$_isMbstringEnabled;
     }
 
     /**
@@ -462,29 +462,24 @@ class PHPExcel_Shared_String
     }
 
     /**
-     * Converts a UTF-8 string into BIFF8 Unicode string data (16-bit string length)
-     * Writes the string using uncompressed notation, no rich text, no Asian phonetics
-     * If mbstring extension is not available, ASCII is assumed, and compressed notation is used
-     * although this will give wrong results for non-ASCII strings
-     * see OpenOffice.org's Documentation of the Microsoft Excel File Format, sect. 2.5.3
+     * Get character count. First try mbstring, then iconv, finally strlen
      *
-     * @param string $value UTF-8 encoded string
-     * @return string
+     * @param string $value
+     * @param string $enc Encoding
+     * @return int Character count
      */
-    public static function UTF8toBIFF8UnicodeLong($value)
+    public static function CountCharacters($value, $enc = 'UTF-8')
     {
-        // character count
-        $ln = self::CountCharacters($value, 'UTF-8');
+        if (self::getIsMbstringEnabled()) {
+            return mb_strlen($value, $enc);
+        }
 
-        // option flags
-        $opt = (self::getIsIconvEnabled() || self::getIsMbstringEnabled()) ?
-            0x0001 : 0x0000;
+        if (self::getIsIconvEnabled()) {
+            return iconv_strlen($value, $enc);
+        }
 
-        // characters
-        $chars = self::ConvertEncoding($value, 'UTF-16LE', 'UTF-8');
-
-        $data = pack('vC', $ln, $opt) . $chars;
-        return $data;
+        // else strlen
+        return strlen($value);
     }
 
     /**
@@ -556,24 +551,29 @@ class PHPExcel_Shared_String
     }
 
     /**
-     * Get character count. First try mbstring, then iconv, finally strlen
+     * Converts a UTF-8 string into BIFF8 Unicode string data (16-bit string length)
+     * Writes the string using uncompressed notation, no rich text, no Asian phonetics
+     * If mbstring extension is not available, ASCII is assumed, and compressed notation is used
+     * although this will give wrong results for non-ASCII strings
+     * see OpenOffice.org's Documentation of the Microsoft Excel File Format, sect. 2.5.3
      *
-     * @param string $value
-     * @param string $enc Encoding
-     * @return int Character count
+     * @param string $value UTF-8 encoded string
+     * @return string
      */
-    public static function CountCharacters($value, $enc = 'UTF-8')
+    public static function UTF8toBIFF8UnicodeLong($value)
     {
-        if (self::getIsMbstringEnabled()) {
-            return mb_strlen($value, $enc);
-        }
+        // character count
+        $ln = self::CountCharacters($value, 'UTF-8');
 
-        if (self::getIsIconvEnabled()) {
-            return iconv_strlen($value, $enc);
-        }
+        // option flags
+        $opt = (self::getIsIconvEnabled() || self::getIsMbstringEnabled()) ?
+            0x0001 : 0x0000;
 
-        // else strlen
-        return strlen($value);
+        // characters
+        $chars = self::ConvertEncoding($value, 'UTF-16LE', 'UTF-8');
+
+        $data = pack('vC', $ln, $opt) . $chars;
+        return $data;
     }
 
     /**
@@ -641,18 +641,6 @@ class PHPExcel_Shared_String
         return ucwords($pValue);
     }
 
-    public static function mb_is_upper($char)
-    {
-        return mb_strtolower($char, "UTF-8") != $char;
-    }
-
-    public static function mb_str_split($string)
-    {
-        # Split at all position not after the start: ^
-        # and not before the end: $
-        return preg_split('/(?<!^)(?!$)/u', $string);
-    }
-
     /**
      * Reverse the case of a string, so that all uppercase characters become lowercase
      *    and all lowercase characters become uppercase
@@ -674,6 +662,18 @@ class PHPExcel_Shared_String
             return implode('', $characters);
         }
         return strtolower($pValue) ^ strtoupper($pValue) ^ $pValue;
+    }
+
+    public static function mb_str_split($string)
+    {
+        # Split at all position not after the start: ^
+        # and not before the end: $
+        return preg_split('/(?<!^)(?!$)/u', $string);
+    }
+
+    public static function mb_is_upper($char)
+    {
+        return mb_strtolower($char, "UTF-8") != $char;
     }
 
     /**

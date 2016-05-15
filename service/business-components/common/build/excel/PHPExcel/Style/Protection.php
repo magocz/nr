@@ -77,28 +77,6 @@ class PHPExcel_Style_Protection extends PHPExcel_Style_Supervisor implements PHP
     }
 
     /**
-     * Get the shared style component for the currently active cell in currently active sheet.
-     * Only used for style supervisor
-     *
-     * @return PHPExcel_Style_Protection
-     */
-    public function getSharedComponent()
-    {
-        return $this->_parent->getSharedComponent()->getProtection();
-    }
-
-    /**
-     * Build style array from subcomponents
-     *
-     * @param array $array
-     * @return array
-     */
-    public function getStyleArray($array)
-    {
-        return array('protection' => $array);
-    }
-
-    /**
      * Apply styles from array
      *
      * <code>
@@ -134,6 +112,17 @@ class PHPExcel_Style_Protection extends PHPExcel_Style_Supervisor implements PHP
     }
 
     /**
+     * Build style array from subcomponents
+     *
+     * @param array $array
+     * @return array
+     */
+    public function getStyleArray($array)
+    {
+        return array('protection' => $array);
+    }
+
+    /**
      * Get locked
      *
      * @return string
@@ -161,6 +150,17 @@ class PHPExcel_Style_Protection extends PHPExcel_Style_Supervisor implements PHP
             $this->_locked = $pValue;
         }
         return $this;
+    }
+
+    /**
+     * Get the shared style component for the currently active cell in currently active sheet.
+     * Only used for style supervisor
+     *
+     * @return PHPExcel_Style_Protection
+     */
+    public function getSharedComponent()
+    {
+        return $this->_parent->getSharedComponent()->getProtection();
     }
 
     /**

@@ -19,10 +19,14 @@
     <script src="../src/common/js/highcharts/modules/drilldown.js"></script>
     <script type="text/javascript" src="../src/common/js/tablesorter/jquery.tablesorter.js"></script>
 
-    <script src="../src/home/js/home.js"></script>
-    <script src="../src/home/js/pipe-chart.js"></script>
-    <script src="../src/home/js/column-chart.js"></script>
-    <script src="../src/home/js/fields-table.js"></script>
+
+    <script src="../src/home/js/ChartModel.js"></script>
+    <script src="../src/home/js/AddOperation.js"></script>
+    <script src="../src/home/js/EditField.js"></script>
+    <script src="../src/home/js/DeleteField.js"></script>
+    <script src="../src/home/js/AddField.js"></script>
+    <script src="../src/home/js/FieldTable.js"></script>
+    <script src="../src/home/js/Home.js"></script>
 
 </head>
 <body>
@@ -60,9 +64,12 @@
         <td class="lastOperationCell">
             <div class="pipeChartSelect">
                 <select id="activeSeasonColumnChartCombobox">
-                    <option value="plantsToCost">Uprawiane rośliny / koszt</option>
-                    <option value="plantsToProceeds">Uprawiane rośliny / przychód</option>
-                    <option value="plantsToProfit">Uprawiane rośliny / zysk</option>
+                    <option value="plantsToCostProField">Koszt</option>
+                    <option value="plantsToCostProHa">Koszt na hektar</option>
+                    <option value="plantsToProfitProField">Zysk</option>
+                    <option value="plantsToProfitProHa">Zysk na hektar</option>
+                    <option value="plantsToRevenuesProField">Przychody</option>
+                    <option value="plantsToRevenuesProHa">Przychody na hektar</option>
                 </select>
             </div>
         </td>

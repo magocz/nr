@@ -608,48 +608,6 @@ class PHPExcel_Worksheet_PageSetup
     }
 
     /**
-     * Is print area set?
-     *
-     * @param    int $index Identifier for a specific print area range if several ranges have been set
-     *                            Default behaviour, or an index value of 0, will identify whether any print range is set
-     *                            Otherwise, existence of the range identified by the value of $index will be returned
-     *                            Print areas are numbered from 1
-     * @return    boolean
-     */
-    public function isPrintAreaSet($index = 0)
-    {
-        if ($index == 0) {
-            return !is_null($this->_printArea);
-        }
-        $printAreas = explode(',', $this->_printArea);
-        return isset($printAreas[$index - 1]);
-    }
-
-    /**
-     * Clear a print area
-     *
-     * @param    int $index Identifier for a specific print area range if several ranges have been set
-     *                            Default behaviour, or an index value of 0, will clear all print ranges that are set
-     *                            Otherwise, the range identified by the value of $index will be removed from the series
-     *                            Print areas are numbered from 1
-     * @return    PHPExcel_Worksheet_PageSetup
-     */
-    public function clearPrintArea($index = 0)
-    {
-        if ($index == 0) {
-            $this->_printArea = NULL;
-        } else {
-            $printAreas = explode(',', $this->_printArea);
-            if (isset($printAreas[$index - 1])) {
-                unset($printAreas[$index - 1]);
-                $this->_printArea = implode(',', $printAreas);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
      * Set print area. e.g. 'A1:D10' or 'A1:D10,G5:M20'
      *
      * @param    string $value
@@ -710,6 +668,48 @@ class PHPExcel_Worksheet_PageSetup
             }
         } else {
             throw new PHPExcel_Exception('Invalid method for setting print range.');
+        }
+
+        return $this;
+    }
+
+    /**
+     * Is print area set?
+     *
+     * @param    int $index Identifier for a specific print area range if several ranges have been set
+     *                            Default behaviour, or an index value of 0, will identify whether any print range is set
+     *                            Otherwise, existence of the range identified by the value of $index will be returned
+     *                            Print areas are numbered from 1
+     * @return    boolean
+     */
+    public function isPrintAreaSet($index = 0)
+    {
+        if ($index == 0) {
+            return !is_null($this->_printArea);
+        }
+        $printAreas = explode(',', $this->_printArea);
+        return isset($printAreas[$index - 1]);
+    }
+
+    /**
+     * Clear a print area
+     *
+     * @param    int $index Identifier for a specific print area range if several ranges have been set
+     *                            Default behaviour, or an index value of 0, will clear all print ranges that are set
+     *                            Otherwise, the range identified by the value of $index will be removed from the series
+     *                            Print areas are numbered from 1
+     * @return    PHPExcel_Worksheet_PageSetup
+     */
+    public function clearPrintArea($index = 0)
+    {
+        if ($index == 0) {
+            $this->_printArea = NULL;
+        } else {
+            $printAreas = explode(',', $this->_printArea);
+            if (isset($printAreas[$index - 1])) {
+                unset($printAreas[$index - 1]);
+                $this->_printArea = implode(',', $printAreas);
+            }
         }
 
         return $this;

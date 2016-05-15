@@ -43,19 +43,7 @@ class PHPExcel_Shared_File
      */
     protected static $_useUploadTempDirectory = FALSE;
 
-
-    /**
-     * Set the flag indicating whether the File Upload Temp directory should be used for temporary files
-     *
-     * @param     boolean $useUploadTempDir Use File Upload Temporary directory (true or false)
-     */
-    public static function setUseUploadTempDirectory($useUploadTempDir = FALSE)
-    {
-        self::$_useUploadTempDirectory = (boolean)$useUploadTempDir;
-    }    //	function setUseUploadTempDirectory()
-
-
-    /**
+/**
      * Get the flag indicating whether the File Upload Temp directory should be used for temporary files
      *
      * @return     boolean    Use File Upload Temporary directory (true or false)
@@ -63,8 +51,17 @@ class PHPExcel_Shared_File
     public static function getUseUploadTempDirectory()
     {
         return self::$_useUploadTempDirectory;
-    }    //	function getUseUploadTempDirectory()
+    }    //	function setUseUploadTempDirectory()
 
+/**
+     * Set the flag indicating whether the File Upload Temp directory should be used for temporary files
+     *
+     * @param     boolean $useUploadTempDir Use File Upload Temporary directory (true or false)
+     */
+    public static function setUseUploadTempDirectory($useUploadTempDir = FALSE)
+    {
+        self::$_useUploadTempDirectory = (boolean)$useUploadTempDir;
+    }    //	function getUseUploadTempDirectory()
 
     /**
      * Verify if a file exists

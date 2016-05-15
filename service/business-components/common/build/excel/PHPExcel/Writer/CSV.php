@@ -169,6 +169,47 @@ class PHPExcel_Writer_CSV extends PHPExcel_Writer_Abstract implements PHPExcel_W
     }
 
     /**
+     * Write line to CSV file
+     *
+     * @param    mixed $pFileHandle PHP filehandle
+     * @param    array $pValues Array containing values in a row
+     * @throws    PHPExcel_Writer_Exception
+     */
+    private function _writeLine($pFileHandle = null, $pValues = null)
+    {
+        if (is_array($pValues)) {
+            // No leading delimiter
+            $writeDelimiter = false;
+
+            // Build the line
+            $line = '';
+
+            foreach ($pValues as $element) {
+                // Escape enclosures
+                $element = str_replace($this->_enclosure, $this->_enclosure . $this->_enclosure, $element);
+
+                // Add delimiter
+                if ($writeDelimiter) {
+                    $line .= $this->_delimiter;
+                } else {
+                    $writeDelimiter = true;
+                }
+
+                // Add enclosed string
+                $line .= $this->_enclosure . $element . $this->_enclosure;
+            }
+
+            // Add line ending
+            $line .= $this->_lineEnding;
+
+            // Write to file
+            fwrite($pFileHandle, $line);
+        } else {
+            throw new PHPExcel_Writer_Exception("Invalid data row passed to CSV writer.");
+        }
+    }
+
+    /**
      * Get enclosure
      *
      * @return string
@@ -280,47 +321,6 @@ class PHPExcel_Writer_CSV extends PHPExcel_Writer_Abstract implements PHPExcel_W
     {
         $this->_sheetIndex = $pValue;
         return $this;
-    }
-
-    /**
-     * Write line to CSV file
-     *
-     * @param    mixed $pFileHandle PHP filehandle
-     * @param    array $pValues Array containing values in a row
-     * @throws    PHPExcel_Writer_Exception
-     */
-    private function _writeLine($pFileHandle = null, $pValues = null)
-    {
-        if (is_array($pValues)) {
-            // No leading delimiter
-            $writeDelimiter = false;
-
-            // Build the line
-            $line = '';
-
-            foreach ($pValues as $element) {
-                // Escape enclosures
-                $element = str_replace($this->_enclosure, $this->_enclosure . $this->_enclosure, $element);
-
-                // Add delimiter
-                if ($writeDelimiter) {
-                    $line .= $this->_delimiter;
-                } else {
-                    $writeDelimiter = true;
-                }
-
-                // Add enclosed string
-                $line .= $this->_enclosure . $element . $this->_enclosure;
-            }
-
-            // Add line ending
-            $line .= $this->_lineEnding;
-
-            // Write to file
-            fwrite($pFileHandle, $line);
-        } else {
-            throw new PHPExcel_Writer_Exception("Invalid data row passed to CSV writer.");
-        }
     }
 
 }

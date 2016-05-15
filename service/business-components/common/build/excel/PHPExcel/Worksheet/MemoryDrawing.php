@@ -141,6 +141,20 @@ class PHPExcel_Worksheet_MemoryDrawing extends PHPExcel_Worksheet_BaseDrawing im
     }
 
     /**
+     * Get indexed filename (using image index)
+     *
+     * @return string
+     */
+    public function getIndexedFilename()
+    {
+        $extension = strtolower($this->getMimeType());
+        $extension = explode('/', $extension);
+        $extension = $extension[1];
+
+        return $this->_uniqueName . $this->getImageIndex() . '.' . $extension;
+    }
+
+    /**
      * Get mime type
      *
      * @return string
@@ -160,20 +174,6 @@ class PHPExcel_Worksheet_MemoryDrawing extends PHPExcel_Worksheet_BaseDrawing im
     {
         $this->_mimeType = $value;
         return $this;
-    }
-
-    /**
-     * Get indexed filename (using image index)
-     *
-     * @return string
-     */
-    public function getIndexedFilename()
-    {
-        $extension = strtolower($this->getMimeType());
-        $extension = explode('/', $extension);
-        $extension = $extension[1];
-
-        return $this->_uniqueName . $this->getImageIndex() . '.' . $extension;
     }
 
     /**

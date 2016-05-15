@@ -148,6 +148,59 @@ class PHPExcel
     private $_ribbonBinObjects = NULL;
 
     /**
+     * Create a new PHPExcel with one Worksheet
+     */
+    public function __construct()
+    {
+        $this->_uniqueID = uniqid();
+        $this->_calculationEngine = PHPExcel_Calculation::getInstance($this);
+
+        // Initialise worksheet collection and add one worksheet
+        $this->_workSheetCollection = array();
+        $this->_workSheetCollection[] = new PHPExcel_Worksheet($this);
+        $this->_activeSheetIndex = 0;
+
+        // Create document properties
+        $this->_properties = new PHPExcel_DocumentProperties();
+
+        // Create document security
+        $this->_security = new PHPExcel_DocumentSecurity();
+
+        // Set named ranges
+        $this->_namedRanges = array();
+
+        // Create the cellXf supervisor
+        $this->_cellXfSupervisor = new PHPExcel_Style(true);
+        $this->_cellXfSupervisor->bindParent($this);
+
+        // Create the default style
+        $this->addCellXf(new PHPExcel_Style);
+        $this->addCellStyleXf(new PHPExcel_Style);
+    }
+
+    /**
+     * Add a cellXf to the workbook
+     *
+     * @param PHPExcel_Style $style
+     */
+    public function addCellXf(PHPExcel_Style $style)
+    {
+        $this->_cellXfCollection[] = $style;
+        $style->setIndex(count($this->_cellXfCollection) - 1);
+    }
+
+    /**
+     * Add a cellStyleXf to the workbook
+     *
+     * @param PHPExcel_Style $pStyle
+     */
+    public function addCellStyleXf(PHPExcel_Style $pStyle)
+    {
+        $this->_cellStyleXfCollection[] = $pStyle;
+        $pStyle->setIndex(count($this->_cellStyleXfCollection) - 1);
+    }
+
+    /**
      * The workbook has macros ?
      *
      * @return true if workbook has macros, false if not
@@ -158,13 +211,13 @@ class PHPExcel
     }
 
     /**
-     * Define if a workbook has macros
+     * Return the macros code
      *
-     * @param true|false
+     * @return binary|null
      */
-    public function setHasMacros($hasMacros = false)
+    public function getMacrosCode()
     {
-        $this->_hasMacros = (bool)$hasMacros;
+        return $this->_macrosCode;
     }
 
     /**
@@ -179,23 +232,13 @@ class PHPExcel
     }
 
     /**
-     * Return the macros code
+     * Define if a workbook has macros
      *
-     * @return binary|null
+     * @param true|false
      */
-    public function getMacrosCode()
+    public function setHasMacros($hasMacros = false)
     {
-        return $this->_macrosCode;
-    }
-
-    /**
-     * Set the macros certificate
-     *
-     * @param binary|null
-     */
-    public function setMacrosCertificate($Certificate = NULL)
-    {
-        $this->_macrosCertificate = $Certificate;
+        $this->_hasMacros = (bool)$hasMacros;
     }
 
     /**
@@ -219,6 +262,16 @@ class PHPExcel
     }
 
     /**
+     * Set the macros certificate
+     *
+     * @param binary|null
+     */
+    public function setMacrosCertificate($Certificate = NULL)
+    {
+        $this->_macrosCertificate = $Certificate;
+    }
+
+    /**
      * Remove all macros, certificate from spreadsheet
      *
      * @param none
@@ -229,19 +282,6 @@ class PHPExcel
         $this->_hasMacros = false;
         $this->_macrosCode = NULL;
         $this->_macrosCertificate = NULL;
-    }
-
-    /**
-     * set ribbon XML data
-     *
-     */
-    public function setRibbonXMLData($Target = NULL, $XMLData = NULL)
-    {
-        if (!is_null($Target) && !is_null($XMLData)) {
-            $this->_ribbonXMLData = array('target' => $Target, 'data' => $XMLData);
-        } else {
-            $this->_ribbonXMLData = NULL;
-        }
     }
 
     /**
@@ -268,25 +308,16 @@ class PHPExcel
     }
 
     /**
-     * store binaries ribbon objects (pictures)
+     * set ribbon XML data
      *
      */
-    public function setRibbonBinObjects($BinObjectsNames = NULL, $BinObjectsData = NULL)
+    public function setRibbonXMLData($Target = NULL, $XMLData = NULL)
     {
-        if (!is_null($BinObjectsNames) && !is_null($BinObjectsData)) {
-            $this->_ribbonBinObjects = array('names' => $BinObjectsNames, 'data' => $BinObjectsData);
+        if (!is_null($Target) && !is_null($XMLData)) {
+            $this->_ribbonXMLData = array('target' => $Target, 'data' => $XMLData);
         } else {
-            $this->_ribbonBinObjects = NULL;
+            $this->_ribbonXMLData = NULL;
         }
-    }
-
-    /**
-     * return the extension of a filename. Internal use for a array_map callback (php<5.3 don't like lambda function)
-     *
-     */
-    private function _getExtensionOnly($ThePath)
-    {
-        return pathinfo($ThePath, PATHINFO_EXTENSION);
     }
 
     /**
@@ -316,6 +347,19 @@ class PHPExcel
                 break;
         }
         return $ReturnData;
+    }
+
+    /**
+     * store binaries ribbon objects (pictures)
+     *
+     */
+    public function setRibbonBinObjects($BinObjectsNames = NULL, $BinObjectsData = NULL)
+    {
+        if (!is_null($BinObjectsNames) && !is_null($BinObjectsData)) {
+            $this->_ribbonBinObjects = array('names' => $BinObjectsNames, 'data' => $BinObjectsData);
+        } else {
+            $this->_ribbonBinObjects = NULL;
+        }
     }
 
     /**
@@ -349,7 +393,7 @@ class PHPExcel
         return ($this->getSheetByCodeName($pSheetCodeName) !== NULL);
     }
 
-    /**
+        /**
      * Get sheet by code name. Warning : sheet don't have always a code name !
      *
      * @param string $pName Sheet name
@@ -365,40 +409,9 @@ class PHPExcel
         }
 
         return null;
-    }
+    }    //    function __destruct()
 
-    /**
-     * Create a new PHPExcel with one Worksheet
-     */
-    public function __construct()
-    {
-        $this->_uniqueID = uniqid();
-        $this->_calculationEngine = PHPExcel_Calculation::getInstance($this);
-
-        // Initialise worksheet collection and add one worksheet
-        $this->_workSheetCollection = array();
-        $this->_workSheetCollection[] = new PHPExcel_Worksheet($this);
-        $this->_activeSheetIndex = 0;
-
-        // Create document properties
-        $this->_properties = new PHPExcel_DocumentProperties();
-
-        // Create document security
-        $this->_security = new PHPExcel_DocumentSecurity();
-
-        // Set named ranges
-        $this->_namedRanges = array();
-
-        // Create the cellXf supervisor
-        $this->_cellXfSupervisor = new PHPExcel_Style(true);
-        $this->_cellXfSupervisor->bindParent($this);
-
-        // Create the default style
-        $this->addCellXf(new PHPExcel_Style);
-        $this->addCellStyleXf(new PHPExcel_Style);
-    }
-
-    /**
+/**
      * Code to execute when this worksheet is unset()
      *
      */
@@ -406,9 +419,9 @@ class PHPExcel
     {
         PHPExcel_Calculation::unsetInstance($this);
         $this->disconnectWorksheets();
-    }    //    function __destruct()
+    }
 
-    /**
+        /**
      * Disconnect all worksheets from this PHPExcel workbook object,
      *    typically so that the PHPExcel object can be unset
      *
@@ -422,9 +435,9 @@ class PHPExcel
         }
         unset($worksheet);
         $this->_workSheetCollection = array();
-    }
+    }    //	function getCellCacheController()
 
-    /**
+/**
      * Return the calculation engine for this worksheet
      *
      * @return PHPExcel_Calculation
@@ -432,7 +445,7 @@ class PHPExcel
     public function getCalculationEngine()
     {
         return $this->_calculationEngine;
-    }    //	function getCellCacheController()
+    }
 
     /**
      * Get properties
@@ -501,17 +514,6 @@ class PHPExcel
     }
 
     /**
-     * Check if a sheet with a specified name already exists
-     *
-     * @param  string $pSheetName Name of the worksheet to check
-     * @return boolean
-     */
-    public function sheetNameExists($pSheetName)
-    {
-        return ($this->getSheetByName($pSheetName) !== NULL);
-    }
-
-    /**
      * Add sheet
      *
      * @param  PHPExcel_Worksheet $pSheet
@@ -555,6 +557,35 @@ class PHPExcel
     }
 
     /**
+     * Check if a sheet with a specified name already exists
+     *
+     * @param  string $pSheetName Name of the worksheet to check
+     * @return boolean
+     */
+    public function sheetNameExists($pSheetName)
+    {
+        return ($this->getSheetByName($pSheetName) !== NULL);
+    }
+
+    /**
+     * Get sheet by name
+     *
+     * @param  string $pName Sheet name
+     * @return PHPExcel_Worksheet
+     */
+    public function getSheetByName($pName = '')
+    {
+        $worksheetCount = count($this->_workSheetCollection);
+        for ($i = 0; $i < $worksheetCount; ++$i) {
+            if ($this->_workSheetCollection[$i]->getTitle() === $pName) {
+                return $this->_workSheetCollection[$i];
+            }
+        }
+
+        return NULL;
+    }
+
+    /**
      * Remove sheet by index
      *
      * @param  int $pIndex Active sheet index
@@ -582,25 +613,6 @@ class PHPExcel
     }
 
     /**
-     * Get sheet by index
-     *
-     * @param  int $pIndex Sheet index
-     * @return PHPExcel_Worksheet
-     * @throws PHPExcel_Exception
-     */
-    public function getSheet($pIndex = 0)
-    {
-        if (!isset($this->_workSheetCollection[$pIndex])) {
-            $numSheets = $this->getSheetCount();
-            throw new PHPExcel_Exception(
-                "Your requested sheet index: {$pIndex} is out of bounds. The actual number of sheets is {$numSheets}."
-            );
-        }
-
-        return $this->_workSheetCollection[$pIndex];
-    }
-
-    /**
      * Get all sheets
      *
      * @return PHPExcel_Worksheet[]
@@ -608,42 +620,6 @@ class PHPExcel
     public function getAllSheets()
     {
         return $this->_workSheetCollection;
-    }
-
-    /**
-     * Get sheet by name
-     *
-     * @param  string $pName Sheet name
-     * @return PHPExcel_Worksheet
-     */
-    public function getSheetByName($pName = '')
-    {
-        $worksheetCount = count($this->_workSheetCollection);
-        for ($i = 0; $i < $worksheetCount; ++$i) {
-            if ($this->_workSheetCollection[$i]->getTitle() === $pName) {
-                return $this->_workSheetCollection[$i];
-            }
-        }
-
-        return NULL;
-    }
-
-    /**
-     * Get index for sheet
-     *
-     * @param  PHPExcel_Worksheet $pSheet
-     * @return Sheet index
-     * @throws PHPExcel_Exception
-     */
-    public function getIndex(PHPExcel_Worksheet $pSheet)
-    {
-        foreach ($this->_workSheetCollection as $key => $value) {
-            if ($value->getHashCode() == $pSheet->getHashCode()) {
-                return $key;
-            }
-        }
-
-        throw new PHPExcel_Exception("Sheet does not exist.");
     }
 
     /**
@@ -672,13 +648,21 @@ class PHPExcel
     }
 
     /**
-     * Get sheet count
+     * Get index for sheet
      *
-     * @return int
+     * @param  PHPExcel_Worksheet $pSheet
+     * @return Sheet index
+     * @throws PHPExcel_Exception
      */
-    public function getSheetCount()
+    public function getIndex(PHPExcel_Worksheet $pSheet)
     {
-        return count($this->_workSheetCollection);
+        foreach ($this->_workSheetCollection as $key => $value) {
+            if ($value->getHashCode() == $pSheet->getHashCode()) {
+                return $key;
+            }
+        }
+
+        throw new PHPExcel_Exception("Sheet does not exist.");
     }
 
     /**
@@ -746,6 +730,35 @@ class PHPExcel
     }
 
     /**
+     * Get sheet count
+     *
+     * @return int
+     */
+    public function getSheetCount()
+    {
+        return count($this->_workSheetCollection);
+    }
+
+    /**
+     * Get sheet by index
+     *
+     * @param  int $pIndex Sheet index
+     * @return PHPExcel_Worksheet
+     * @throws PHPExcel_Exception
+     */
+    public function getSheet($pIndex = 0)
+    {
+        if (!isset($this->_workSheetCollection[$pIndex])) {
+            $numSheets = $this->getSheetCount();
+            throw new PHPExcel_Exception(
+                "Your requested sheet index: {$pIndex} is out of bounds. The actual number of sheets is {$numSheets}."
+            );
+        }
+
+        return $this->_workSheetCollection[$pIndex];
+    }
+
+    /**
      * Add external sheet
      *
      * @param  PHPExcel_Worksheet $pSheet External sheet to add
@@ -777,6 +790,16 @@ class PHPExcel
         }
 
         return $this->addSheet($pSheet, $iSheetIndex);
+    }
+
+    /**
+     * Get the workbook collection of cellXfs
+     *
+     * @return PHPExcel_Style[]
+     */
+    public function getCellXfCollection()
+    {
+        return $this->_cellXfCollection;
     }
 
     /**
@@ -855,16 +878,6 @@ class PHPExcel
     }
 
     /**
-     * Get worksheet iterator
-     *
-     * @return PHPExcel_WorksheetIterator
-     */
-    public function getWorksheetIterator()
-    {
-        return new PHPExcel_WorksheetIterator($this);
-    }
-
-    /**
      * Copy workbook (!= clone!)
      *
      * @return PHPExcel
@@ -892,16 +905,6 @@ class PHPExcel
                 $this->{$key} = unserialize(serialize($val));
             }
         }
-    }
-
-    /**
-     * Get the workbook collection of cellXfs
-     *
-     * @return PHPExcel_Style[]
-     */
-    public function getCellXfCollection()
-    {
-        return $this->_cellXfCollection;
     }
 
     /**
@@ -954,17 +957,6 @@ class PHPExcel
             return $this->_cellXfCollection[0];
         }
         throw new PHPExcel_Exception('No default style found for this workbook');
-    }
-
-    /**
-     * Add a cellXf to the workbook
-     *
-     * @param PHPExcel_Style $style
-     */
-    public function addCellXf(PHPExcel_Style $style)
-    {
-        $this->_cellXfCollection[] = $style;
-        $style->setIndex(count($this->_cellXfCollection) - 1);
     }
 
     /**
@@ -1043,17 +1035,6 @@ class PHPExcel
             }
         }
         return false;
-    }
-
-    /**
-     * Add a cellStyleXf to the workbook
-     *
-     * @param PHPExcel_Style $pStyle
-     */
-    public function addCellStyleXf(PHPExcel_Style $pStyle)
-    {
-        $this->_cellStyleXfCollection[] = $pStyle;
-        $pStyle->setIndex(count($this->_cellStyleXfCollection) - 1);
     }
 
     /**
@@ -1154,6 +1135,16 @@ class PHPExcel
     }
 
     /**
+     * Get worksheet iterator
+     *
+     * @return PHPExcel_WorksheetIterator
+     */
+    public function getWorksheetIterator()
+    {
+        return new PHPExcel_WorksheetIterator($this);
+    }
+
+    /**
      * Return the unique ID value assigned to this spreadsheet workbook
      *
      * @return string
@@ -1161,6 +1152,15 @@ class PHPExcel
     public function getID()
     {
         return $this->_uniqueID;
+    }
+
+    /**
+     * return the extension of a filename. Internal use for a array_map callback (php<5.3 don't like lambda function)
+     *
+     */
+    private function _getExtensionOnly($ThePath)
+    {
+        return pathinfo($ThePath, PATHINFO_EXTENSION);
     }
 
 }

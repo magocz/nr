@@ -95,24 +95,7 @@ class PHPExcel_Shared_JAMA_QRDecomposition
         }
     }    //	function __construct()
 
-
-    /**
-     *    Is the matrix full rank?
-     *
-     * @return boolean true if R, and hence A, has full rank, else false.
-     */
-    public function isFullRank()
-    {
-        for ($j = 0; $j < $this->n; ++$j) {
-            if ($this->Rdiag[$j] == 0) {
-                return false;
-            }
-        }
-        return true;
-    }    //	function isFullRank()
-
-
-    /**
+/**
      *    Return the Householder vectors
      *
      * @return Matrix Lower trapezoidal matrix whose columns define the reflections
@@ -129,10 +112,9 @@ class PHPExcel_Shared_JAMA_QRDecomposition
             }
         }
         return new PHPExcel_Shared_JAMA_Matrix($H);
-    }    //	function getH()
+    }    //	function isFullRank()
 
-
-    /**
+/**
      *    Return the upper triangular factor
      *
      * @return Matrix upper triangular factor
@@ -151,10 +133,9 @@ class PHPExcel_Shared_JAMA_QRDecomposition
             }
         }
         return new PHPExcel_Shared_JAMA_Matrix($R);
-    }    //	function getR()
+    }    //	function getH()
 
-
-    /**
+/**
      *    Generate and return the (economy-sized) orthogonal factor
      *
      * @return Matrix orthogonal factor
@@ -189,10 +170,9 @@ class PHPExcel_Shared_JAMA_QRDecomposition
         }
         */
         return new PHPExcel_Shared_JAMA_Matrix($Q);
-    }    //	function getQ()
+    }    //	function getR()
 
-
-    /**
+/**
      *    Least squares solution of A*X = B
      *
      * @param Matrix $B A Matrix with as many rows as A and any number of columns.
@@ -237,6 +217,21 @@ class PHPExcel_Shared_JAMA_QRDecomposition
         } else {
             throw new PHPExcel_Calculation_Exception(PHPExcel_Shared_JAMA_Matrix::MatrixDimensionException);
         }
+    }    //	function getQ()
+
+/**
+     *    Is the matrix full rank?
+     *
+     * @return boolean true if R, and hence A, has full rank, else false.
+     */
+    public function isFullRank()
+    {
+        for ($j = 0; $j < $this->n; ++$j) {
+            if ($this->Rdiag[$j] == 0) {
+                return false;
+            }
+        }
+        return true;
     }    //	function solve()
 
 }    //	PHPExcel_Shared_JAMA_class QRDecomposition

@@ -54,6 +54,7 @@ body.modal-open {
 .homeTableActiveSeasonData {
     border-collapse: collapse;
     width: 100%;
+    text-align: center;
 }
 
 .homeTableActiveSeasonData td {
@@ -89,7 +90,7 @@ body.modal-open {
 
 .fieldEditInputs {
     margin-bottom: 6px;
-    width: 70%;
+    width: 100%;
 }
 
 .footer {
@@ -97,14 +98,10 @@ body.modal-open {
 }
 
 .editFieldInput {
-    width: 40%;
+    width: 65%;
     float: left;
 }
 
-.editFieldWarning {
-    width: 25%;
-    float: left;
-}
 
 .editFieldLable {
     width: 35%;

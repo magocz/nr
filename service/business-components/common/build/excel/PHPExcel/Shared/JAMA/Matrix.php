@@ -128,44 +128,28 @@ class PHPExcel_Shared_JAMA_Matrix
         return $this->A;
     }    //	function getArray()
 
-
-    /**
-     *    getRowDimension
+/**
+     *    getMatrixByRow
      *
-     * @return int Row dimension
+     *    Get a submatrix by row index/range
+     * @param int $i0 Initial row index
+     * @param int $iF Final row index
+     * @return Matrix Submatrix
      */
-    public function getRowDimension()
+    public function getMatrixByRow($i0 = null, $iF = null)
     {
-        return $this->m;
+        if (is_int($i0)) {
+            if (is_int($iF)) {
+                return $this->getMatrix($i0, 0, $iF + 1, $this->n);
+            } else {
+                return $this->getMatrix($i0, 0, $i0 + 1, $this->n);
+            }
+        } else {
+            throw new PHPExcel_Calculation_Exception(self::ArgumentTypeException);
+        }
     }    //	function getRowDimension()
 
-
-    /**
-     *    getColumnDimension
-     *
-     * @return int Column dimension
-     */
-    public function getColumnDimension()
-    {
-        return $this->n;
-    }    //	function getColumnDimension()
-
-
-    /**
-     *    get
-     *
-     *    Get the i,j-th element of the matrix.
-     * @param int $i Row position
-     * @param int $j Column position
-     * @return mixed Element (int/float/double)
-     */
-    public function get($i = null, $j = null)
-    {
-        return $this->A[$i][$j];
-    }    //	function get()
-
-
-    /**
+/**
      *    getMatrix
      *
      *    Get a submatrix
@@ -315,31 +299,9 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::PolymorphicArgumentException);
         }
-    }    //	function getMatrix()
+    }    //	function getColumnDimension()
 
-
-    /**
-     *    checkMatrixDimensions
-     *
-     *    Is matrix B the same size?
-     * @param Matrix $B Matrix B
-     * @return boolean
-     */
-    public function checkMatrixDimensions($B = null)
-    {
-        if ($B instanceof PHPExcel_Shared_JAMA_Matrix) {
-            if (($this->m == $B->getRowDimension()) && ($this->n == $B->getColumnDimension())) {
-                return true;
-            } else {
-                throw new PHPExcel_Calculation_Exception(self::MatrixDimensionException);
-            }
-        } else {
-            throw new PHPExcel_Calculation_Exception(self::ArgumentTypeException);
-        }
-    }    //	function checkMatrixDimensions()
-
-
-    /**
+/**
      *    set
      *
      *    Set the i,j-th element of the matrix.
@@ -352,65 +314,9 @@ class PHPExcel_Shared_JAMA_Matrix
     {
         // Optimized set version just has this
         $this->A[$i][$j] = $c;
-    }    //	function set()
+    }    //	function get()
 
-
-    /**
-     *    identity
-     *
-     *    Generate an identity matrix.
-     * @param int $m Row dimension
-     * @param int $n Column dimension
-     * @return Matrix Identity matrix
-     */
-    public function identity($m = null, $n = null)
-    {
-        return $this->diagonal($m, $n, 1);
-    }    //	function identity()
-
-
-    /**
-     *    diagonal
-     *
-     *    Generate a diagonal matrix
-     * @param int $m Row dimension
-     * @param int $n Column dimension
-     * @param mixed $c Diagonal value
-     * @return Matrix Diagonal matrix
-     */
-    public function diagonal($m = null, $n = null, $c = 1)
-    {
-        $R = new PHPExcel_Shared_JAMA_Matrix($m, $n);
-        for ($i = 0; $i < $m; ++$i) {
-            $R->set($i, $i, $c);
-        }
-        return $R;
-    }    //	function diagonal()
-
-
-    /**
-     *    getMatrixByRow
-     *
-     *    Get a submatrix by row index/range
-     * @param int $i0 Initial row index
-     * @param int $iF Final row index
-     * @return Matrix Submatrix
-     */
-    public function getMatrixByRow($i0 = null, $iF = null)
-    {
-        if (is_int($i0)) {
-            if (is_int($iF)) {
-                return $this->getMatrix($i0, 0, $iF + 1, $this->n);
-            } else {
-                return $this->getMatrix($i0, 0, $i0 + 1, $this->n);
-            }
-        } else {
-            throw new PHPExcel_Calculation_Exception(self::ArgumentTypeException);
-        }
-    }    //	function getMatrixByRow()
-
-
-    /**
+/**
      *    getMatrixByCol
      *
      *    Get a submatrix by column index/range
@@ -429,10 +335,9 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::ArgumentTypeException);
         }
-    }    //	function getMatrixByCol()
+    }    //	function getMatrix()
 
-
-    /**
+/**
      *    transpose
      *
      *    Tranpose matrix
@@ -447,10 +352,9 @@ class PHPExcel_Shared_JAMA_Matrix
             }
         }
         return $R;
-    }    //	function transpose()
+    }    //	function checkMatrixDimensions()
 
-
-    /**
+/**
      *    trace
      *
      *    Sum of diagonal elements
@@ -464,10 +368,9 @@ class PHPExcel_Shared_JAMA_Matrix
             $s += $this->A[$i][$i];
         }
         return $s;
-    }    //	function trace()
+    }    //	function set()
 
-
-    /**
+/**
      *    uminus
      *
      *    Unary minus matrix -A
@@ -475,10 +378,9 @@ class PHPExcel_Shared_JAMA_Matrix
      */
     public function uminus()
     {
-    }    //	function uminus()
+    }    //	function identity()
 
-
-    /**
+/**
      *    plus
      *
      *    A + B
@@ -516,10 +418,62 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::PolymorphicArgumentException);
         }
-    }    //	function plus()
+    }    //	function diagonal()
 
+/**
+     *    checkMatrixDimensions
+     *
+     *    Is matrix B the same size?
+     * @param Matrix $B Matrix B
+     * @return boolean
+     */
+    public function checkMatrixDimensions($B = null)
+    {
+        if ($B instanceof PHPExcel_Shared_JAMA_Matrix) {
+            if (($this->m == $B->getRowDimension()) && ($this->n == $B->getColumnDimension())) {
+                return true;
+            } else {
+                throw new PHPExcel_Calculation_Exception(self::MatrixDimensionException);
+            }
+        } else {
+            throw new PHPExcel_Calculation_Exception(self::ArgumentTypeException);
+        }
+    }    //	function getMatrixByRow()
 
-    /**
+/**
+     *    getRowDimension
+     *
+     * @return int Row dimension
+     */
+    public function getRowDimension()
+    {
+        return $this->m;
+    }    //	function getMatrixByCol()
+
+/**
+     *    getColumnDimension
+     *
+     * @return int Column dimension
+     */
+    public function getColumnDimension()
+    {
+        return $this->n;
+    }    //	function transpose()
+
+/**
+     *    get
+     *
+     *    Get the i,j-th element of the matrix.
+     * @param int $i Row position
+     * @param int $j Column position
+     * @return mixed Element (int/float/double)
+     */
+    public function get($i = null, $j = null)
+    {
+        return $this->A[$i][$j];
+    }    //	function trace()
+
+/**
      *    plusEquals
      *
      *    A = A + B
@@ -571,10 +525,9 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::PolymorphicArgumentException);
         }
-    }    //	function plusEquals()
+    }    //	function uminus()
 
-
-    /**
+/**
      *    minus
      *
      *    A - B
@@ -612,10 +565,9 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::PolymorphicArgumentException);
         }
-    }    //	function minus()
+    }    //	function plus()
 
-
-    /**
+/**
      *    minusEquals
      *
      *    A = A - B
@@ -667,10 +619,9 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::PolymorphicArgumentException);
         }
-    }    //	function minusEquals()
+    }    //	function plusEquals()
 
-
-    /**
+/**
      *    arrayTimes
      *
      *    Element-by-element multiplication
@@ -709,10 +660,9 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::PolymorphicArgumentException);
         }
-    }    //	function arrayTimes()
+    }    //	function minus()
 
-
-    /**
+/**
      *    arrayTimesEquals
      *
      *    Element-by-element multiplication
@@ -765,10 +715,9 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::PolymorphicArgumentException);
         }
-    }    //	function arrayTimesEquals()
+    }    //	function minusEquals()
 
-
-    /**
+/**
      *    arrayRightDivide
      *
      *    Element-by-element right division
@@ -826,10 +775,9 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::PolymorphicArgumentException);
         }
-    }    //	function arrayRightDivide()
+    }    //	function arrayTimes()
 
-
-    /**
+/**
      *    arrayRightDivideEquals
      *
      *    Element-by-element right division
@@ -868,10 +816,9 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::PolymorphicArgumentException);
         }
-    }    //	function arrayRightDivideEquals()
+    }    //	function arrayTimesEquals()
 
-
-    /**
+/**
      *    arrayLeftDivide
      *
      *    Element-by-element Left division
@@ -910,10 +857,9 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::PolymorphicArgumentException);
         }
-    }    //	function arrayLeftDivide()
+    }    //	function arrayRightDivide()
 
-
-    /**
+/**
      *    arrayLeftDivideEquals
      *
      *    Element-by-element Left division
@@ -952,10 +898,9 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::PolymorphicArgumentException);
         }
-    }    //	function arrayLeftDivideEquals()
+    }    //	function arrayRightDivideEquals()
 
-
-    /**
+/**
      *    times
      *
      *    Matrix multiplication
@@ -1048,10 +993,9 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::PolymorphicArgumentException);
         }
-    }    //	function times()
+    }    //	function arrayLeftDivide()
 
-
-    /**
+/**
      *    power
      *
      *    A = A ^ B
@@ -1103,10 +1047,9 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::PolymorphicArgumentException);
         }
-    }    //	function power()
+    }    //	function arrayLeftDivideEquals()
 
-
-    /**
+/**
      *    concat
      *
      *    A = A & B
@@ -1143,10 +1086,19 @@ class PHPExcel_Shared_JAMA_Matrix
         } else {
             throw new PHPExcel_Calculation_Exception(self::PolymorphicArgumentException);
         }
-    }    //	function concat()
+    }    //	function times()
 
+/**
+     *    Matrix inverse or pseudoinverse.
+     *
+     * @return Matrix ... Inverse(A) if A is square, pseudoinverse otherwise.
+     */
+    public function inverse()
+    {
+        return $this->solve($this->identity($this->m, $this->m));
+    }    //	function power()
 
-    /**
+/**
      *    Solve A*X = B.
      *
      * @param Matrix $B Right hand side
@@ -1161,21 +1113,40 @@ class PHPExcel_Shared_JAMA_Matrix
             $QR = new PHPExcel_Shared_JAMA_QRDecomposition($this);
             return $QR->solve($B);
         }
+    }    //	function concat()
+
+/**
+     *    identity
+     *
+     *    Generate an identity matrix.
+     * @param int $m Row dimension
+     * @param int $n Column dimension
+     * @return Matrix Identity matrix
+     */
+    public function identity($m = null, $n = null)
+    {
+        return $this->diagonal($m, $n, 1);
     }    //	function solve()
 
-
-    /**
-     *    Matrix inverse or pseudoinverse.
+/**
+     *    diagonal
      *
-     * @return Matrix ... Inverse(A) if A is square, pseudoinverse otherwise.
+     *    Generate a diagonal matrix
+     * @param int $m Row dimension
+     * @param int $n Column dimension
+     * @param mixed $c Diagonal value
+     * @return Matrix Diagonal matrix
      */
-    public function inverse()
+    public function diagonal($m = null, $n = null, $c = 1)
     {
-        return $this->solve($this->identity($this->m, $this->m));
+        $R = new PHPExcel_Shared_JAMA_Matrix($m, $n);
+        for ($i = 0; $i < $m; ++$i) {
+            $R->set($i, $i, $c);
+        }
+        return $R;
     }    //	function inverse()
 
-
-    /**
+/**
      *    det
      *
      *    Calculate determinant

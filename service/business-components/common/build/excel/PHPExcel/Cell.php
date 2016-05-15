@@ -96,30 +96,6 @@ class PHPExcel_Cell
      */
     private $_formulaAttributes;
 
-
-    /**
-     *    Send notification to the cache controller
-     *
-     * @return void
-     **/
-    public function notifyCacheController()
-    {
-        $this->_parent->updateCacheData($this);
-
-        return $this;
-    }
-
-    public function detach()
-    {
-        $this->_parent = NULL;
-    }
-
-    public function attach(PHPExcel_CachedObjectStorage_CacheBase $parent)
-    {
-        $this->_parent = $parent;
-    }
-
-
     /**
      *    Create a new Cell
      *
@@ -147,43 +123,279 @@ class PHPExcel_Cell
     }
 
     /**
-     *    Get cell coordinate column
+     * Get value binder to use
      *
+     * @return PHPExcel_Cell_IValueBinder
+     */
+    public static function getValueBinder()
+    {
+        if (self::$_valueBinder === NULL) {
+            self::$_valueBinder = new PHPExcel_Cell_DefaultValueBinder();
+        }
+
+        return self::$_valueBinder;
+    }
+
+    /**
+     * Set value binder to use
+     *
+     * @param PHPExcel_Cell_IValueBinder $binder
+     * @throws PHPExcel_Exception
+     */
+    public static function setValueBinder(PHPExcel_Cell_IValueBinder $binder = NULL)
+    {
+        if ($binder === NULL) {
+            throw new PHPExcel_Exception("A PHPExcel_Cell_IValueBinder is required for PHPExcel to function correctly.");
+        }
+
+        self::$_valueBinder = $binder;
+    }
+
+    /**
+     *    Make string row, column or cell coordinate absolute
+     *
+     * @param    string $pCoordinateString e.g. 'A' or '1' or 'A1'
+     *                    Note that this value can be a row or column reference as well as a cell reference
+     * @return    string    Absolute coordinate        e.g. '$A' or '$1' or '$A$1'
+     * @throws    PHPExcel_Exception
+     */
+    public static function absoluteReference($pCoordinateString = 'A1')
+    {
+        if (strpos($pCoordinateString, ':') === FALSE && strpos($pCoordinateString, ',') === FALSE) {
+            // Split out any worksheet name from the reference
+            $worksheet = '';
+            $cellAddress = explode('!', $pCoordinateString);
+            if (count($cellAddress) > 1) {
+                list($worksheet, $pCoordinateString) = $cellAddress;
+            }
+            if ($worksheet > '') $worksheet .= '!';
+
+            // Create absolute coordinate
+            if (ctype_digit($pCoordinateString)) {
+                return $worksheet . '$' . $pCoordinateString;
+            } elseif (ctype_alpha($pCoordinateString)) {
+                return $worksheet . '$' . strtoupper($pCoordinateString);
+            }
+            return $worksheet . self::absoluteCoordinate($pCoordinateString);
+        }
+
+        throw new PHPExcel_Exception('Cell coordinate string can not be a range of cells');
+    }
+
+    /**
+     *    Make string coordinate absolute
+     *
+     * @param    string $pCoordinateString e.g. 'A1'
+     * @return    string    Absolute coordinate        e.g. '$A$1'
+     * @throws    PHPExcel_Exception
+     */
+    public static function absoluteCoordinate($pCoordinateString = 'A1')
+    {
+        if (strpos($pCoordinateString, ':') === FALSE && strpos($pCoordinateString, ',') === FALSE) {
+            // Split out any worksheet name from the coordinate
+            $worksheet = '';
+            $cellAddress = explode('!', $pCoordinateString);
+            if (count($cellAddress) > 1) {
+                list($worksheet, $pCoordinateString) = $cellAddress;
+            }
+            if ($worksheet > '') $worksheet .= '!';
+
+            // Create absolute coordinate
+            list($column, $row) = self::coordinateFromString($pCoordinateString);
+            $column = ltrim($column, '$');
+            $row = ltrim($row, '$');
+            return $worksheet . '$' . $column . '$' . $row;
+        }
+
+        throw new PHPExcel_Exception('Cell coordinate string can not be a range of cells');
+    }
+
+    /**
+     *    Build range from coordinate strings
+     *
+     * @param    array $pRange Array containg one or more arrays containing one or two coordinate strings
+     * @return    string    String representation of $pRange
+     * @throws    PHPExcel_Exception
+     */
+    public static function buildRange($pRange)
+    {
+        // Verify range
+        if (!is_array($pRange) || empty($pRange) || !is_array($pRange[0])) {
+            throw new PHPExcel_Exception('Range does not contain any information');
+        }
+
+        // Build range
+        $imploded = array();
+        $counter = count($pRange);
+        for ($i = 0; $i < $counter; ++$i) {
+            $pRange[$i] = implode(':', $pRange[$i]);
+        }
+        $imploded = implode(',', $pRange);
+
+        return $imploded;
+    }
+
+    /**
+     *    Calculate range dimension
+     *
+     * @param    string $pRange Cell range (e.g. A1:A1)
+     * @return    array    Range dimension (width, height)
+     */
+    public static function rangeDimension($pRange = 'A1:A1')
+    {
+        // Calculate range outer borders
+        list($rangeStart, $rangeEnd) = self::rangeBoundaries($pRange);
+
+        return array(($rangeEnd[0] - $rangeStart[0] + 1), ($rangeEnd[1] - $rangeStart[1] + 1));
+    }
+
+    /**
+     *    Calculate range boundaries
+     *
+     * @param    string $pRange Cell range (e.g. A1:A1)
+     * @return    array    Range coordinates array(Start Cell, End Cell)
+     *                    where Start Cell and End Cell are arrays (Column ID, Row Number)
+     */
+    public static function getRangeBoundaries($pRange = 'A1:A1')
+    {
+        // Ensure $pRange is a valid range
+        if (empty($pRange)) {
+            $pRange = self::DEFAULT_RANGE;
+        }
+
+        // Uppercase coordinate
+        $pRange = strtoupper($pRange);
+
+        // Extract range
+        if (strpos($pRange, ':') === FALSE) {
+            $rangeA = $rangeB = $pRange;
+        } else {
+            list($rangeA, $rangeB) = explode(':', $pRange);
+        }
+
+        return array(self::coordinateFromString($rangeA), self::coordinateFromString($rangeB));
+    }
+
+    /**
+     *    String from columnindex
+     *
+     * @param    int $pColumnIndex Column index (base 0 !!!)
      * @return    string
      */
-    public function getColumn()
+    public static function stringFromColumnIndex($pColumnIndex = 0)
     {
-        return $this->_parent->getCurrentColumn();
+        //	Using a lookup cache adds a slight memory overhead, but boosts speed
+        //	caching using a static within the method is faster than a class static,
+        //		though it's additional memory overhead
+        static $_indexCache = array();
+
+        if (!isset($_indexCache[$pColumnIndex])) {
+            // Determine column string
+            if ($pColumnIndex < 26) {
+                $_indexCache[$pColumnIndex] = chr(65 + $pColumnIndex);
+            } elseif ($pColumnIndex < 702) {
+                $_indexCache[$pColumnIndex] = chr(64 + ($pColumnIndex / 26)) .
+                    chr(65 + $pColumnIndex % 26);
+            } else {
+                $_indexCache[$pColumnIndex] = chr(64 + (($pColumnIndex - 26) / 676)) .
+                    chr(65 + ((($pColumnIndex - 26) % 676) / 26)) .
+                    chr(65 + $pColumnIndex % 26);
+            }
+        }
+        return $_indexCache[$pColumnIndex];
     }
 
     /**
-     *    Get cell coordinate row
+     *    Extract all cell references in range
      *
-     * @return    int
+     * @param    string $pRange Range (e.g. A1 or A1:C10 or A1:E10 A20:E25)
+     * @return    array    Array containing single cell references
      */
-    public function getRow()
+    public static function extractAllCellReferencesInRange($pRange = 'A1')
     {
-        return $this->_parent->getCurrentRow();
+        // Returnvalue
+        $returnValue = array();
+
+        // Explode spaces
+        $cellBlocks = explode(' ', str_replace('$', '', strtoupper($pRange)));
+        foreach ($cellBlocks as $cellBlock) {
+            // Single cell?
+            if (strpos($cellBlock, ':') === FALSE && strpos($cellBlock, ',') === FALSE) {
+                $returnValue[] = $cellBlock;
+                continue;
+            }
+
+            // Range...
+            $ranges = self::splitRange($cellBlock);
+            foreach ($ranges as $range) {
+                // Single cell?
+                if (!isset($range[1])) {
+                    $returnValue[] = $range[0];
+                    continue;
+                }
+
+                // Range...
+                list($rangeStart, $rangeEnd) = $range;
+                sscanf($rangeStart, '%[A-Z]%d', $startCol, $startRow);
+                sscanf($rangeEnd, '%[A-Z]%d', $endCol, $endRow);
+                $endCol++;
+
+                // Current data
+                $currentCol = $startCol;
+                $currentRow = $startRow;
+
+                // Loop cells
+                while ($currentCol != $endCol) {
+                    while ($currentRow <= $endRow) {
+                        $returnValue[] = $currentCol . $currentRow;
+                        ++$currentRow;
+                    }
+                    ++$currentCol;
+                    $currentRow = $startRow;
+                }
+            }
+        }
+
+        //	Sort the result by column and row
+        $sortKeys = array();
+        foreach (array_unique($returnValue) as $coord) {
+            sscanf($coord, '%[A-Z]%d', $column, $row);
+            $sortKeys[sprintf('%3s%09d', $column, $row)] = $coord;
+        }
+        ksort($sortKeys);
+
+        // Return value
+        return array_values($sortKeys);
     }
 
     /**
-     *    Get cell coordinate
+     * Compare 2 cells
      *
-     * @return    string
+     * @param    PHPExcel_Cell $a Cell a
+     * @param    PHPExcel_Cell $b Cell b
+     * @return    int        Result of comparison (always -1 or 1, never zero!)
      */
-    public function getCoordinate()
+    public static function compareCells(PHPExcel_Cell $a, PHPExcel_Cell $b)
     {
-        return $this->_parent->getCurrentAddress();
+        if ($a->getRow() < $b->getRow()) {
+            return -1;
+        } elseif ($a->getRow() > $b->getRow()) {
+            return 1;
+        } elseif (self::columnIndexFromString($a->getColumn()) < self::columnIndexFromString($b->getColumn())) {
+            return -1;
+        } else {
+            return 1;
+        }
     }
 
-    /**
-     *    Get cell value
-     *
-     * @return    mixed
-     */
-    public function getValue()
+    public function detach()
     {
-        return $this->_value;
+        $this->_parent = NULL;
+    }
+
+    public function attach(PHPExcel_CachedObjectStorage_CacheBase $parent)
+    {
+        $this->_parent = $parent;
     }
 
     /**
@@ -198,67 +410,6 @@ class PHPExcel_Cell
             $this->getStyle()
                 ->getNumberFormat()->getFormatCode()
         );
-    }
-
-    /**
-     *    Set cell value
-     *
-     *    Sets the value for a cell, automatically determining the datatype using the value binder
-     *
-     * @param    mixed $pValue Value
-     * @return    PHPExcel_Cell
-     * @throws    PHPExcel_Exception
-     */
-    public function setValue($pValue = NULL)
-    {
-        if (!self::getValueBinder()->bindValue($this, $pValue)) {
-            throw new PHPExcel_Exception("Value could not be bound to cell.");
-        }
-        return $this;
-    }
-
-    /**
-     *    Set the value for a cell, with the explicit data type passed to the method (bypassing any use of the value binder)
-     *
-     * @param    mixed $pValue Value
-     * @param    string $pDataType Explicit data type
-     * @return    PHPExcel_Cell
-     * @throws    PHPExcel_Exception
-     */
-    public function setValueExplicit($pValue = NULL, $pDataType = PHPExcel_Cell_DataType::TYPE_STRING)
-    {
-        // set the value according to data type
-        switch ($pDataType) {
-            case PHPExcel_Cell_DataType::TYPE_NULL:
-                $this->_value = $pValue;
-                break;
-            case PHPExcel_Cell_DataType::TYPE_STRING2:
-                $pDataType = PHPExcel_Cell_DataType::TYPE_STRING;
-            case PHPExcel_Cell_DataType::TYPE_STRING:
-            case PHPExcel_Cell_DataType::TYPE_INLINE:
-                $this->_value = PHPExcel_Cell_DataType::checkString($pValue);
-                break;
-            case PHPExcel_Cell_DataType::TYPE_NUMERIC:
-                $this->_value = (float)$pValue;
-                break;
-            case PHPExcel_Cell_DataType::TYPE_FORMULA:
-                $this->_value = (string)$pValue;
-                break;
-            case PHPExcel_Cell_DataType::TYPE_BOOL:
-                $this->_value = (bool)$pValue;
-                break;
-            case PHPExcel_Cell_DataType::TYPE_ERROR:
-                $this->_value = PHPExcel_Cell_DataType::checkErrorCode($pValue);
-                break;
-            default:
-                throw new PHPExcel_Exception('Invalid datatype: ' . $pDataType);
-                break;
-        }
-
-        // set the datatype
-        $this->_dataType = $pDataType;
-
-        return $this->notifyCacheController();
     }
 
     /**
@@ -325,6 +476,92 @@ class PHPExcel_Cell
         }
 
         return $this->notifyCacheController();
+    }
+
+    /**
+     *    Get parent worksheet
+     *
+     * @return PHPExcel_Worksheet
+     */
+    public function getWorksheet()
+    {
+        return $this->_parent->getParent();
+    }
+
+    /**
+     *    Get cell coordinate
+     *
+     * @return    string
+     */
+    public function getCoordinate()
+    {
+        return $this->_parent->getCurrentAddress();
+    }
+
+    /**
+     *    Get cell style
+     *
+     * @return    PHPExcel_Style
+     */
+    public function getStyle()
+    {
+        return $this->getWorksheet()->getStyle($this->getCoordinate());
+    }
+
+    /**
+     *    Set the value for a cell, with the explicit data type passed to the method (bypassing any use of the value binder)
+     *
+     * @param    mixed $pValue Value
+     * @param    string $pDataType Explicit data type
+     * @return    PHPExcel_Cell
+     * @throws    PHPExcel_Exception
+     */
+    public function setValueExplicit($pValue = NULL, $pDataType = PHPExcel_Cell_DataType::TYPE_STRING)
+    {
+        // set the value according to data type
+        switch ($pDataType) {
+            case PHPExcel_Cell_DataType::TYPE_NULL:
+                $this->_value = $pValue;
+                break;
+            case PHPExcel_Cell_DataType::TYPE_STRING2:
+                $pDataType = PHPExcel_Cell_DataType::TYPE_STRING;
+            case PHPExcel_Cell_DataType::TYPE_STRING:
+            case PHPExcel_Cell_DataType::TYPE_INLINE:
+                $this->_value = PHPExcel_Cell_DataType::checkString($pValue);
+                break;
+            case PHPExcel_Cell_DataType::TYPE_NUMERIC:
+                $this->_value = (float)$pValue;
+                break;
+            case PHPExcel_Cell_DataType::TYPE_FORMULA:
+                $this->_value = (string)$pValue;
+                break;
+            case PHPExcel_Cell_DataType::TYPE_BOOL:
+                $this->_value = (bool)$pValue;
+                break;
+            case PHPExcel_Cell_DataType::TYPE_ERROR:
+                $this->_value = PHPExcel_Cell_DataType::checkErrorCode($pValue);
+                break;
+            default:
+                throw new PHPExcel_Exception('Invalid datatype: ' . $pDataType);
+                break;
+        }
+
+        // set the datatype
+        $this->_dataType = $pDataType;
+
+        return $this->notifyCacheController();
+    }
+
+    /**
+     *    Send notification to the cache controller
+     *
+     * @return void
+     **/
+    public function notifyCacheController()
+    {
+        $this->_parent->updateCacheData($this);
+
+        return $this;
     }
 
     /**
@@ -485,16 +722,6 @@ class PHPExcel_Cell
     }
 
     /**
-     *    Get parent worksheet
-     *
-     * @return PHPExcel_Worksheet
-     */
-    public function getWorksheet()
-    {
-        return $this->_parent->getParent();
-    }
-
-    /**
      *    Is this cell in a merge range
      *
      * @return boolean
@@ -502,23 +729,6 @@ class PHPExcel_Cell
     public function isInMergeRange()
     {
         return (boolean)$this->getMergeRange();
-    }
-
-    /**
-     *    Is this cell the master (top left cell) in a merge range (that holds the actual data value)
-     *
-     * @return boolean
-     */
-    public function isMergeRangeValueCell()
-    {
-        if ($mergeRange = $this->getMergeRange()) {
-            $mergeRange = PHPExcel_Cell::splitRange($mergeRange);
-            list($startCell) = $mergeRange[0];
-            if ($this->getCoordinate() === $startCell) {
-                return true;
-            }
-        }
-        return false;
     }
 
     /**
@@ -534,29 +744,6 @@ class PHPExcel_Cell
             }
         }
         return false;
-    }
-
-    /**
-     *    Get cell style
-     *
-     * @return    PHPExcel_Style
-     */
-    public function getStyle()
-    {
-        return $this->getWorksheet()->getStyle($this->getCoordinate());
-    }
-
-    /**
-     *    Re-bind parent
-     *
-     * @param    PHPExcel_Worksheet $parent
-     * @return    PHPExcel_Cell
-     */
-    public function rebindParent(PHPExcel_Worksheet $parent)
-    {
-        $this->_parent = $parent->getCellCacheController();
-
-        return $this->notifyCacheController();
     }
 
     /**
@@ -577,133 +764,6 @@ class PHPExcel_Cell
         return (($rangeStart[0] <= $myColumn) && ($rangeEnd[0] >= $myColumn) &&
             ($rangeStart[1] <= $myRow) && ($rangeEnd[1] >= $myRow)
         );
-    }
-
-    /**
-     *    Coordinate from string
-     *
-     * @param    string $pCoordinateString
-     * @return    array    Array containing column and row (indexes 0 and 1)
-     * @throws    PHPExcel_Exception
-     */
-    public static function coordinateFromString($pCoordinateString = 'A1')
-    {
-        if (preg_match("/^([$]?[A-Z]{1,3})([$]?\d{1,7})$/", $pCoordinateString, $matches)) {
-            return array($matches[1], $matches[2]);
-        } elseif ((strpos($pCoordinateString, ':') !== FALSE) || (strpos($pCoordinateString, ',') !== FALSE)) {
-            throw new PHPExcel_Exception('Cell coordinate string can not be a range of cells');
-        } elseif ($pCoordinateString == '') {
-            throw new PHPExcel_Exception('Cell coordinate can not be zero-length string');
-        }
-
-        throw new PHPExcel_Exception('Invalid cell coordinate ' . $pCoordinateString);
-    }
-
-    /**
-     *    Make string row, column or cell coordinate absolute
-     *
-     * @param    string $pCoordinateString e.g. 'A' or '1' or 'A1'
-     *                    Note that this value can be a row or column reference as well as a cell reference
-     * @return    string    Absolute coordinate        e.g. '$A' or '$1' or '$A$1'
-     * @throws    PHPExcel_Exception
-     */
-    public static function absoluteReference($pCoordinateString = 'A1')
-    {
-        if (strpos($pCoordinateString, ':') === FALSE && strpos($pCoordinateString, ',') === FALSE) {
-            // Split out any worksheet name from the reference
-            $worksheet = '';
-            $cellAddress = explode('!', $pCoordinateString);
-            if (count($cellAddress) > 1) {
-                list($worksheet, $pCoordinateString) = $cellAddress;
-            }
-            if ($worksheet > '') $worksheet .= '!';
-
-            // Create absolute coordinate
-            if (ctype_digit($pCoordinateString)) {
-                return $worksheet . '$' . $pCoordinateString;
-            } elseif (ctype_alpha($pCoordinateString)) {
-                return $worksheet . '$' . strtoupper($pCoordinateString);
-            }
-            return $worksheet . self::absoluteCoordinate($pCoordinateString);
-        }
-
-        throw new PHPExcel_Exception('Cell coordinate string can not be a range of cells');
-    }
-
-    /**
-     *    Make string coordinate absolute
-     *
-     * @param    string $pCoordinateString e.g. 'A1'
-     * @return    string    Absolute coordinate        e.g. '$A$1'
-     * @throws    PHPExcel_Exception
-     */
-    public static function absoluteCoordinate($pCoordinateString = 'A1')
-    {
-        if (strpos($pCoordinateString, ':') === FALSE && strpos($pCoordinateString, ',') === FALSE) {
-            // Split out any worksheet name from the coordinate
-            $worksheet = '';
-            $cellAddress = explode('!', $pCoordinateString);
-            if (count($cellAddress) > 1) {
-                list($worksheet, $pCoordinateString) = $cellAddress;
-            }
-            if ($worksheet > '') $worksheet .= '!';
-
-            // Create absolute coordinate
-            list($column, $row) = self::coordinateFromString($pCoordinateString);
-            $column = ltrim($column, '$');
-            $row = ltrim($row, '$');
-            return $worksheet . '$' . $column . '$' . $row;
-        }
-
-        throw new PHPExcel_Exception('Cell coordinate string can not be a range of cells');
-    }
-
-    /**
-     *    Split range into coordinate strings
-     *
-     * @param    string $pRange e.g. 'B4:D9' or 'B4:D9,H2:O11' or 'B4'
-     * @return    array    Array containg one or more arrays containing one or two coordinate strings
-     *                                e.g. array('B4','D9') or array(array('B4','D9'),array('H2','O11'))
-     *                                        or array('B4')
-     */
-    public static function splitRange($pRange = 'A1:A1')
-    {
-        // Ensure $pRange is a valid range
-        if (empty($pRange)) {
-            $pRange = self::DEFAULT_RANGE;
-        }
-
-        $exploded = explode(',', $pRange);
-        $counter = count($exploded);
-        for ($i = 0; $i < $counter; ++$i) {
-            $exploded[$i] = explode(':', $exploded[$i]);
-        }
-        return $exploded;
-    }
-
-    /**
-     *    Build range from coordinate strings
-     *
-     * @param    array $pRange Array containg one or more arrays containing one or two coordinate strings
-     * @return    string    String representation of $pRange
-     * @throws    PHPExcel_Exception
-     */
-    public static function buildRange($pRange)
-    {
-        // Verify range
-        if (!is_array($pRange) || empty($pRange) || !is_array($pRange[0])) {
-            throw new PHPExcel_Exception('Range does not contain any information');
-        }
-
-        // Build range
-        $imploded = array();
-        $counter = count($pRange);
-        for ($i = 0; $i < $counter; ++$i) {
-            $pRange[$i] = implode(':', $pRange[$i]);
-        }
-        $imploded = implode(',', $pRange);
-
-        return $imploded;
     }
 
     /**
@@ -742,44 +802,23 @@ class PHPExcel_Cell
     }
 
     /**
-     *    Calculate range dimension
+     *    Coordinate from string
      *
-     * @param    string $pRange Cell range (e.g. A1:A1)
-     * @return    array    Range dimension (width, height)
+     * @param    string $pCoordinateString
+     * @return    array    Array containing column and row (indexes 0 and 1)
+     * @throws    PHPExcel_Exception
      */
-    public static function rangeDimension($pRange = 'A1:A1')
+    public static function coordinateFromString($pCoordinateString = 'A1')
     {
-        // Calculate range outer borders
-        list($rangeStart, $rangeEnd) = self::rangeBoundaries($pRange);
-
-        return array(($rangeEnd[0] - $rangeStart[0] + 1), ($rangeEnd[1] - $rangeStart[1] + 1));
-    }
-
-    /**
-     *    Calculate range boundaries
-     *
-     * @param    string $pRange Cell range (e.g. A1:A1)
-     * @return    array    Range coordinates array(Start Cell, End Cell)
-     *                    where Start Cell and End Cell are arrays (Column ID, Row Number)
-     */
-    public static function getRangeBoundaries($pRange = 'A1:A1')
-    {
-        // Ensure $pRange is a valid range
-        if (empty($pRange)) {
-            $pRange = self::DEFAULT_RANGE;
+        if (preg_match("/^([$]?[A-Z]{1,3})([$]?\d{1,7})$/", $pCoordinateString, $matches)) {
+            return array($matches[1], $matches[2]);
+        } elseif ((strpos($pCoordinateString, ':') !== FALSE) || (strpos($pCoordinateString, ',') !== FALSE)) {
+            throw new PHPExcel_Exception('Cell coordinate string can not be a range of cells');
+        } elseif ($pCoordinateString == '') {
+            throw new PHPExcel_Exception('Cell coordinate can not be zero-length string');
         }
 
-        // Uppercase coordinate
-        $pRange = strtoupper($pRange);
-
-        // Extract range
-        if (strpos($pRange, ':') === FALSE) {
-            $rangeA = $rangeB = $pRange;
-        } else {
-            list($rangeA, $rangeB) = explode(':', $pRange);
-        }
-
-        return array(self::coordinateFromString($rangeA), self::coordinateFromString($rangeB));
+        throw new PHPExcel_Exception('Invalid cell coordinate ' . $pCoordinateString);
     }
 
     /**
@@ -826,144 +865,76 @@ class PHPExcel_Cell
     }
 
     /**
-     *    String from columnindex
+     *    Get cell coordinate column
      *
-     * @param    int $pColumnIndex Column index (base 0 !!!)
      * @return    string
      */
-    public static function stringFromColumnIndex($pColumnIndex = 0)
+    public function getColumn()
     {
-        //	Using a lookup cache adds a slight memory overhead, but boosts speed
-        //	caching using a static within the method is faster than a class static,
-        //		though it's additional memory overhead
-        static $_indexCache = array();
+        return $this->_parent->getCurrentColumn();
+    }
 
-        if (!isset($_indexCache[$pColumnIndex])) {
-            // Determine column string
-            if ($pColumnIndex < 26) {
-                $_indexCache[$pColumnIndex] = chr(65 + $pColumnIndex);
-            } elseif ($pColumnIndex < 702) {
-                $_indexCache[$pColumnIndex] = chr(64 + ($pColumnIndex / 26)) .
-                    chr(65 + $pColumnIndex % 26);
-            } else {
-                $_indexCache[$pColumnIndex] = chr(64 + (($pColumnIndex - 26) / 676)) .
-                    chr(65 + ((($pColumnIndex - 26) % 676) / 26)) .
-                    chr(65 + $pColumnIndex % 26);
+    /**
+     *    Get cell coordinate row
+     *
+     * @return    int
+     */
+    public function getRow()
+    {
+        return $this->_parent->getCurrentRow();
+    }
+
+    /**
+     *    Is this cell the master (top left cell) in a merge range (that holds the actual data value)
+     *
+     * @return boolean
+     */
+    public function isMergeRangeValueCell()
+    {
+        if ($mergeRange = $this->getMergeRange()) {
+            $mergeRange = PHPExcel_Cell::splitRange($mergeRange);
+            list($startCell) = $mergeRange[0];
+            if ($this->getCoordinate() === $startCell) {
+                return true;
             }
         }
-        return $_indexCache[$pColumnIndex];
+        return false;
     }
 
     /**
-     *    Extract all cell references in range
+     *    Split range into coordinate strings
      *
-     * @param    string $pRange Range (e.g. A1 or A1:C10 or A1:E10 A20:E25)
-     * @return    array    Array containing single cell references
+     * @param    string $pRange e.g. 'B4:D9' or 'B4:D9,H2:O11' or 'B4'
+     * @return    array    Array containg one or more arrays containing one or two coordinate strings
+     *                                e.g. array('B4','D9') or array(array('B4','D9'),array('H2','O11'))
+     *                                        or array('B4')
      */
-    public static function extractAllCellReferencesInRange($pRange = 'A1')
+    public static function splitRange($pRange = 'A1:A1')
     {
-        // Returnvalue
-        $returnValue = array();
-
-        // Explode spaces
-        $cellBlocks = explode(' ', str_replace('$', '', strtoupper($pRange)));
-        foreach ($cellBlocks as $cellBlock) {
-            // Single cell?
-            if (strpos($cellBlock, ':') === FALSE && strpos($cellBlock, ',') === FALSE) {
-                $returnValue[] = $cellBlock;
-                continue;
-            }
-
-            // Range...
-            $ranges = self::splitRange($cellBlock);
-            foreach ($ranges as $range) {
-                // Single cell?
-                if (!isset($range[1])) {
-                    $returnValue[] = $range[0];
-                    continue;
-                }
-
-                // Range...
-                list($rangeStart, $rangeEnd) = $range;
-                sscanf($rangeStart, '%[A-Z]%d', $startCol, $startRow);
-                sscanf($rangeEnd, '%[A-Z]%d', $endCol, $endRow);
-                $endCol++;
-
-                // Current data
-                $currentCol = $startCol;
-                $currentRow = $startRow;
-
-                // Loop cells
-                while ($currentCol != $endCol) {
-                    while ($currentRow <= $endRow) {
-                        $returnValue[] = $currentCol . $currentRow;
-                        ++$currentRow;
-                    }
-                    ++$currentCol;
-                    $currentRow = $startRow;
-                }
-            }
+        // Ensure $pRange is a valid range
+        if (empty($pRange)) {
+            $pRange = self::DEFAULT_RANGE;
         }
 
-        //	Sort the result by column and row
-        $sortKeys = array();
-        foreach (array_unique($returnValue) as $coord) {
-            sscanf($coord, '%[A-Z]%d', $column, $row);
-            $sortKeys[sprintf('%3s%09d', $column, $row)] = $coord;
+        $exploded = explode(',', $pRange);
+        $counter = count($exploded);
+        for ($i = 0; $i < $counter; ++$i) {
+            $exploded[$i] = explode(':', $exploded[$i]);
         }
-        ksort($sortKeys);
-
-        // Return value
-        return array_values($sortKeys);
+        return $exploded;
     }
 
     /**
-     * Compare 2 cells
+     *    Re-bind parent
      *
-     * @param    PHPExcel_Cell $a Cell a
-     * @param    PHPExcel_Cell $b Cell b
-     * @return    int        Result of comparison (always -1 or 1, never zero!)
+     * @param    PHPExcel_Worksheet $parent
+     * @return    PHPExcel_Cell
      */
-    public static function compareCells(PHPExcel_Cell $a, PHPExcel_Cell $b)
+    public function rebindParent(PHPExcel_Worksheet $parent)
     {
-        if ($a->getRow() < $b->getRow()) {
-            return -1;
-        } elseif ($a->getRow() > $b->getRow()) {
-            return 1;
-        } elseif (self::columnIndexFromString($a->getColumn()) < self::columnIndexFromString($b->getColumn())) {
-            return -1;
-        } else {
-            return 1;
-        }
-    }
+        $this->_parent = $parent->getCellCacheController();
 
-    /**
-     * Get value binder to use
-     *
-     * @return PHPExcel_Cell_IValueBinder
-     */
-    public static function getValueBinder()
-    {
-        if (self::$_valueBinder === NULL) {
-            self::$_valueBinder = new PHPExcel_Cell_DefaultValueBinder();
-        }
-
-        return self::$_valueBinder;
-    }
-
-    /**
-     * Set value binder to use
-     *
-     * @param PHPExcel_Cell_IValueBinder $binder
-     * @throws PHPExcel_Exception
-     */
-    public static function setValueBinder(PHPExcel_Cell_IValueBinder $binder = NULL)
-    {
-        if ($binder === NULL) {
-            throw new PHPExcel_Exception("A PHPExcel_Cell_IValueBinder is required for PHPExcel to function correctly.");
-        }
-
-        self::$_valueBinder = $binder;
+        return $this->notifyCacheController();
     }
 
     /**
@@ -1007,18 +978,18 @@ class PHPExcel_Cell
     /**
      * @deprecated        Since version 1.7.8 for planned changes to cell for array formula handling
      */
-    public function setFormulaAttributes($pAttributes)
+    public function getFormulaAttributes()
     {
-        $this->_formulaAttributes = $pAttributes;
-        return $this;
+        return $this->_formulaAttributes;
     }
 
     /**
      * @deprecated        Since version 1.7.8 for planned changes to cell for array formula handling
      */
-    public function getFormulaAttributes()
+    public function setFormulaAttributes($pAttributes)
     {
-        return $this->_formulaAttributes;
+        $this->_formulaAttributes = $pAttributes;
+        return $this;
     }
 
     /**
@@ -1029,6 +1000,33 @@ class PHPExcel_Cell
     public function __toString()
     {
         return (string)$this->getValue();
+    }
+
+    /**
+     *    Get cell value
+     *
+     * @return    mixed
+     */
+    public function getValue()
+    {
+        return $this->_value;
+    }
+
+    /**
+     *    Set cell value
+     *
+     *    Sets the value for a cell, automatically determining the datatype using the value binder
+     *
+     * @param    mixed $pValue Value
+     * @return    PHPExcel_Cell
+     * @throws    PHPExcel_Exception
+     */
+    public function setValue($pValue = NULL)
+    {
+        if (!self::getValueBinder()->bindValue($this, $pValue)) {
+            throw new PHPExcel_Exception("Value could not be bound to cell.");
+        }
+        return $this;
     }
 
 }
