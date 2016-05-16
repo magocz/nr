@@ -19,7 +19,7 @@ class SeasonBF
         if ($seasonId != null) {
             return json_encode($this->seasoBA->getPlant_Varietes_FieldSize_Details_ChartData($seasonId, $_SESSION['id']));
         }
-        return json_encode( $this->seasoBA->getPlant_Varietes_FieldSize_Details_ChartData($_SESSION['activeSeasonId'], $_SESSION['id']));
+        return json_encode($this->seasoBA->getPlant_Varietes_FieldSize_Details_ChartData($_SESSION['activeSeasonId'], $_SESSION['id']));
     }
 
     public function generatePlantToFieldNumberChartData($seasonId)
@@ -96,6 +96,41 @@ class SeasonBF
             return json_encode($this->seasoBA->generateSeasonOverviewTable($seasonId, $_SESSION['id']));
         }
         return json_encode($this->seasoBA->generateSeasonOverviewTable($_SESSION['activeSeasonId'], $_SESSION['id']));
+    }
+
+    public function saveSeason($data)
+    {
+        $response = SeasonRepo::saveSeason($data['seasonName'], $_SESSION['id']);
+        if ($response != false) {
+            print_r($response);
+            if (UserRepo::changeActiveSeason($response, $_SESSION['id'])) {
+                $_SESSION['activeSeasonId'] = $response;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function deleteSeason($firstParam)
+    {
+        return SeasonRepo::deleteSeason($firstParam, $_SESSION['id']);
+    }
+
+    public function findAllUserSeasons()
+    {
+        return json_encode(SeasonRepo::findAllUserSeasons($_SESSION['id']));
+    }
+
+    public function addSeasonAsActive($firstParam)
+    {
+        if (SeasonRepo::isThtatUserSeason($firstParam, $_SESSION['id'])) {
+            if (UserRepo::changeActiveSeason($firstParam, $_SESSION['id'])) {
+                $_SESSION['activeSeasonId'] = $firstParam;
+                return true;
+            }
+            return false;
+        }
+        return false;
     }
 
 

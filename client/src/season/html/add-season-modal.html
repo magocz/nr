@@ -1,0 +1,29 @@
+<!--add new seazon modal-->
+<div class="modal fade" id="addSeasonModal" role="dialog" data-backdrop="static"
+     data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="addSeasonModalHeader"></h4>
+            </div>
+            <div class="modal-body">
+                <div>Zapisany sezon zostanie automatycznie aktywnym sezonem!</div>
+                <select id="seasonNameSelector" style="padding: 2px; margin-bottom: 5px; margin-top: 5px;>
+                    <option value=" 2013/2014">2013/2014</option>
+                <option value="2014/2015">2014/2015</option>
+                <option selected value="2015/2016">2015/2016</option>
+                <option value="2016/2017">2016/2017</option>
+                <option value="2017/2018">2017/2018</option>
+                <option value="2018/2019">2018/2019</option>
+                <option value="2019/2020">2019/2020</option>
+                </select>
+                <div class="modal-footer">
+                    <button onclick="addSeason()" type="button" class="btn btn-success">
+                        Dodaj sezon
+                    </button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

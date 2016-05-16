@@ -6,7 +6,7 @@ class FieldRepo
 
     public static function findFieldById($fieldId, $userId)
     {
-        $sql = "SELECT * FROM FIELD WHERE `ID` LIKE '$fieldId' AND `USER_ID` LIKE '$userId'";
+        $sql = "SELECT * FROM FIELD WHERE `ID` LIKE '$fieldId' AND `USER_ID` LIKE '$userId' AND `ACTIVE` = 1 ";
         $response = $GLOBALS['dbcon']->query($sql);
         $rows = array();
         while ($r = mysqli_fetch_assoc($response)) {
@@ -22,7 +22,7 @@ class FieldRepo
 
     public static function findAllFieldsBySeasonId($seasonId)
     {
-        $sql = "SELECT * FROM FIELD WHERE `SEASON_ID` LIKE '$seasonId'";
+        $sql = "SELECT * FROM FIELD WHERE `SEASON_ID` LIKE '$seasonId' AND `ACTIVE` = 1";
         $response = $GLOBALS['dbcon']->query($sql);
         $rows = array();
         while ($r = mysqli_fetch_assoc($response)) {
@@ -33,7 +33,7 @@ class FieldRepo
 
     public static function deleteFieldById($fieldId, $userId)
     {
-        $sql = "DELETE FROM FIELD WHERE `ID` LIKE '$fieldId' AND `USER_ID` LIKE '$userId'";
+        $sql = "UPDATE FIELD SET ACTIVE = 0 WHERE `ID` LIKE '$fieldId' AND `USER_ID` LIKE '$userId'";
         $response = $GLOBALS['dbcon']->query($sql);
         return $response;
     }
@@ -71,7 +71,7 @@ class FieldRepo
 
         $sql = "UPDATE FIELD " . "SET FIELD_NR = '$fieldNr' , DESCRIPTION = '$description',  PLANT = '$plant', VARIETES = '$varietes', HA = '$ha', " .
             "PLANT_PRICE = '$plantPrice', TONS_PRO_HA = '$tonsProHa' " .
-            "WHERE ID = $fieldId AND USER_ID = $userId";
+            "WHERE ID = $fieldId AND USER_ID = $userId  AND `ACTIVE` = 1";
         echo $sql;
         $response = $GLOBALS['dbcon']->query($sql);
         if ($response === TRUE) {
@@ -83,7 +83,7 @@ class FieldRepo
     public static function addOperationNumber($fieldId, $userId)
     {
         $sql = "UPDATE FIELD " . "SET OPERATIONS_NUMBER = OPERATIONS_NUMBER + 1 " .
-            "WHERE ID = $fieldId AND USER_ID = $userId";
+            "WHERE ID = $fieldId AND USER_ID = $userId  AND `ACTIVE` = 1";
         $response = $GLOBALS['dbcon']->query($sql);
         if ($response === TRUE) {
             return true;
@@ -94,7 +94,7 @@ class FieldRepo
     public static function deleteOperationNumber($fieldId, $userId)
     {
         $sql = "UPDATE FIELD " . "SET OPERATIONS_NUMBER = OPERATIONS_NUMBER - 1 " .
-            "WHERE ID = $fieldId AND USER_ID = $userId";
+            "WHERE ID = $fieldId AND USER_ID = $userId  AND `ACTIVE` = 1";
         $response = $GLOBALS['dbcon']->query($sql);
         if ($response === TRUE) {
             return true;

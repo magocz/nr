@@ -47,5 +47,15 @@ class UserRepo
 
     }
 
+    public static function changeActiveSeason($seasonId, $userId)
+    {
+        $sql = "UPDATE USER SET selected_season_id = '$seasonId' WHERE id = '$userId'";
+        print_r($sql);
+        if ($GLOBALS['dbcon']->query($sql) == TRUE) {
+            return true;
+        }
+        return false;
+    }
+
 }
 

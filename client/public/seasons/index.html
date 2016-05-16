@@ -17,11 +17,9 @@
     <script src="../../src/common/js/bootstrap/bootstrap.js"></script>
     <script type="text/javascript" src="../../src/common/js/tablesorter/jquery.tablesorter.js"></script>
 
-    <script src="../../src/fiedl/js/OperationsTable.js"></script>
-    <script src="../../src/fiedl/js/field.js"></script>
-    <script src="../../src/fiedl/js/Operations.js"></script>
-    <script src="../../src/fiedl/js/EditOperation.js"></script>
-    <script src="../../src/fiedl/js/DeleteOperation.js"></script>
+    <script src="../../src/season/js/Season.js"></script>
+    <script src="../../src/season/js/AddSeason.js"></script>
+    <script src="../../src/season/js/SeasonsTable.js"></script>
 
     <script src="../../src/authorization/js/Logout.js"></script>
 
@@ -32,8 +30,8 @@
         <td colspan="2">
             <div>
                 <ul class="menu">
-                    <li><a class="active" href="/nr/client/public/" style="text-decoration: none">Home</a></li>
-                    <li><a href="/nr/client/public/seasons">Sezony</a></li>
+                    <li><a href="/nr/client/public/" style="text-decoration: none">Home</a></li>
+                    <li><a class="active" href="/nr/client/public/seasons">Sezony</a></li>
                     <li style="float:right"><a href="/nr/client/public/authorization">Wyloguj</a></li>
                     <li style="float:right"><a href="/nr/client/public/user/">Twoje dane</a></li>
                 </ul>
@@ -59,7 +57,6 @@
         <td class="homeTableSearchCell" colspan="2">
             <table>
                 <tr>
-                    <td></td>
                     <td>
                         <div align="right" class="homeTableSiteCell">
                             <table align="right">
@@ -71,7 +68,7 @@
                                     </td>
 
                                     <td style="width: 33%">
-                                        <button onclick="openAdOperationModalDialog()" align="right" type="button"
+                                        <button onclick="openAddSeasonModal()" align="right" type="button"
                                                 class="btn btn-success"
                                                 style="float: right; margin-top: 10px; data-dismiss=" modal
                                         ">Dodaj sezon</button>
@@ -86,7 +83,7 @@
     </tr>
     <tr>
         <td colspan="2">
-            <div id="operationsCell" class="homeTableCellDiv">
+            <div id="seasonsCell" class="homeTableCellDiv">
             </div>
         </td>
     </tr>
@@ -98,6 +95,6 @@
 </table>
 <iframe id="my_iframe" style="display:none;"></iframe>
 
-
+<div id="addSeasonModalContener"></div>
 </body>
 </html>

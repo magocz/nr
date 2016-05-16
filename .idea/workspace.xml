@@ -1,33 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/seasons/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/authorization/js/Logout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/fiedl/js/DeleteOperation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/fiedl/js/EditOperation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/fiedl/js/Operations.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/rest/user/logout.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="" />
+    <list default="true" id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="Kod refaktoring">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/season/html/add-season-modal.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/season/html/seasons-table.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/season/js/AddSeason.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/season/js/Season.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/season/js/SeasonsTable.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/field/index.html" afterPath="$PROJECT_DIR$/client/public/field/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/index.html" afterPath="$PROJECT_DIR$/client/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/authorization/js/login.js" afterPath="$PROJECT_DIR$/client/src/authorization/js/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/drilldown.js" afterPath="$PROJECT_DIR$/client/src/common/js/highcharts/modules/drilldown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/fiedl/js/OperationsTable.js" afterPath="$PROJECT_DIR$/client/src/fiedl/js/OperationsTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/fiedl/js/field.js" afterPath="$PROJECT_DIR$/client/src/fiedl/js/field.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/home/html/add-operation-modal.html" afterPath="$PROJECT_DIR$/client/src/home/html/add-operation-modal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/home/html/edit-fiedl-modal.html" afterPath="$PROJECT_DIR$/client/src/home/html/edit-fiedl-modal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/home/js/AddOperation.js" afterPath="$PROJECT_DIR$/client/src/home/js/AddOperation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/home/js/ChartModel.js" afterPath="$PROJECT_DIR$/client/src/home/js/ChartModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/home/js/EditField.js" afterPath="$PROJECT_DIR$/client/src/home/js/EditField.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/field/repo/FieldBE.php" afterPath="$PROJECT_DIR$/service/business-components/field/repo/FieldBE.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/seasons/index.html" afterPath="$PROJECT_DIR$/client/public/seasons/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/field/repo/FieldRepo.php" afterPath="$PROJECT_DIR$/service/business-components/field/repo/FieldRepo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/operation/business-activity/OperationBA.php" afterPath="$PROJECT_DIR$/service/business-components/operation/business-activity/OperationBA.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php" afterPath="$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/season/business-activity/SeasonBA.php" afterPath="$PROJECT_DIR$/service/business-components/season/business-activity/SeasonBA.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/season/SeasonBF.php" afterPath="$PROJECT_DIR$/service/business-components/season/SeasonBF.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/season/repo/SeasonBE.php" afterPath="$PROJECT_DIR$/service/business-components/season/repo/SeasonBE.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/season/repo/SeasonRepo.php" afterPath="$PROJECT_DIR$/service/business-components/season/repo/SeasonRepo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/user/repo/UserRepo.php" afterPath="$PROJECT_DIR$/service/business-components/user/repo/UserRepo.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/configs/db-config/db-config.php" afterPath="$PROJECT_DIR$/service/configs/db-config/db-config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/rest/operation/operation.php" afterPath="$PROJECT_DIR$/service/rest/operation/operation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/rest/season/season.php" afterPath="$PROJECT_DIR$/service/rest/season/season.php" />
     </list>
     <ignored path="nr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,138 +38,133 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="DeleteOperation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/DeleteOperation.js">
+      <file leaf-file-name="SeasonBF.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/business-components/season/SeasonBF.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+            <state relative-caret-position="705">
+              <caret line="127" column="58" selection-start-line="127" selection-start-column="58" selection-end-line="127" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddOperation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/home/js/AddOperation.js">
+      <file leaf-file-name="db-config.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/service/configs/db-config/db-config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="59" />
+            <state relative-caret-position="85">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SeasonRepo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/business-components/season/repo/SeasonRepo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="26" column="44" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="44" />
+              <folding>
+                <marker date="1463438643780" expanded="true" signature="111:206" placeholder="SELECT * FRO... SEASON" />
+                <marker date="1463438643780" expanded="true" signature="1205:1300" placeholder="SELECT * FRO... SEASON" />
+                <marker date="1463438643780" expanded="true" signature="1533:1602" placeholder="SELECT * FRO... SEASON" />
+                <marker date="1463438643780" expanded="true" signature="2051:2136" placeholder="UPDATE SEASO... " />
+                <marker date="1463438643780" expanded="true" signature="2335:2399" placeholder="INSERT INTO SEASON... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SeasonsTable.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/season/js/SeasonsTable.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="80" column="71" selection-start-line="80" selection-start-column="71" selection-end-line="80" selection-end-column="71" />
+              <folding>
+                <marker date="1463438756118" expanded="true" signature="1617:1649" placeholder="..." />
+                <marker date="1463438756118" expanded="true" signature="1830:1874" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="season.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/rest/season/season.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.741936">
-              <caret line="34" column="54" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="54" />
-              <folding>
-                <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OperationBA.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/business-components/operation/business-activity/OperationBA.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.354838">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FieldRepo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/business-components/field/repo/FieldRepo.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.354838">
-              <caret line="86" column="21" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
-              <folding>
-                <marker date="1463418332403" expanded="true" signature="109:184" placeholder="SELECT * FRO... FIELD" />
-                <marker date="1463418332403" expanded="true" signature="739:793" placeholder="SELECT * FRO... FIELD" />
-                <marker date="1463418332403" expanded="true" signature="1075:1148" placeholder="DELETE FROM " />
-                <marker date="1463418332403" expanded="true" signature="1662:1769" placeholder="INSERT INTO FIELD... " />
-                <marker date="1463418332403" expanded="true" signature="1662:1897" placeholder="INSERT INTO FIELD... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditField.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/home/js/EditField.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="30" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditOperation.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/EditOperation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OperationRepo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.0">
-              <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
-              <folding>
-                <marker date="1463418825254" expanded="true" signature="121:192" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
-                <marker date="1463418825254" expanded="true" signature="649:718" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
-                <marker date="1463418825254" expanded="true" signature="1627:2012" placeholder="INSERT INTO DONE_OPERATION_DETAILS... " />
-                <marker date="1463418825254" expanded="true" signature="2253:2315" placeholder="DELETE FROM " />
-                <marker date="1463418825254" expanded="true" signature="2253:2341" placeholder="DELETE FROM " />
-                <marker date="1463418825254" expanded="true" signature="2259:2315" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
-                <marker date="1463418825254" expanded="true" signature="3236:3648" placeholder="UPDATE DONE_... " />
-                <marker date="1463418825254" expanded="true" signature="3242:3648" placeholder="INSERT INTO DONE_OPERATION_DETAILS... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/public/seasons/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0266021">
-              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="357">
+              <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/public/field/index.html">
+      <file leaf-file-name="field.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/field.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.870968">
-              <caret line="99" column="0" selection-start-line="30" selection-start-column="3" selection-end-line="99" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="87" column="4" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="69" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1463429250391" expanded="true" signature="448:543" placeholder="..." />
+                <marker date="1463429250391" expanded="true" signature="1565:1623" placeholder="..." />
+                <marker date="1463429250391" expanded="true" signature="1789:1865" placeholder="..." />
+                <marker date="1463429250391" expanded="true" signature="2021:2097" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Season.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/season/js/Season.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRepo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/business-components/user/repo/UserRepo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+              <folding>
+                <marker date="1463432264985" expanded="true" signature="98:176" placeholder="SELECT * FRO... USER" />
+                <marker date="1463432264985" expanded="true" signature="428:474" placeholder="SELECT * FRO... USER" />
+                <marker date="1463432264985" expanded="true" signature="703:747" placeholder="SELECT * FRO... USER" />
+                <marker date="1463432264985" expanded="true" signature="1133:1216" placeholder="INSERT INTO USER... " />
+                <marker date="1463432264985" expanded="true" signature="1373:1434" placeholder="UPDATE USER " />
+                <marker date="1463432264985" expanded="true" signature="1373:1442" placeholder="UPDATE USER " />
+                <marker date="1463432264985" expanded="true" signature="1433:1434" placeholder="SELECT * FRO... USER" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddSeason.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/season/js/AddSeason.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="18" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -217,20 +201,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/service/rest/season/chart/profit/pro-ha.php" />
-        <option value="$PROJECT_DIR$/service/rest/season/chart/revenues/pro-field.php" />
-        <option value="$PROJECT_DIR$/service/rest/season/chart/revenues/pro-ha.php" />
-        <option value="$PROJECT_DIR$/service/rest/season/table/details.php" />
-        <option value="$PROJECT_DIR$/client/src/home/js/column-chart.js" />
-        <option value="$PROJECT_DIR$/service/rest/season/table/overwiew.php" />
-        <option value="$PROJECT_DIR$/client/src/home/js/chart-model.js" />
-        <option value="$PROJECT_DIR$/client/src/home/js/home.js" />
-        <option value="$PROJECT_DIR$/client/src/home/js/SaveNewField.js" />
         <option value="$PROJECT_DIR$/client/src/home/js/fields-table.js" />
         <option value="$PROJECT_DIR$/client/src/home/js/DeleteField.js" />
         <option value="$PROJECT_DIR$/client/src/home/js/Home.js" />
         <option value="$PROJECT_DIR$/client/src/home/js/AddField.js" />
-        <option value="$PROJECT_DIR$/service/business-components/season/repo/SeasonRepo.php" />
         <option value="$PROJECT_DIR$/service/rest/field/field.php" />
         <option value="$PROJECT_DIR$/service/business-components/other-costs/repo/OtherCostsRepo.php" />
         <option value="$PROJECT_DIR$/client/src/fiedl/resources/field.css" />
@@ -241,10 +215,7 @@
         <option value="$PROJECT_DIR$/client/src/home/resources/home.css" />
         <option value="$PROJECT_DIR$/client/src/home/js/FieldTable.js" />
         <option value="$PROJECT_DIR$/client/src/authorization/js/registration.js" />
-        <option value="$PROJECT_DIR$/service/business-components/user/repo/UserRepo.php" />
         <option value="$PROJECT_DIR$/service/rest/user/login.php" />
-        <option value="$PROJECT_DIR$/service/business-components/season/SeasonBF.php" />
-        <option value="$PROJECT_DIR$/service/configs/db-config/db-config.php" />
         <option value="$PROJECT_DIR$/service/rest/user/logout.php" />
         <option value="$PROJECT_DIR$/client/src/authorization/js/Logout.js" />
         <option value="$PROJECT_DIR$/client/public/index.html" />
@@ -260,31 +231,45 @@
         <option value="$PROJECT_DIR$/client/src/common/js/highcharts/modules/drilldown.js" />
         <option value="$PROJECT_DIR$/client/src/fiedl/js/OperationsTable.js" />
         <option value="$PROJECT_DIR$/client/src/fiedl/js/field.js" />
-        <option value="$PROJECT_DIR$/service/business-components/field/repo/FieldRepo.php" />
         <option value="$PROJECT_DIR$/client/src/fiedl/js/EditOperation.js" />
-        <option value="$PROJECT_DIR$/service/rest/operation/operation.php" />
         <option value="$PROJECT_DIR$/client/src/fiedl/js/DeleteOperation.js" />
         <option value="$PROJECT_DIR$/service/business-components/operation/business-activity/OperationBA.php" />
         <option value="$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php" />
         <option value="$PROJECT_DIR$/client/public/field/index.html" />
+        <option value="$PROJECT_DIR$/service/business-components/field/repo/FieldRepo.php" />
+        <option value="$PROJECT_DIR$/client/src/season/AddSeason.js" />
+        <option value="$PROJECT_DIR$/client/src/season/add-season-modal.html" />
+        <option value="$PROJECT_DIR$/client/src/season/js/AddSeason.js" />
+        <option value="$PROJECT_DIR$/client/src/season/html/add-season-modal.html" />
+        <option value="$PROJECT_DIR$/service/business-components/user/repo/UserRepo.php" />
+        <option value="$PROJECT_DIR$/service/rest/operation/operation.php" />
+        <option value="$PROJECT_DIR$/service/business-components/season/repo/SeasonBE.php" />
+        <option value="$PROJECT_DIR$/client/src/season/js/Season.js" />
+        <option value="$PROJECT_DIR$/client/src/season/html/seasons-table.html" />
         <option value="$PROJECT_DIR$/client/public/seasons/index.html" />
+        <option value="$PROJECT_DIR$/service/rest/season/season.php" />
+        <option value="$PROJECT_DIR$/service/business-components/season/repo/SeasonRepo.php" />
+        <option value="$PROJECT_DIR$/client/src/season/js/SeasonsTable.js" />
+        <option value="$PROJECT_DIR$/service/business-components/season/SeasonBF.php" />
+        <option value="$PROJECT_DIR$/service/configs/db-config/db-config.php" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpServers">
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1050" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -428,92 +413,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="seasons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="field" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -550,19 +449,19 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\nr\service\rest\season" />
-      <recent name="C:\xampp\htdocs\nr\service\configs" />
-      <recent name="C:\xampp\htdocs\nr\client\src\common\resources" />
-      <recent name="C:\xampp\htdocs\nr\client\public\authorization" />
-      <recent name="C:\xampp\htdocs\nr\client" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\nr\client\src\season\html" />
       <recent name="C:\xampp\htdocs\nr\client\public\seasons" />
       <recent name="C:\xampp\htdocs\nr\client\src\fiedl" />
       <recent name="C:\xampp\htdocs\nr\service\rest\excel\field" />
       <recent name="C:\xampp\htdocs\nr\service\rest\excel" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\nr\client\src\season\js" />
+      <recent name="C:\xampp\htdocs\nr\client\src\season\html" />
       <recent name="C:\xampp\htdocs\nr\service\rest\season" />
+      <recent name="C:\xampp\htdocs\nr\service\configs" />
+      <recent name="C:\xampp\htdocs\nr\client\src\common\resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -572,31 +471,21 @@
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -606,27 +495,15 @@
       <option name="METHOD_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -788,13 +665,12 @@
       <method />
     </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <module name="" />
       <setting name="vmparams" value="" />
       <setting name="cmdLine" value="run-app" />
-      <setting name="depsClasspath" value="false" />
       <setting name="passParentEnv" value="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <setting name="launchBrowser" value="true" />
+      <setting name="depsClasspath" value="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -958,6 +834,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -968,6 +845,7 @@
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run-script" />
       <scripts />
+      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
@@ -981,7 +859,9 @@
       <item index="0" class="java.lang.String" itemvalue="PHPUnit.nr" />
     </list>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -990,6 +870,7 @@
       <changelist id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="" />
       <created>1461618517120</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1461618517120</updated>
       <workItem from="1461618518508" duration="2928000" />
       <workItem from="1461700037292" duration="796000" />
@@ -1027,64 +908,75 @@
       <workItem from="1463252711031" duration="12642000" />
       <workItem from="1463325752978" duration="22597000" />
       <workItem from="1463405957730" duration="13094000" />
+      <workItem from="1463429257898" duration="9819000" />
     </task>
     <task id="LOCAL-00001" summary="Zaczęto refaktoring kodu w sekcji serwisowej, pliki PHP.">
       <created>1463089722893</created>
       <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1463089722893</updated>
     </task>
     <task id="LOCAL-00002" summary="Zaczęto refaktoring kodu w sekcji serwisowej, pliki PHP.">
       <created>1463090011636</created>
       <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1463090011636</updated>
     </task>
     <task id="LOCAL-00003" summary="Zaczęto refaktoring kodu w sekcji serwisowej, pliki PHP. DB config.">
       <created>1463090210454</created>
       <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
       <updated>1463090210454</updated>
     </task>
     <task id="LOCAL-00004" summary="Dodanie pakietow do obslugi wykresów.">
       <created>1463143548629</created>
       <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
       <updated>1463143548629</updated>
     </task>
     <task id="LOCAL-00005" summary="Dodanie pakietow do obslugi wykresów.">
       <created>1463150852960</created>
       <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
       <updated>1463150852960</updated>
     </task>
     <task id="LOCAL-00006" summary="Kod refaktoring">
       <created>1463347411118</created>
       <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
       <updated>1463347411118</updated>
     </task>
     <task id="LOCAL-00007" summary="Kod refaktoring">
       <created>1463347512365</created>
       <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
       <updated>1463347512365</updated>
     </task>
     <task id="LOCAL-00008" summary="Kod refaktoring">
       <created>1463347806680</created>
       <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
       <updated>1463347806680</updated>
     </task>
     <task id="LOCAL-00009" summary="Kod refaktoring">
       <created>1463347810213</created>
       <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
       <updated>1463347810213</updated>
     </task>
     <task id="LOCAL-00010" summary="Kod refaktoring">
       <created>1463348328370</created>
       <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
       <updated>1463348328370</updated>
     </task>
@@ -1092,22 +984,24 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205685000" />
+    <option name="totallyTimeSpent" value="215504000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884398" sideWeight="0.5021436" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884398" sideWeight="0.49785638" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1789925" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17864583" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1117,10 +1011,8 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19027483" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1163,137 +1055,46 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/service/business-components/common/build/excel/PHPExcel/Style/Font.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/rest/excel/field/excel-generator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="50" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/rest/excel/excel-generator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/business-components/operation/repo/OperationBE.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/business-components/field/business-activity/FieldExcelGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="78" selection-start-line="27" selection-start-column="78" selection-end-line="27" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/home/html/home-table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="47" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/fiedl/html/delete-field-modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/fiedl/html/operations-table.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/home/js/FieldTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/authorization/js/registration.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/authorization/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/business-components/user/business-activity/UserBA.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/business-components/user/repo/UserRepo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.356711">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/rest/season/chart/cost/pro-field.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6118501">
+        <state relative-caret-position="0">
           <caret line="23" column="24" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/business-components/season/SeasonBF.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31922612">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/configs/db-config/db-config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.053204354">
-          <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/home/js/HomeControloe.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51282054">
+        <state relative-caret-position="0">
           <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
           <folding />
         </state>
@@ -1301,7 +1102,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/rest/user/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.741936">
+        <state relative-caret-position="0">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
@@ -1309,7 +1110,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/rest/user/logout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.032259">
+        <state relative-caret-position="0">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
@@ -1317,7 +1118,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/authorization/js/Logout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
           <folding />
         </state>
@@ -1325,31 +1126,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/authorization/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/common/js/jquery-ui.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.82051283">
+        <state relative-caret-position="0">
           <caret line="8063" column="20" selection-start-line="8063" selection-start-column="20" selection-end-line="8063" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/rest/season/season.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.387097">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/rest/field/field.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63845223">
+        <state relative-caret-position="0">
           <caret line="55" column="33" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
           <folding />
         </state>
@@ -1357,15 +1149,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/business-components/field/business-activity/FieldBA.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42563483">
+        <state relative-caret-position="0">
           <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/home/js/AddField.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43589744">
+        <state relative-caret-position="0">
           <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
           <folding />
         </state>
@@ -1373,7 +1164,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/home/resources/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3458283">
+        <state relative-caret-position="0">
           <caret line="90" column="16" selection-start-line="90" selection-start-column="1" selection-end-line="90" selection-end-column="16" />
           <folding />
         </state>
@@ -1381,7 +1172,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/fiedl/resources/field.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13301088">
+        <state relative-caret-position="0">
           <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
           <folding />
         </state>
@@ -1389,7 +1180,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/business-components/field/repo/FieldBE.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.32258">
+        <state relative-caret-position="0">
           <caret line="51" column="54" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="54" />
           <folding />
         </state>
@@ -1397,7 +1188,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/business-components/season/business-activity/SeasonBA.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.870968">
+        <state relative-caret-position="0">
           <caret line="240" column="91" selection-start-line="240" selection-start-column="91" selection-end-line="240" selection-end-column="91" />
           <folding>
             <element signature="n#getPlant_Varietes_Cost_Details_ProHa_ChartData#0;n#SeasonBA#0;n#!!top" expanded="false" />
@@ -1407,7 +1198,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/common/js/highcharts/highcharts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.30985916">
+        <state relative-caret-position="0">
           <caret line="1" column="6" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="6" />
           <folding />
         </state>
@@ -1415,27 +1206,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/common/js/highcharts/modules/drilldown.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.549296">
+        <state relative-caret-position="0">
           <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/home/html/add-operation-modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.225806">
-          <caret line="49" column="64" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="64" />
-          <folding>
-            <element signature="n#style#0;n#select#0;n#td#1;n#tr#2;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#3;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#td#1;n#tr#3;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/home/html/delete-field-modal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.935484">
+        <state relative-caret-position="0">
           <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding />
         </state>
@@ -1443,7 +1222,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/home/js/DeleteField.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="1" />
           <folding />
         </state>
@@ -1451,7 +1230,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/home/html/edit-fiedl-modal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.903226">
+        <state relative-caret-position="0">
           <caret line="71" column="99" selection-start-line="71" selection-start-column="75" selection-end-line="71" selection-end-column="99" />
           <folding />
         </state>
@@ -1459,64 +1238,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/OperationsTable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="23" column="51" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="51" />
-          <folding>
-            <marker date="1463418081132" expanded="true" signature="1033:1082" placeholder="..." />
-            <marker date="1463418081132" expanded="true" signature="1238:1287" placeholder="..." />
-            <marker date="1463418081132" expanded="true" signature="1448:1479" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/field.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding>
-            <marker date="1463418122927" expanded="true" signature="448:543" placeholder="..." />
-            <marker date="1463418122927" expanded="true" signature="1565:1623" placeholder="..." />
-            <marker date="1463418122927" expanded="true" signature="1789:1865" placeholder="..." />
-            <marker date="1463418122927" expanded="true" signature="2021:2097" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/Operations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="9" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/rest/operation/operation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.870968">
-          <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/home/js/ChartModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="123" column="10" selection-start-line="123" selection-start-column="10" selection-end-line="123" selection-end-column="10" />
           <folding>
             <element signature="n#!!block;n#createChart#0" expanded="false" />
-            <marker date="1463416604510" expanded="true" signature="1873:1887" placeholder="..." />
-            <marker date="1463416604510" expanded="true" signature="1959:1978" placeholder="..." />
-            <marker date="1463416604510" expanded="true" signature="2972:2986" placeholder="..." />
-            <marker date="1463416604510" expanded="true" signature="3054:3073" placeholder="..." />
-            <marker date="1463416604510" expanded="true" signature="4457:4471" placeholder="..." />
-            <marker date="1463416604510" expanded="true" signature="4539:4558" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/home/js/AddOperation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="391">
           <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="59" />
           <folding />
         </state>
@@ -1524,7 +1264,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/home/js/EditField.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="476">
           <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="30" selection-end-column="70" />
           <folding />
         </state>
@@ -1532,7 +1272,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/DeleteOperation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="306">
           <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding />
         </state>
@@ -1540,93 +1280,258 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/EditOperation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="493">
           <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/business-components/field/repo/FieldRepo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.354838">
-          <caret line="86" column="21" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
-          <folding>
-            <marker date="1463418332403" expanded="true" signature="109:184" placeholder="SELECT * FRO... FIELD" />
-            <marker date="1463418332403" expanded="true" signature="739:793" placeholder="SELECT * FRO... FIELD" />
-            <marker date="1463418332403" expanded="true" signature="1075:1148" placeholder="DELETE FROM " />
-            <marker date="1463418332403" expanded="true" signature="1662:1769" placeholder="INSERT INTO FIELD... " />
-            <marker date="1463418332403" expanded="true" signature="1662:1897" placeholder="INSERT INTO FIELD... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/business-components/operation/business-activity/OperationBA.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.354838">
+        <state relative-caret-position="272">
           <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php">
+    <entry file="file://$PROJECT_DIR$/client/public/field/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.0">
-          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+        <state relative-caret-position="1683">
+          <caret line="99" column="0" selection-start-line="30" selection-start-column="3" selection-end-line="99" selection-end-column="0" />
           <folding>
-            <marker date="1463418825254" expanded="true" signature="121:192" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
-            <marker date="1463418825254" expanded="true" signature="649:718" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
-            <marker date="1463418825254" expanded="true" signature="1627:2012" placeholder="INSERT INTO DONE_OPERATION_DETAILS... " />
-            <marker date="1463418825254" expanded="true" signature="2253:2315" placeholder="DELETE FROM " />
-            <marker date="1463418825254" expanded="true" signature="2253:2341" placeholder="DELETE FROM " />
-            <marker date="1463418825254" expanded="true" signature="2259:2315" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
-            <marker date="1463418825254" expanded="true" signature="3236:3648" placeholder="UPDATE DONE_... " />
-            <marker date="1463418825254" expanded="true" signature="3242:3648" placeholder="INSERT INTO DONE_OPERATION_DETAILS... " />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#button#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/field/index.html">
+    <entry file="file://$PROJECT_DIR$/service/business-components/field/repo/FieldRepo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.870968">
-          <caret line="99" column="0" selection-start-line="30" selection-start-column="3" selection-end-line="99" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1463429859613" expanded="true" signature="109:184" placeholder="SELECT * FRO... FIELD" />
+            <marker date="1463429859613" expanded="true" signature="109:201" placeholder="SELECT * FRO... FIELD" />
+            <marker date="1463429859613" expanded="true" signature="109:202" placeholder="SELECT * FRO... FIELD" />
+            <marker date="1463429859613" expanded="true" signature="757:828" placeholder="SELECT * FRO... FIELD" />
+            <marker date="1463429859613" expanded="true" signature="1110:1193" placeholder="UPDATE FIELD... " />
+            <marker date="1463429859613" expanded="true" signature="1116:1193" placeholder="DELETE FROM " />
+            <marker date="1463429859613" expanded="true" signature="1707:1942" placeholder="INSERT INTO FIELD... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/Operations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="48" column="11" selection-start-line="35" selection-start-column="7" selection-end-line="48" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/home/html/add-operation-modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1632">
+          <caret line="96" column="18" selection-start-line="93" selection-start-column="10" selection-end-line="96" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#td#1;n#tr#2;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#td#1;n#tr#3;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#select#0;n#td#1;n#tr#3;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.741936">
+        <state relative-caret-position="-1369">
           <caret line="34" column="54" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
           <folding>
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1463429250433" expanded="true" signature="121:192" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
+            <marker date="1463429250433" expanded="true" signature="649:718" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
+            <marker date="1463429250433" expanded="true" signature="1627:2012" placeholder="INSERT INTO DONE_OPERATION_DETAILS... " />
+            <marker date="1463429250433" expanded="true" signature="2253:2341" placeholder="DELETE FROM " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/rest/operation/operation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/business-components/season/repo/SeasonBE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/home/js/FieldTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
+          <folding>
+            <marker date="1463346972130" expanded="true" signature="2172:2221" placeholder="..." />
+            <marker date="1463346972130" expanded="true" signature="2383:2432" placeholder="..." />
+            <marker date="1463346972130" expanded="true" signature="2589:2620" placeholder="..." />
+            <marker date="1463346972130" expanded="true" signature="2797:2828" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/season/html/add-season-modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/season/html/seasons-table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#5;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/season/js/Season.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/season/js/AddSeason.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="18" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/public/seasons/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0266021">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#tr#2;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/field.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="87" column="4" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="69" />
+          <folding>
+            <marker date="1463429250391" expanded="true" signature="448:543" placeholder="..." />
+            <marker date="1463429250391" expanded="true" signature="1565:1623" placeholder="..." />
+            <marker date="1463429250391" expanded="true" signature="1789:1865" placeholder="..." />
+            <marker date="1463429250391" expanded="true" signature="2021:2097" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/rest/season/season.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/business-components/season/repo/SeasonRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="26" column="44" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="44" />
+          <folding>
+            <marker date="1463438643780" expanded="true" signature="111:206" placeholder="SELECT * FRO... SEASON" />
+            <marker date="1463438643780" expanded="true" signature="1205:1300" placeholder="SELECT * FRO... SEASON" />
+            <marker date="1463438643780" expanded="true" signature="1533:1602" placeholder="SELECT * FRO... SEASON" />
+            <marker date="1463438643780" expanded="true" signature="2051:2136" placeholder="UPDATE SEASO... " />
+            <marker date="1463438643780" expanded="true" signature="2335:2399" placeholder="INSERT INTO SEASON... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/business-components/user/repo/UserRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+          <folding>
+            <marker date="1463432264985" expanded="true" signature="98:176" placeholder="SELECT * FRO... USER" />
+            <marker date="1463432264985" expanded="true" signature="428:474" placeholder="SELECT * FRO... USER" />
+            <marker date="1463432264985" expanded="true" signature="703:747" placeholder="SELECT * FRO... USER" />
+            <marker date="1463432264985" expanded="true" signature="1133:1216" placeholder="INSERT INTO USER... " />
+            <marker date="1463432264985" expanded="true" signature="1373:1434" placeholder="UPDATE USER " />
+            <marker date="1463432264985" expanded="true" signature="1373:1442" placeholder="UPDATE USER " />
+            <marker date="1463432264985" expanded="true" signature="1433:1434" placeholder="SELECT * FRO... USER" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/season/js/SeasonsTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="80" column="71" selection-start-line="80" selection-start-column="71" selection-end-line="80" selection-end-column="71" />
+          <folding>
+            <marker date="1463438756118" expanded="true" signature="1617:1649" placeholder="..." />
+            <marker date="1463438756118" expanded="true" signature="1830:1874" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/business-components/season/SeasonBF.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="127" column="58" selection-start-line="127" selection-start-column="58" selection-end-line="127" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/configs/db-config/db-config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

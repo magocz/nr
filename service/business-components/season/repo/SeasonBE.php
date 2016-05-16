@@ -17,7 +17,7 @@ class SeasonBE
         $this->id = $seasonDB['ID'];
         $this->userId = $seasonDB['USER_ID'];
         $this->name = $seasonDB['NAME'];
-        $this->active = $seasonDB['ACTIVE'];
+        $this->active = false;
     }
 
     public function addField($field)
