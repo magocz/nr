@@ -15,7 +15,7 @@
             this.elem.attr(a, A(e.Color(this.start), e.Color(this.end), this.pos))
         }
     });
-    l(q.lang, {drillUpText: "\u25c1 Cofni do {series.name}"});
+    l(q.lang, {drillUpText: "\u25c1 WSTECZ"});
     q.drilldown = {
         activeAxisLabelStyle: {cursor: "pointer", color: "#0d233a", fontWeight: "bold", textDecoration: "underline"},
         activeDataLabelStyle: {cursor: "pointer", color: "#0d233a", fontWeight: "bold", textDecoration: "underline"},

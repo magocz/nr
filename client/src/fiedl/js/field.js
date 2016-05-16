@@ -1,17 +1,18 @@
 $(function () {
 
 
+    $("#addOperationModalContener").load("../../src/home/html/add-operation-modal.html");
+    $("#deleteOperationModalContener").load("../../src/home/html/delete-field-modal.html");
+
+    reloadField();
+
+});
+
+function reloadField() {
+
     $("#operationsCell").load("../../src/fiedl/html/operations-table.html");
-
-    function getFieldIdFromUrl() {
-        var url = window.location.href;
-        var url_array = url.split("#");
-        if (url_array.length == 2) {
-            return url_array[1];
-        }
-    }
-
     var fieldId = getFieldIdFromUrl();
+
     $('#fieldHeader').append(
         "<i class='fa fa-refresh w3-spin' style='font-size:55px; cursor:pointer; margin-right: 3px;padding: 5px ;  display: table;margin: 0 auto' />"
     );
@@ -24,7 +25,6 @@ $(function () {
             contentType: "application/x-www-form-urlencoded",
             statusCode: {
                 200: function (data) {
-                    $('#fieldHeader').empty();
                     fillFieldContent(data);
                     drawFieldOperationsTable(data.fertilizerOperations);
                     drawFieldOperationsTable(data.plantProtectionOperations);
@@ -38,10 +38,10 @@ $(function () {
             }
         });
     }
-});
+}
 
 function fillFieldContent(data) {
-
+    $('#fieldHeader').empty();
     $('#fieldHeader').append('Działka numer: ' + data.fieldNumber +
         "<i onclick='openDeleteFieldModalDialog(" + JSON.stringify(data) + ");' class='fa fa-trash-o' style='font-size:25px; cursor:pointer; float: right; padding: 5px' data-toggle='tooltip'  title='Usuń'/>" +
         "<i id ='generateFieldExceFileBtn' onclick='generateExcelFromField(" + data.id + ")' class='fa fa-download' style='font-size:25px; cursor:pointer; margin-right: 3px;float: right;padding: 5px ' data-toggle='tooltip'  title='Generuj excela'/>" +
@@ -56,6 +56,7 @@ function fillFieldContent(data) {
         '<div><b>Przeprowadzone operacje: </b>' + data.operationsNumber + '</div>' +
         '<div><b>Cena za tonę: </b>' + data.plantPrice + '</div>' +
         '<div><b>Ton na hektar: </b>' + data.tonsProHa + '</div>';
+    $('#fieldLeftInfoDivId').empty();
     $('#fieldLeftInfoDivId').append(leftContent);
 
     var rightContent =
@@ -66,7 +67,7 @@ function fillFieldContent(data) {
         '<div><b>Koszt ochrony roślin: </b>' + formatPrice(data.totalPlantProtectionOperationsCost * data.ha) + '</div>' +
         '<div><b>Koszt ochrony roślin na hektar: </b>' + formatPrice(data.totalPlantProtectionOperationsCost) + '</div>' +
         '<div><b>Dodatkowe koszty: </b>' + formatPrice(data.totalOtherCosts) + '</div>';
-
+    $('#fieldRightInfoDivId').empty();
     $('#fieldRightInfoDivId').append(rightContent);
 }
 
@@ -100,4 +101,12 @@ function generateExcelFromField(fieldId) {
         }
     });
 
+}
+
+function getFieldIdFromUrl() {
+    var url = window.location.href;
+    var url_array = url.split("#");
+    if (url_array.length == 2) {
+        return url_array[1];
+    }
 }

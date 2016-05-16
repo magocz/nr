@@ -36,7 +36,13 @@ function getEmptyChart(newTitle, newSubtitle, yAxisDesc, unit, chartType, render
             },
 
             xAxis: {
-                type: 'category'
+                type: 'category',
+                labels: {
+                    rotation: -45,
+                    style: {
+                        fontSize: '13px',
+                    }
+                }
             },
             yAxis: {
                 title: {
@@ -69,13 +75,19 @@ function generateChart_Unit_HA(data, newTitle, newSubtitle, yAxisDesc, chartType
             text: newTitle + data.data.seasonName
         },
         subtitle: {
-            text: newSubtitle + formatPrice(data.data.costs)  + ' ha'
+            text: newSubtitle + formatPrice(data.data.costs) + ' ha'
         },
 
         unit: 'ds',
 
         xAxis: {
-            type: 'category'
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '13px',
+                }
+            }
         },
         yAxis: {
             title: {
@@ -102,6 +114,13 @@ function generateChart_Unit_HA(data, newTitle, newSubtitle, yAxisDesc, chartType
             data: data.data.seriesData
         }],
         drilldown: {
+            drillUpButton: {
+                relativeTo: 'spacingBox',
+                position: {
+                    y: 0,
+                    x: 0
+                }
+            },
             series: data.data.drilldownData
         }
     });
@@ -123,7 +142,13 @@ function generateChart_Unit_PLN(data, newTitle, newSubtitle, yAxisDesc, chartTyp
         unit: 'ds',
 
         xAxis: {
-            type: 'category'
+            type: 'category',
+            labels: {
+                rotation: -45,
+                style: {
+                    fontSize: '12px'
+                }
+            }
         },
         yAxis: {
             title: {
@@ -150,6 +175,13 @@ function generateChart_Unit_PLN(data, newTitle, newSubtitle, yAxisDesc, chartTyp
             data: data.data.seriesData
         }],
         drilldown: {
+            drillUpButton: {
+                relativeTo: 'spacingBox',
+                position: {
+                    y: 0,
+                    x: 0
+                }
+            },
             series: data.data.drilldownData
         }
     });
@@ -161,6 +193,6 @@ function formatPrice(price) {
 }
 
 // Need to extend String prototype for convinience
-String.prototype.reverse = function() {
+String.prototype.reverse = function () {
     return this.split('').reverse().join('');
 }

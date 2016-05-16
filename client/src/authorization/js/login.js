@@ -45,3 +45,8 @@ $(function () {
 
 });
 
+
+function login(){
+    window.location.href = "/nr/client/public/authorization/";
+}
+

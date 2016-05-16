@@ -47,13 +47,13 @@ class FieldBE
         foreach ($operationsDB as $operation) {
             if ($operation['MEANS_TYPE'] == 'plantProtection') {
                 array_push($this->plantProtectionOperations, new OperationBE($operation));
-                $this->totalCost += ($operation['COST_PRO_HA']); // count for field so * ha
                 $this->totalPlantProtectionOperationsCost += $operation['COST_PRO_HA'];
             } else if ($operation['MEANS_TYPE'] == 'fertilizer') {
                 array_push($this->fertilizerOperations, new OperationBE($operation));
-                $this->totalCost += ($operation['COST_PRO_HA']);// count for field so * ha
                 $this->totalFertilizerOperationsCost += $operation['COST_PRO_HA'];
             }
+            $this->totalCost += ($operation['COST_PRO_HA']);// count for field so * ha
+
         }
 
         foreach ($otherCostsDB as $otherCosts) {
@@ -140,6 +140,8 @@ class FieldBE
             'varietes' => $this->varietes,
             'ha' => $this->ha,
             'operationsNumber' => $this->operationsNumber,
+            'plantPrice' => $this->plantPrice,
+            'tonsProHa' => $this->tonsProHa,
             'seasonId' => $this->id,
         ];
     }

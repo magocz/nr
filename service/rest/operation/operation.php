@@ -43,7 +43,7 @@ if ($_SESSION['login'] == null) {
         if (is_numeric($firstParam)) {
             $data = json_decode(file_get_contents('php://input'), true);
             if ($data != null) {
-                if (!$fieldBA->updateField($data)) {
+                if (!$operationBA->updateOperation($data)) {
                     header('HTTP/1.0 500 Server error');
                     exit;
                 }
@@ -61,9 +61,10 @@ if ($_SESSION['login'] == null) {
         }
     }
     if ($method == 'DELETE') {
+        $data = json_decode(file_get_contents('php://input'), true);
         $firstParam = array_shift($request);
         if (is_numeric($firstParam)) {
-            if (!$fieldBA->deleteField($firstParam)) {
+            if (!$operationBA->deleteOperation($data)) {
                 header('HTTP/1.0 500 Server error');
                 exit;
             }

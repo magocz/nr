@@ -11,11 +11,14 @@ function openFieldEditModalDialog(field) {
 
 
 function fillEditableFields(field) {
+    console.log(field);
     $('#fieldNumberEditInput').val(field.fieldNumber);
     $('#fieldDescriptionEditInput').val(field.description);
     $('#fieldPlantEditInput').val(field.plant);
     $('#fieldVarietesEditInput').val(field.varietes);
     $('#fieldSizeEditInput').val(field.ha);
+    $('#fieldPlantPriceEditInput').val(field.plantPrice);
+    $('#fieldTonsProHaEditInput').val(field.tonsProHa);
 }
 
 function updateField(field) {
@@ -45,7 +48,6 @@ function updateJSONObjFormFieldValues(field) {
     field.ha = $('#fieldSizeEditInput').val();
     field.plantPrice = $('#fieldPlantPriceEditInput').val();
     field.tonsProHa = $('#fieldTonsProHaEditInput').val();
-    field.otherCosts = $('#fieldOtherCostsEditInput').val();
     return field;
 }
 
@@ -58,7 +60,6 @@ function createJSONObjFormFieldValues() {
     field.ha = $('#fieldSizeEditInput').val();
     field.plantPrice = $('#fieldPlantPriceEditInput').val();
     field.tonsProHa = $('#fieldTonsProHaEditInput').val();
-    field.otherCosts = $('#fieldOtherCostsEditInput').val();
     return field;
 }
 
@@ -67,7 +68,9 @@ function clearAllFieldEditModalInputs() {
     $('#fieldDescriptionEditInput').val('');
     $('#fieldPlantEditInput').val('');
     $('#fieldVarietesEditInput').val('');
-    $('#fieldSizeEditInput').val('');
+    $('#fieldSizeEditInput').val('0.0');
+    $('#fieldTonsProHaEditInput').val('0.0');
+    $('#fieldPlantPriceEditInput').val('0.0');
 }
 
 function checkRequiredFieldInEditFieldModal() {
@@ -88,6 +91,12 @@ function checkRequiredFieldInEditFieldModal() {
         isOk = false;
     }
     if (!$.isNumeric($('#fieldSizeEditInput').val())) {
+        isOk = false;
+    }
+    if (!$.isNumeric($('#fieldTonsProHaEditInput').val())) {
+        isOk = false;
+    }
+    if (!$.isNumeric($('#fieldPlantPriceEditInput').val())) {
         isOk = false;
     }
     isOk ? $('#updateFieldBtn').attr("disabled", false) : $('#updateFieldBtn').attr("disabled", true);

@@ -1,58 +1,18 @@
-function openAdOperationModalDialog(field) {
-    $('#addOperationModalHeader').text('Dodaj zabieg do działki: ' + field.fieldNumber);
+function openAdOperationModalDialog() {
+    $('#addOperationModalHeader').text('Dodaj zabieg do działki');
     $('#operationDate').datepicker({
-            changeMonth: true,
-            changeYear: true,
-            showButtonPanel: true
-        }    );
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true
+    });
     $('#operationDate').datepicker('setDate', new Date());
     configModalToDispalyCallender();
     $('#addOperationBtn').unbind();
     $('#addOperationBtn').click(function () {
-        addOperation(field);
+        addOperation();
     });
 
     $('#addOperationdModal').modal();
-}
-
-function addOperation(field) {
-    if (checkRequiredFieldInAddOperationModal()) {
-        $.ajax({
-            url: "../../service/rest/operation/operation.php/",
-            type: "PUT",
-            dataType: 'json',
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify(createJSONObjFormFieldValues_Operation(field.id)),
-            statusCode: {
-                200: function () {
-                    loadHomeData();
-                    clearFieldInAddOperationModal();
-                    $('#addOperationdModal').modal('toggle');
-
-                }
-            }
-        });
-    }
-}
-
-function createJSONObjFormFieldValues_Operation(fieldId) {
-    var operation = {};
-    operation.fieldId = fieldId;
-    operation.date = $('#operationDate').val();
-    operation.meansName = $('#operationMeansNameInputs').val();
-    operation.meansType = $('#operationType').val();
-    if ($('#operationMeansDoseOption').val() === 'lProHa') {
-        operation.meansDoseInLProHa = $('#operationMeansDoseInputs').val();
-        operation.meansDoseInKgProHa = null;
-    } else if ($('#operationMeansDoseOption').val() === 'kgProHa') {
-        operation.meansDoseInLProHa = null;
-        operation.meansDoseInKgProHa = $('#operationMeansDoseInputs').val();
-    }
-    operation.cause = $('#operationCauseInputs').val();
-    operation.economicHarm = $('#operationEcoHarmInputs').val();
-    operation.costProHa = $('#operationCostProHaInputs').val();
-    operation.comment = $('#operationCommentInputs').val();
-    return operation;
 }
 
 function configModalToDispalyCallender() {
@@ -70,6 +30,26 @@ function configModalToDispalyCallender() {
             throw error;
     }
 }
+
+function addOperation() {
+    if (checkRequiredFieldInAddOperationModal()) {
+        $.ajax({
+            url: "../../../service/rest/operation/operation.php/",
+            type: "PUT",
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(createJSONObjFormFieldValues_Operation(getFieldIdFromUrl())),
+            statusCode: {
+                200: function () {
+                    reloadField();
+                    clearFieldInAddOperationModal();
+                    $('#addOperationdModal').modal('toggle');
+                }
+            }
+        });
+    }
+}
+
 
 function checkRequiredFieldInAddOperationModal() {
     var isOk = true;
@@ -109,3 +89,24 @@ function clearFieldInAddOperationModal() {
     $('#operationCostProHaInputs').val('0.0');
     $('#operationCauseInputs').val('Nie określono');
 }
+
+function createJSONObjFormFieldValues_Operation(fieldId) {
+    var operation = {};
+    operation.fieldId = fieldId;
+    operation.date = $('#operationDate').val();
+    operation.meansName = $('#operationMeansNameInputs').val();
+    operation.meansType = $('#operationType').val();
+    if ($('#operationMeansDoseOption').val() === 'lProHa') {
+        operation.meansDoseInLProHa = $('#operationMeansDoseInputs').val();
+        operation.meansDoseInKgProHa = null;
+    } else if ($('#operationMeansDoseOption').val() === 'kgProHa') {
+        operation.meansDoseInLProHa = null;
+        operation.meansDoseInKgProHa = $('#operationMeansDoseInputs').val();
+    }
+    operation.cause = $('#operationCauseInputs').val();
+    operation.economicHarm = $('#operationEcoHarmInputs').val();
+    operation.costProHa = $('#operationCostProHaInputs').val();
+    operation.comment = $('#operationCommentInputs').val();
+    return operation;
+}
+

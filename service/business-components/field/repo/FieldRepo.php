@@ -44,13 +44,14 @@ class FieldRepo
         $description = $data['description'];
         $plant = $data['plant'];
         $varietes = $data['varietes'];
-        $ha = $data['ha'];
-        print_r($data);
-        //$seasonId = strval($data['seasonId']) == '-1' ? $_SESSION['activeSeasonId'] : $data['seasonId'];
-        $seasonId = 1;
-        $sql = "INSERT INTO FIELD (SEASON_ID, FIELD_NR, USER_ID ,DESCRIPTION ,PLANT, VARIETES, HA) VALUES ('$seasonId','$fieldNr','$userId','$description','$plant',' $varietes','$ha')";
+        $tonsProHa = floatval($data['tonsProHa']);
+        $plantPrice = floatval($data['plantPrice']);
+        $ha = floatval($data['ha']);
+        $seasonId = $_SESSION['activeSeasonId'];
+        $sql = "INSERT INTO FIELD (SEASON_ID, FIELD_NR, USER_ID ,DESCRIPTION ,PLANT, VARIETES, HA, PLANT_PRICE,TONS_PRO_HA) " .
+            "VALUES ('$seasonId','$fieldNr','$userId','$description','$plant','$varietes','$ha','$plantPrice','$tonsProHa')";
         $response = $GLOBALS['dbcon']->query($sql);
-        echo ' dsdsds';
+        echo $sql;
         if ($response === TRUE) {
             return true;
         }
@@ -64,9 +65,35 @@ class FieldRepo
         $description = $data['description'];
         $plant = $data['plant'];
         $varietes = $data['varietes'];
-        $ha = $data['ha'];
+        $tonsProHa = floatval($data['tonsProHa']);
+        $plantPrice = floatval($data['plantPrice']);
+        $ha = floatval($data['ha']);
 
-        $sql = "UPDATE FIELD " . "SET FIELD_NR = '$fieldNr' , DESCRIPTION = '$description',  PLANT = '$plant', VARIETES = '$varietes', HA = '$ha' " .
+        $sql = "UPDATE FIELD " . "SET FIELD_NR = '$fieldNr' , DESCRIPTION = '$description',  PLANT = '$plant', VARIETES = '$varietes', HA = '$ha', " .
+            "PLANT_PRICE = '$plantPrice', TONS_PRO_HA = '$tonsProHa' " .
+            "WHERE ID = $fieldId AND USER_ID = $userId";
+        echo $sql;
+        $response = $GLOBALS['dbcon']->query($sql);
+        if ($response === TRUE) {
+            return true;
+        }
+        return false;
+    }
+
+    public static function addOperationNumber($fieldId, $userId)
+    {
+        $sql = "UPDATE FIELD " . "SET OPERATIONS_NUMBER = OPERATIONS_NUMBER + 1 " .
+            "WHERE ID = $fieldId AND USER_ID = $userId";
+        $response = $GLOBALS['dbcon']->query($sql);
+        if ($response === TRUE) {
+            return true;
+        }
+        return false;
+    }
+
+    public static function deleteOperationNumber($fieldId, $userId)
+    {
+        $sql = "UPDATE FIELD " . "SET OPERATIONS_NUMBER = OPERATIONS_NUMBER - 1 " .
             "WHERE ID = $fieldId AND USER_ID = $userId";
         $response = $GLOBALS['dbcon']->query($sql);
         if ($response === TRUE) {
