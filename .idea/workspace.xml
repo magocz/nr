@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/configs/db-config/db-config.php" afterPath="$PROJECT_DIR$/service/configs/db-config/db-config.php" />
     </list>
     <ignored path="nr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,11 +66,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditField.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EditField.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/home/js/EditField.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82051283">
+            <state vertical-scroll-proportion="0.0">
               <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db-config.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/service/configs/db-config/db-config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.13301088">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -119,16 +130,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-19.161291">
               <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.7096774">
-              <caret line="34" column="54" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -215,7 +216,6 @@
         <option value="$PROJECT_DIR$/client/src/season/js/Season.js" />
         <option value="$PROJECT_DIR$/service/rest/season/season.php" />
         <option value="$PROJECT_DIR$/service/business-components/season/SeasonBF.php" />
-        <option value="$PROJECT_DIR$/service/configs/db-config/db-config.php" />
         <option value="$PROJECT_DIR$/service/business-components/season/repo/SeasonBE.php" />
         <option value="$PROJECT_DIR$/client/src/common/resources/menu.css" />
         <option value="$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php" />
@@ -232,6 +232,7 @@
         <option value="$PROJECT_DIR$/client/src/home/js/FieldTable.js" />
         <option value="$PROJECT_DIR$/client/src/season/js/SeasonsTable.js" />
         <option value="$PROJECT_DIR$/client/src/home/js/EditField.js" />
+        <option value="$PROJECT_DIR$/service/configs/db-config/db-config.php" />
       </list>
     </option>
   </component>
@@ -390,6 +391,60 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="nr" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="configs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="configs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db-config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1019,7 +1074,7 @@
       <workItem from="1463405957730" duration="13094000" />
       <workItem from="1463429257898" duration="9819000" />
       <workItem from="1463492295533" duration="2347000" />
-      <workItem from="1463499538360" duration="3533000" />
+      <workItem from="1463499538360" duration="3598000" />
     </task>
     <task id="LOCAL-00001" summary="Zaczęto refaktoring kodu w sekcji serwisowej, pliki PHP.">
       <created>1463089722893</created>
@@ -1087,11 +1142,17 @@
       <option name="project" value="LOCAL" />
       <updated>1463503054678</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Kod refaktoring">
+      <created>1463503087377</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1463503087377</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221384000" />
+    <option name="totallyTimeSpent" value="221449000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="0" />
@@ -1385,13 +1446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/configs/db-config/db-config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.053140096">
-          <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/rest/season/season.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.95652175">
@@ -1617,8 +1671,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/home/js/EditField.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82051283">
+        <state vertical-scroll-proportion="0.0">
           <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/configs/db-config/db-config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13301088">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
