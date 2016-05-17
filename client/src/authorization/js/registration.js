@@ -36,13 +36,14 @@ $(function () {
         }
         if (isInputOK) {
             var formData = $('form').serialize();
+
             $.ajax({
-                url: "../../service/rest/user/registration.php",
+                url: "../../../service/rest/user/user.php/",
                 data: 'login=' + login + '&password=' + CryptoJS.MD5(password) + '&mail=' + mail,
                 type: "POST",
                 contentType: "application/x-www-form-urlencoded",
                 success: function (data, textStatus, response) {
-                    //window.location.href = "/nr/";
+                    //window.location.href = "/nr/client/public/";
                 },
                 error: function (data, textStatus, response) {
                     if (data.statusText === 'LoginError') {

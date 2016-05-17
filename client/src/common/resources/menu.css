@@ -37,13 +37,31 @@ li a:hover:not(.active) {
 }
 
 .tableTitle{
-    padding: 14px;
+    padding: 4px;
     font-size: 25px;
     font-family: serif;
+    border-bottom: solid 1px;
 }
 
 .active:hover {
     color: white;
     text-decoration: none;
     background-color: #4CAF50;
+}
+
+.userDataContent{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 2px;
+    font-size: 18px;
+    font-family: serif;
+}
+
+.userDataInput{
+    margin-bottom: 5px;
+}
+
+.userDataTable
+{
+    width: 100%;
 }

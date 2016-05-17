@@ -1,5 +1,4 @@
 <?php
-
 include_once '../../business-components/season/repo/SeasonRepo.php';
 include_once '../../business-components/season/repo/SeasonBE.php';
 include_once '../../business-components/season/business-activity/SeasonBA.php';
@@ -27,18 +26,43 @@ include_once '../../business-components/season/SeasonBF.php';
 session_start();
 
 $method = $_SERVER['REQUEST_METHOD'];
+$request = explode('/', trim($_SERVER['PATH_INFO'], '/'));
+
 $userBF = new UserBF();
 
-if (isset($_POST['login'], $_POST['password'])) {
-    $login = $_POST['login'];
-    $password = $_POST['password']; // The hashed password.
-    if ($userBF->login($login, $password) == false) {
-        header("HTTP/1.0 401 Unauthorized");
-    } else {
-        header("HTTP/1.0 200 OK");
+if ($_SESSION['id'] == null) {
+    if ($method == 'POST') {
+        $login = $_POST['login'];
+        $password = $_POST['password'];
+        $mail = $_POST['mail'];
+        $response = $userBF->register($login, $mail, $password);
+        if ($response == 1) {
+            header("HTTP/1.0 201 Created");
+            exit;
+
+        } else if ($response == -1) {
+            header("HTTP/1.0 401 MailError");
+            exit;
+        } else if ($response == 0) {
+            header("HTTP/1.0 401 LoginError");
+            exit;
+        }
     }
 } else {
-    header("HTTP/1.0 405 Method Not Allowed");
-    exit;
-}
+    if ($method == 'GET') {
+        header('Content-type: application/json');
+        echo $userBF->findUser();
+        exit;
+    }
+    if ($method == 'POST') {
+        $data = json_decode(file_get_contents('php://input'), true);
+        if ($data != null) {
+            if (!$userBF->update($data)) {
+                header('HTTP/1.0 500 Server error');
+                exit;
+            } else {
 
+            }
+        }
+    }
+}

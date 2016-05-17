@@ -1,6 +1,6 @@
 function logout() {
     $.ajax({
-        url: "../../service/rest/user/logout.php",
+        url: "../../service/rest/user/logout.php/",
         type: "GET",
         contentType: "application/x-www-form-urlencoded",
         success: function () {

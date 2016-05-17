@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../src/common/resources/menu.css">
+    <link rel="stylesheet" type="text/css" href="../../src/fiedl/resources/field.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../src/common/resources/bootstrap.css">
+    <link rel="stylesheet" href="../../src/common/resources/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../../src/home/resources/home.css">
+
+
+    <script src="../../src/common/js/jquery-2.2.3.js"></script>
+    <script src="../../src/common/js/jquery-ui.js"></script>
+    <script src="../../src/common/js/datepicker-pl.js"></script>
+    <script src="../../src/common/js/bootstrap/bootstrap.js"></script>
+    <script type="text/javascript" src="../../src/common/js/tablesorter/jquery.tablesorter.js"></script>
+
+    <script src="../../src/common/js/util/DoubleFormater.js"></script>
+    <script src="../../src/season/js/Season.js"></script>
+    <script src="../../src/season/js/AddSeason.js"></script>
+    <script src="../../src/season/js/SeasonsTable.js"></script>
+
+    <script src="../../src/user/js/User.js"></script>
+
+    <script src="../../src/authorization/js/Logout.js"></script>
+
+</head>
+<body>
+<table id="seasonsTable" class="homeTable" align="center">
+    <tr>
+        <td colspan="2">
+            <div>
+                <ul class="menu">
+                    <li><a href="/nr/client/public/" style="text-decoration: none">Home</a></li>
+                    <li><a href="/nr/client/public/seasons">Sezony</a></li>
+                    <li style="float:right"><a href="/nr/client/public/authorization">Wyloguj</a></li>
+                    <li style="float:right"><a class="active" href="/nr/client/public/user/">Twoje dane</a></li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+    <tr class="homeTableSearchRow">
+        <td class="homeTableSearchCell" colspan="2">
+            <div align="left" class="tableTitle">
+                Twoje dane
+            </div>
+        </td>
+    </tr>
+    <tr class="homeTableSearchRow">
+        <td class="homeTableSearchCell" colspan="2">
+            <div align="left" class="userDataContent">
+                <table id="userDataTable" hidden="true">
+                    <tr>
+                        <td>Login:</td>
+                        <td>
+                            <input class="userDataInput" type="text" maxlength="30" id="loginInput">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Imię:</td>
+                        <td>
+                            <input class="userDataInput" type="text" maxlength="30" id="firstNameInput">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nazwisko:</td>
+                        <td>
+                            <input class="userDataInput" type="text" maxlength="30" id="lastNameInput">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>E-Mail:</td>
+                        <td>
+                            <input class="userDataInput" type="text" maxlength="30" id="mailInput">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <i id="userDataLoadIcon" class='fa fa-refresh w3-spin' style='font-size:55px; cursor:pointer; margin-right: 3px;padding: 5px ;  display: table;margin: 0 auto' />
+        </td>
+    </tr>
+    <tr class="homeTableSearchRow">
+        <td class="homeTableSearchCell" colspan="2">
+            <button align="right" type="button"
+                    class="btn btn-success"
+                    style="float: right; margin-top: 10px; data-dismiss=" modal
+            ">Aktualizuj</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="footer">Copyright&copy; Neldam Software Solutions</div>
+        </td>
+    </tr>
+</table>
+<iframe id="my_iframe" style="display:none;"></iframe>
+
+<div id="addSeasonModalContener"></div>
+</body>
+</html>
