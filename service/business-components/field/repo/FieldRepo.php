@@ -31,6 +31,19 @@ class FieldRepo
         return $rows;
     }
 
+    public static function findAllFieldsBySeasonId_ReturnBE($seasonId)
+    {
+        $sql = "SELECT * FROM FIELD WHERE `SEASON_ID` LIKE '$seasonId' AND `ACTIVE` = 1";
+        $response = $GLOBALS['dbcon']->query($sql);
+        $rows = array();
+        while ($r = mysqli_fetch_assoc($response)) {
+            $operatiosn = OperationRepo::findAllDoneOperationsByFieldId($r['ID']);
+            $otherCosts = OtherCostsRepo::findAllOtherCostsByFieldId($r['ID']);
+            $rows[] = new FieldBE($r, $operatiosn, $otherCosts);
+        }
+        return $rows;
+    }
+
     public static function deleteFieldById($fieldId, $userId)
     {
         $sql = "UPDATE FIELD SET ACTIVE = 0 WHERE `ID` LIKE '$fieldId' AND `USER_ID` LIKE '$userId'";

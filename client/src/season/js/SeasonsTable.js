@@ -1,8 +1,5 @@
 function generateSeasonsTable() {
-    $('#allSesonsTable tbody').on('click', 'tr', function () {
-        alert($(this).find('td:last').text());
-    });
-
+    $('#seasonTableLoadIcon').show();
     $.ajax({
         url: "../../../service/rest/season/season.php/",
         type: "GET",
@@ -10,12 +7,10 @@ function generateSeasonsTable() {
         contentType: "application/x-www-form-urlencoded",
         statusCode: {
             200: function (data) {
+                $('#seasonTableLoadIcon').hide();
                 drawTable(data);
                 $("#allSesonsTable").tablesorter({
-                        headers: {
-                            6: {sorter: false},
-                            7: {sorter: false}
-                        }
+                        sortList: [[7, 1]]
                     }
                 );
             }
@@ -36,14 +31,14 @@ function drawRow(rowData) {
     var row = $("<tr />")
     $("#allSesonsTable").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
     row.append($("<td onclick='setAsActiveSeason(this)'> " + rowData.name + "</td>"));
-    row.append($("<td>" + '-' + "</td>"));
-    row.append($("<td>" + '-' + "</td>"));
-    row.append($("<td>" + '-' + "</td>"));
-    row.append($("<td>" + '-' + "</td>"));
-    row.append($("<td>" + '-' + "</td>"));
-    row.append($("<td>" + '-' + "</td>"));
-    row.append($("<td>  " + (rowData.active === true ?
-        "<i onclick='setAsActiveSeason({elem: this, sesonId: " + rowData.id + "})' class='" + (rowData.active === true ? 'fa fa-heart' : 'fa fa-heart-o') + "' style='font-size:15px; cursor:pointer; ' data-toggle='tooltip'  title='Ustaw jako aktywny'/>"
+    row.append($("<td>" + rowData.seasonFieldsCount + "</td>"));
+    row.append($("<td>" + rowData.seasonOperationsCount + "</td>"));
+    row.append($("<td>" + getSeasonIfno(rowData.totalSeasonCosts) + "</td>"));
+    row.append($("<td>" + getSeasonIfno(rowData.totalSeasonCostsProHa) + "</td>"));
+    row.append($("<td>" + getSeasonIfno(rowData.totalSeasonProfi) + "</td>"));
+    row.append($("<td>" + getSeasonIfno(rowData.totalSeasonProfiProHa) + "</td>"));
+    row.append($("<td><span hidden>" + rowData.active + "</span>" + (rowData.active === 1 ?
+        "<i onclick='setAsActiveSeason({elem: this, sesonId: " + rowData.id + "})' class='fa fa-heart' style='font-size:15px; cursor:pointer; ' data-toggle='tooltip'  title='Ustaw jako aktywny'/>"
             :
         "<i onclick='setAsActiveSeason({elem: this, sesonId: " + rowData.id + "})' class='fa fa-heart-o' style='font-size:15px; cursor:pointer; data-toggle='tooltip'  title='Ustaw jako aktywny'/>" ) +
 
@@ -89,5 +84,8 @@ function setAsActiveSeason(event) {
             }
         }
     });
+}
 
+function getSeasonIfno(val) {
+    return val ? formatDouble(val) : '-';
 }

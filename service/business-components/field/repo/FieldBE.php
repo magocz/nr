@@ -29,7 +29,7 @@ class FieldBE
     /**
      * FieldBE constructor.
      */
-    public function __construct($fieldDB, $operationsDB, $otherCostsDB)
+    public function     __construct($fieldDB, $operationsDB, $otherCostsDB)
     {
         $this->id = $fieldDB['ID'];
         $this->fieldNumber = $fieldDB['FIELD_NR'];
@@ -43,6 +43,27 @@ class FieldBE
         $this->plantPrice = $fieldDB['PLANT_PRICE'];
         $this->tonsProHa = $fieldDB['TONS_PRO_HA'];
 
+
+        foreach ($operationsDB as $operation) {
+            if ($operation['MEANS_TYPE'] == 'plantProtection') {
+                array_push($this->plantProtectionOperations, new OperationBE($operation));
+                $this->totalPlantProtectionOperationsCost += $operation['COST_PRO_HA'];
+            } else if ($operation['MEANS_TYPE'] == 'fertilizer') {
+                array_push($this->fertilizerOperations, new OperationBE($operation));
+                $this->totalFertilizerOperationsCost += $operation['COST_PRO_HA'];
+            }
+            $this->totalCost += ($operation['COST_PRO_HA']);// count for field so * ha
+
+        }
+
+        foreach ($otherCostsDB as $otherCosts) {
+            array_push($this->otherCosts, new OtherCostsBE($otherCosts));
+            $this->totalCost += $otherCosts['COST'];
+            $this->totalOtherCosts += $otherCosts['COST'];
+        }
+    }
+
+    public function setOperations($operationsDB, $otherCostsDB){
 
         foreach ($operationsDB as $operation) {
             if ($operation['MEANS_TYPE'] == 'plantProtection') {

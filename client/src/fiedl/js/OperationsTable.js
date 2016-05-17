@@ -1,7 +1,3 @@
-function emptyOperationsField() {
-    $("#fieldOperationsTable").empty();
-}
-
 function drawFieldOperationsTable(data) {
     $("#fieldOperationsTable").append('<tbody />');
     for (var i = 0; i < data.length; i++) {

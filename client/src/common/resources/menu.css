@@ -36,6 +36,12 @@ li a:hover:not(.active) {
     background-color: #4CAF50;
 }
 
+.tableTitle{
+    padding: 14px;
+    font-size: 25px;
+    font-family: serif;
+}
+
 .active:hover {
     color: white;
     text-decoration: none;

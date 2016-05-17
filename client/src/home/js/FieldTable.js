@@ -16,6 +16,7 @@ function getFieldsTableRowsInfo(site) {
 }
 
 function generateFieldsTable(restUrl) {
+    $('#homeTableLoadIcon').show();
     $.ajax({
         url: restUrl,
         type: "GET",
@@ -23,6 +24,7 @@ function generateFieldsTable(restUrl) {
         contentType: "application/x-www-form-urlencoded",
         statusCode: {
             200: function (homeData) {
+                $('#homeTableLoadIcon').hide();
                 drawTable(homeData);
                 $("#homeTableActiveSeasonData").tablesorter({
                         headers: {

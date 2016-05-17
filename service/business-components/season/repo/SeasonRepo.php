@@ -42,8 +42,35 @@ class SeasonRepo
         $rows = array();
         while ($r = mysqli_fetch_assoc($response)) {
             $seasonBF = new SeasonBE($r);
+            $fields = FieldRepo::findAllFieldsBySeasonId_ReturnBE($seasonBF->id);
+            $fieldInfo = (object)[
+                'seasonFieldsCount' => 0,
+                'seasonOperationsCount' => 0,
+                'totalSeasonHa' => 0,
+                'totalSeasonCosts' => 0,
+                'totalSeasonProfit' => 0,
+
+            ];
+            foreach ($fields as $field) {
+                $fieldInfo->seasonFieldsCount++;
+                $fieldInfo->seasonOperationsCount += (count($field->fertilizerOperations) + count($field->plantProtectionOperations));
+                $fieldInfo->totalSeasonHa += $field->ha;
+                $fieldInfo->totalSeasonProfit += $field->getFieldProfit();
+                $fieldInfo->totalSeasonCosts += $field->getTotalCostProField();
+            }
+            if ($fieldInfo->seasonFieldsCount != 0 && $fieldInfo->totalSeasonHa != 0) {
+                $seasonBF->seasonFieldsCount = $fieldInfo->seasonFieldsCount;
+                $seasonBF->seasonOperationsCount = $fieldInfo->seasonOperationsCount;
+                $seasonBF->totalSeasonHa = $fieldInfo->totalSeasonHa;
+                $seasonBF->totalSeasonCosts = $fieldInfo->totalSeasonCosts;
+                $seasonBF->totalSeasonProfi = $fieldInfo->totalSeasonProfit;
+                $seasonBF->totalSeasonCostsProHa = $fieldInfo->totalSeasonCosts / $fieldInfo->totalSeasonHa;
+                $seasonBF->totalSeasonProfiProHa = $fieldInfo->totalSeasonProfit / $fieldInfo->totalSeasonHa;
+            }
+
+
             if ($seasonBF->id == $_SESSION['activeSeasonId']) {
-                $seasonBF->active = true;
+                $seasonBF->active = 1;
             }
             $rows[] = $seasonBF;
         }

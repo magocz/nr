@@ -90,7 +90,7 @@ function checkRequiredFieldInEditFieldModal() {
     if ($('#fieldSizeEditInput').val().length === 0) {
         isOk = false;
     }
-    if (!$.isNumeric($('#fieldSizeEditInput').val())) {
+    if (!$.isNumeric($('#fieldSizeEditInput').val()) || parseFloat($('#fieldSizeEditInput').val()) === 0) {
         isOk = false;
     }
     if (!$.isNumeric($('#fieldTonsProHaEditInput').val())) {
