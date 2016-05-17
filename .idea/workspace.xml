@@ -1,23 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="Kod refaktoring">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/common/js/util/DoubleFormater.js" />
+    <list default="true" id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/seasons/index.html" afterPath="$PROJECT_DIR$/client/public/seasons/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/common/resources/menu.css" afterPath="$PROJECT_DIR$/client/src/common/resources/menu.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/fiedl/js/OperationsTable.js" afterPath="$PROJECT_DIR$/client/src/fiedl/js/OperationsTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/home/html/home-table.html" afterPath="$PROJECT_DIR$/client/src/home/html/home-table.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/home/js/EditField.js" afterPath="$PROJECT_DIR$/client/src/home/js/EditField.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/home/js/FieldTable.js" afterPath="$PROJECT_DIR$/client/src/home/js/FieldTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/season/html/seasons-table.html" afterPath="$PROJECT_DIR$/client/src/season/html/seasons-table.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/season/js/SeasonsTable.js" afterPath="$PROJECT_DIR$/client/src/season/js/SeasonsTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/field/repo/FieldBE.php" afterPath="$PROJECT_DIR$/service/business-components/field/repo/FieldBE.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/field/repo/FieldRepo.php" afterPath="$PROJECT_DIR$/service/business-components/field/repo/FieldRepo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php" afterPath="$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/season/repo/SeasonBE.php" afterPath="$PROJECT_DIR$/service/business-components/season/repo/SeasonBE.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/season/repo/SeasonRepo.php" afterPath="$PROJECT_DIR$/service/business-components/season/repo/SeasonRepo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/configs/db-config/db-config.php" afterPath="$PROJECT_DIR$/service/configs/db-config/db-config.php" />
     </list>
     <ignored path="nr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,7 +68,7 @@
       <file leaf-file-name="EditField.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/home/js/EditField.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8195576">
+            <state vertical-scroll-proportion="0.82051283">
               <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
               <folding />
             </state>
@@ -1034,7 +1019,7 @@
       <workItem from="1463405957730" duration="13094000" />
       <workItem from="1463429257898" duration="9819000" />
       <workItem from="1463492295533" duration="2347000" />
-      <workItem from="1463499538360" duration="3511000" />
+      <workItem from="1463499538360" duration="3533000" />
     </task>
     <task id="LOCAL-00001" summary="Zaczęto refaktoring kodu w sekcji serwisowej, pliki PHP.">
       <created>1463089722893</created>
@@ -1096,11 +1081,17 @@
       <option name="project" value="LOCAL" />
       <updated>1463348328370</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Kod refaktoring">
+      <created>1463503054678</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1463503054678</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221362000" />
+    <option name="totallyTimeSpent" value="221384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="0" />
@@ -1108,6 +1099,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884398" sideWeight="0.5021436" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1127,7 +1119,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19027483" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1626,7 +1617,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/home/js/EditField.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8195576">
+        <state vertical-scroll-proportion="0.82051283">
           <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
           <folding />
         </state>
