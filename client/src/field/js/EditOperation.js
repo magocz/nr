@@ -1,19 +1,18 @@
 function openEditOperationModalDialog(operation) {
     fillOperationFormValues(operation);
-    $('#addOperationModalHeader').text('Dodaj zabieg do działki');
+    $('#editOperationdModalHeader').text('Dodaj zabieg do działki');
     $('#operationDate').datepicker({
         changeMonth: true,
         changeYear: true,
         showButtonPanel: true
     });
-    $('#operationDate').datepicker('setDate', new Date());
     configModalToDispalyCallender();
-    $('#addOperationBtn').unbind();
-    $('#addOperationBtn').click(function () {
+    $('#editOperationBtn').unbind();
+    $('#editOperationBtn').click(function () {
         editOperation(operation);
     });
 
-    $('#addOperationdModal').modal();
+    $('#editOperationdModal').modal();
 }
 
 function configModalToDispalyCallender() {
@@ -44,7 +43,7 @@ function editOperation(operation) {
                 200: function () {
                     reloadField();
                     clearFieldInAddOperationModal();
-                    $('#addOperationdModal').modal('toggle');
+                    $('#editOperationdModal').modal('toggle');
                 }
             }
         });
@@ -78,7 +77,7 @@ function checkRequiredFieldInAddOperationModal() {
     if (!$.isNumeric($('#operationEcoHarmInputs').val())) {
         isOk = false;
     }
-    isOk ? $('#addOperationBtn').attr("disabled", false) : $('#addOperationBtn').attr("disabled", true);
+    isOk ? $('#editOperationBtn').attr("disabled", false) : $('#editOperationBtn').attr("disabled", true);
     return isOk;
 }
 

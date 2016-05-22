@@ -2,21 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/user/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/user/js/User.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/business-components/user/UserBF.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/rest/user/user.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/service/rest/user/registration.php" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/public/login/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/field/html/add-operation-modal.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/field/html/edit-operation-modal.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/login/js/login.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/fiedl/html/delete-field-modal.html" afterPath="$PROJECT_DIR$/client/src/field/html/delete-field-modal.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/fiedl/html/operations-table.html" afterPath="$PROJECT_DIR$/client/src/field/html/operations-table.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/fiedl/js/DeleteOperation.js" afterPath="$PROJECT_DIR$/client/src/field/js/DeleteOperation.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/fiedl/js/EditOperation.js" afterPath="$PROJECT_DIR$/client/src/field/js/EditOperation.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/fiedl/js/Operations.js" afterPath="$PROJECT_DIR$/client/src/field/js/Operations.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/fiedl/js/OperationsTable.js" afterPath="$PROJECT_DIR$/client/src/field/js/OperationsTable.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/fiedl/js/field.js" afterPath="$PROJECT_DIR$/client/src/field/js/field.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/src/fiedl/resources/field.css" afterPath="$PROJECT_DIR$/client/src/field/resources/field.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/field/index.html" afterPath="$PROJECT_DIR$/client/public/field/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/index.html" afterPath="$PROJECT_DIR$/client/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/seasons/index.html" afterPath="$PROJECT_DIR$/client/public/seasons/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/public/user/index.html" afterPath="$PROJECT_DIR$/client/public/user/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/authorization/js/Logout.js" afterPath="$PROJECT_DIR$/client/src/authorization/js/Logout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/authorization/js/registration.js" afterPath="$PROJECT_DIR$/client/src/authorization/js/registration.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/common/resources/menu.css" afterPath="$PROJECT_DIR$/client/src/common/resources/menu.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/home/resources/home.css" afterPath="$PROJECT_DIR$/client/src/home/resources/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/user/business-activity/UserBA.php" afterPath="$PROJECT_DIR$/service/business-components/user/business-activity/UserBA.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/user/repo/UserRepo.php" afterPath="$PROJECT_DIR$/service/business-components/user/repo/UserRepo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/rest/user/login.php" afterPath="$PROJECT_DIR$/service/rest/user/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/rest/user/logout.php" afterPath="$PROJECT_DIR$/service/rest/user/logout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/home/js/ChartModel.js" afterPath="$PROJECT_DIR$/client/src/home/js/ChartModel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/home/js/FieldTable.js" afterPath="$PROJECT_DIR$/client/src/home/js/FieldTable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php" afterPath="$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php" />
     </list>
     <ignored path="nr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,26 +38,6 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/client/public/user/index.html">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="518">
-                    <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="nr" />
@@ -61,8 +47,8 @@
       <file leaf-file-name="db-config.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/configs/db-config/db-config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="68" selection-start-line="2" selection-start-column="68" selection-end-line="2" selection-end-column="68" />
+            <state relative-caret-position="85">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -100,18 +86,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/service/rest/excel/field/excel-generator.php" />
-        <option value="$PROJECT_DIR$/service/business-components/field/business-activity/FieldExcelGenerator.php" />
-        <option value="$PROJECT_DIR$/client/src/fiedl/html/operations-table.html" />
-        <option value="$PROJECT_DIR$/client/public/index.html" />
-        <option value="$PROJECT_DIR$/client/src/authorization/js/login.js" />
-        <option value="$PROJECT_DIR$/client/src/home/html/edit-fiedl-modal.html" />
-        <option value="$PROJECT_DIR$/client/src/home/js/AddOperation.js" />
         <option value="$PROJECT_DIR$/client/src/home/html/add-operation-modal.html" />
         <option value="$PROJECT_DIR$/client/src/fiedl/js/Operations.js" />
         <option value="$PROJECT_DIR$/service/business-components/season/business-activity/SeasonBA.php" />
         <option value="$PROJECT_DIR$/client/src/common/js/highcharts/modules/drilldown.js" />
-        <option value="$PROJECT_DIR$/client/src/fiedl/js/EditOperation.js" />
         <option value="$PROJECT_DIR$/client/src/fiedl/js/DeleteOperation.js" />
         <option value="$PROJECT_DIR$/service/business-components/operation/business-activity/OperationBA.php" />
         <option value="$PROJECT_DIR$/client/src/season/AddSeason.js" />
@@ -123,33 +101,41 @@
         <option value="$PROJECT_DIR$/service/rest/season/season.php" />
         <option value="$PROJECT_DIR$/service/business-components/season/SeasonBF.php" />
         <option value="$PROJECT_DIR$/service/business-components/season/repo/SeasonBE.php" />
-        <option value="$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php" />
         <option value="$PROJECT_DIR$/service/business-components/field/repo/FieldBE.php" />
         <option value="$PROJECT_DIR$/service/business-components/field/repo/FieldRepo.php" />
-        <option value="$PROJECT_DIR$/client/src/home/js/ChartModel.js" />
         <option value="$PROJECT_DIR$/client/src/common/js/util/DoubleFormater.js" />
         <option value="$PROJECT_DIR$/service/business-components/season/repo/SeasonRepo.php" />
         <option value="$PROJECT_DIR$/client/src/fiedl/js/OperationsTable.js" />
-        <option value="$PROJECT_DIR$/client/src/fiedl/js/field.js" />
         <option value="$PROJECT_DIR$/client/src/season/html/seasons-table.html" />
         <option value="$PROJECT_DIR$/client/src/home/html/home-table.html" />
-        <option value="$PROJECT_DIR$/client/src/home/js/FieldTable.js" />
         <option value="$PROJECT_DIR$/client/src/season/js/SeasonsTable.js" />
         <option value="$PROJECT_DIR$/client/src/home/js/EditField.js" />
-        <option value="$PROJECT_DIR$/client/public/field/index.html" />
         <option value="$PROJECT_DIR$/client/src/common/resources/menu.css" />
         <option value="$PROJECT_DIR$/client/src/home/resources/home.css" />
-        <option value="$PROJECT_DIR$/client/public/seasons/index.html" />
         <option value="$PROJECT_DIR$/service/rest/user/login.php" />
         <option value="$PROJECT_DIR$/service/rest/user/logout.php" />
-        <option value="$PROJECT_DIR$/client/src/authorization/js/Logout.js" />
         <option value="$PROJECT_DIR$/service/business-components/user/UserBF.php" />
         <option value="$PROJECT_DIR$/client/src/authorization/js/registration.js" />
         <option value="$PROJECT_DIR$/service/rest/user/user.php" />
         <option value="$PROJECT_DIR$/service/business-components/user/repo/UserRepo.php" />
         <option value="$PROJECT_DIR$/service/business-components/user/business-activity/UserBA.php" />
         <option value="$PROJECT_DIR$/client/src/user/js/User.js" />
+        <option value="$PROJECT_DIR$/client/public/login/index.html" />
+        <option value="$PROJECT_DIR$/client/public/index.html" />
+        <option value="$PROJECT_DIR$/client/src/login/js/login.js" />
+        <option value="$PROJECT_DIR$/client/src/home/js/ChartModel.js" />
+        <option value="$PROJECT_DIR$/client/src/home/js/FieldTable.js" />
         <option value="$PROJECT_DIR$/client/public/user/index.html" />
+        <option value="$PROJECT_DIR$/client/public/seasons/index.html" />
+        <option value="$PROJECT_DIR$/client/src/authorization/js/Logout.js" />
+        <option value="$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php" />
+        <option value="$PROJECT_DIR$/client/src/fiedl/js/field.js" />
+        <option value="$PROJECT_DIR$/client/public/field/index.html" />
+        <option value="$PROJECT_DIR$/client/src/fiedl/js/EditOperation.js" />
+        <option value="$PROJECT_DIR$/client/src/fiedl/html/edit-operation-modal.html" />
+        <option value="$PROJECT_DIR$/client/src/field/html/edit-operation-modal.html" />
+        <option value="$PROJECT_DIR$/client/src/field/js/field.js" />
+        <option value="$PROJECT_DIR$/client/src/field/js/EditOperation.js" />
         <option value="$PROJECT_DIR$/service/configs/db-config/db-config.php" />
       </list>
     </option>
@@ -302,7 +288,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -312,72 +297,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="configs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="configs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db-config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -412,19 +334,19 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\nr\client\src\fiedl\html" />
+      <recent name="C:\xampp\htdocs\nr\client\src\login\js" />
+      <recent name="C:\xampp\htdocs\nr\client\public\login" />
+      <recent name="C:\xampp\htdocs\nr\client\public" />
+      <recent name="C:\xampp\htdocs\nr\client\public\seasons" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\nr\client\src\season\js" />
       <recent name="C:\xampp\htdocs\nr\client\src\season\html" />
       <recent name="C:\xampp\htdocs\nr\service\rest\season" />
       <recent name="C:\xampp\htdocs\nr\service\configs" />
       <recent name="C:\xampp\htdocs\nr\client\src\common\resources" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\nr\client\public" />
-      <recent name="C:\xampp\htdocs\nr\client\public\seasons" />
-      <recent name="C:\xampp\htdocs\nr\client\src\season\html" />
-      <recent name="C:\xampp\htdocs\nr\client\src\fiedl" />
-      <recent name="C:\xampp\htdocs\nr\service\rest\excel\field" />
     </key>
   </component>
   <component name="RunManager">
@@ -875,6 +797,7 @@
       <workItem from="1463492295533" duration="2347000" />
       <workItem from="1463499538360" duration="3646000" />
       <workItem from="1463511017033" duration="7584000" />
+      <workItem from="1463945592734" duration="4101000" />
     </task>
     <task id="LOCAL-00001" summary="Zaczęto refaktoring kodu w sekcji serwisowej, pliki PHP.">
       <created>1463089722893</created>
@@ -971,11 +894,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229081000" />
+    <option name="totallyTimeSpent" value="233182000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -983,12 +906,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884398" sideWeight="0.5021436" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884398" sideWeight="0.49785638" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.49785638" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.178125" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.178125" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1042,111 +965,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/common/js/highcharts/highcharts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/common/js/highcharts/modules/drilldown.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/home/html/delete-field-modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/home/js/DeleteField.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/home/html/edit-fiedl-modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="71" column="99" selection-start-line="71" selection-start-column="75" selection-end-line="71" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/home/js/AddOperation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/DeleteOperation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/EditOperation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/business-components/operation/business-activity/OperationBA.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/Operations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="48" column="11" selection-start-line="35" selection-start-column="7" selection-end-line="48" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/home/html/add-operation-modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="96" column="18" selection-start-line="93" selection-start-column="10" selection-end-line="96" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/rest/operation/operation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/season/html/add-season-modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/business-components/season/SeasonBF.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="120" column="50" selection-start-line="120" selection-start-column="50" selection-end-line="120" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1174,34 +996,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/home/js/ChartModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="197" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/fiedl/html/operations-table.html">
+    <entry file="file://$PROJECT_DIR$/client/src/field/html/operations-table.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/OperationsTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/fiedl/js/field.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="148" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="148" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1209,17 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="56" column="40" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="164" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/home/js/FieldTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1235,14 +1022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1598">
           <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/field/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1267,17 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="790">
           <caret line="49" column="36" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="162" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/seasons/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="48" column="48" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1285,7 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1293,29 +1060,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="42" column="52" selection-start-line="39" selection-start-column="3" selection-end-line="42" selection-end-column="52" />
-          <folding>
-            <marker date="1463511012850" expanded="true" signature="111:206" placeholder="SELECT * FRO... SEASON" />
-            <marker date="1463511012850" expanded="true" signature="1205:1300" placeholder="SELECT * FRO... SEASON" />
-            <marker date="1463511012850" expanded="true" signature="1533:1602" placeholder="SELECT * FRO... SEASON" />
-            <marker date="1463511012850" expanded="true" signature="3552:3637" placeholder="UPDATE SEASO... " />
-            <marker date="1463511012850" expanded="true" signature="3836:3900" placeholder="INSERT INTO SEASON... " />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/rest/user/registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="5" selection-start-line="11" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/service/rest/user/registration.php" />
     <entry file="file://$PROJECT_DIR$/service/rest/user/reset-password.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1338,14 +1090,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/authorization/js/Logout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="11" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/season/js/AddSeason.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1358,7 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="42" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1366,15 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="32" column="9" selection-start-line="31" selection-start-column="3" selection-end-line="32" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="41" column="74" selection-start-line="41" selection-start-column="74" selection-end-line="41" selection-end-column="74" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1382,7 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1398,7 +1131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1406,7 +1138,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
           <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1414,18 +1145,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
-          <folding>
-            <marker date="1463518552262" expanded="true" signature="98:176" placeholder="SELECT * FRO... USER" />
-            <marker date="1463518552262" expanded="true" signature="428:474" placeholder="SELECT * FRO... USER" />
-            <marker date="1463518552262" expanded="true" signature="756:800" placeholder="SELECT * FRO... USER" />
-            <marker date="1463518552262" expanded="true" signature="1186:1269" placeholder="INSERT INTO USER... " />
-            <marker date="1463518552262" expanded="true" signature="1426:1495" placeholder="UPDATE USER " />
-            <marker date="1463518552262" expanded="true" signature="1724:1807" placeholder="INSERT INTO USER... " />
-            <marker date="1463518552262" expanded="true" signature="2197:2274" placeholder="UPDATE USER " />
-            <marker date="1463518552262" expanded="true" signature="2197:2329" placeholder="UPDATE USER " />
-            <marker date="1463518552262" expanded="true" signature="2204:2274" placeholder="INSERT INTO USER... " />
-            <marker date="1463518552262" expanded="true" signature="2515:2555" placeholder="SELECT * FRO... USER" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1441,22 +1160,242 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/authorization/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="87" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/authorization/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/login/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="15" column="87" selection-start-line="15" selection-start-column="87" selection-end-line="15" selection-end-column="87" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#2;n#tr#1;n#table#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/login/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/home/js/HomeControloe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/home/js/ChartModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="21" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <marker date="1463948248911" expanded="true" signature="1985:1999" placeholder="..." />
+            <marker date="1463948248911" expanded="true" signature="2071:2090" placeholder="..." />
+            <marker date="1463948248911" expanded="true" signature="3084:3098" placeholder="..." />
+            <marker date="1463948248911" expanded="true" signature="3166:3185" placeholder="..." />
+            <marker date="1463948248911" expanded="true" signature="4569:4583" placeholder="..." />
+            <marker date="1463948248911" expanded="true" signature="4651:4670" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/home/js/FieldTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding>
+            <marker date="1463948275110" expanded="true" signature="2368:2417" placeholder="..." />
+            <marker date="1463948275110" expanded="true" signature="2579:2628" placeholder="..." />
+            <marker date="1463948275110" expanded="true" signature="2785:2816" placeholder="..." />
+            <marker date="1463948275110" expanded="true" signature="2993:3024" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="104" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/public/user/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+        <state relative-caret-position="629">
+          <caret line="37" column="89" selection-start-line="37" selection-start-column="89" selection-end-line="37" selection-end-column="89" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/seasons/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="35" column="89" selection-start-line="35" selection-start-column="89" selection-end-line="35" selection-end-column="89" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/authorization/js/Logout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/rest/operation/operation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/business-components/operation/business-activity/OperationBA.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <marker date="1463949018928" expanded="true" signature="121:192" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
+            <marker date="1463949018928" expanded="true" signature="649:718" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
+            <marker date="1463949018928" expanded="true" signature="1627:2012" placeholder="INSERT INTO DONE_OPERATION_DETAILS... " />
+            <marker date="1463949018928" expanded="true" signature="2253:2341" placeholder="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/rest/field/field.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/field/js/OperationsTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+          <folding>
+            <marker date="1463511012784" expanded="true" signature="956:1005" placeholder="..." />
+            <marker date="1463511012784" expanded="true" signature="1161:1210" placeholder="..." />
+            <marker date="1463511012784" expanded="true" signature="1371:1402" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/field/html/add-operation-modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/home/html/add-operation-modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/field/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="773">
+          <caret line="103" column="35" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/field/js/DeleteOperation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/field/html/edit-operation-modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="94" column="44" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/field/js/field.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <marker date="1463949537798" expanded="true" signature="543:638" placeholder="..." />
+            <marker date="1463949537798" expanded="true" signature="1784:1842" placeholder="..." />
+            <marker date="1463949537798" expanded="true" signature="2008:2084" placeholder="..." />
+            <marker date="1463949537798" expanded="true" signature="2240:2316" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/field/js/EditOperation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="43" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/configs/db-config/db-config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="68" selection-start-line="2" selection-start-column="68" selection-end-line="2" selection-end-column="68" />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>

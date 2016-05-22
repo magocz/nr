@@ -16,6 +16,9 @@ function createChart(restUrl, newTitle, newSubtitle, yAxisDesc, unit, chartType,
                 if (unit === 'HA') {
                     generateChart_Unit_HA(homeData, newTitle, newSubtitle, yAxisDesc, chartType, renderObject);
                 }
+            },
+            403: function () {
+                window.location.href = "/nr/client/public/login";
             }
         }
     });

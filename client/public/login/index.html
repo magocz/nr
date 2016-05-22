@@ -13,10 +13,11 @@
 
     <script src="../../src/common/js/jquery-2.2.3.js"></script>
     <script src="../../src/common/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../../src/common/js/md5/CryptoMD5.js"></script>
     <script src="../../src/common/js/datepicker-pl.js"></script>
     <script src="../../src/common/js/bootstrap/bootstrap.js"></script>
     <script type="text/javascript" src="../../src/common/js/tablesorter/jquery.tablesorter.js"></script>
-
+    <script type="text/javascript" src="../../src/login/js/login.js"></script>
     <script src="../../src/common/js/util/DoubleFormater.js"></script>
     <script src="../../src/season/js/Season.js"></script>
     <script src="../../src/season/js/AddSeason.js"></script>
@@ -31,57 +32,52 @@
         <td colspan="2">
             <div>
                 <ul class="menu">
-                    <li><a href="/nr/client/public/" style="text-decoration: none">Home</a></li>
-                    <li><a class="active" href="/nr/client/public/seasons">Sezony</a></li>
-                    <li style="float:right"><a onclick="logout()" style="cursor: pointer">Wyloguj</a></li>
-                    <li style="float:right"><a href="/nr/client/public/user/">Twoje dane</a></li>
+                    <li><a href="/nr/client/public/login/" style="text-decoration: none">
+                        <div style="font-size: 30px; font-family: 'Comic Sans MS'">Agro-Note</div>
+                    </a></li>
+                    <li style="float:right"><a class="active" style="float:right">
+                        <div style="float:right">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div style="text-align: left; font-size: 12px ; margin-left: -10px; padding: 3px">
+                                            Login:
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div style="text-align: left; font-size: 12px ; margin-left: -10px; padding: 3px">
+                                            Hasło:
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input id="loginLogin" type="text" style="color: black; margin-right: 5px; width: 100px"></td>
+                                    <td><input id="loginPassword" type="password" style="color: black; width: 100px ;margin-right: 5px;">
+                                    </td>
+                                    <td><input type="button" onclick="login()" value="Zaloguj" style="width: 70px; color: black; "></td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </a></li>
                 </ul>
             </div>
         </td>
     </tr>
     <tr class="homeTableSearchRow">
-
         <td class="homeTableSearchCell" colspan="2">
-            <table>
-                <tr>
-                    <td>
-                        <div align="right" class="homeTableSiteCell">
-                            <table align="right">
-                                <tr>
-                                    <td class="homeTableSearchCell" style="width: 33%">
-                                        <div align="left" class="tableTitle">
-                                            Lista zapisanych sezonów
-                                        </div>
-                                    </td>
+            <img src="../../src/authorization/resources/main-tab.PNG" alt="Mountain View">
+        </td>
+    </tr>
 
-                                    <td style="width: 33%">
-                                        <button onclick="openAddSeasonModal()" align="right" type="button"
-                                                class="btn btn-success"
-                                                style="float: right; margin-top: 10px; data-dismiss=" modal
-                                        ">Dodaj sezon</button>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <div id="seasonsCell" class="homeTableCellDiv">
-            </div>
-        </td>
-    </tr>
     <tr>
         <td colspan="2">
             <div class="footer">Copyright&copy; Neldam Software Solutions</div>
         </td>
     </tr>
 </table>
-<iframe id="my_iframe" style="display:none;"></iframe>
 
-<div id="addSeasonModalContener"></div>
+<div id="registerModalDialogContener"></div>
+<div id="resetMailModalDialogContener"></div>
 </body>
 </html>

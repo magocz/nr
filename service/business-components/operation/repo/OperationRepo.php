@@ -63,7 +63,7 @@ class OperationRepo
     public static function updateOperation($operationData, $userId)
     {
         $operationId = $operationData['id'];
-        $operationDate = $operationData['date'];
+        $operationDate = date('Y-m-d', strtotime($operationData['date']));
         $meansName = $operationData['meansName'];
         $meansType = $operationData['meansType'];
         $meansDoseProKgProHa = @$operationData['meansDoseInKgProHa'] == '' ? null : $operationData['meansDoseInKgProHa'];

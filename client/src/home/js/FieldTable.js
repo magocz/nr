@@ -35,6 +35,9 @@ function generateFieldsTable(restUrl) {
                 );
                 setCurrentVisbleRowsLength();
                 show(0, maxRowNumber, 0); // show first
+            },
+            403: function () {
+                window.location.href = "/nr/client/public/login";
             }
         }
     });
