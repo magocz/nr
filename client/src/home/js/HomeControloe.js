@@ -6,6 +6,11 @@ $(function () {
 
     loadHomeData();
 
+    $("#homeTableCell").load("../src/home/html/home-table.html");
+    // loading first pie chart
+    // loading the field table
+    generateFieldsTable('../../service/rest/season/table/overwiew.php/');
+
 
     $('#activeSeasonChartCombobox').change(function () {
         if ($('#activeSeasonChartCombobox').val() === 'plantsToVarietes') {
@@ -45,11 +50,7 @@ $(function () {
 });
 
 function loadHomeData() {
-    $("#homeTableCell").load("../src/home/html/home-table.html");
-    // loading first pie chart
     createChart('../../service/rest/season/chart/plant/variates.php/', 'Uprawiane rośliny: ', 'Całkowita powierzchnia: ', 'Powierzchnia w ha', 'HA', 'pie', 'activeSeasonPipeChartContener');
     // loading first column chart
     createChart('../../service/rest/season/chart/cost/pro-field.php/', 'Koszt: ', 'Całkowity koszt: ', 'Koszt w zł', 'PLN', 'column', 'activeSeasonColumnChartContener');
-    // loading the field table
-    generateFieldsTable('../../service/rest/season/table/overwiew.php/');
 }

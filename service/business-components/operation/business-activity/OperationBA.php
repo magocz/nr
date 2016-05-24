@@ -5,10 +5,7 @@ class OperationBA
 {
     public function addNewOperation($operationData)
     {
-        if (OperationRepo::saveNewOperation($operationData, $_SESSION['activeSeasonId'], $_SESSION['id'])) {
-            return FieldRepo::addOperationNumber($operationData['fieldId'], $_SESSION['id']);
-        }
-        return false;
+        return OperationRepo::saveNewOperation($operationData, $_SESSION['activeSeasonId'], $_SESSION['id']);
     }
 
 

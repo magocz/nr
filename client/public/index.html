@@ -39,7 +39,8 @@
                 <ul class="menu">
                     <li><a class="active" href="/nr/client/public/" style="text-decoration: none">Home</a></li>
                     <li><a href="/nr/client/public/seasons">Sezony</a></li>
-                    <li id="logoutBtn" style="float:right"><a onclick="logout()" style="cursor: pointer">Wyloguj</a></li>
+                    <li id="logoutBtn" style="float:right"><a onclick="logout()" style="cursor: pointer">Wyloguj</a>
+                    </li>
                     <li style="float:right"><a href="/nr/client/public/user/">Twoje dane</a></li>
                 </ul>
             </div>
@@ -121,10 +122,15 @@
                                         </table>
                                     </td>
                                     <td style="width: 33%">
+                                        <button id="addOperationTuSelFieldsBtn" onclick="openAddOperationToFieldsModalDialog()" align="right" type="button"
+                                                class="btn btn-success"
+                                                style="float: right; margin-top: 10px ; margin-left: 10px;" disabled="true">
+                                            Dodaj zabieg
+                                        </button>
                                         <button onclick="openSaveNewFieldModal()" align="right" type="button"
                                                 class="btn btn-success"
-                                                style="float: right; margin-top: 10px; data-dismiss=" modal
-                                        ">Dodaj</button>
+                                                style="float: right; margin-top: 10px;">Dodaj pole
+                                        </button>
                                     </td>
                                 </tr>
                             </table>

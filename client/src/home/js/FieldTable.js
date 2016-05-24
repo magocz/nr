@@ -3,6 +3,8 @@ var allVisiblesRows;
 var maxSites = 1;
 var currentPage = 0;
 
+var selectedRowsMap = [];
+
 function getFieldsTableRowsInfo(site) {
     var $table = $('#homeTableActiveSeasonData');
     $rows = $table.find('tbody  tr:visible');
@@ -23,13 +25,14 @@ function generateFieldsTable(restUrl) {
         dataType: 'json',
         contentType: "application/x-www-form-urlencoded",
         statusCode: {
-            200: function (homeData) {
+             200: function (homeData) {
                 $('#homeTableLoadIcon').hide();
                 drawTable(homeData);
                 $("#homeTableActiveSeasonData").tablesorter({
                         headers: {
-                            6: {sorter: false},
-                            7: {sorter: false}
+                            0: {sorter: false},
+                            7: {sorter: false},
+                            8: {sorter: false}
                         }
                     }
                 );
@@ -56,6 +59,7 @@ function drawRow(rowData) {
     displaySeasonId = rowData.seasonId;
     var row = $("<tr />")
     $("#homeTableActiveSeasonData").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
+    row.append($("<td><input class='fieldsTableCheckboxs' type='checkbox' onchange='toogleSelectedRow(" + rowData.id + ")' /></td>"));
     row.append($("<td> " + rowData.fieldNumber + "</td>"));
     row.append($("<td>" + rowData.description + "</td>"));
     row.append($("<td>" + rowData.plant + "</td>"));
@@ -71,8 +75,36 @@ function drawRow(rowData) {
 }
 
 
+function toogleSelectedRow(fieldId) {
+    if (jQuery.inArray(fieldId, selectedRowsMap) === -1) {
+        selectedRowsMap.push(fieldId);
+    }
+    else {
+        selectedRowsMap.splice($.inArray(fieldId, selectedRowsMap), 1)
+    }
+    $("#homeTableActiveSeasonData tr:not(:checked)").removeClass('selected');
+    $("#homeTableActiveSeasonData tr:has(:checked)").addClass('selected');
+
+    if (selectedRowsMap.length === 0) {
+        $("#addOperationTuSelFieldsBtn").attr('disabled', true);
+
+    } else {
+        $("#addOperationTuSelFieldsBtn").attr('disabled', false);
+    }
+
+}
+
 function getFieldDetails(fieldId) {
     window.location.href = '/nr/client/public/field#' + fieldId;
+}
+
+
+function addOperationToSelectedFields(){
+    $("#homeTableActiveSeasonData tr:has(:checked)").each(function() {
+        var operationsNumber = $(this).find('td:eq(6)').text();
+        operationsNumber++;
+       $(this).find('td:eq(6)').text(operationsNumber);
+    });
 }
 
 

@@ -15,6 +15,43 @@ function openAdOperationModalDialog(field) {
     $('#addOperationdModal').modal();
 }
 
+function openAddOperationToFieldsModalDialog() {
+    $('#addOperationModalHeader').text('Dodaj zabieg do wybranych działek');
+    $('#operationDate').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true
+    }    );
+    $('#operationDate').datepicker('setDate', new Date());
+    configModalToDispalyCallender();
+    $('#addOperationBtn').unbind();
+    $('#addOperationBtn').click(function () {
+        addOperationToFields();
+    });
+
+    $('#addOperationdModal').modal();
+}
+
+function addOperationToFields(){
+    if (checkRequiredFieldInAddOperationModal()) {
+        $.ajax({
+            url: "../../service/rest/operation/operation.php/",
+            type: "PUT",
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(createJSONObjFormFieldValues_Operation(selectedRowsMap)),
+            statusCode: {
+                200: function () {
+                    loadHomeData();
+                    clearFieldInAddOperationModal();
+                    $('#addOperationdModal').modal('toggle');
+                    addOperationToSelectedFields();
+                }
+            }
+        });
+    }
+}
+
 function addOperation(field) {
     if (checkRequiredFieldInAddOperationModal()) {
         $.ajax({
@@ -22,13 +59,12 @@ function addOperation(field) {
             type: "PUT",
             dataType: 'json',
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify(createJSONObjFormFieldValues_Operation(field.id)),
+            data: JSON.stringify(createJSONObjFormFieldValues_Operation([field.id])),
             statusCode: {
                 200: function () {
                     loadHomeData();
                     clearFieldInAddOperationModal();
                     $('#addOperationdModal').modal('toggle');
-
                 }
             }
         });

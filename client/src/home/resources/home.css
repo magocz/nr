@@ -103,7 +103,6 @@ body.modal-open {
     float: left;
 }
 
-
 .editFieldLable {
     width: 35%;
     float: left;
@@ -115,4 +114,8 @@ body.modal-open {
 
 .clsDatePicker {
     z-index: 1000000000;
+}
+
+.selected {
+    background-color: #E8E8E8 ;
 }
