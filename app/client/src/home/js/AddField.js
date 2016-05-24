@@ -11,7 +11,7 @@ function openSaveNewFieldModal() {
 function saveField() {
     if (checkRequiredFieldInEditFieldModal()) {
         $.ajax({
-            url: "../../service/rest/field/field.php/",
+            url: "app/service/rest/field/field.php/",
             type: "PUT",
             dataType: 'json',
             contentType: "application/json",

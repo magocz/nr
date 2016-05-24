@@ -2,8 +2,8 @@ $(function () {
 
 
    // $("#addOperationModalContener").load("../../src/home/html/add-operation-modal.html");
-    $("#editOperationModalContener").load("../../src/field/html/edit-operation-modal.html");
-    $("#deleteOperationModalContener").load("../../src/home/html/delete-field-modal.html");
+    $("#editOperationModalContener").load("../app/client/src/field/html/edit-operation-modal.html");
+    $("#deleteOperationModalContener").load("../app/client/src/home/html/delete-field-modal.html");
 
     reloadField();
 
@@ -11,7 +11,7 @@ $(function () {
 
 function reloadField() {
 
-    $("#operationsCell").load("../../src/field/html/operations-table.html");
+    $("#operationsCell").load("../app/client/src/field/html/operations-table.html");
     var fieldId = getFieldIdFromUrl();
 
     $('#fieldHeader').append(
@@ -20,7 +20,7 @@ function reloadField() {
 
     if (fieldId) {
         $.ajax({
-            url: "../../../service/rest/field/field.php/" + fieldId,
+            url: "../app/service/rest/field/field.php/" + fieldId,
             type: "GET",
             dataType: 'json',
             contentType: "application/x-www-form-urlencoded",
@@ -37,7 +37,7 @@ function reloadField() {
                     );
                 },
                 403: function () {
-                    window.location.href = "/nr/client/public/login";
+                    window.location.href = "/nr/login";
                 }
             }
         });
@@ -92,13 +92,13 @@ function generateExcelFromField(fieldId) {
     $('#generateFieldExceFileBtn').addClass('fa fa-refresh w3-spin');
 
     $.ajax({
-        url: '../../../service/rest/excel/field/excel-generator.php/' + fieldId,
+        url: '../app/service/rest/excel/field/excel-generator.php/' + fieldId,
         type: "GET",
         dataType: 'application/vnd.ms-excel',
         contentType: "application/vnd.ms-excel",
         statusCode: {
             200: function (data) {
-                window.location = '../../../service/rest/excel/field/excel-generator.php/' + fieldId;
+                window.location = '../app/service/rest/excel/field/excel-generator.php/' + fieldId;
                 $('#generateFieldExceFileBtn').removeClass('fa fa-refresh w3-spin');
                 $('#generateFieldExceFileBtn').addClass('fa fa-download');
             }

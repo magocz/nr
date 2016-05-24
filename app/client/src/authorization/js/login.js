@@ -22,7 +22,7 @@ $(function () {
                 contentType: "application/x-www-form-urlencoded",
                 success: function (data, textStatus, response) {
                     $('#loginError').hide();
-                    window.location.href = "/nr/client/public";
+                    window.location.href = "/nr/";
                 },
                 error: function (data, textStatus, response) {
                     $('#loginError').show();
@@ -47,6 +47,6 @@ $(function () {
 
 
 function login(){
-    window.location.href = "/nr/client/public/authorization/";
+    window.location.href = "/nr/login/";
 }
 

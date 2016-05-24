@@ -1,7 +1,7 @@
 function generateSeasonsTable() {
     $('#seasonTableLoadIcon').show();
     $.ajax({
-        url: "../../../service/rest/season/season.php/",
+        url: "../app/service/rest/season/season.php/",
         type: "GET",
         dataType: 'json',
         contentType: "application/x-www-form-urlencoded",
@@ -73,7 +73,7 @@ function setAsActiveSeason(event) {
     $(event.elem).removeClass();
     $(event.elem).addClass('fa fa-refresh w3-spin');
     $.ajax({
-        url: "../../../service/rest/season/season.php/" + event.sesonId,
+        url: "../app/service/rest/season/season.php/" + event.sesonId,
         type: "PUT",
         dataType: 'json',
         contentType: "application/json; charset=utf-8",

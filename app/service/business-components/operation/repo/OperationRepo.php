@@ -32,7 +32,7 @@ class OperationRepo
     public static function saveNewOperation($operationData, $seasonId, $userId)
     {
         foreach ($operationData['fieldId'] as $fieldId) {
-            $operationDate = $operationData['date'];
+            $operationDate = date('Y-m-d', strtotime($operationData['date']));
             $meansName = $operationData['meansName'];
             $meansType = $operationData['meansType'];
             $meansDoseProKgProHa = floatval(@$operationData['meansDoseInLProHa']);

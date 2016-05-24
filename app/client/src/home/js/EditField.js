@@ -24,7 +24,7 @@ function fillEditableFields(field) {
 function updateField(field) {
     if (checkRequiredFieldInEditFieldModal()) {
         $.ajax({
-            url: "../../service/rest/field/field.php/" + field.id,
+            url: "app/service/rest/field/field.php/" + field.id,
             type: "POST",
             dataType: 'json',
             contentType: "application/json; charset=utf-8",

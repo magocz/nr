@@ -13,12 +13,12 @@ function login() {
     if (isInputOK) {
         var formData = $('form').serialize();
         $.ajax({
-            url: "../../../service/rest/user/login.php",
+            url: "../app/service/rest/user/login.php",
             data: 'login=' + login + '&password=' + CryptoJS.MD5(password),
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
             success: function (data, textStatus, response) {
-                window.location.href = "/nr/client/public";
+                window.location.href = "/nr/";
             },
             error: function (data, textStatus, response) {
                 $('#loginPassword').css("border", "2px solid red");

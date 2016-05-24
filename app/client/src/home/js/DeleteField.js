@@ -9,7 +9,7 @@ function openDeleteFieldModalDialog(field) {
 
 function deleteField(fieldId) {
     $.ajax({
-        url: "../../service/rest/field/field.php/" + fieldId,
+        url: "app/service/rest/field/field.php/" + fieldId,
         type: "DELETE",
         dataType: 'json',
         contentType: "application/x-www-form-urlencoded",

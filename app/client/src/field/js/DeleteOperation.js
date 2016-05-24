@@ -9,7 +9,7 @@ function openDeleteOperationModalDialog(operation) {
 
 function deleteOperation(operation) {
     $.ajax({
-        url: "../../../service/rest/operation/operation.php/" + operation.id,
+        url: "../app/service/rest/operation/operation.php/" + operation.id,
         type: "DELETE",
         dataType: 'json',
         contentType: "application/json; charset=utf-8",

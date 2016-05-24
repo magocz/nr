@@ -1,7 +1,7 @@
 $(function () {
 
     $.ajax({
-        url: "../../../service/rest/user/user.php/",
+        url: "../app/service/rest/user/user.php/",
         type: "GET",
         dataType: 'json',
         contentType: "application/json; charset=utf-8",

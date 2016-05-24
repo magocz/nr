@@ -34,7 +34,7 @@ function configModalToDispalyCallender() {
 function addOperation() {
     if (checkRequiredFieldInAddOperationModal()) {
         $.ajax({
-            url: "../../../service/rest/operation/operation.php/",
+            url: "../app/service/rest/operation/operation.php/",
             type: "PUT",
             dataType: 'json',
             contentType: "application/json; charset=utf-8",

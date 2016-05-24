@@ -6,7 +6,7 @@ function openAddSeasonModal() {
 function addSeason() {
     var season = {seasonName: $('#seasonNameSelector').val()};
     $.ajax({
-        url: "../../../service/rest/season/season.php/",
+        url: "../app/service/rest/season/season.php/",
         type: "POST",
         dataType: 'json',
         contentType: "application/json; charset=utf-8",

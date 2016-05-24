@@ -1,18 +1,18 @@
 function logout() {
     $.ajax({
-        url: "../../service/rest/user/logout.php/",
+        url: "../app/service/rest/user/logout.php/",
         type: "GET",
         contentType: "application/x-www-form-urlencoded",
         success: function () {
-            window.location.href = "/nr/client/public/login/";
+            window.location.href = "/nr/login/";
         },
         error: function () {
             $.ajax({
-                url: "../../../service/rest/user/logout.php/",
+                url: "app/service/rest/user/logout.php/",
                 type: "GET",
                 contentType: "application/x-www-form-urlencoded",
                 success: function () {
-                    window.location.href = "/nr/client/public/login/";
+                    window.location.href = "/nr/login/";
                 },
                 error: function () {
                     alert('Bład podczas wylogowywania...')
