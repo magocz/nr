@@ -2,33 +2,33 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../src/common/resources/menu.css">
-    <link rel="stylesheet" type="text/css" href="../src/home/resources/home.css">
+    <link rel="stylesheet" type="text/css" href="app/client/src/common/resources/menu.css">
+    <link rel="stylesheet" type="text/css" href="app/client/src/home/resources/home.css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../src/common/resources/bootstrap.css">
-    <link rel="stylesheet" href="../src/common/resources/jquery-ui.css">
+    <link rel="stylesheet" href="app/client/src/common/resources/bootstrap.css">
+    <link rel="stylesheet" href="app/client/src/common/resources/jquery-ui.css">
 
-    <script src="../src/common/js/jquery-2.2.3.js"></script>
-    <script src="../src/common/js/jquery-ui.js"></script>
-    <script src="../src/common/js/datepicker-pl.js"></script>
-    <script src="../src/common/js/bootstrap/bootstrap.js"></script>
-    <script src="../src/common/js/highcharts/highcharts.js"></script>
-    <script src="../src/common/js/highcharts/modules/data.js"></script>
-    <script src="../src/common/js/highcharts/modules/drilldown.js"></script>
-    <script type="text/javascript" src="../src/common/js/tablesorter/jquery.tablesorter.js"></script>
+    <script src="app/client/src/common/js/jquery-2.2.3.js"></script>
+    <script src="app/client/src/common/js/jquery-ui.js"></script>
+    <script src="app/client/src/common/js/datepicker-pl.js"></script>
+    <script src="app/client/src/common/js/bootstrap/bootstrap.js"></script>
+    <script src="app/client/src/common/js/highcharts/highcharts.js"></script>
+    <script src="app/client/src/common/js/highcharts/modules/data.js"></script>
+    <script src="app/client/src/common/js/highcharts/modules/drilldown.js"></script>
+    <script type="text/javascript" src="app/client/src/common/js/tablesorter/jquery.tablesorter.js"></script>
 
 
-    <script src="../src/home/js/ChartModel.js"></script>
-    <script src="../src/home/js/AddOperation.js"></script>
-    <script src="../src/home/js/EditField.js"></script>
-    <script src="../src/home/js/DeleteField.js"></script>
-    <script src="../src/home/js/AddField.js"></script>
-    <script src="../src/home/js/FieldTable.js"></script>
-    <script src="../src/home/js/HomeControloe.js"></script>
+    <script src="app/client/src/home/js/ChartModel.js"></script>
+    <script src="app/client/src/home/js/AddOperation.js"></script>
+    <script src="app/client/src/home/js/EditField.js"></script>
+    <script src="app/client/src/home/js/DeleteField.js"></script>
+    <script src="app/client/src/home/js/AddField.js"></script>
+    <script src="app/client/src/home/js/FieldTable.js"></script>
+    <script src="app/client/src/home/js/HomeControloe.js"></script>
 
-    <script src="../src/authorization/js/Logout.js"></script>
+    <script src="app/client/src/authorization/js/Logout.js"></script>
 
 </head>
 <body>
@@ -122,9 +122,12 @@
                                         </table>
                                     </td>
                                     <td style="width: 33%">
-                                        <button id="addOperationTuSelFieldsBtn" onclick="openAddOperationToFieldsModalDialog()" align="right" type="button"
+                                        <button id="addOperationTuSelFieldsBtn"
+                                                onclick="openAddOperationToFieldsModalDialog()" align="right"
+                                                type="button"
                                                 class="btn btn-success"
-                                                style="float: right; margin-top: 10px ; margin-left: 10px;" disabled="true">
+                                                style="float: right; margin-top: 10px ; margin-left: 10px;"
+                                                disabled="true">
                                             Dodaj zabieg
                                         </button>
                                         <button onclick="openSaveNewFieldModal()" align="right" type="button"

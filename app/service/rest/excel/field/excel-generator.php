@@ -62,7 +62,7 @@ if ($_SESSION['login'] == null) {
         $firstParam = array_shift($request);
         if (is_numeric($firstParam)) {
             $dt = new DateTime();
-            $fileName = "field" . $firstParam . " at " . $dt->format('Y-m-d H:i:s') . ".xls";
+            $fileName = $fieldBA->generateFieldName($firstParam) . $dt->format('Y-m-d H:i:s') . ".xls";
             header('Content-Type: application/vnd.ms-excel');
             header('Content-Disposition: attachment;filename=' . $fileName . '');
             header('Cache-Control: max-age=0');

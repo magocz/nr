@@ -1,10 +1,10 @@
 function openAdOperationModalDialog(field) {
     $('#addOperationModalHeader').text('Dodaj zabieg do działki: ' + field.fieldNumber);
     $('#operationDate').datepicker({
-            changeMonth: true,
-            changeYear: true,
-            showButtonPanel: true
-        }    );
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true
+    });
     $('#operationDate').datepicker('setDate', new Date());
     configModalToDispalyCallender();
     $('#addOperationBtn').unbind();
@@ -21,7 +21,7 @@ function openAddOperationToFieldsModalDialog() {
         changeMonth: true,
         changeYear: true,
         showButtonPanel: true
-    }    );
+    });
     $('#operationDate').datepicker('setDate', new Date());
     configModalToDispalyCallender();
     $('#addOperationBtn').unbind();
@@ -32,7 +32,7 @@ function openAddOperationToFieldsModalDialog() {
     $('#addOperationdModal').modal();
 }
 
-function addOperationToFields(){
+function addOperationToFields() {
     if (checkRequiredFieldInAddOperationModal()) {
         $.ajax({
             url: "../../service/rest/operation/operation.php/",
@@ -42,7 +42,7 @@ function addOperationToFields(){
             data: JSON.stringify(createJSONObjFormFieldValues_Operation(selectedRowsMap)),
             statusCode: {
                 200: function () {
-                    loadHomeData();
+                    loadColumnChart()
                     clearFieldInAddOperationModal();
                     $('#addOperationdModal').modal('toggle');
                     addOperationToSelectedFields();
@@ -62,7 +62,13 @@ function addOperation(field) {
             data: JSON.stringify(createJSONObjFormFieldValues_Operation([field.id])),
             statusCode: {
                 200: function () {
-                    loadHomeData();
+
+                    var currentRow = $(field.event).closest('tr');
+                    var operationsNumber = $(currentRow).find('td:eq(6)').text();
+                    operationsNumber++;
+                    $(currentRow).find('td:eq(6)').text(operationsNumber);
+
+                    loadColumnChart()
                     clearFieldInAddOperationModal();
                     $('#addOperationdModal').modal('toggle');
                 }

@@ -1,15 +1,12 @@
 $(function () {
 
+    
+
     $("#editFieldModalContener").load("../src/home/html/edit-fiedl-modal.html");
     $("#deleteFieldModalContener").load("../src/home/html/delete-field-modal.html");
     $("#addOperationModalContener").load("../src/home/html/add-operation-modal.html");
 
     loadHomeData();
-
-    $("#homeTableCell").load("../src/home/html/home-table.html");
-    // loading first pie chart
-    // loading the field table
-    generateFieldsTable('../../service/rest/season/table/overwiew.php/');
 
 
     $('#activeSeasonChartCombobox').change(function () {
@@ -53,4 +50,43 @@ function loadHomeData() {
     createChart('../../service/rest/season/chart/plant/variates.php/', 'Uprawiane rośliny: ', 'Całkowita powierzchnia: ', 'Powierzchnia w ha', 'HA', 'pie', 'activeSeasonPipeChartContener');
     // loading first column chart
     createChart('../../service/rest/season/chart/cost/pro-field.php/', 'Koszt: ', 'Całkowity koszt: ', 'Koszt w zł', 'PLN', 'column', 'activeSeasonColumnChartContener');
+
+    $("#homeTableCell").load("../src/home/html/home-table.html");
+    // loading first pie chart
+    // loading the field table
+    generateFieldsTable('../../service/rest/season/table/overwiew.php/');
 }
+
+
+
+function loadPipeChart() {
+    createChart('../../service/rest/season/chart/plant/variates.php/', 'Uprawiane rośliny: ', 'Całkowita powierzchnia: ', 'Powierzchnia w ha', 'HA', 'pie', 'activeSeasonPipeChartContener');
+    // loading first column chart
+    createChart('../../service/rest/season/chart/cost/pro-field.php/', 'Koszt: ', 'Całkowity koszt: ', 'Koszt w zł', 'PLN', 'column', 'activeSeasonColumnChartContener');
+
+    $("#homeTableCell").load("../src/home/html/home-table.html");
+    // loading first pie chart
+    // loading the field table
+    generateFieldsTable('../../service/rest/season/table/overwiew.php/');
+}
+
+
+function loadPipeChart() {
+    createChart('../../service/rest/season/chart/plant/variates.php/', 'Uprawiane rośliny: ', 'Całkowita powierzchnia: ', 'Powierzchnia w ha', 'HA', 'pie', 'activeSeasonPipeChartContener');
+    // loading first column chart
+}
+
+function loadColumnChart() {
+    createChart('../../service/rest/season/chart/cost/pro-field.php/', 'Koszt: ', 'Całkowity koszt: ', 'Koszt w zł', 'PLN', 'column', 'activeSeasonColumnChartContener');
+}
+
+
+function loadFieldsTable() {
+
+    $("#homeTableCell").load("../src/home/html/home-table.html");
+    // loading first pie chart
+    // loading the field table
+    generateFieldsTable('../../service/rest/season/table/overwiew.php/');
+}
+
+

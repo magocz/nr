@@ -30,4 +30,9 @@ class FieldBA
         }
         return FieldExcelGenerator::generateFieldExcel($field);
     }
+
+    public function generateFieldName($fieldId)
+    {
+        return FieldRepo::getFieldName($fieldId, $_SESSION['id']);
+    }
 }

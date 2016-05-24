@@ -114,4 +114,14 @@ class FieldRepo
         }
         return false;
     }
+
+    public static function getFieldName($fieldId, $userId)
+    {
+        $sql = "SELECT * FROM FIELD WHERE `ID` LIKE '$fieldId' AND `USER_ID` LIKE '$userId' AND `ACTIVE` = 1 ";
+        $response = $GLOBALS['dbcon']->query($sql);
+        while ($r = mysqli_fetch_assoc($response)) {
+            return 'Działka ' . $r['FIELD_NR'] . ' z dnia ';
+        }
+        return '';
+    }
 }

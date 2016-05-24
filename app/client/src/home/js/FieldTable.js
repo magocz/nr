@@ -25,7 +25,7 @@ function generateFieldsTable(restUrl) {
         dataType: 'json',
         contentType: "application/x-www-form-urlencoded",
         statusCode: {
-             200: function (homeData) {
+            200: function (homeData) {
                 $('#homeTableLoadIcon').hide();
                 drawTable(homeData);
                 $("#homeTableActiveSeasonData").tablesorter({
@@ -67,7 +67,7 @@ function drawRow(rowData) {
     row.append($("<td>" + rowData.ha + "</td>"));
     row.append($("<td>" + rowData.operationsNumber + "</td>"));
     row.append($("<td>  " +
-        "<i onclick='openAdOperationModalDialog(" + JSON.stringify(rowData) + ")' class='fa fa-plus' style='font-size:20px; cursor:pointer; margin-right: 5px' data-toggle='tooltip'  title='Dodaj nowy zabieg'/>" +
+        "<i onclick='openAdOperationModalDialog({id :" + rowData.id + ", event: this })' class='fa fa-plus' style='font-size:20px; cursor:pointer; margin-right: 5px' data-toggle='tooltip'  title='Dodaj nowy zabieg'/>" +
         "<i onclick='openFieldEditModalDialog(" + JSON.stringify(rowData) + ")' class='fa fa-edit' style='font-size:20px; cursor:pointer; margin-right: 5px' data-toggle='tooltip'  title='Edytuj'/>" +
         "<i onclick='openDeleteFieldModalDialog(" + JSON.stringify(rowData) + ");' class='fa fa-trash-o' style='font-size:20px; cursor:pointer;' data-toggle='tooltip'  title='Usuń'/>" +
         "</td>"));
@@ -99,11 +99,11 @@ function getFieldDetails(fieldId) {
 }
 
 
-function addOperationToSelectedFields(){
-    $("#homeTableActiveSeasonData tr:has(:checked)").each(function() {
+function addOperationToSelectedFields() {
+    $("#homeTableActiveSeasonData tr:has(:checked)").each(function () {
         var operationsNumber = $(this).find('td:eq(6)').text();
         operationsNumber++;
-       $(this).find('td:eq(6)').text(operationsNumber);
+        $(this).find('td:eq(6)').text(operationsNumber);
     });
 }
 
