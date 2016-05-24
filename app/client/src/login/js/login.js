@@ -18,7 +18,7 @@ function login() {
             type: "POST",
             contentType: "application/x-www-form-urlencoded",
             success: function (data, textStatus, response) {
-                window.location.href = "/nr/";
+                window.location.href = "/";
             },
             error: function (data, textStatus, response) {
                 $('#loginPassword').css("border", "2px solid red");
