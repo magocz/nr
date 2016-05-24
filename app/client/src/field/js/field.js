@@ -37,7 +37,7 @@ function reloadField() {
                     );
                 },
                 403: function () {
-                    window.location.href = "/nr/login";
+                    window.location.href = "/login";
                 }
             }
         });

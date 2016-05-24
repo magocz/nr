@@ -18,7 +18,7 @@ function createChart(restUrl, newTitle, newSubtitle, yAxisDesc, unit, chartType,
                 }
             },
             403: function () {
-                window.location.href = "/nr/login";
+                window.location.href = "/login";
             }
         }
     });

@@ -40,7 +40,7 @@ function generateFieldsTable(restUrl) {
                 show(0, maxRowNumber, 0); // show first
             },
             403: function () {
-                window.location.href = "/nr/login";
+                window.location.href = "/login";
             }
         }
     });
@@ -95,7 +95,6 @@ function toogleSelectedRow(fieldId) {
 }
 
 function getFieldDetails(fieldId) {
-    window.location.href = '/nr/field#' + fieldId;
 }
 
 
