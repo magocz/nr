@@ -1,14 +1,16 @@
 $(function () {
+    checkIfLogedIn();
 
-
-
+    $("#addSeasonModalContener").load("app/client/src/season/html/add-season-modal.html");
     $("#editFieldModalContener").load("app/client/src/home/html/edit-fiedl-modal.html");
     $("#deleteFieldModalContener").load("app/client/src/home/html/delete-field-modal.html");
     $("#addOperationModalContener").load("app/client/src/home/html/add-operation-modal.html");
 
-    loadHomeData();
+    generateHomeContent();
 
+});
 
+function generateHomeContent() {
     $('#activeSeasonChartCombobox').change(function () {
         if ($('#activeSeasonChartCombobox').val() === 'plantsToVarietes') {
             createChart('app/service/rest/season/chart/plant/variates.php/', 'Uprawiane rośliny: ', 'Całkowita powierzchnia: ', 'Powierzchnia w ha', 'HA', 'pie', 'activeSeasonPipeChartContener');
@@ -41,10 +43,12 @@ $(function () {
             createChart('app/service/rest/season/chart/revenues/pro-ha.php/', 'Przychody na hektar: ', 'Średni przychód na hektar: ', 'Przychody w zł', 'PLN', 'column', 'activeSeasonColumnChartContener');
         }
     });
-
+    if (!checkIfHasActiveSeason()) {
+        return;
+    }
+    loadHomeData();
     searchFieldsTable();
-
-});
+}
 
 function loadHomeData() {
     createChart('app/service/rest/season/chart/plant/variates.php/', 'Uprawiane rośliny: ', 'Całkowita powierzchnia: ', 'Powierzchnia w ha', 'HA', 'pie', 'activeSeasonPipeChartContener');
@@ -56,7 +60,6 @@ function loadHomeData() {
     // loading the field table
     generateFieldsTable('app/service/rest/season/table/overwiew.php/');
 }
-
 
 
 function loadPipeChart() {
@@ -90,3 +93,45 @@ function loadFieldsTable() {
 }
 
 
+function checkIfLogedIn() {
+    $.ajax({
+        url: 'app/service/rest/user/user.php/',
+        type: "GET",
+        contentType: "application/x-www-form-urlencoded",
+        statusCode: {
+            200: function (user) {
+                if (user) {
+                    $('#mainContent').show();
+                } else {
+                    window.location.href = "/login";
+                }
+            },
+            403: function () {
+                window.location.href = "/login";
+            }
+        }
+    });
+}
+
+
+function checkIfHasActiveSeason() {
+    $.ajax({
+        url: 'app/service/rest/season/season.php/check',
+        type: "GET",
+        contentType: "application/x-www-form-urlencoded",
+        statusCode: {
+            200: function (season) {
+                if (!season) {
+                    $('.seasonData').hide();
+                    $('#addFirstSeasonRow').show();
+                    return false;
+                }
+                return true;
+            },
+            403: function () {
+                window.location.href = "/login";
+            }
+        }
+    });
+    return true;
+}

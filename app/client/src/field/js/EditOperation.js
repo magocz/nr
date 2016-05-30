@@ -32,7 +32,7 @@ function configModalToDispalyCallender() {
 }
 
 function editOperation(operation) {
-    if (checkRequiredFieldInAddOperationModal()) {
+    if (checkRequiredFieldInEditOperationModal()) {
         $.ajax({
             url: "../app/service/rest/operation/operation.php/" + operation.id,
             type: "POST",
@@ -51,30 +51,30 @@ function editOperation(operation) {
 }
 
 
-function checkRequiredFieldInAddOperationModal() {
+function checkRequiredFieldInEditOperationModal() {
     var isOk = true;
-    if ($('#operationMeansNameInputs').val().length === 0) {
+    if ($('#operationMeansNameEditInputs').val().length === 0) {
         isOk = false;
     }
-    if ($('#operationMeansDoseInputs').val().length === 0) {
+    if ($('#operationMeansDoseEditInputs').val().length === 0) {
         isOk = false;
     }
-    if ($('#operationCauseInputs').val().length === 0) {
+    if ($('#operationCauseEditInputs').val().length === 0) {
         isOk = false;
     }
-    if ($('#operationEcoHarmInputs').val().length === 0) {
+    if ($('#operationEcoHarmEditInputs').val().length === 0) {
         isOk = false;
     }
-    if ($('#operationCostProHaInputs').val().length === 0) {
+    if ($('#operationCostProHaEditInputs').val().length === 0) {
         isOk = false;
     }
-    if (!$.isNumeric($('#operationMeansDoseInputs').val())) {
+    if (!$.isNumeric($('#operationMeansDoseEditInputs').val())) {
         isOk = false;
     }
-    if (!$.isNumeric($('#operationCostProHaInputs').val())) {
+    if (!$.isNumeric($('#operationCostProHaEditInputs').val())) {
         isOk = false;
     }
-    if (!$.isNumeric($('#operationEcoHarmInputs').val())) {
+    if (!$.isNumeric($('#operationEcoHarmEditInputs').val())) {
         isOk = false;
     }
     isOk ? $('#editOperationBtn').attr("disabled", false) : $('#editOperationBtn').attr("disabled", true);
@@ -82,46 +82,46 @@ function checkRequiredFieldInAddOperationModal() {
 }
 
 function clearFieldInAddOperationModal() {
-    $('#operationMeansNameInputs').val('');
+    $('#operationMeansNameEditInputs').val('');
     $('#operationCommentInputs').val('');
-    $('#operationCauseInputs').val('0.0');
-    $('#operationEcoHarmInputs').val('0.0');
-    $('#operationCostProHaInputs').val('0.0');
-    $('#operationCauseInputs').val('Nie określono');
+    $('#operationCauseEditInputs').val('0.0');
+    $('#operationEcoHarmEditInputs').val('0.0');
+    $('#operationCostProHaEditInputs').val('0.0');
+    $('#operationCauseEditInputs').val('Nie określono');
 }
 
 function createJSONObjFormFieldValues_OperationUpdate(fieldId, operation) {
     operation.fieldId = fieldId;
-    operation.date = $('#operationDate').val();
-    operation.meansName = $('#operationMeansNameInputs').val();
-    operation.meansType = $('#operationType').val();
-    if ($('#operationMeansDoseOption').val() === 'lProHa') {
-        operation.meansDoseInLProHa = $('#operationMeansDoseInputs').val();
+    operation.date = $('#operationEditDate').val();
+    operation.meansName = $('#operationMeansNameEditInputs').val();
+    operation.meansType = $('#operationEditType').val();
+    if ($('#operationMeansDoseEditOption').val() === 'lProHa') {
+        operation.meansDoseInLProHa = $('#operationMeansDoseEditInputs').val();
         operation.meansDoseInKgProHa = null;
-    } else if ($('#operationMeansDoseOption').val() === 'kgProHa') {
+    } else if ($('#operationMeansDoseEditOption').val() === 'kgProHa') {
         operation.meansDoseInLProHa = null;
-        operation.meansDoseInKgProHa = $('#operationMeansDoseInputs').val();
+        operation.meansDoseInKgProHa = $('#operationMeansDoseEditInputs').val();
     }
-    operation.cause = $('#operationCauseInputs').val();
-    operation.economicHarm = $('#operationEcoHarmInputs').val();
-    operation.costProHa = $('#operationCostProHaInputs').val();
-    operation.comment = $('#operationCommentInputs').val();
+    operation.cause = $('#operationCauseEditInputs').val();
+    operation.economicHarm = $('#operationEcoHarmEditInputs').val();
+    operation.costProHa = $('#operationCostProHaEditInputs').val();
+    operation.comment = $('#operationCommentEditInputs').val();
     return operation;
 }
 
 function fillOperationFormValues(operation) {
-    $('#operationDate').val(operation.date);
-    $('#operationMeansNameInputs').val(operation.meansName);
-    $('#operationType').val(operation.meansType);
+    $('#operationEditDate').val(operation.date);
+    $('#operationMeansNameEditInputs').val(operation.meansName);
+    $('#operationEditType').val(operation.meansType);
     if (operation.meansDoseInLProHa == 0) {
-        $('#operationMeansDoseInputs').val(operation.meansDoseInKgProHa);
-        $('#operationMeansDoseOption').val('kgProHa');
+        $('#operationMeansDoseEditInputs').val(operation.meansDoseInKgProHa);
+        $('#operationMeansDoseEditOption').val('kgProHa');
     } else if (operation.meansDoseInKgProHa == 0) {
-        $('#operationMeansDoseInputs').val(operation.meansDoseInLProHa);
-        $('#operationMeansDoseOption').val('lProHa');
+        $('#operationMeansDoseEditInputs').val(operation.meansDoseInLProHa);
+        $('#operationMeansDoseEditOption').val('lProHa');
     }
-    $('#operationCauseInputs').val(operation.cause);
-    $('#operationEcoHarmInputs').val(operation.economicHarm);
-    $('#operationCostProHaInputs').val(operation.costProHa);
-    $('#operationCommentInputs').val(operation.comment);
+    $('#operationCauseEditInputs').val(operation.cause);
+    $('#operationEcoHarmEditInputs').val(operation.economicHarm);
+    $('#operationCostProHaEditInputs').val(operation.costProHa);
+    $('#operationCommentEditInputs').val(operation.comment);
 }

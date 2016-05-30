@@ -15,9 +15,9 @@
                             <div class="fieldEditInputs">Data zabiegu:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input id="operationDate" class="fieldEditInputs" type="text"
+                            <input id="operationEditDate" class="fieldEditInputs" type="text"
                                    style="z-index:1151 !important;" readonly="true"
-                                   onkeyup="checkRequiredFieldInAddOperationModal()">
+                                   onkeyup="checkRequiredFieldInEditOperationModal()">
                         </td>
                     </tr>
                     <tr>
@@ -25,8 +25,8 @@
                             <div>Nazwa środka:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="operationMeansNameInputs"
-                                   onkeyup="checkRequiredFieldInAddOperationModal()">
+                            <input class="fieldEditInputs" type="text" id="operationMeansNameEditInputs"
+                                   onkeyup="checkRequiredFieldInEditOperationModal()">
                         </td>
                     </tr>
                     <tr>
@@ -34,7 +34,7 @@
                             <div>Rodzaj środka:</div>
                         </td>
                         <td class="editFieldInput">
-                            <select id="operationType" style="padding: 2px; margin-bottom: 5px; width: 368px">
+                            <select id="operationEditType" style="padding: 2px; margin-bottom: 5px; width: 368px">
                                 <option selected value="plantProtection">Ochrona roślin</option>
                                 <option value="fertilizer">Nawóz</option>
                             </select>
@@ -45,9 +45,9 @@
                             <div>Dawka na hektar:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="operationMeansDoseInputs"
-                                   value="0.0" style="width: 80%" onkeyup="checkRequiredFieldInAddOperationModal()">
-                            <select id="operationMeansDoseOption" style="padding: 2px">
+                            <input class="fieldEditInputs" type="text" id="operationMeansDoseEditInputs"
+                                   value="0.0" style="width: 80%" onkeyup="checkRequiredFieldInEditOperationModal()">
+                            <select id="operationMeansDoseEditOption" style="padding: 2px">
                                 <option value="lProHa">l/ha</option>
                                 <option value="kgProHa">kg/ha</option>
                             </select>
@@ -58,8 +58,8 @@
                             <div>Powód stosowania:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="operationCauseInputs" value="Nie określono"
-                                   onkeyup="checkRequiredFieldInAddOperationModal()">
+                            <input class="fieldEditInputs" type="text" id="operationCauseEditInputs" value="Nie określono"
+                                   onkeyup="checkRequiredFieldInEditOperationModal()">
                         </td>
                     </tr>
                     <tr>
@@ -67,8 +67,8 @@
                             <div>Ekonomiczna szkodliwość:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="operationEcoHarmInputs" value="0.0"
-                                   onkeyup="checkRequiredFieldInAddOperationModal()">
+                            <input class="fieldEditInputs" type="text" id="operationEcoHarmEditInputs" value="0.0"
+                                   onkeyup="checkRequiredFieldInEditOperationModal()">
                         </td>
                     </tr>
                     <tr>
@@ -76,8 +76,8 @@
                             <div>Koszt środka na hektar:</div>
                         </td>
                         <td class="editFieldInput">
-                            <input class="fieldEditInputs" type="text" id="operationCostProHaInputs" value="0.0"
-                                   onkeyup="checkRequiredFieldInAddOperationModal()">
+                            <input class="fieldEditInputs" type="text" id="operationCostProHaEditInputs" value="0.0"
+                                   onkeyup="checkRequiredFieldInEditOperationModal()">
                         </td>
                     </tr>
                     <tr>
@@ -85,14 +85,14 @@
                             <div>Komentarz:</div>
                         </td>
                         <td class="editFieldInput">
-                            <textarea class="fieldEditInputs" type="te" id="operationCommentInputs" maxlength="2000"
+                            <textarea class="fieldEditInputs" type="te" id="operationCommentEditInputs" maxlength="2000"
                                       style="resize: none"/>
                         </td>
                     </tr>
                 </table>
             </div>
             <div class="modal-footer">
-                <button id="editOperationBtn" type="button" class="btn btn-success" disabled="true">Zapisz zmiany</button>
+                <button id="editOperationBtn" type="button" class="btn btn-success">Zapisz zmiany</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
             </div>
         </div>

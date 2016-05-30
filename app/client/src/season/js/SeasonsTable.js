@@ -31,8 +31,8 @@ function drawRow(rowData) {
     var row = $("<tr />")
     $("#allSesonsTable").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
     row.append($("<td onclick='setAsActiveSeason(this)'> " + rowData.name + "</td>"));
-    row.append($("<td>" + rowData.seasonFieldsCount + "</td>"));
-    row.append($("<td>" + rowData.seasonOperationsCount + "</td>"));
+    row.append($("<td>" + getSeasonDataOr_(rowData.seasonFieldsCount) + "</td>"));
+    row.append($("<td>" + getSeasonDataOr_(rowData.seasonOperationsCount) + "</td>"));
     row.append($("<td>" + getSeasonIfno(rowData.totalSeasonCosts) + "</td>"));
     row.append($("<td>" + getSeasonIfno(rowData.totalSeasonCostsProHa) + "</td>"));
     row.append($("<td>" + getSeasonIfno(rowData.totalSeasonProfi) + "</td>"));
@@ -88,4 +88,8 @@ function setAsActiveSeason(event) {
 
 function getSeasonIfno(val) {
     return val ? formatDouble(val) : '-';
+}
+
+function getSeasonDataOr_(val) {
+    return val ? val : '-';
 }

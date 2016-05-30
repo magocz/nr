@@ -1,12 +1,10 @@
 $(function () {
-
-
-   // $("#addOperationModalContener").load("../../src/home/html/add-operation-modal.html");
     $("#editOperationModalContener").load("../app/client/src/field/html/edit-operation-modal.html");
     $("#deleteOperationModalContener").load("../app/client/src/home/html/delete-field-modal.html");
-
+    $("#addOperationModalContener").load("../app/client/src/home/html/add-operation-modal.html");
+    $("#deleteFieldModalContener").load("../app/client/src/home/html/delete-field-modal.html");
+    $("#editFieldModalContener").load("../app/client/src/home/html/edit-fiedl-modal.html");
     reloadField();
-
 });
 
 function reloadField() {
@@ -56,21 +54,21 @@ function fillFieldContent(data) {
         '<div><b>Opis pola: </b>' + data.description + '</div>' +
         '<div><b>Uprawiana roślina: </b>' + data.plant + '</div>' +
         '<div><b>Odmiana: </b>' + data.varietes + '</div>' +
-        '<div><b>Powierzchnia pola: </b>' + data.ha + '</div>' +
+        '<div><b>Powierzchnia pola: </b>' + data.ha + ' ha</div>' +
         '<div><b>Przeprowadzone operacje: </b>' + data.operationsNumber + '</div>' +
-        '<div><b>Cena za tonę: </b>' + data.plantPrice + '</div>' +
+        '<div><b>Cena za tonę: </b>' + data.plantPrice + ' zł</div>' +
         '<div><b>Ton na hektar: </b>' + data.tonsProHa + '</div>';
     $('#fieldLeftInfoDivId').empty();
     $('#fieldLeftInfoDivId').append(leftContent);
 
     var rightContent =
-        '<div><b>Całkowity koszt: </b>' + formatPrice(data.totalCost * data.ha) + '</div>' +
-        '<div><b>Całkowity koszt na hektar: </b>' + data.totalCost + '</div>' +
-        '<div><b>Koszt nawozów: </b>' + formatPrice(data.totalFertilizerOperationsCost * data.ha) + '</div>' +
-        '<div><b>Koszt nawozów na hektar: </b>' + formatPrice(data.totalFertilizerOperationsCost) + '</div>' +
-        '<div><b>Koszt ochrony roślin: </b>' + formatPrice(data.totalPlantProtectionOperationsCost * data.ha) + '</div>' +
-        '<div><b>Koszt ochrony roślin na hektar: </b>' + formatPrice(data.totalPlantProtectionOperationsCost) + '</div>' +
-        '<div><b>Dodatkowe koszty: </b>' + formatPrice(data.totalOtherCosts) + '</div>';
+        '<div><b>Całkowity koszt: </b>' + formatPrice(data.totalCost * data.ha) + ' zł</div>' +
+        '<div><b>Całkowity koszt na hektar: </b>' + data.totalCost + ' zł</div>' +
+        '<div><b>Koszt nawozów: </b>' + formatPrice(data.totalFertilizerOperationsCost * data.ha) + ' zł</div>' +
+        '<div><b>Koszt nawozów na hektar: </b>' + formatPrice(data.totalFertilizerOperationsCost) + ' zł</div>' +
+        '<div><b>Koszt ochrony roślin: </b>' + formatPrice(data.totalPlantProtectionOperationsCost * data.ha) + ' zł</div>' +
+        '<div><b>Koszt ochrony roślin na hektar: </b>' + formatPrice(data.totalPlantProtectionOperationsCost) + ' zł</div>' +
+        '<div><b>Przychody: </b>' + formatPrice(data.plantPrice * data.tonsProHa) + ' zł</div>';
     $('#fieldRightInfoDivId').empty();
     $('#fieldRightInfoDivId').append(rightContent);
 }

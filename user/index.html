@@ -23,80 +23,81 @@
     <script src="../app/client/src/season/js/SeasonsTable.js"></script>
 
     <script src="../app/client/src/user/js/User.js"></script>
-
     <script src="../app/client/src/authorization/js/Logout.js"></script>
+
+    <title>Agro-Note Użytkownik</title>
 
 </head>
 <body>
-<table id="seasonsTable" class="homeTable" align="center">
-    <tr>
-        <td colspan="2">
-            <div>
-                <ul class="menu">
-                    <li><a href="/" style="text-decoration: none">Home</a></li>
-                    <li><a href="/seasons">Sezony</a></li>
-                    <li style="float:right"><a onclick="logout()" style="cursor: pointer">Wyloguj</a></li>
-                    <li style="float:right"><a class="active" href="/user/">Twoje dane</a></li>
-                </ul>
-            </div>
-        </td>
-    </tr>
-    <tr class="homeTableSearchRow">
-        <td class="homeTableSearchCell" colspan="2">
-            <div align="left" class="tableTitle">
-                Twoje dane
-            </div>
-        </td>
-    </tr>
-    <tr class="homeTableSearchRow">
-        <td class="homeTableSearchCell" colspan="2">
-            <div align="left" class="userDataContent">
-                <table id="userDataTable" hidden="true">
-                    <tr>
-                        <td>Login:</td>
-                        <td>
-                            <input class="userDataInput" type="text" maxlength="30" id="loginInput">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Imię:</td>
-                        <td>
-                            <input class="userDataInput" type="text" maxlength="30" id="firstNameInput">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nazwisko:</td>
-                        <td>
-                            <input class="userDataInput" type="text" maxlength="30" id="lastNameInput">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>E-Mail:</td>
-                        <td>
-                            <input class="userDataInput" type="text" maxlength="30" id="mailInput">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <i id="userDataLoadIcon" class='fa fa-refresh w3-spin' style='font-size:55px; cursor:pointer; margin-right: 3px;padding: 5px ;  display: table;margin: 0 auto' />
-        </td>
-    </tr>
-    <tr class="homeTableSearchRow">
-        <td class="homeTableSearchCell" colspan="2">
-            <button align="right" type="button"
-                    class="btn btn-success"
-                    style="float: right; margin-top: 10px; data-dismiss=" modal
-            ">Aktualizuj</button>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <div class="footer">Copyright&copy; Neldam Software Solutions</div>
-        </td>
-    </tr>
-</table>
-<iframe id="my_iframe" style="display:none;"></iframe>
-
-<div id="addSeasonModalContener"></div>
+<div id="mainContent" hidden="true">
+    <table id="seasonsTable" class="homeTable" align="center">
+        <tr>
+            <td colspan="2">
+                <div>
+                    <ul class="menu">
+                        <li><a href="/" style="text-decoration: none">Home</a></li>
+                        <li><a href="/seasons">Sezony</a></li>
+                        <li style="float:right"><a onclick="logout()" style="cursor: pointer">Wyloguj</a></li>
+                        <li style="float:right"><a class="active" href="/user/">Twoje dane</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <tr class="homeTableSearchRow">
+            <td class="homeTableSearchCell" colspan="2">
+                <div align="left" class="tableTitle">
+                    Twoje dane
+                </div>
+            </td>
+        </tr>
+        <tr class="homeTableSearchRow">
+            <td class="homeTableSearchCell" colspan="2">
+                <div align="left" class="userDataContent">
+                    <table id="userDataTable" hidden="true">
+                        <tr>
+                            <td>Login:</td>
+                            <td>
+                                <input class="userDataInput" type="text" maxlength="30" id="loginInput">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Imię:</td>
+                            <td>
+                                <input class="userDataInput" type="text" maxlength="30" id="firstNameInput">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Nazwisko:</td>
+                            <td>
+                                <input class="userDataInput" type="text" maxlength="30" id="lastNameInput">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>E-Mail:</td>
+                            <td>
+                                <input class="userDataInput" type="text" maxlength="30" id="mailInput">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <i id="userDataLoadIcon" class='fa fa-refresh w3-spin'
+                   style='font-size:55px; cursor:pointer; margin-right: 3px;padding: 5px ;  display: table;margin: 0 auto'/>
+            </td>
+        </tr>
+        <tr class="homeTableSearchRow">
+            <td class="homeTableSearchCell" colspan="2">
+                <button align="right" type="button"
+                        class="btn btn-success"
+                        style="float: right; margin-top: 10px; data-dismiss=" modal
+                ">Aktualizuj</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="footer">Copyright&copy; Neldam Software Solutions</div>
+            </td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

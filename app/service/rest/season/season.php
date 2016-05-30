@@ -33,6 +33,11 @@ if ($_SESSION['login'] == null) {
     exit;
 } else {
     if ($method == 'GET') {
+        $firstParam = array_shift($request);
+        if ($firstParam == 'check') {
+            echo $_SESSION['activeSeasonId'];
+            exit;
+        }
         header('Content-type: application/json');
         echo $seasonBF->findAllUserSeasons();
         exit;

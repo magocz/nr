@@ -15,7 +15,7 @@ function drawFieldOperationsRow(rowData) {
     row.append($("<td>" + (rowData.meansDoseInLProHa == 0 ? '-' : rowData.meansDoseInLProHa ) + "</td>"));
     row.append($("<td>" + (rowData.meansDoseInKgProHa == 0 ? '-' : rowData.meansDoseInKgProHa) + "</td>"));
     row.append($("<td>  " +
-        "<i onclick='openDetailsOperationModal(" + rowData + ");' class='fa fa-info' style='font-size:20px; cursor:pointer; margin-right: 5px' data-toggle='tooltip'  title='Szegóły'/>" +
+       // "<i onclick='openDetailsOperationModal(" + rowData + ");' class='fa fa-info' style='font-size:20px; cursor:pointer; margin-right: 5px' data-toggle='tooltip'  title='Szegóły'/>" +
         "<i onclick='openEditOperationModalDialog(" + JSON.stringify(rowData) + ")' class='fa fa-edit' style='font-size:20px; cursor:pointer; margin-right: 5px' data-toggle='tooltip'  title='Edytuj'/>" +
         "<i onclick='openDeleteOperationModalDialog(" + JSON.stringify(rowData) + ");' class='fa fa-trash-o' style='font-size:20px; cursor:pointer;' data-toggle='tooltip'  title='Usuń'/>" +
         "</td>"));

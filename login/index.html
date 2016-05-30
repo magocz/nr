@@ -19,12 +19,11 @@
     <script type="text/javascript" src="../app/client/src/common/js/tablesorter/jquery.tablesorter.js"></script>
     <script type="text/javascript" src="../app/client/src/login/js/login.js"></script>
     <script src="../app/client/src/common/js/util/DoubleFormater.js"></script>
-    <script src="../app/client/src/season/js/Season.js"></script>
-    <script src="../app/client/src/season/js/AddSeason.js"></script>
-    <script src="../app/client/src/season/js/SeasonsTable.js"></script>
 
     <script src="../app/client/src/authorization/js/Logout.js"></script>
-
+    <title>Witamy na agron-note, notatniku dla rolnika.</title>
+    <meta name="description"
+          content="Agro Note, to serwis dla rolników, którzy chcą notować zabiegi wykonane na ich polach oraz notować przychody z danych działek, tym samym tworzyc raporty sezonowe.. "/>
 </head>
 <body>
 <table id="seasonsTable" class="homeTable" align="center">
@@ -51,10 +50,13 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><input id="loginLogin" type="text" style="color: black; margin-right: 5px; width: 100px"></td>
-                                    <td><input id="loginPassword" type="password" style="color: black; width: 100px ;margin-right: 5px;">
+                                    <td><input id="loginLogin" type="text"
+                                               style="color: black; margin-right: 5px; width: 100px"></td>
+                                    <td><input id="loginPassword" type="password"
+                                               style="color: black; width: 100px ;margin-right: 5px;">
                                     </td>
-                                    <td><input type="button" onclick="login()" value="Zaloguj" style="width: 70px; color: black; "></td>
+                                    <td><input type="button" onclick="login()" value="Zaloguj"
+                                               style="width: 70px; color: black; "></td>
                                 </tr>
                             </table>
 
@@ -66,7 +68,7 @@
     </tr>
     <tr class="homeTableSearchRow">
         <td class="homeTableSearchCell" colspan="2">
-            <img src="../app/client/src/authorization/resources/main-tab.PNG" alt="Mountain View">
+            <img src="../app/client/src/authorization/resources/main-tab.PNG" alt="agro-note example">
         </td>
     </tr>
 
@@ -76,7 +78,6 @@
         </td>
     </tr>
 </table>
-
 <div id="registerModalDialogContener"></div>
 <div id="resetMailModalDialogContener"></div>
 </body>

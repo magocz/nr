@@ -1,0 +1,84 @@
+<!--edit field modal dialog-->
+<div class="modal fade" id="editFieldModal" role="dialog" data-backdrop="static"
+     data-keyboard="false">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="editFieldModalHeader"></h4>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tr>
+                        <td class="editFieldLable">
+                            <div class="fieldEditInputs">Numer działki:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <input class="fieldEditInputs" type="text" id="fieldNumberEditInput"
+                                   onkeyup="checkRequiredFieldInEditFieldModal()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editFieldLable">
+                            <div class="fieldEditInputs">Opis pola:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <input class="fieldEditInputs" type="text" id="fieldDescriptionEditInput"
+                                   onkeyup="checkRequiredFieldInEditFieldModal()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editFieldLable">
+                            <div class="fieldEditInputs">Roślina:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <input class="fieldEditInputs" type="text" id="fieldPlantEditInput"
+                                   onkeyup="checkRequiredFieldInEditFieldModal()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editFieldLable">
+                            <div class="fieldEditInputs">Odmiana:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <input class="fieldEditInputs" type="text" id="fieldVarietesEditInput"
+                                   onkeyup="checkRequiredFieldInEditFieldModal()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editFieldLable">
+                            <div class="fieldEditInputs">Powierzchnia [ha]:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <input class="fieldEditInputs" type="text" id="fieldSizeEditInput"
+                                   onkeyup="checkRequiredFieldInEditFieldModal()" value="0.0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editFieldLable">
+                            <div class="fieldEditInputs">Ton na hektar:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <input class="fieldEditInputs" type="text" id="fieldTonsProHaEditInput"
+                                   onkeyup="checkRequiredFieldInEditFieldModal()" value="0.0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editFieldLable">
+                            <div class="fieldEditInputs">Średnia cena za tonę:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <input class="fieldEditInputs" type="text" id="fieldPlantPriceEditInput"
+                                   onkeyup="checkRequiredFieldInEditFieldModal()" value="0.0">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="updateFieldBtn" type="button" class="btn btn-success" disabled>Zapisz</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
+            </div>
+        </div>
+    </div>
+</div>

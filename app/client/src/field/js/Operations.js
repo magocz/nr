@@ -92,7 +92,7 @@ function clearFieldInAddOperationModal() {
 
 function createJSONObjFormFieldValues_Operation(fieldId) {
     var operation = {};
-    operation.fieldId = fieldId;
+    operation.fieldId = [fieldId];
     operation.date = $('#operationDate').val();
     operation.meansName = $('#operationMeansNameInputs').val();
     operation.meansType = $('#operationType').val();

@@ -1,10 +1,9 @@
 $(function () {
-
+    checkIfLogedIn();
     $.ajax({
-        url: "../app/service/rest/user/user.php/",
+        url: '../app/service/rest/user/user.php/',
         type: "GET",
-        dataType: 'json',
-        contentType: "application/json; charset=utf-8",
+        contentType: "application/x-www-form-urlencoded",
         statusCode: {
             200: function (data) {
                 loadDataToUserImpust(data);
@@ -33,3 +32,23 @@ $(function () {
         };
     }
 });
+
+function checkIfLogedIn() {
+    $.ajax({
+        url: '../app/service/rest/user/user.php/',
+        type: "GET",
+        contentType: "application/x-www-form-urlencoded",
+        statusCode: {
+            200: function (user) {
+                if (user) {
+                    $('#mainContent').show();
+                } else {
+                    window.location.href = "/login";
+                }
+            },
+            403: function () {
+                window.location.href = "/login";
+            }
+        }
+    });
+}
