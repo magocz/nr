@@ -1,0 +1,49 @@
+<!--edit field modal dialog-->
+<div class="modal fade" id="addOtherCostModal" role="dialog" data-backdrop="static"
+     data-keyboard="false">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="addOtherCostnModalHeader"></h4>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tr>
+                        <td class="editFieldLable">
+                            <div class="fieldEditInputs">Data obciążenia:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <input id="otherCostDate" class="fieldEditInputs" type="text"
+                                   style="z-index:1151 !important;" readonly="true"
+                                   onclick="checkRequiredOtherCostFieldsModal()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editFieldLable">
+                            <div>Opis:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <textarea class="fieldEditInputs" onkeyup="checkRequiredOtherCostFieldsModal()" type="te" id="otherCostComment" maxlength="2000"
+                                      style="resize: none"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editFieldLable">
+                            <div>Koszt:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <input class="fieldEditInputs" type="text" id="otherCost" value="0.0"
+                                   onkeyup="checkRequiredOtherCostFieldsModal()">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button id="addOtherCostnBtn" type="button" class="btn btn-success" disabled="true">Zapisz</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
+            </div>
+        </div>
+    </div>
+</div>

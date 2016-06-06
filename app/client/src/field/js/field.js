@@ -1,15 +1,20 @@
 $(function () {
     $("#editOperationModalContener").load("../app/client/src/field/html/edit-operation-modal.html");
-    $("#deleteOperationModalContener").load("../app/client/src/home/html/delete-field-modal.html");
-    $("#addOperationModalContener").load("../app/client/src/home/html/add-operation-modal.html");
-    $("#deleteFieldModalContener").load("../app/client/src/home/html/delete-field-modal.html");
-    $("#editFieldModalContener").load("../app/client/src/home/html/edit-fiedl-modal.html");
+    $("#deleteOperationModalContener").load("../app/client/src/field/html/delete-field-modal.html");
+    $("#addOperationModalContener").load("../app/client/src/field/html/add-operation-modal.html");
+    $("#deleteFieldModalContener").load("../app/client/src/field/html/delete-field-modal.html");
+    $("#editFieldModalContener").load("../app/client/src/field/html/edit-fiedl-modal.html");
+    $("#deleteOtherCostModalContener").load("../app/client/src/field/html/delete-other-cost-modal.html");
+    $("#addOtherCostModalContener").load("../app/client/src/field/html/add-other-cost-modal.html");
+
     reloadField();
 });
 
 function reloadField() {
 
     $("#operationsCell").load("../app/client/src/field/html/operations-table.html");
+    $("#otherCostCell").load("../app/client/src/field/html/other-cost-table.html");
+
     var fieldId = getFieldIdFromUrl();
 
     $('#fieldHeader').append(
@@ -17,28 +22,7 @@ function reloadField() {
     );
 
     if (fieldId) {
-        $.ajax({
-            url: "../app/service/rest/field/field.php/" + fieldId,
-            type: "GET",
-            dataType: 'json',
-            contentType: "application/x-www-form-urlencoded",
-            statusCode: {
-                200: function (data) {
-                    fillFieldContent(data);
-                    drawFieldOperationsTable(data.fertilizerOperations);
-                    drawFieldOperationsTable(data.plantProtectionOperations);
-                    $("#fieldOperationsTable").tablesorter({
-                            headers: {
-                                5: {sorter: false},
-                            }
-                        }
-                    );
-                },
-                403: function () {
-                    window.location.href = "/login";
-                }
-            }
-        });
+        loadOperations(fieldId);
     }
 }
 
@@ -62,8 +46,8 @@ function fillFieldContent(data) {
     $('#fieldLeftInfoDivId').append(leftContent);
 
     var rightContent =
-        '<div><b>Całkowity koszt: </b>' + formatPrice(data.totalCost * data.ha) + ' zł</div>' +
-        '<div><b>Całkowity koszt na hektar: </b>' + data.totalCost + ' zł</div>' +
+        '<div><b>Całkowity koszt: </b>' + formatPrice(data.totalCost) + ' zł</div>' +
+        '<div><b>Całkowity koszt na hektar: </b>' + formatPrice(data.totalCost / data.ha) + ' zł</div>' +
         '<div><b>Koszt nawozów: </b>' + formatPrice(data.totalFertilizerOperationsCost * data.ha) + ' zł</div>' +
         '<div><b>Koszt nawozów na hektar: </b>' + formatPrice(data.totalFertilizerOperationsCost) + ' zł</div>' +
         '<div><b>Koszt ochrony roślin: </b>' + formatPrice(data.totalPlantProtectionOperationsCost * data.ha) + ' zł</div>' +

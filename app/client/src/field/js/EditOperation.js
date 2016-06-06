@@ -1,6 +1,6 @@
 function openEditOperationModalDialog(operation) {
     fillOperationFormValues(operation);
-    $('#editOperationdModalHeader').text('Dodaj zabieg do działki');
+    $('#editOperationdModalHeader').text('Edytuj zabieg z dnia ' + operation.date);
     $('#operationDate').datepicker({
         changeMonth: true,
         changeYear: true,
@@ -84,7 +84,6 @@ function checkRequiredFieldInEditOperationModal() {
 function clearFieldInAddOperationModal() {
     $('#operationMeansNameEditInputs').val('');
     $('#operationCommentInputs').val('');
-    $('#operationCauseEditInputs').val('0.0');
     $('#operationEcoHarmEditInputs').val('0.0');
     $('#operationCostProHaEditInputs').val('0.0');
     $('#operationCauseEditInputs').val('Nie określono');

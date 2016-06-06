@@ -20,11 +20,14 @@
 
     <script src="../app/client/src/field/js/field.js"></script>
     <script src="../app/client/src/field/js/OperationsTable.js"></script>
+    <script src="../app/client/src/field/js/OtherCostTable.js"></script>
     <script src="../app/client/src/field/js/DeleteField.js"></script>
     <script src="../app/client/src/field/js/Operations.js"></script>
     <script src="../app/client/src/field/js/EditOperation.js"></script>
     <script src="../app/client/src/field/js/DeleteOperation.js"></script>
+    <script src="../app/client/src/field/js/DeleteOtherCost.js"></script>
     <script src="../app/client/src/field/js/EditField.js"></script>
+    <script src="../app/client/src/field/js/AddOtherCost.js"></script>
     <script src="../app/client/src/authorization/js/Logout.js"></script>
 
     <title>Agro-Note Działka</title>
@@ -58,7 +61,6 @@
         </td>
     </tr>
     <tr class="homeTableSearchRow">
-
         <td class="homeTableSearchCell" colspan="2">
             <table>
                 <tr>
@@ -93,6 +95,41 @@
             </div>
         </td>
     </tr>
+    <tr class="homeTableSearchRow">
+
+        <td class="homeTableSearchCell" colspan="2">
+            <table>
+                <tr>
+                    <td></td>
+                    <td>
+                        <div align="right" class="homeTableSiteCell">
+                            <table align="right">
+                                <tr>
+                                    <td class="homeTableSearchCell" style="width: 33%">
+                                        <div align="left" class="homeTableSearchCell">
+                                            Lista dodatkowych kosztów
+                                        </div>
+                                    </td>
+
+                                    <td style="width: 33%">
+                                        <button onclick="openAddOtherCostModalDialog()" align="right" type="button"
+                                                class="btn btn-success"
+                                                style="float: right; margin-top: 10px; data-dismiss=" modal                                        ">Dodaj koszt</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div id="otherCostCell" class="homeTableCellDiv">
+            </div>
+        </td>
+    </tr>
     <tr>
         <td colspan="2">
             <div class="footer">Copyright&copy; Neldam Software Solutions</div>
@@ -106,5 +143,7 @@
 <div id="deleteOperationModalContener"></div>
 <div id="addOperationModalContener"></div>
 <div id="editOperationModalContener"></div>
+<div id="deleteOtherCostModalContener"></div>
+<div id="addOtherCostModalContener"></div>
 </body>
 </html>

@@ -52,7 +52,7 @@ class FieldBE
                 array_push($this->fertilizerOperations, new OperationBE($operation));
                 $this->totalFertilizerOperationsCost += $operation['COST_PRO_HA'];
             }
-            $this->totalCost += ($operation['COST_PRO_HA']);// count for field so * ha
+            $this->totalCost += ($operation['COST_PRO_HA']) * $this->ha;// count for field so * ha
 
         }
 

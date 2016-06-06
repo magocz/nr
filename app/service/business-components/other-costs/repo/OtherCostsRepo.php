@@ -39,29 +39,12 @@ class  OtherCostsRepo
 
     public static function saveNewOtherCost($data, $seasonId, $userId)
     {
-        $fieldNr = iconv("UTF-8", "ISO-8859-2", $data['fieldNumber']);
-        $description = iconv("UTF-8", "ISO-8859-2", $data['description']);
-        $plant = iconv("UTF-8", "ISO-8859-2", $data['plant']);
-        $varietes = iconv("UTF-8", "ISO-8859-2", $data['varietes']);
-        $ha = $data['ha'];
-        $sql = "INSERT INTO OTHER_COSTS (SEASON_ID, FIELD_NR, USER_ID ,DESCRIPTION ,PLANT, VARIETES, HA) VALUES ('$seasonId ','$fieldNr ',' $userId ',' $description ',' $plant ',' $varietes ','$ha ')";
-        $response = $GLOBALS['dbcon']->query($sql);
-        if ($response === TRUE) {
-            return true;
-        }
-        echo $response;
-        return false;
-    }
-
-    public static function updateOtherCostById($otherCostID, $data, $userId)
-    {
-        $fieldNr = iconv("UTF-8", "ISO-8859-2", $data['fieldNumber']);
-        $description = iconv("UTF-8", "ISO-8859-2", $data['description']);
-        $plant = iconv("UTF-8", "ISO-8859-2", $data['plant']);
-        $varietes = iconv("UTF-8", "ISO-8859-2", $data['varietes']);
-        $ha = $data['ha'];
-        $sql = "UPDATE OTHER_COSTS " . "SET FIELD_NR = '$fieldNr' , DESCRIPTION = '$description',  PLANT = '$plant', VARIETES = '$varietes', HA = '$ha' " .
-            "WHERE ID = $fieldId AND USER_ID = $userId";
+        $fieldId = $data['fieldId'];
+        $comment = $data['comment'];
+        $cost = $data['cost'];
+        $date = date('Y-m-d', strtotime($data['date']));
+        $sql = "INSERT INTO OTHER_COSTS (SEASON_ID, FIELD_ID, USER_ID ,COMMENT ,COST, DATE) VALUES ('$seasonId','$fieldId','$userId','$comment','$cost','$date')";
+        echo $sql;
         $response = $GLOBALS['dbcon']->query($sql);
         if ($response === TRUE) {
             return true;
@@ -69,9 +52,25 @@ class  OtherCostsRepo
         return false;
     }
 
-    public static function findAllOtherCostsByFieldId($fieldId)
+    public static function updateOtherCostById($data, $firstParam,$userId)
     {
-        $sql = "SELECT * FROM OTHER_COSTS WHERE `FIELD_ID` LIKE '$fieldId'";
+        $id = $firstParam;
+        $comment = $data['comment'];
+        $cost = $data['cost'];
+
+        $date = date('Y-m-d', strtotime($data['date']));
+        $sql = "UPDATE OTHER_COSTS SET COMMENT = '$comment',COST = '$cost', DATE = '$date' WHERE `ID` LIKE '$id' AND `USER_ID` LIKE '$userId'";
+        echo $sql;
+        $response = $GLOBALS['dbcon']->query($sql);
+        if ($response === TRUE) {
+            return true;
+        }
+        return false;
+    }
+
+    public static function findAllOtherCostsByFieldId($fieldId, $userId)
+    {
+        $sql = "SELECT * FROM OTHER_COSTS WHERE `FIELD_ID` LIKE '$fieldId' AND `USER_ID` LIKE '$userId'";
         $response = $GLOBALS['dbcon']->query($sql);
         $rows = array();
         while ($r = mysqli_fetch_assoc($response)) {

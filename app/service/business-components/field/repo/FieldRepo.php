@@ -14,7 +14,7 @@ class FieldRepo
         }
         if (count($rows) == 1) {
             $operatiosn = OperationRepo::findAllDoneOperationsByFieldId($fieldId);
-            $otherCosts = OtherCostsRepo::findAllOtherCostsByFieldId($fieldId);
+            $otherCosts = OtherCostsRepo::findAllOtherCostsByFieldId($fieldId,$_SESSION['id']);
             return new FieldBE($rows[0], $operatiosn, $otherCosts);
         }
         return null;
@@ -31,14 +31,14 @@ class FieldRepo
         return $rows;
     }
 
-    public static function findAllFieldsBySeasonId_ReturnBE($seasonId)
+    public static function findAllFieldsBySeasonId_ReturnBE($seasonId, $userId)
     {
         $sql = "SELECT * FROM FIELD WHERE `SEASON_ID` LIKE '$seasonId' AND `ACTIVE` = 1";
         $response = $GLOBALS['dbcon']->query($sql);
         $rows = array();
         while ($r = mysqli_fetch_assoc($response)) {
             $operatiosn = OperationRepo::findAllDoneOperationsByFieldId($r['ID']);
-            $otherCosts = OtherCostsRepo::findAllOtherCostsByFieldId($r['ID']);
+            $otherCosts = OtherCostsRepo::findAllOtherCostsByFieldId($r['ID'],$userId );
             $rows[] = new FieldBE($r, $operatiosn, $otherCosts);
         }
         return $rows;

@@ -1,3 +1,31 @@
+
+function loadOperations(fieldId) {
+    $.ajax({
+        url: "../app/service/rest/field/field.php/" + fieldId,
+        type: "GET",
+        dataType: 'json',
+        contentType: "application/x-www-form-urlencoded",
+        statusCode: {
+            200: function (data) {
+                fillFieldContent(data);
+                drawFieldOperationsTable(data.fertilizerOperations);
+                drawFieldOperationsTable(data.plantProtectionOperations);
+                drawOtherCostTable(data.otherCosts)
+                $("#fieldOperationsTable").tablesorter({
+                        headers: {
+                            5: {sorter: false},
+                        }
+                    }
+                );
+            },
+            403: function () {
+                window.location.href = "/login";
+            }
+        }
+    });
+}
+
+
 function drawFieldOperationsTable(data) {
     $("#fieldOperationsTable").append('<tbody />');
     for (var i = 0; i < data.length; i++) {

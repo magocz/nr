@@ -7,8 +7,7 @@ class OtherCostsBE
     public $userId;
     public $fieldId;
     public $seasonId;
-    public $initDate;
-    public $editDate;
+    public $date;
     public $cost;
     public $comment;
 
@@ -22,8 +21,7 @@ class OtherCostsBE
         $this->userId = $otherCosts['USER_ID'];
         $this->fieldId = $otherCosts['FIELD_ID'];
         $this->seasonId = $otherCosts['SEASON_ID'];
-        $this->initDate = $otherCosts['INIT_DATE'];
-        $this->editDate = $otherCosts['EDIT_DATE'];
+        $this->date = $otherCosts['DATE'];
         $this->cost = $otherCosts['COST'];
         $this->comment = $otherCosts['COMMENT'];
     }

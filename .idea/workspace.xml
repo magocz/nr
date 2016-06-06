@@ -2,30 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0f2fb24-4bff-470b-b97a-7331efe29d80" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/client/src/field/html/edit-fiedl-modal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/client/src/field/js/DeleteField.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/client/src/field/js/EditField.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/client/src/home/html/add-season-modal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/client/src/home/js/AddSeason.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/client/src/field/html/add-other-cost-modal.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/client/src/field/html/delete-other-cost-modal.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/client/src/field/html/other-cost-table.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/client/src/field/js/AddOtherCost.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/client/src/field/js/DeleteOtherCost.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/client/src/field/js/EditOtherCost.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/client/src/field/js/OtherCostTable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/service/rest/other-cost/other-cost.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/client/src/field/html/edit-operation-modal.html" afterPath="$PROJECT_DIR$/app/client/src/field/html/edit-operation-modal.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/client/src/field/js/EditOperation.js" afterPath="$PROJECT_DIR$/app/client/src/field/js/EditOperation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/client/src/field/js/Operations.js" afterPath="$PROJECT_DIR$/app/client/src/field/js/Operations.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/client/src/field/js/OperationsTable.js" afterPath="$PROJECT_DIR$/app/client/src/field/js/OperationsTable.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/client/src/field/js/field.js" afterPath="$PROJECT_DIR$/app/client/src/field/js/field.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/client/src/home/js/FieldTable.js" afterPath="$PROJECT_DIR$/app/client/src/home/js/FieldTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/client/src/home/js/HomeControloe.js" afterPath="$PROJECT_DIR$/app/client/src/home/js/HomeControloe.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/client/src/home/resources/home.css" afterPath="$PROJECT_DIR$/app/client/src/home/resources/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/client/src/season/js/AddSeason.js" afterPath="$PROJECT_DIR$/app/client/src/season/js/AddSeason.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/client/src/season/js/Season.js" afterPath="$PROJECT_DIR$/app/client/src/season/js/Season.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/client/src/season/js/SeasonsTable.js" afterPath="$PROJECT_DIR$/app/client/src/season/js/SeasonsTable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/client/src/user/js/User.js" afterPath="$PROJECT_DIR$/app/client/src/user/js/User.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/service/rest/season/season.php" afterPath="$PROJECT_DIR$/app/service/rest/season/season.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/service/business-components/field/repo/FieldBE.php" afterPath="$PROJECT_DIR$/app/service/business-components/field/repo/FieldBE.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/service/business-components/field/repo/FieldRepo.php" afterPath="$PROJECT_DIR$/app/service/business-components/field/repo/FieldRepo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/service/business-components/other-costs/business-activity/OtherCostsBA.php" afterPath="$PROJECT_DIR$/app/service/business-components/other-costs/business-activity/OtherCostsBA.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/service/business-components/other-costs/repo/OtherCostsBE.php" afterPath="$PROJECT_DIR$/app/service/business-components/other-costs/repo/OtherCostsBE.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/service/business-components/other-costs/repo/OtherCostsRepo.php" afterPath="$PROJECT_DIR$/app/service/business-components/other-costs/repo/OtherCostsRepo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/service/business-components/season/repo/SeasonRepo.php" afterPath="$PROJECT_DIR$/app/service/business-components/season/repo/SeasonRepo.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/field/index.html" afterPath="$PROJECT_DIR$/field/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login/index.html" afterPath="$PROJECT_DIR$/login/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seasons/index.html" afterPath="$PROJECT_DIR$/seasons/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/index.html" afterPath="$PROJECT_DIR$/user/index.html" />
     </list>
     <ignored path="nr.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,25 +37,35 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="add-other-cost-modal.html" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/client/src/field/html/add-other-cost-modal.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="297">
+                    <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+                    <folding>
+                      <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                      <element signature="n#style#0;n#textarea#0;n#td#1;n#tr#1;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="nr" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#td#0;n#tr#7;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#td#0;n#tr#7;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="db-config.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/service/configs/db-config/db-config.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -102,20 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/fiedl/js/EditOperation.js" />
-        <option value="$PROJECT_DIR$/client/src/fiedl/html/edit-operation-modal.html" />
-        <option value="$PROJECT_DIR$/client/src/field/html/edit-operation-modal.html" />
-        <option value="$PROJECT_DIR$/client/src/field/js/field.js" />
-        <option value="$PROJECT_DIR$/client/src/field/js/EditOperation.js" />
-        <option value="$PROJECT_DIR$/client/src/home/resources/home.css" />
-        <option value="$PROJECT_DIR$/client/src/home/html/home-table.html" />
-        <option value="$PROJECT_DIR$/client/public/index.html" />
-        <option value="$PROJECT_DIR$/service/business-components/operation/repo/OperationRepo.php" />
-        <option value="$PROJECT_DIR$/service/business-components/operation/business-activity/OperationBA.php" />
-        <option value="$PROJECT_DIR$/service/configs/db-config/db-config.php" />
-        <option value="$PROJECT_DIR$/service/business-components/field/business-activity/FieldBA.php" />
-        <option value="$PROJECT_DIR$/service/rest/excel/field/excel-generator.php" />
-        <option value="$PROJECT_DIR$/service/business-components/field/repo/FieldRepo.php" />
         <option value="$PROJECT_DIR$/service/business-components/field/business-activity/FieldExcelGenerator.php" />
         <option value="$PROJECT_DIR$/client/src/home/js/HomeControloe.js" />
         <option value="$PROJECT_DIR$/client/src/home/js/FieldTable.js" />
@@ -125,21 +117,15 @@
         <option value="$PROJECT_DIR$/app/client/src/home/js/DeleteField.js" />
         <option value="$PROJECT_DIR$/app/client/src/field/js/DeleteOperation.js" />
         <option value="$PROJECT_DIR$/app/client/src/authorization/js/login.js" />
-        <option value="$PROJECT_DIR$/app/service/business-components/operation/repo/OperationRepo.php" />
         <option value="$PROJECT_DIR$/app/client/src/login/js/login.js" />
         <option value="$PROJECT_DIR$/app/client/src/authorization/js/Logout.js" />
         <option value="$PROJECT_DIR$/app/client/src/home/js/ChartModel.js" />
-        <option value="$PROJECT_DIR$/app/client/src/field/html/add-operation-modal.html" />
-        <option value="$PROJECT_DIR$/app/client/src/field/js/EditOperation.js" />
         <option value="$PROJECT_DIR$/app/client/src/field/html/edit-operation-modal.html" />
         <option value="$PROJECT_DIR$/app/client/src/field/js/Operations.js" />
-        <option value="$PROJECT_DIR$/app/client/src/field/js/OperationsTable.js" />
         <option value="$PROJECT_DIR$/app/client/src/home/js/FieldTable.js" />
         <option value="$PROJECT_DIR$/app/client/src/field/js/DeleteField.js" />
         <option value="$PROJECT_DIR$/app/client/src/home/js/EditField.js" />
         <option value="$PROJECT_DIR$/app/client/src/field/js/EditField.js" />
-        <option value="$PROJECT_DIR$/app/client/src/field/js/field.js" />
-        <option value="$PROJECT_DIR$/field/index.html" />
         <option value="$PROJECT_DIR$/app/client/src/season/js/AddSeason.js" />
         <option value="$PROJECT_DIR$/app/client/src/season/js/SeasonsTable.js" />
         <option value="$PROJECT_DIR$/app/client/src/home/resources/home.css" />
@@ -151,6 +137,26 @@
         <option value="$PROJECT_DIR$/app/service/rest/season/season.php" />
         <option value="$PROJECT_DIR$/app/client/src/home/js/HomeControloe.js" />
         <option value="$PROJECT_DIR$/app/client/src/home/js/AddSeason.js" />
+        <option value="$PROJECT_DIR$/app/client/src/field/html/operations-table.html" />
+        <option value="$PROJECT_DIR$/app/client/src/field/html/other-cost-table.html" />
+        <option value="$PROJECT_DIR$/app/service/business-components/other-costs/repo/OtherCostsBE.php" />
+        <option value="$PROJECT_DIR$/app/client/src/field/js/OperationsTable.js" />
+        <option value="$PROJECT_DIR$/app/client/src/field/html/delete-other-cost-modal.html" />
+        <option value="$PROJECT_DIR$/app/client/src/field/js/DeleteOtherCost.js" />
+        <option value="$PROJECT_DIR$/field/index.html" />
+        <option value="$PROJECT_DIR$/app/client/src/field/html/add-operation-modal.html" />
+        <option value="$PROJECT_DIR$/app/service/business-components/field/repo/FieldBE.php" />
+        <option value="$PROJECT_DIR$/app/client/src/field/js/field.js" />
+        <option value="$PROJECT_DIR$/app/client/src/field/js/OtherCostTable.js" />
+        <option value="$PROJECT_DIR$/app/service/business-components/operation/repo/OperationRepo.php" />
+        <option value="$PROJECT_DIR$/app/client/src/field/js/EditOperation.js" />
+        <option value="$PROJECT_DIR$/app/service/business-components/field/repo/FieldRepo.php" />
+        <option value="$PROJECT_DIR$/app/service/business-components/season/repo/SeasonRepo.php" />
+        <option value="$PROJECT_DIR$/app/service/business-components/other-costs/business-activity/OtherCostsBA.php" />
+        <option value="$PROJECT_DIR$/app/service/rest/other-cost/other-cost.php" />
+        <option value="$PROJECT_DIR$/app/service/business-components/other-costs/repo/OtherCostsRepo.php" />
+        <option value="$PROJECT_DIR$/app/client/src/field/js/AddOtherCost.js" />
+        <option value="$PROJECT_DIR$/app/client/src/field/html/add-other-cost-modal.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app/service/configs/db-config/db-config.php" />
       </list>
@@ -303,8 +309,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -338,10 +345,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rest" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -406,28 +409,9 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htdocs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="htdocs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -463,11 +447,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\app\client\src\home\html" />
-      <recent name="C:\xampp\htdocs\app\client\src\home\js" />
+      <recent name="C:\xampp\htdocs\app\client\src\field\js" />
       <recent name="C:\xampp\htdocs\app\client\src\field\html" />
-      <recent name="C:\xampp\htdocs\nr\client\src\fiedl\html" />
-      <recent name="C:\xampp\htdocs\nr\client\src\login\js" />
+      <recent name="C:\xampp\htdocs\app\service\rest" />
+      <recent name="C:\xampp\htdocs\app\service\rest\operation" />
+      <recent name="C:\xampp\htdocs\app\client\src\home\html" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\nr" />
@@ -928,7 +912,9 @@
       <workItem from="1463945592734" duration="4115000" />
       <workItem from="1464099792278" duration="5286000" />
       <workItem from="1464115009175" duration="8767000" />
-      <workItem from="1464638345249" duration="9513000" />
+      <workItem from="1464638345249" duration="10111000" />
+      <workItem from="1465156663737" duration="1212000" />
+      <workItem from="1465243974914" duration="6655000" />
     </task>
     <task id="LOCAL-00001" summary="Zaczęto refaktoring kodu w sekcji serwisowej, pliki PHP.">
       <created>1463089722893</created>
@@ -1032,7 +1018,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256762000" />
+    <option name="totallyTimeSpent" value="265227000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -1051,6 +1037,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2578125" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48414376" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1062,35 +1049,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19027483" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884398" sideWeight="0.5021436" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.49785638" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2578125" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19027483" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1130,218 +1089,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/client/src/home/html/add-operation-modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/service/business-components/field/repo/FieldRepo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
-          <caret line="126" column="1" selection-start-line="126" selection-start-column="1" selection-end-line="126" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/home/html/home-table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/service/rest/excel/field/excel-generator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="69" column="80" selection-start-line="69" selection-start-column="80" selection-end-line="69" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/service/business-components/field/business-activity/FieldBA.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/service/business-components/field/business-activity/FieldExcelGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="97" column="26" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/authorization/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authorization/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/authorization/js/Logout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/login/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/home/js/AddOperation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/home/js/AddField.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/field/html/add-operation-modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="92" column="18" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/service/rest/operation/operation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/service/business-components/operation/repo/OperationRepo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
-          <folding>
-            <marker date="1464638201497" expanded="true" signature="121:192" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
-            <marker date="1464638201497" expanded="true" signature="649:718" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
-            <marker date="1464638201497" expanded="true" signature="1705:2094" placeholder="INSERT INTO DONE_OPERATION_DETAILS... " />
-            <marker date="1464638201497" expanded="true" signature="2513:2601" placeholder="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/service/business-components/operation/business-activity/OperationBA.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/Operations.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="90" column="1" selection-start-line="90" selection-start-column="1" selection-end-line="90" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/field/html/operations-table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/OperationsTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-          <folding>
-            <marker date="1464640242338" expanded="true" signature="958:1007" placeholder="..." />
-            <marker date="1464640242338" expanded="true" signature="1163:1212" placeholder="..." />
-            <marker date="1464640242338" expanded="true" signature="1373:1404" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/field/html/delete-field-modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/field/html/edit-operation-modal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="79" column="82" selection-start-line="79" selection-start-column="82" selection-end-line="79" selection-end-column="82" />
-          <folding>
-            <element signature="n#style#0;n#select#0;n#td#1;n#tr#2;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#3;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#td#1;n#tr#3;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/DeleteOperation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/home/js/DeleteField.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/home/js/FieldTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="97" column="3" selection-start-line="97" selection-start-column="3" selection-end-line="97" selection-end-column="47" />
-          <folding>
-            <marker date="1464641245157" expanded="true" signature="2568:2617" placeholder="..." />
-            <marker date="1464641245157" expanded="true" signature="2779:2828" placeholder="..." />
-            <marker date="1464641245157" expanded="true" signature="2987:3018" placeholder="..." />
-            <marker date="1464641245157" expanded="true" signature="3195:3226" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/client/src/field/html/edit-fiedl-modal.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1349,14 +1100,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/EditOperation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="40" column="97" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="97" />
           <folding />
         </state>
       </provider>
@@ -1369,40 +1112,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/EditField.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/field.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="53" column="65" selection-start-line="53" selection-start-column="65" selection-end-line="53" selection-end-column="65" />
-          <folding>
-            <marker date="1464642395926" expanded="true" signature="757:852" placeholder="..." />
-            <marker date="1464642395926" expanded="true" signature="1979:2037" placeholder="..." />
-            <marker date="1464642395926" expanded="true" signature="2203:2279" placeholder="..." />
-            <marker date="1464642395926" expanded="true" signature="2435:2511" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/field/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/service/business-components/user/business-activity/UserBA.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1410,7 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1418,7 +1130,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1426,10 +1137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="802">
           <caret line="94" column="1" selection-start-line="94" selection-start-column="1" selection-end-line="94" selection-end-column="1" />
-          <folding>
-            <marker date="1464643939777" expanded="true" signature="1690:1722" placeholder="..." />
-            <marker date="1464643939777" expanded="true" signature="1903:1947" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1437,12 +1144,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1096">
           <caret line="100" column="6" selection-start-line="100" selection-start-column="6" selection-end-line="100" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1466,7 +1167,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1474,18 +1174,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#0;n#tr#1;n#table#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#1;n#table#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#2;n#tr#1;n#table#0;n#div#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1493,12 +1181,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="739">
           <caret line="87" column="35" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1506,7 +1188,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="93" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1514,7 +1195,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1522,7 +1202,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1545,15 +1224,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="37" column="45" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/service/business-components/season/SeasonBF.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1561,7 +1231,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="109" column="48" selection-start-line="109" selection-start-column="14" selection-end-line="109" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1573,14 +1242,284 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/html/operations-table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="52" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/service/business-components/season/business-activity/SeasonBA.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/service/business-components/season/SeasonBF.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="105" column="56" selection-start-line="105" selection-start-column="56" selection-end-line="105" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/DeleteOperation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="49" selection-start-line="0" selection-start-column="40" selection-end-line="0" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/html/delete-field-modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/field/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="29" column="59" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/html/delete-other-cost-modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/service/business-components/operation/business-activity/OperationBA.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/DeleteOtherCost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/service/business-components/other-costs/repo/OtherCostsBE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/service/business-components/field/business-activity/FieldBA.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/OperationsTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <marker date="1465245238736" expanded="true" signature="1805:1854" placeholder="..." />
+            <marker date="1465245238736" expanded="true" signature="2010:2059" placeholder="..." />
+            <marker date="1465245238736" expanded="true" signature="2220:2251" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/Operations.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
-          <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/field.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="89" selection-start-line="49" selection-start-column="89" selection-end-line="49" selection-end-column="89" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#7;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#td#0;n#tr#7;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1465248010382" expanded="true" signature="1053:1148" placeholder="..." />
+            <marker date="1465248010382" expanded="true" signature="1465:1523" placeholder="..." />
+            <marker date="1465248010382" expanded="true" signature="1689:1765" placeholder="..." />
+            <marker date="1465248010382" expanded="true" signature="1921:1997" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/html/add-operation-modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="94" column="43" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/EditOtherCost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/html/other-cost-table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/service/business-components/field/repo/FieldBE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/service/business-components/operation/repo/OperationRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="67" column="57" selection-start-line="67" selection-start-column="43" selection-end-line="67" selection-end-column="57" />
+          <folding>
+            <marker date="1464638201497" expanded="true" signature="121:192" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
+            <marker date="1464638201497" expanded="true" signature="649:718" placeholder="SELECT * FRO... DONE_OPERATION_DETAILS" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/OtherCostTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+          <folding>
+            <marker date="1465245557756" expanded="true" signature="864:913" placeholder="..." />
+            <marker date="1465245557756" expanded="true" signature="1074:1105" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/EditField.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/service/business-components/field/repo/FieldRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="33" column="52" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="59" />
+          <folding>
+            <marker date="1465249817654" expanded="true" signature="109:201" placeholder="SELECT * FRO... FIELD" />
+            <marker date="1465249817654" expanded="true" signature="773:844" placeholder="SELECT * FRO... FIELD" />
+            <marker date="1465249817654" expanded="true" signature="1144:1215" placeholder="SELECT * FRO... FIELD" />
+            <marker date="1465249817654" expanded="true" signature="1708:1791" placeholder="UPDATE FIELD... " />
+            <marker date="1465249817654" expanded="true" signature="2305:2540" placeholder="INSERT INTO FIELD... " />
+            <marker date="1465249817654" expanded="true" signature="4421:4513" placeholder="SELECT * FRO... FIELD" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/service/business-components/season/repo/SeasonRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
+          <folding>
+            <marker date="1465249842650" expanded="true" signature="111:206" placeholder="SELECT * FRO... SEASON" />
+            <marker date="1465249842650" expanded="true" signature="1205:1300" placeholder="SELECT * FRO... SEASON" />
+            <marker date="1465249842650" expanded="true" signature="1533:1602" placeholder="SELECT * FRO... SEASON" />
+            <marker date="1465249842650" expanded="true" signature="3561:3646" placeholder="UPDATE SEASO... " />
+            <marker date="1465249842650" expanded="true" signature="3845:3909" placeholder="INSERT INTO SEASON... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/service/business-components/other-costs/repo/OtherCostsRepo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
+          <folding>
+            <marker date="1465250271538" expanded="true" signature="123:208" placeholder="SELECT * FRO... OTHER_COSTS" />
+            <marker date="1465250271538" expanded="true" signature="494:554" placeholder="SELECT * FRO... OTHER_COSTS" />
+            <marker date="1465250271538" expanded="true" signature="1007:1090" placeholder="DELETE FROM " />
+            <marker date="1465250271538" expanded="true" signature="1433:1577" placeholder="INSERT INTO OTHER_COSTS... " />
+            <marker date="1465250271538" expanded="true" signature="1999:2073" placeholder="UPDATE OTHER... " />
+            <marker date="1465250271538" expanded="true" signature="1999:2095" placeholder="UPDATE OTHER... " />
+            <marker date="1465250271538" expanded="true" signature="1999:2124" placeholder="UPDATE OTHER... " />
+            <marker date="1465250271538" expanded="true" signature="2005:2073" placeholder="INSERT INTO OTHER_COSTS... " />
+            <marker date="1465250271538" expanded="true" signature="2391:2478" placeholder="SELECT * FRO... OTHER_COSTS" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/service/business-components/other-costs/business-activity/OtherCostsBA.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/service/rest/other-cost/other-cost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/AddOtherCost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/js/EditOperation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="93" column="51" selection-start-line="93" selection-start-column="51" selection-end-line="93" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/client/src/field/html/add-other-cost-modal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#td#1;n#tr#1;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="136" column="62" selection-start-line="136" selection-start-column="62" selection-end-line="136" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>

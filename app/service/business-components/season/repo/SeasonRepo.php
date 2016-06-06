@@ -42,7 +42,7 @@ class SeasonRepo
         $rows = array();
         while ($r = mysqli_fetch_assoc($response)) {
             $seasonBF = new SeasonBE($r);
-            $fields = FieldRepo::findAllFieldsBySeasonId_ReturnBE($seasonBF->id);
+            $fields = FieldRepo::findAllFieldsBySeasonId_ReturnBE($seasonBF->id, $userId);
             $fieldInfo = (object)[
                 'seasonFieldsCount' => 0,
                 'seasonOperationsCount' => 0,
