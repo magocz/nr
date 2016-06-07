@@ -177,27 +177,57 @@ class SeasonBA
                 } else {
                     @$seriesHasMap[$field->plant]->y = $field->getTotalCostProField();
                     @$seriesHasMap[$field->plant]->name = $field->plant;
-                    @$seriesHasMap[$field->plant]->drilldown = $field->plant . 'ID';
+                    @$seriesHasMap[$field->plant]->drilldown = $field->plant . 'allCostID';
                 }
                 if ($field->hasFieldCosts()) {
+                    $isAdded = false;
+                    if (key_exists($field->plant . 'allCostID', $drilldownHashMap)) {
+                        for ($i = 0; $i < count($drilldownHashMap[$field->plant . 'allCostID']->data); $i++) {
+                            if ($drilldownHashMap[$field->plant . 'allCostID']->data[$i]->name == $field->varietes) {
+                                $drilldownHashMap[$field->plant . 'allCostID']->data[$i]->y += $field->getTotalCostProField();
+                                $isAdded = true;
+                                break;
+                            }
+                        }
+                        if (!$isAdded) {
+                            array_push($drilldownHashMap[$field->plant . 'allCostID']->data,
+                                (object)[
+                                    'name' => $field->varietes,
+                                    'y' => $field->getTotalCostProField(),
+                                    'drilldown' => $field->varietes . 'ID',
+                                ]
+                            );
+                        }
+                    } else {
+                        @$drilldownHashMap[$field->plant . 'allCostID']->id = $field->plant . 'allCostID';
+                        @$drilldownHashMap[$field->plant . 'allCostID']->name = $field->varietes;
+                        @$drilldownHashMap[$field->plant . 'allCostID']->data = array(
+                            (object)[
+                                'name' => $field->varietes,
+                                'y' => $field->getTotalCostProField(),
+                                'drilldown' => $field->varietes . 'ID',
+                            ]
+                        );
+                    }
 
-                    if (key_exists($field->plant, $drilldownHashMap)) {
-                        array_push($drilldownHashMap[$field->plant]->data, (object)[
-                            'name' => $field->varietes,
+                    if (key_exists($field->varietes . 'ID', $drilldownHashMap)) {
+                        array_push($drilldownHashMap[$field->varietes . 'ID']->data, (object)[
+                            'name' => $field->varietes . ': ' . $field->description,
                             'y' => $field->getTotalCostProField(),
                             'drilldown' => $field->varietes . $field->id . 'allCostID',
                         ]);
                     } else {
-                        @$drilldownHashMap[$field->plant]->id = $field->plant . 'ID';
-                        @$drilldownHashMap[$field->plant]->name = $field->plant;
-                        @$drilldownHashMap[$field->plant]->data = array(
+                        @$drilldownHashMap[$field->varietes . 'ID']->id = $field->varietes . 'ID';
+                        @$drilldownHashMap[$field->varietes . 'ID']->name = $field->plant;
+                        @$drilldownHashMap[$field->varietes . 'ID']->data = array(
                             (object)[
-                                'name' => $field->varietes,
+                                'name' => $field->varietes . ': ' . $field->description,
                                 'y' => $field->getTotalCostProField(),
                                 'drilldown' => $field->varietes . $field->id . 'allCostID',
                             ]
                         );
                     }
+
 
                     if (key_exists($field->varietes . $field->id . 'allCostID', $drilldownHashMap)) {
                         $drilldownHashMap[$field->varietes . $field->id . 'allCostID']->data[0]->y += $field->getTotalFertilizerOperationsCostProField();
@@ -205,7 +235,7 @@ class SeasonBA
                         $drilldownHashMap[$field->varietes . $field->id . 'allCostID']->data[0]->y += $field->getTotalOtherCostProProField();
                     } else {
                         @$drilldownHashMap[$field->varietes . $field->id . 'allCostID']->id = $field->varietes . $field->id . 'allCostID';
-                        @$drilldownHashMap[$field->varietes . $field->id . 'allCostID']->name = $field->varietes;
+                        @$drilldownHashMap[$field->varietes . $field->id . 'allCostID']->name = $field->varietes . ': ' . $field->description;
                         @$drilldownHashMap[$field->varietes . $field->id . 'allCostID']->data = array(
                             (object)[
                                 'name' => 'Koszty nawozów',
@@ -235,10 +265,10 @@ class SeasonBA
                             }
                         } else {
                             @$drilldownHashMap[$field->varietes . $field->id . 'totalFertilizerOperationsCost']->id = $field->varietes . $field->id . 'totalFertilizerOperationsCost';
-                            @$drilldownHashMap[$field->varietes . $field->id . 'totalFertilizerOperationsCost']->name = $field->varietes;
+                            @$drilldownHashMap[$field->varietes . $field->id . 'totalFertilizerOperationsCost']->name = $field->varietes . ': ' . $field->description;
                             @$drilldownHashMap[$field->varietes . $field->id . 'totalFertilizerOperationsCost']->data = array();
                             foreach ($field->fertilizerOperations as $fertilizerOperation) {
-                                array_push($drilldownHashMap[$field->varietes .$field->id . 'totalFertilizerOperationsCost']->data, (object)[
+                                array_push($drilldownHashMap[$field->varietes . $field->id . 'totalFertilizerOperationsCost']->data, (object)[
                                     'name' => $fertilizerOperation->meansName . ' / ' . $fertilizerOperation->date,
                                     'y' => floatval($fertilizerOperation->costProHa * $field->ha),
                                 ]);
@@ -256,10 +286,10 @@ class SeasonBA
                             }
                         } else {
                             @$drilldownHashMap[$field->varietes . $field->id . 'totalPlantProtectionOperationsCost']->id = $field->varietes . $field->id . 'totalPlantProtectionOperationsCost';
-                            @$drilldownHashMap[$field->varietes . $field->id . 'totalPlantProtectionOperationsCost']->name = $field->varietes;
+                            @$drilldownHashMap[$field->varietes . $field->id . 'totalPlantProtectionOperationsCost']->name = $field->varietes . ': ' . $field->description;
                             @$drilldownHashMap[$field->varietes . $field->id . 'totalPlantProtectionOperationsCost']->data = array();
                             foreach ($field->plantProtectionOperations as $plantProtectionOperation) {
-                                array_push($drilldownHashMap[$field->varietes .$field->id . 'totalPlantProtectionOperationsCost']->data, (object)[
+                                array_push($drilldownHashMap[$field->varietes . $field->id . 'totalPlantProtectionOperationsCost']->data, (object)[
                                     'name' => $plantProtectionOperation->meansName . ' / ' . $plantProtectionOperation->date,
                                     'y' => floatval($plantProtectionOperation->costProHa * $field->ha),
                                 ]);
@@ -278,10 +308,10 @@ class SeasonBA
 
                         } else {
                             @$drilldownHashMap[$field->varietes . $field->id . 'totalOtherCosts']->id = $field->varietes . $field->id . 'totalOtherCosts';
-                            @$drilldownHashMap[$field->varietes . $field->id . 'totalOtherCosts']->name = $field->varietes;
+                            @$drilldownHashMap[$field->varietes . $field->id . 'totalOtherCosts']->name = $field->varietes . ': ' . $field->description;
                             @$drilldownHashMap[$field->varietes . $field->id . 'totalOtherCosts']->data = array();
                             foreach ($field->otherCosts as $otherCost) {
-                                array_push($drilldownHashMap[$field->varietes . $field->id .'totalOtherCosts']->data, (object)[
+                                array_push($drilldownHashMap[$field->varietes . $field->id . 'totalOtherCosts']->data, (object)[
                                     'name' => $otherCost->comment,
                                     'y' => floatval($otherCost->cost),
                                 ]);

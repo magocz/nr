@@ -108,12 +108,12 @@ class FieldBE
 
     public function getTotalCostProField()
     {
-        return $this->totalCost * $this->ha;
+        return $this->totalCost;
     }
 
     public function getTotalCostProHa()
     {
-        return $this->totalCost;
+        return $this->totalCost/$this->ha;
     }
 
     public function getTotalFertilizerOperationsCostProHa()
