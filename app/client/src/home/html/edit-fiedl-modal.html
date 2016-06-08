@@ -6,9 +6,10 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="editFieldModalHeader"></h4>
+                <h3 class="modal-title" id="editFieldModalHeader"></h3>
             </div>
             <div class="modal-body">
+                <h4 class="modal-header" style="margin-top: -10px">Ogólne</h4>
                 <table>
                     <tr>
                         <td class="editFieldLable">
@@ -57,6 +58,18 @@
                     </tr>
                     <tr>
                         <td class="editFieldLable">
+                            <div class="fieldEditInputs">Nasion na hektar [kg/ha]:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <input class="fieldEditInputs" type="text" id="fieldSeedsKgProHaEditInput"
+                                   onkeyup="checkRequiredFieldInEditFieldModal()" value="0.0">
+                        </td>
+                    </tr>
+                </table>
+                <h4 class="modal-header">Zysk</h4>
+                <table>
+                    <tr>
+                        <td class="editFieldLable">
                             <div class="fieldEditInputs">Ton na hektar:</div>
                         </td>
                         <td class="editFieldInput">
@@ -66,10 +79,40 @@
                     </tr>
                     <tr>
                         <td class="editFieldLable">
-                            <div class="fieldEditInputs">Średnia cena za tonę:</div>
+                            <div class="fieldEditInputs">Średnia cena za tonę [zł]:</div>
                         </td>
                         <td class="editFieldInput">
                             <input class="fieldEditInputs" type="text" id="fieldPlantPriceEditInput"
+                                   onkeyup="checkRequiredFieldInEditFieldModal()" value="0.0">
+                        </td>
+                    </tr>
+                </table>
+                <h4 class="modal-header">Koszt</h4>
+                <table>
+                    <tr>
+                        <td class="editFieldLable">
+                            <div class="fieldEditInputs">Podatek całkowity [zł]:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <input class="fieldEditInputs" type="text" id="fieldTaxEditInput"
+                                   onkeyup="checkRequiredFieldInEditFieldModal()" value="0.0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editFieldLable">
+                            <div class="fieldEditInputs">Cena siewu na hektar [zł]:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <input class="fieldEditInputs" type="text" id="fieldSeedsCostEditInput"
+                                   onkeyup="checkRequiredFieldInEditFieldModal()" value="0.0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="editFieldLable">
+                            <div class="fieldEditInputs">Koszt dzierżawy [zł]:</div>
+                        </td>
+                        <td class="editFieldInput">
+                            <input class="fieldEditInputs" type="text" id="fieldLeaseEditInput"
                                    onkeyup="checkRequiredFieldInEditFieldModal()" value="0.0">
                         </td>
                     </tr>

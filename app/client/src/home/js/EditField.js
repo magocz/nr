@@ -19,6 +19,11 @@ function fillEditableFields(field) {
     $('#fieldSizeEditInput').val(field.ha);
     $('#fieldPlantPriceEditInput').val(field.plantPrice);
     $('#fieldTonsProHaEditInput').val(field.tonsProHa);
+
+    $('#fieldSeedsKgProHaEditInput').val(field.seedsProHa);
+    $('#fieldTaxEditInput').val(field.tax);
+    $('#fieldSeedsCostEditInput').val(field.seedsCost);
+    $('#fieldLeaseEditInput').val(field.leaseCost);
 }
 
 function updateField(field) {
@@ -48,6 +53,10 @@ function updateJSONObjFormFieldValues(field) {
     field.ha = $('#fieldSizeEditInput').val();
     field.plantPrice = $('#fieldPlantPriceEditInput').val();
     field.tonsProHa = $('#fieldTonsProHaEditInput').val();
+    field.seedsProHa = $('#fieldSeedsKgProHaEditInput').val();
+    field.tax = $('#fieldTaxEditInput').val();
+    field.seedsCost = $('#fieldSeedsCostEditInput').val();
+    field.leaseCost = $('#fieldLeaseEditInput').val();
     return field;
 }
 
@@ -60,6 +69,11 @@ function createJSONObjFormFieldValues() {
     field.ha = $('#fieldSizeEditInput').val();
     field.plantPrice = $('#fieldPlantPriceEditInput').val();
     field.tonsProHa = $('#fieldTonsProHaEditInput').val();
+
+    field.seedsProHa = $('#fieldSeedsKgProHaEditInput').val();
+    field.tax = $('#fieldTaxEditInput').val();
+    field.seedsCost = $('#fieldSeedsCostEditInput').val();
+    field.leaseCost = $('#fieldLeaseEditInput').val();
     return field;
 }
 
@@ -71,6 +85,10 @@ function clearAllFieldEditModalInputs() {
     $('#fieldSizeEditInput').val('0.0');
     $('#fieldTonsProHaEditInput').val('0.0');
     $('#fieldPlantPriceEditInput').val('0.0');
+    $('#fieldSeedsKgProHaEditInput').val('0.0');
+    $('#fieldTaxEditInput').val('0.0');
+    $('#fieldSeedsCostEditInput').val('0.0');
+    $('#fieldLeaseEditInput').val('0.0');
 }
 
 function checkRequiredFieldInEditFieldModal() {
@@ -97,6 +115,18 @@ function checkRequiredFieldInEditFieldModal() {
         isOk = false;
     }
     if (!$.isNumeric($('#fieldPlantPriceEditInput').val())) {
+        isOk = false;
+    }
+    if (!$.isNumeric($('#fieldSeedsKgProHaEditInput').val())) {
+        isOk = false;
+    }
+    if (!$.isNumeric($('#fieldTaxEditInput').val())) {
+        isOk = false;
+    }
+    if (!$.isNumeric($('#fieldSeedsCostEditInput').val())) {
+        isOk = false;
+    }
+    if (!$.isNumeric($('#fieldLeaseEditInput').val())) {
         isOk = false;
     }
     isOk ? $('#updateFieldBtn').attr("disabled", false) : $('#updateFieldBtn').attr("disabled", true);

@@ -1,15 +1,25 @@
 html {
     overflow-y: scroll;
-}
-
-body.modal-open {
-    /*  disable scrooling*/
-    position: fixed;
-    top: 0;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
     left: 0;
     right: 0;
-    bottom: 0;
+}
 
+html.modal-open {
+    position: absolute;
+    overflow-y: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+body {
+    height: 100%;
+    padding-right:0px !important;
+    margin-right:0px !important;
 }
 
 .homeTable {
@@ -106,6 +116,8 @@ body.modal-open {
 .editFieldLable {
     width: 35%;
     float: left;
+    text-align: right;
+    padding-right: 5px;
 }
 
 .datepicker {
@@ -117,5 +129,5 @@ body.modal-open {
 }
 
 .selected {
-    background-color: #E8E8E8 ;
+    background-color: #E8E8E8;
 }

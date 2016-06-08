@@ -14,7 +14,7 @@ class FieldRepo
         }
         if (count($rows) == 1) {
             $operatiosn = OperationRepo::findAllDoneOperationsByFieldId($fieldId);
-            $otherCosts = OtherCostsRepo::findAllOtherCostsByFieldId($fieldId,$_SESSION['id']);
+            $otherCosts = OtherCostsRepo::findAllOtherCostsByFieldId($fieldId, $_SESSION['id']);
             return new FieldBE($rows[0], $operatiosn, $otherCosts);
         }
         return null;
@@ -38,7 +38,7 @@ class FieldRepo
         $rows = array();
         while ($r = mysqli_fetch_assoc($response)) {
             $operatiosn = OperationRepo::findAllDoneOperationsByFieldId($r['ID']);
-            $otherCosts = OtherCostsRepo::findAllOtherCostsByFieldId($r['ID'],$userId );
+            $otherCosts = OtherCostsRepo::findAllOtherCostsByFieldId($r['ID'], $userId);
             $rows[] = new FieldBE($r, $operatiosn, $otherCosts);
         }
         return $rows;
@@ -60,9 +60,13 @@ class FieldRepo
         $tonsProHa = floatval($data['tonsProHa']);
         $plantPrice = floatval($data['plantPrice']);
         $ha = floatval($data['ha']);
+        $seedsProHa = floatval($data['seedsProHa']);
+        $seedsCost = floatval($data['seedsCost']);
+        $tax = floatval($data['tax']);
+        $leaseCost = floatval($data['leaseCost']);
         $seasonId = $_SESSION['activeSeasonId'];
-        $sql = "INSERT INTO FIELD (SEASON_ID, FIELD_NR, USER_ID ,DESCRIPTION ,PLANT, VARIETES, HA, PLANT_PRICE,TONS_PRO_HA) " .
-            "VALUES ('$seasonId','$fieldNr','$userId','$description','$plant','$varietes','$ha','$plantPrice','$tonsProHa')";
+        $sql = "INSERT INTO FIELD (SEASON_ID, FIELD_NR, USER_ID ,DESCRIPTION ,PLANT, VARIETES, HA, PLANT_PRICE,TONS_PRO_HA, SEEDS_PRO_HA, TAX, SEEDS_COST, LEASE_COST) " .
+            "VALUES ('$seasonId','$fieldNr','$userId','$description','$plant','$varietes','$ha','$plantPrice','$tonsProHa','$seedsProHa', '$tax', '$seedsCost','$leaseCost')";
         $response = $GLOBALS['dbcon']->query($sql);
         echo $sql;
         if ($response === TRUE) {
@@ -81,9 +85,12 @@ class FieldRepo
         $tonsProHa = floatval($data['tonsProHa']);
         $plantPrice = floatval($data['plantPrice']);
         $ha = floatval($data['ha']);
-
+        $seedsProHa = floatval($data['seedsProHa']);
+        $seedsCost = floatval($data['seedsCost']);
+        $tax = floatval($data['tax']);
+        $leaseCost = floatval($data['leaseCost']);
         $sql = "UPDATE FIELD " . "SET FIELD_NR = '$fieldNr' , DESCRIPTION = '$description',  PLANT = '$plant', VARIETES = '$varietes', HA = '$ha', " .
-            "PLANT_PRICE = '$plantPrice', TONS_PRO_HA = '$tonsProHa' " .
+            "PLANT_PRICE = '$plantPrice', TONS_PRO_HA = '$tonsProHa', SEEDS_PRO_HA = '$seedsProHa', TAX = '$tax', SEEDS_COST = '$seedsCost', LEASE_COST = '$leaseCost'" .
             "WHERE ID = $fieldId AND USER_ID = $userId  AND `ACTIVE` = 1";
         echo $sql;
         $response = $GLOBALS['dbcon']->query($sql);

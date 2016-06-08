@@ -15,6 +15,10 @@ class FieldBE
     public $operationsNumber;
     public $plantPrice;
     public $tonsProHa;
+    public $seedsProHa;
+    public $seedsCost;
+    public $tax;
+    public $leaseCost;
     public $fertilizerOperations = array();
     public $plantProtectionOperations = array();
     public $otherCosts = array();
@@ -42,6 +46,10 @@ class FieldBE
         $this->operationsNumber = $fieldDB['OPERATIONS_NUMBER'];
         $this->plantPrice = $fieldDB['PLANT_PRICE'];
         $this->tonsProHa = $fieldDB['TONS_PRO_HA'];
+        $this->seedsProHa = $fieldDB['SEEDS_PRO_HA'];
+        $this->seedsCost = $fieldDB['SEEDS_COST'];
+        $this->tax = $fieldDB['TAX'];
+        $this->leaseCost = $fieldDB['LEASE_COST'];
 
 
         foreach ($operationsDB as $operation) {
@@ -164,6 +172,12 @@ class FieldBE
             'plantPrice' => $this->plantPrice,
             'tonsProHa' => $this->tonsProHa,
             'seasonId' => $this->id,
+            'seedsProHa' => $this->seedsProHa,
+            'seedsCost' => $this->seedsCost,
+            'tax' => $this->tax,
+            'leaseCost' => $this->leaseCost,
+
+
         ];
     }
 
